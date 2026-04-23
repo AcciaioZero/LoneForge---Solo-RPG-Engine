@@ -1,0 +1,2833 @@
+{
+  "interaction_tables": {
+    "version": "1.0",
+    "source": "LoneForge Homebrew",
+    "note": "Each interaction entry has a 'type' and a 'results' array (or 'function' for mechanic types). The code picks a random result from the array. Variables in {curly_braces} are replaced dynamically at runtime. Fallback: if a specific location override is not found, use the matching generic pool.",
+
+    "variable_reference": {
+      "{location}": "A random named location from the current settlement",
+      "{npc_name}": "A randomly generated NPC name",
+      "{npc_role}": "A random profession or role",
+      "{amount}": "A gold amount appropriate to player tier (tier1: 5-25gp, tier2: 25-100gp, tier3: 100-500gp, tier4: 500+gp)",
+      "{creature}": "A random creature name from the bestiary",
+      "{item}": "A random item name from the item database",
+      "{spell}": "A random spell name from the spell database",
+      "{district}": "The name of the current district"
+    },
+
+    "interaction_types": {
+      "table_result": "Pick a random string from results array and add to journal as narrative log.",
+      "mechanic": "Call an existing game function. 'function' field names the handler.",
+      "cost_action": "Show a confirmation dialog with cost. On confirm, deduct gold and apply effect.",
+      "oracle_prompt": "Pre-fill the Oracle input with the suggested question and open the Oracle panel.",
+      "skill_check": "Trigger a skill check with the specified skill and DC. Use results.success and results.failure."
+    },
+
+    "generic_pools": {
+
+      "Gather rumors": {
+        "type": "table_result",
+        "results": [
+          "An old man nursing his drink leans over: 'They say something came out of {location} last night. Nobody's gone back to check.'",
+          "A merchant passing through mentions that the road to the east has been unusually quiet lately. Too quiet.",
+          "'You didn't hear this from me,' whispers a server, 'but {npc_name} the {npc_role} hasn't been seen in three days. Friends are getting worried.'",
+          "A group of laborers argue about whether the new construction near {location} is cursed. Two of them quit this morning.",
+          "Someone left a coded message pinned to the notice board. No one's claimed it.",
+          "'The guard doubled their patrols near {location} last night,' a local mentions. 'Won't say why.'",
+          "A traveler just arrived from the south. Whatever they saw on the road, they won't talk about it.",
+          "Word is that {npc_name} is looking for someone with specific skills. Paying well, no questions asked."
+        ]
+      },
+
+      "Gather local rumors": {
+        "type": "table_result",
+        "results": [
+          "A neighbor mentions that the family at {location} packed up and left in the middle of the night last week.",
+          "'The children won't go near the old fountain anymore,' someone says. 'They say they see faces in the water.'",
+          "A street vendor complains that their best supplier has been unreliable lately. Something has disrupted trade from the south.",
+          "Two locals debate loudly about whether the new {npc_role} in the {district} district is trustworthy. The argument goes nowhere.",
+          "A young woman is asking about her missing brother. He worked at {location} and hasn't come home.",
+          "'Strange lights again last night,' an elderly man says, gesturing vaguely toward the edge of town.",
+          "The baker mentions that the flour delivery was late and the cart driver looked frightened.",
+          "Someone chalked a symbol on the wall near {location}. Nobody recognizes it. Nobody is asking questions."
+        ]
+      },
+
+      "Gather street-level rumors": {
+        "type": "table_result",
+        "results": [
+          "A child runs past shouting about something at {location}. By the time you catch them, they've forgotten what the fuss was.",
+          "Two beggars argue over territory near the market. One of them seems to know more about what happens in this district than most guards.",
+          "'Keep your coin close,' a passerby warns you without making eye contact. 'Cutpurses working this block today.'",
+          "Graffiti near {location} reads something in a language you half-recognize. Could be a gang sign, could be a warning.",
+          "A street performer stops their act to stare at something behind you. When you turn, nothing is there. When you turn back, the performer is gone.",
+          "A cart wheel breaks in front of {location}, spilling its load. The owner is frantic and won't say what the crates contain.",
+          "'You're new here,' a child says, studying you. 'The last new person who asked too many questions left quickly.'",
+          "Someone has been watching you from across the street for the past few minutes. When you look directly at them, they move on."
+        ]
+      },
+
+      "Gather rumors about the city's past": {
+        "type": "table_result",
+        "results": [
+          "An old record mentions that the district you're in was built over something older. The original plans were sealed by order of the governor.",
+          "'This city has had three names,' a historian tells you. 'The first two were abandoned for reasons nobody writes down.'",
+          "A faded inscription near {location} commemorates an event that official histories don't mention.",
+          "The archivist mentions offhandedly that entire sections of the city records from a particular decade are missing.",
+          "'Ask the old families,' someone suggests. 'They remember what the official story leaves out.'",
+          "A map on the wall of a local establishment shows the city as it was a hundred years ago. Several landmarks no longer exist. One of them should.",
+          "A local historian mentions that the founding of this settlement involved a bargain. They won't say with whom.",
+          "There's a sealed room in {location}. Been sealed for forty years. The current owner doesn't know why and is too superstitious to open it."
+        ]
+      },
+
+      "Gather underworld rumors": {
+        "type": "table_result",
+        "results": [
+          "A contact speaks quietly: 'Someone is moving something large through the city. Whatever it is, the usual fences won't touch it.'",
+          "'The guild has a problem,' a source mentions. 'Someone on the inside has been talking to the guard. Nobody knows who yet.'",
+          "Three independent operators have gone silent in the past tenday. Could be coincidence. Probably isn't.",
+          "'There's a job nobody wants to take,' a fence mentions. 'The pay is exceptional. That should tell you something.'",
+          "Word is that a magistrate has been accepting payments for information. The question is who's paying.",
+          "A shipment was supposed to arrive at {location} last night. It didn't. The people waiting for it are very unhappy.",
+          "'Stay away from {location} this week,' a contact advises. 'I don't know why. Just stay away.'",
+          "Someone new is operating in the district. Efficient, quiet, no known affiliations. Everyone is nervous."
+        ]
+      },
+
+      "Gather political information": {
+        "type": "table_result",
+        "results": [
+          "A minor official mentions that two factions on the council are deadlocked over something they won't discuss in open session.",
+          "'The governor has been meeting privately with someone from outside the city,' a clerk whispers. 'Arrived after dark, left before dawn.'",
+          "A vote is coming that will change how the district operates. Both sides are courting anyone with influence.",
+          "'Follow the building permits,' a cynical official suggests. 'You can read the political winds in where they allow construction.'",
+          "Three council members have changed their positions on a key issue in the past month. No one is explaining why.",
+          "An ambassador from a neighboring power arrived unexpectedly this week. The official reason is a courtesy visit. No one believes that.",
+          "A senior official was replaced quietly last tenday. Their replacement is unknown outside the inner circle.",
+          "'The city guard's loyalties are not as simple as they appear,' a contact in the government district observes."
+        ]
+      },
+
+      "Gather information about the faith": {
+        "type": "table_result",
+        "results": [
+          "The priest mentions that pilgrimages to a sacred site have increased dramatically this season. Something is drawing the faithful.",
+          "'There is a schism forming,' a devoted worshipper says quietly. 'Not here. But word travels.'",
+          "A holy artifact belonging to this faith was reportedly stolen three months ago. The temple has been quiet about it.",
+          "'Pray for the town of {location},' a priest asks you. 'They have need of it.' They won't say more.",
+          "A new interpretation of an old prophecy has been circulating among the clergy. Not everyone agrees it's benign.",
+          "The temple has been receiving unusual donations lately — not coin, but objects. Strange ones.",
+          "'Someone has been asking questions about our history,' the head priest says. 'Questions that suggest they know things they should not.'",
+          "A minor miracle was reported near {location} last week. The temple is investigating quietly."
+        ]
+      },
+
+      "Gather information about local threats": {
+        "type": "table_result",
+        "results": [
+          "A guard sergeant mentions that patrols near {location} have been increased after three incidents in the past week.",
+          "'Something is coming out of the ruins to the east at night,' a scout reports. 'We've lost two patrols trying to identify it.'",
+          "A bounty has been posted on a {creature} that has been attacking travelers on the northern road. Nobody's collected yet.",
+          "'The threat isn't outside the walls,' a veteran guard says darkly. 'It never was.'",
+          "A caravan was attacked two days from here. The survivors described something that didn't match any known creature.",
+          "Three separate farms reported the same thing on the same night. The guard is calling it coincidence. The farmers are not.",
+          "'We know what it is,' a guard tells you. 'We just don't know how to stop it.'",
+          "A map of recent incidents has been pinned in the barracks. There is a clear pattern in the locations. No one has noted it yet."
+        ]
+      },
+
+      "Gather information about arcane phenomena": {
+        "type": "table_result",
+        "results": [
+          "An apprentice mage reports that the mana flows near {location} have become unstable without any clear cause.",
+          "'The stars aren't where they should be,' an astrologer mutters. 'Someone is moving them.'",
+          "A confiscated grimoire mentions an incomplete ritual that might explain the recent distortions, but no one has managed to decipher it.",
+          "'This isn't new magic,' an elderly arcanist says. 'It's ancient magic waking up.'",
+          "Three spellcasters suffered the same kind of mental collapse after attempting to perceive what lies beyond the veil.",
+          "A merchant claims that some enchanted items are losing power, while others — inexplicably — are gaining it.",
+          "'We mapped the anomalies,' a researcher explains. 'They form a symbol. Not one you want to see.'",
+          "A shard of arcane crystal found near {location} vibrates when brought close to any source of magic."
+        ]
+      },
+
+      "Find work": {
+        "type": "table_result",
+        "results": [
+          "A notice on the board: '{npc_name} seeks an experienced individual for a retrieval job. Discretion required. Pay: {amount} gp.'",
+          "A merchant approaches you quietly: 'I need someone to escort a package to {location}. No questions, good pay.'",
+          "A job: clear out whatever has taken up residence in an abandoned building near {location}. Owner wants it done quietly.",
+          "A local official needs documents delivered to three locations in the city by nightfall. {amount} gp for the job.",
+          "'You look capable,' a well-dressed person says. 'I need a capable person. Tonight. {amount} gp.'",
+          "A message has been left for anyone willing to investigate disappearances near {location}. No official involvement.",
+          "Work available: guard duty for a merchant's warehouse for three nights. {amount} gp per night.",
+          "A notice requests someone to find a missing person — last seen near {location} four days ago. Family is paying {amount} gp."
+        ]
+      },
+
+      "Find mercenary work": {
+        "type": "table_result",
+        "results": [
+          "A mercenary captain is recruiting for a job outside the city. Won't say what, but the pay is {amount} gp and equipment is provided.",
+          "'Caravan needs swords,' a handler says bluntly. 'Three days south, three days back. {amount} gp, no sharing, no questions.'",
+          "A local lord needs a small group to clear a location that can't be identified officially. Very good pay. Very unofficial.",
+          "Bounty work: a dangerous individual was last seen near {location}. Wanted alive. {amount} gp.",
+          "A note pinned to the board: 'Soldiers of fortune wanted for a dangerous operation. Experience with {creature} preferred.'",
+          "'The city guard won't handle it,' a civilian explains. 'Too political. I need someone who doesn't care about politics.'",
+          "A job nobody else will take is still available. The pay reflects that: {amount} gp up front, more on completion.",
+          "A guild is hiring outside contractors for something they can't assign to their own members. Deniability is the point."
+        ]
+      },
+
+      "Post or read job notices": {
+        "type": "table_result",
+        "results": [
+          "The board has three new notices today. One of them catches your eye: someone needs a package retrieved from {location}. {amount} gp.",
+          "A notice in a careful hand: 'Seeking individual with knowledge of {creature}. Academic interest. Generous compensation.'",
+          "Someone has crossed out and rewritten a notice multiple times. The job is still available. Whatever it involves, people keep declining.",
+          "A notice from the city guard: reward offered for information about recent incidents near {location}. No questions asked.",
+          "You post your own notice. Within the hour, someone has already added a comment beneath it.",
+          "Three notices are from the same person, each offering more than the last. Whatever they need done, they need it done soon.",
+          "A notice in coded language. You're not sure what it's offering, but someone has circled it in charcoal.",
+          "An official notice warns against a wanted individual. The description is vague enough to match several people you've met."
+        ]
+      },
+
+      "Long rest": {
+        "type": "mechanic",
+        "function": "handleLongRest",
+        "confirmation": "Take a long rest here? Your HP and abilities will be restored.",
+        "cost": 0
+      },
+
+      "Rest safely": {
+        "type": "mechanic",
+        "function": "handleLongRest",
+        "confirmation": "Rest here safely through the night?",
+        "cost": 0
+      },
+
+      "Gossip": {
+        "type": "table_result",
+        "results": [
+          "'{npc_name} the {npc_role} was seen leaving {location} in a hurry yesterday evening. Nobody knows why.'",
+          "'I shouldn't say this, but the {npc_role} at the end of the street has been acting strange since last week.'",
+          "'They say the new {npc_role} in the {district} district isn't who they claim to be. But who's going to ask?'",
+          "'Something happened at {location} last month. The people involved won't talk about it. That's usually a bad sign.'",
+          "'Did you hear? {npc_name} lost everything at the gambling house. Three nights in a row. Some say it wasn't bad luck.'",
+          "'The family that used to live here moved out suddenly. Left most of their things. Nobody's renting the place.'",
+          "'A stranger was asking questions about the old families last tenday. Haven't seen them since.'",
+          "'There's a meeting tonight at {location}. Private. Very private. Word travels though.'"
+        ]
+      },
+
+      "Observe daily life in the district": {
+        "type": "table_result",
+        "results": [
+          "A tense exchange between two merchants near {location} ends abruptly when they notice you watching.",
+          "Children play a game in the street with rules you don't recognize. When you ask, they look at each other and run.",
+          "A cart unloads crates at {location} while the owner watches nervously, counting each one.",
+          "Two guards on patrol walk past without acknowledging each other. The tension between them is obvious.",
+          "A street performer draws a crowd, but their act seems to be a cover for something. Hard to say what.",
+          "Someone is sketching the street from a window above. They close the shutter when they notice you looking up.",
+          "An argument spills briefly into the street from a building near {location}, then stops suddenly.",
+          "A well-dressed individual walks through the district looking at everything and touching nothing, taking notes."
+        ]
+      },
+
+      "Make a contact": {
+        "type": "table_result",
+        "results": [
+          "A {npc_role} named {npc_name} introduces themselves quietly. They seem to know more about you than they should. Could be useful.",
+          "Someone slides a note to you. It has a name, a location, and a time. Nothing else.",
+          "A regular here — {npc_name} — takes an interest in you. Not a friendly interest. A professional one.",
+          "You catch someone's eye across the room. A moment of mutual assessment. They nod slightly. A beginning.",
+          "'{npc_name} can help you with that,' a stranger says, unprompted. They leave before you can ask how they knew what you needed.",
+          "A {npc_role} buys you a drink without explanation. They want something. They'll mention it when the time is right.",
+          "You're approached by someone who asks three very specific questions about your skills. Then they give you a name and walk away.",
+          "A contact from a previous encounter passes you a name: '{npc_name}. {district} district. Tell them I sent you.'"
+        ]
+      },
+
+      "Make a criminal contact": {
+        "type": "table_result",
+        "results": [
+          "A fence named {npc_name} takes note of you. They work out of {location}. They'll deal with the right kind of person.",
+          "Someone slides a chit across the table. It's an introduction token — a way to open a door that's usually closed.",
+          "A {npc_role} speaks to you briefly in what seems like small talk. It isn't. By the end you have a name and a signal.",
+          "You're tested first — asked a question with no right answer. The fact that you don't panic seems to be the answer.",
+          "'{npc_name} owes me,' a contact says. 'Now they owe you. Use it carefully.'",
+          "A note is passed to you: a time, a location, no name. Someone wants to meet.",
+          "A regular here is clearly connected. They don't approach you, but they haven't looked away either.",
+          "The introduction is indirect — a name passed through two intermediaries. Someone doesn't want to be seen talking to you directly. Yet."
+        ]
+      },
+
+      "Receive healing": {
+        "type": "cost_action",
+        "cost": 15,
+        "cost_description": "15 gp",
+        "effect": "restore_hp_full",
+        "confirmation": "Pay 15 gp for healing?",
+        "results": [
+          "The healer's hands glow faintly as they work. Your wounds close and the pain recedes.",
+          "A brief prayer, a touch of light. You feel your injuries knit themselves closed.",
+          "The priest administers treatment with practiced efficiency. You leave feeling considerably better.",
+          "It's not magic exactly — more like guided natural recovery. Effective, regardless.",
+          "The healer frowns at your injuries, then at you. 'What did you do?' They treat you anyway."
+        ]
+      },
+
+      "Receive minor healing": {
+        "type": "cost_action",
+        "cost": 5,
+        "cost_description": "5 gp",
+        "effect": "restore_hp_partial",
+        "restore_amount": "2d4+2",
+        "confirmation": "Pay 5 gp for minor healing?",
+        "results": [
+          "A novice acolyte tends to your wounds carefully. Not a full recovery, but enough.",
+          "The shrine keeper says a brief blessing over you. The worst of your injuries ease.",
+          "Simple treatment — cleaned wounds, a binding, a minor prayer. It helps.",
+          "The healer has limited supplies but does what they can. You feel somewhat better."
+        ]
+      },
+
+      "Exchange currency": {
+        "type": "table_result",
+        "results": [
+          "The clerk weighs your coins carefully and quotes a fair rate. Standard transaction, no complications.",
+          "The exchange rate today is slightly unfavorable. The clerk shrugs. 'Market conditions.'",
+          "A quick, professional transaction. The clerk doesn't ask where the coins came from.",
+          "The clerk notices a marking on one of your coins and examines it carefully before completing the exchange.",
+          "Exchange completed. The clerk adds: 'If you're carrying that much regularly, we offer secure storage.'"
+        ]
+      },
+
+      "Attend a public session": {
+        "type": "table_result",
+        "results": [
+          "A case is being heard involving a property dispute near {location}. The arguments reveal more about local politics than property law.",
+          "A minor criminal matter. The sentence seems disproportionate to the offense. No one in the room looks surprised.",
+          "The session is interrupted by an objection that clearly wasn't expected. The official presiding looks uncomfortable.",
+          "An unusually large number of observers today. Whatever is being decided here matters to people.",
+          "The session ends abruptly. An official whispers something to the presiding figure and the room is cleared.",
+          "A routine proceeding becomes interesting when a witness says something they clearly weren't supposed to say.",
+          "The gallery is full of people from the {district} district. They watch the proceedings with focused intensity.",
+          "An empty chair at the official table. No explanation given. Several observers exchange meaningful looks."
+        ]
+      },
+
+      "Buy food and drink": {
+        "type": "cost_action",
+        "cost": 1,
+        "cost_description": "1 gp",
+        "effect": "add_rations",
+        "confirmation": "Buy a day's worth of food and drink for 1 gp?",
+        "results": [
+          "The food is simple but filling. You eat well enough.",
+          "Better than expected for the price. You make a note of this place.",
+          "Nothing special, but it does the job. You leave satisfied.",
+          "The server recommends a local specialty. It's worth it."
+        ]
+      }
+
+    },
+
+    "location_overrides": {
+
+      "Painters' Atelier": {
+        "Commission a portrait or artwork": {
+          "type": "cost_action",
+          "cost": "20 gp",
+          "results": [
+            "The artist studies you carefully. 'Yes… I can capture this. Return in 1d4 days.'",
+            "'A portrait?' the artist says, intrigued. 'I will need special pigments. Bring me a gemstone worth at least {amount}.'"
+          ]
+        },
+        "Buy artisan's supplies": {
+          "type": "table_result",
+          "results": [
+            "The atelier has a few pigments and brushes left over from recent work. Prices vary depending on quality.",
+            "The artist offers you a unique pigment made from crushed minerals. 'Rare stuff. Worth every coin.'",
+            "'Supplies? I'm nearly out,' the artist says. 'Try the {location} — they receive shipments more often.'"
+          ]
+        }
+      },
+
+      "Music School": {
+        "Learn an instrument (downtime)": {
+          "type": "skill_check",
+          "skill": "Performance",
+          "dc": 12,
+          "results": {
+            "success": "Your instructor praises your progress. You gain 1 day of effective training toward instrument proficiency.",
+            "failure": "The lesson is frustrating and unfocused. No progress is made today."
+          }
+        },
+
+        "Hire a performer": {
+          "type": "cost_action",
+          "results": [
+            "A talented student agrees to perform for you. Their repertoire includes traditional songs and local ballads. They ask you for 1 gp",
+            "The school's maestro is available — for a higher fee. Their performance is said to move even the sternest hearts. They ask you for 10 gp",
+            "No one is available today. 'Try again tomorrow,' the assistant suggests."
+          ]
+        }
+      },
+
+      "Theater": {
+        "Watch a performance": {
+          "type": "cost_action",
+          "results": [
+            "You watch a stirring performance. The crowd erupts in applause as the final act concludes. The show costs 5 gp",
+            "The play is mediocre, but the atmosphere is lively. You overhear whispers about {npc_name} backstage.",
+            "A last-minute cancellation forces the troupe to improvise. The result is chaotic but memorable."
+          ]
+        },
+
+        "Hire an actor": {
+          "type": "table_result",
+          "results": [
+            "A charismatic actor agrees to assist you — for the right price. They specialize in impersonations.  They ask you for 10 gp",
+            "A stagehand suggests a performer, {npc_name}, known for dramatic flair. 'They love adventure more than coin. You can find them in {location}'",
+            "No actors are available. The troupe is preparing for an important premiere."
+          ]
+        },
+
+        "Look for work": {
+          "type": "table_result",
+          "results": [
+            "The director eyes you critically. 'We need someone for a minor role. Interested?'",
+            "A stagehand offers you a job moving props. It's not glamorous, but it pays {amount}.",
+            "'Work?' the manager laughs. 'Try the {location}. They always need extra hands.'"
+          ]
+        }
+      },
+
+      "Music Shop": {
+        "Browse instruments": {
+          "type": "table_result",
+          "results": [
+            "You test the strings of a finely crafted lute. Its resonance is warm and bright — the shopkeeper watches your reaction with a knowing smile.",
+            "A peculiar horn catches your eye. The vendor taps it lightly and it emits a soft, haunting note that lingers in the air.",
+            "You find a dusty instrument tucked behind a shelf. 'Old piece,' the vendor says. 'Belonged to {npc_name} a {npc_role}, if the rumors are true.'",
+            "A row of exotic instruments from distant lands gleams under lantern light. One of them vibrates faintly as you approach.",
+            "The vendor proudly displays a newly arrived masterpiece. 'Only one like it in the region,' they say. 'Try it — gently.'"
+          ]
+        },
+
+        "Sell an instrument": {
+          "type": "table_result",
+          "results": [
+            "The vendor inspects your instrument with professional care. 'Good craftsmanship. I can offer {amount}.'",
+            "'Where did you get this?' the vendor asks, intrigued. They run a finger along the wood grain, clearly impressed.",
+            "The vendor shakes their head. 'Too many of these in stock. Try again next week — the market shifts quickly.'",
+            "A student overhears the conversation and immediately expresses interest. The vendor mediates a quick sale.",
+            "The vendor offers a lower price than expected, citing minor wear. Their explanation is annoyingly reasonable."
+          ]
+        },
+
+        "Ask about performers in town": {
+          "type": "table_result",
+          "results": [
+            "'Performers?' the vendor says. 'Try the {location}. A troupe arrived yesterday — loud bunch.'",
+            "The vendor mentions a traveling bard known for stirring ballads. 'They stay near the {location} when they're in town.'",
+            "'If you're looking for talent, speak with {npc_name}. They recruit musicians for private events.'",
+            "The vendor lowers their voice. 'There's a performer who plays only at secret gatherings. Ask around the {district}.'",
+            "'Funny you ask,' the vendor says. 'Someone was looking for a musician earlier today. Left no name.'"
+          ]
+        },
+
+        "Commission a custom instrument": {
+          "type": "cost_action",
+          "results": [
+            "The vendor nods eagerly. 'I can craft that. Give me 1d6 days and I'll have something worthy of your hands. It will cost you 30 gp.'",
+            "'Custom work?' they say, rubbing their chin. 'I'll need rare materials. Bring me a {item} and we can begin.'",
+            "The vendor refuses politely. 'Too complex for my workshop. But {npc_name} might take the commission. You should go to {location}'",
+            "They sketch a quick design on parchment. 'Yes… this could work. But it will cost more than you expect becuase there is a shortage of materials nowdays. They ask for 45 gp' ",
+            "The vendor agrees, but warns: 'If you want perfection, you'll need to be patient. Art can't be rushed. Give me 10 days and 50 gp and you will have a masterpiece.'"
+          ]
+        }
+      },
+
+      "Art Gallery": {
+        "Browse artwork": {
+          "type": "table_result",
+          "results": [
+            "A painting of a stormy coastline draws your attention. The waves seem almost alive under the gallery's soft lighting.",
+            "You pause before a sculpture carved from translucent stone. It shifts color subtly as you move around it.",
+            "A curator approaches quietly. 'That piece,' they whisper, 'was recovered from {location}. Its history is… complicated.'",
+            "A series of portraits lines the wall — each subject's eyes seem to follow you with unsettling precision.",
+            "You find a small, unassuming sketch tucked between grander works. The curator smiles. 'That one is my favorite.'"
+          ]
+        },
+
+        "Sell a valuable": {
+          "type": "table_result",
+          "results": [
+            "The curator examines your item with reverence. 'Exquisite. I can offer {amount}, assuming the provenance checks out.'",
+            "'Where did you acquire this?' the curator asks sharply. Their tone softens once you explain.",
+            "The gallery declines politely. 'We specialize in a different style. Try the {location} instead.'",
+            "A wealthy patron overhears and expresses interest. Negotiations begin immediately.",
+            "The curator offers a surprisingly high price. 'Pieces like this rarely surface. I'd be a fool to refuse.'"
+          ]
+        },
+
+        "Commission an appraisal": {
+          "type": "skill_check",
+          "skill": "Investigation",
+          "dc": 13,
+          "results": {
+            "success": "The curator provides a detailed appraisal. 'This piece is authentic — and valuable. Handle it with care.'",
+            "failure": "The curator frowns. 'Difficult to say. I need more time, or perhaps access to the archives at {location}.'"
+          }
+        },
+
+        "Ask about provenance of an object": {
+          "type": "table_result",
+          "results": [
+            "'Provenance?' the curator repeats. 'Ah, a fascinating tale. It begins in the {district}, decades ago…'",
+            "They produce a dusty ledger. 'Your object appears in these records — linked to {npc_name}, a collector of some renown.'",
+            "'I've heard rumors,' the curator says. 'Some claim the piece was stolen from a noble house. Others say it was gifted.'",
+            "The curator hesitates. 'Its origins are… disputed. Several factions have shown interest in it recently.'",
+            "'This object,' they say quietly, 'was once part of a larger set. The rest may still be hidden in {location}.'"
+          ]
+        }
+      },
+
+      "Runic Tattoo Shop": {
+        "Browse charms and trinkets": {
+          "type": "table_result",
+          "results": [
+            "A charm shaped like a coiled serpent hums faintly as you lift it. The runes along its spine glow for a heartbeat.",
+            "You examine a small wooden talisman etched with swirling sigils of the spell {spell}. The shopkeeper warns: 'It reacts to strong emotions.'",
+            "A shimmering pendant catches your eye. 'Found near {location},' the vendor says. 'Strange place. Stranger energies.'",
+            "A set of rune-etched stones sits in a velvet-lined box. When you touch one, it vibrates softly, as if greeting you.",
+            "You notice a charm wrapped in silver thread. 'Don't touch that one,' the vendor says quickly. 'It's… temperamental.'"
+          ]
+        },
+
+        "Commission a runic tattoo (downtime)": {
+          "type": "skill_check",
+          "skill": "Arcana",
+          "dc": 12,
+          "results": {
+            "success": "The tattooist nods approvingly. 'You understand the runes well enough. I can inscribe a minor protective sigil. Return in 1d4 days.'",
+            "failure": "The tattooist frowns. 'These runes are not toys. Study more, then return — I won't risk a misbinding.'"
+          }
+        },
+
+        "Ask about local magical rumors": {
+          "type": "table_result",
+          "results": [
+            "An apprentice mage reports that the mana flows near {location} have become unstable without any clear cause.",
+            "'The stars aren't where they should be,' an astrologer mutters. 'Someone is moving them.'",
+            "A confiscated grimoire mentions an incomplete ritual that might explain the recent distortions, but no one has managed to decipher it.",
+            "'This isn't new magic,' an elderly arcanist says. 'It's ancient magic waking up.'",
+            "Three spellcasters suffered the same kind of mental collapse after attempting to perceive what lies beyond the veil.",
+            "A merchant claims that some enchanted items are losing power, while others — inexplicably — are gaining it.",
+            "'We mapped the anomalies,' a researcher explains. 'They form a symbol. Not one you want to see.'",
+            "A shard of arcane crystal found near {location} vibrates when brought close to any source of magic."
+          ]
+        }
+      },
+
+      "Performance Plaza": {
+        "Watch a street performance": {
+          "type": "table_result",
+          "results": [
+            "A troupe of dancers spins in perfect rhythm. The crowd claps along, and a child hands you a flower with a shy smile.",
+            "A lone bard plays a haunting melody. As the final note fades, someone whispers a rumor about {npc_name}.",
+            "A fire-breather draws gasps from the crowd. Sparks drift upward, briefly forming shapes that resemble runes.",
+            "A juggler drops a ball, laughs it off, and improvises a comedic routine that has the crowd roaring.",
+            "A masked performer recites a dramatic monologue. Their eyes meet yours for a moment — unsettlingly intense."
+          ]
+        },
+
+        "Perform for coin": {
+          "type": "skill_check",
+          "skill": "Performance",
+          "dc": 11,
+          "results": {
+            "success": "Your performance draws a small crowd. You earn {amount} and a few appreciative nods.",
+            "failure": "Your act fails to impress. A child claps politely, but no one else seems moved."
+          }
+        },
+
+        "Meet contacts": {
+          "type": "table_result",
+          "results": [
+            "A hooded figure approaches quietly. 'You look like someone who listens. Meet me at {location} after dusk.'",
+            "A performer introduces you to {npc_name}, who claims to know things about the {district}.",
+            "You overhear a whispered argument between two individuals. One of them drops a folded note as they leave.",
+            "A merchant compliments your taste and hints at a private gathering happening soon — invitation only.",
+            "A street performer recognizes you. 'I've heard your name before,' they say. 'Someone's been asking about you.'"
+          ]
+        }
+      },
+
+      "Scroll Vendor": {
+        "Ask about rare spells": {
+          "type": "table_result",
+          "results": [
+            "The vendor's eyes sharpen with interest. 'Now that is a question. I had a scroll of {spell} pass through last month — sold it before I could copy it. Regret that.' They pause. 'Try the Wizard's Tower. Or {npc_name} — private collector, very private.'",
+            "'Rare how?' the vendor asks. 'Rare as in difficult, or rare as in shouldn't exist?' Either way, they suggest checking back in a tenday — a shipment is expected.",
+            "The vendor produces a worn ledger. '{spell} — had one, sold one, haven't seen another. The person who bought it came from the academy. That's all I know.'",
+            "'I know someone who knows someone,' the vendor says carefully. 'This kind of thing has a price beyond coin. Are you serious about this?'",
+            "The vendor shakes their head slowly. 'Whoever told you to come here for that overestimates my stock. But I can send word if something surfaces. Name?'",
+            "'An {npc_role} named {npc_name} comes here every ten days to buy {spell} scrolls. I've never understood why they need them.'"
+          ]
+        },
+        "Commission a scroll to be copied": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 12,
+          "results": {
+            "success": "The vendor agrees to copy the spell onto a scroll for you. Cost: 25 gp per spell level. Available in 1d4 days.",
+            "failure": "The vendor declines. 'I don't copy spells I don't have. And I don't copy spells I have for just anyone.' They suggest returning with a better reason."
+          }
+        },
+        "Sell a scroll": {
+          "type": "table_result",
+          "results": [
+            "The vendor examines your scroll carefully, holds it up to the light, and names a price. Fair enough.",
+            "'Where did you get this?' The question is professional, not accusatory. The price they offer reflects the answer.",
+            "The vendor declines to purchase. 'I have three of these already. Come back when the market shifts.'",
+            "The vendor makes a counteroffer lower than you expected. They explain why, and they're not wrong.",
+            "A quick sale. The vendor seems more interested in the scroll than the transaction. They're already reading it before you leave."
+          ]
+        }
+      },
+
+      "Magic Items Vendor": {
+        "Browse magic items": {
+          "type": "table_result",
+          "results": [
+            "The current stock includes several items under glass. The vendor watches you as you browse — not suspiciously, professionally.",
+            "An item near the back catches your eye. The vendor notices immediately. 'Good eye. That one isn't officially for sale yet.'",
+            "The stock is well-curated if limited. Whatever they carry, they know exactly what it does.",
+            "A new item arrived this morning — the vendor is still cataloguing it. They'll discuss it with serious buyers only.",
+            "Two items in the display case have been there a while. The vendor doesn't push them. They're waiting for the right buyer."
+          ]
+        },
+        "Request appraisal": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 10,
+          "results": {
+            "success": "The vendor examines your item carefully. After several minutes: 'This is a {item}. My assessment: genuine, functional, worth approximately {amount} gp on the current market.' They charge 10 gp for the appraisal.",
+            "failure": "The vendor glances at your item and shakes their head. 'I don't appraise items I didn't sell. Too much liability.' They suggest the Wizard's Tower."
+          }
+        },
+        "Ask about specific items": {
+          "type": "table_result",
+          "results": [
+            "'I don't have one now,' the vendor says, 'but I know where one is. Finding it would cost you {amount} gp just for the introduction.'",
+            "The vendor makes a note. 'I'll put the word out. If something surfaces, I'll send you a message. Where are you staying?'",
+            "'That item is controlled,' the vendor says carefully. 'Not illegal to own. Complicated to acquire. Interested in complicated?'",
+            "'I had one six months ago. Sold it the day it arrived.' A pause. 'The person who bought it is still in the city, as far as I know.'",
+            "The vendor seems unsurprised by the request. 'You're not the first to ask about that. Something is driving demand. I don't know what yet.'"
+          ]
+        },
+        "Sell a magic item": {
+          "type": "table_result",
+          "results": [
+            "The vendor examines the item thoroughly before naming a price. Their offer is fair — 60% of market value.",
+            "'I'll take it,' the vendor says after a careful inspection, 'but I need provenance. Where did this come from?'",
+            "The vendor declines politely. 'I have two already. The market for this is slow right now.'",
+            "An offer is made immediately, no examination. That speed suggests they know exactly what it is and have a buyer waiting.",
+            "The vendor haggles. Not aggressively, but they know the item's value and won't pretend otherwise."
+          ]
+        }
+      },
+
+      "Wizard's Tower": {
+        "Commission spell research": {
+          "type": "table_result",
+          "results": [
+            "The wizard listens, asks three clarifying questions, and names a price: {amount} gp, two weeks minimum. 'Magic research isn't predictable. It might take longer.'",
+            "'I can investigate this,' the wizard says slowly, 'but I'll need something in return beyond coin. There is a matter I need assistance with.'",
+            "The wizard declines the commission but suggests a colleague who specializes in the relevant school. Provides a name and location.",
+            "'That research has already been done,' the wizard says, pulling a scroll from a shelf. 'By me, twelve years ago. The results were not encouraging.'",
+            "The wizard agrees, but sets a condition: whatever is discovered is shared equally. 'Knowledge shouldn't be hoarded. Especially not dangerous knowledge.'"
+          ]
+        },
+        "Request identification of a magic item": {
+          "type": "cost_action",
+          "cost": 100,
+          "cost_description": "100 gp",
+          "effect": "identify_item",
+          "confirmation": "Pay 100 gp for a full magical identification?",
+          "results": [
+            "The wizard examines the item for several minutes in silence. 'This is more interesting than I expected.' They provide a full accounting of its properties.",
+            "A ritual identification — takes an hour, costs {amount} gp, reveals everything the item can do and a fragment of its history.",
+            "'Interesting,' the wizard murmurs, turning the item over. They identify its properties and add: 'I would be curious to know where you found this.'",
+            "The identification reveals something the wizard didn't expect. They charge the standard fee but ask to study it further — for their own reasons."
+          ]
+        },
+        "Ask about magical lore": {
+          "type": "table_result",
+          "results": [
+            "The wizard sets down their work and gives the question genuine consideration. 'That is not a simple matter. The short answer is yes. The accurate answer requires context.'",
+            "'I wrote a monograph on that subject,' the wizard says, moving to a shelf. 'Forty pages. I can summarize the relevant sections for {amount} gp.'",
+            "The wizard's expression shifts slightly — not alarm, but attention. 'Why are you asking about that specifically?'",
+            "'The conventional understanding is incomplete,' the wizard says. 'Most practitioners don't know what I know about this. That is intentional.'",
+            "An unexpected answer: the wizard doesn't know. They admit it without embarrassment. 'But I know who does. Whether they'll tell you is another matter.'"
+          ]
+        }
+      },
+
+      "Arcane Academy": {
+        "Buy student supplies": {
+          "type": "table_result",
+          "results": [
+            "A student assistant hands you a neatly organized kit. 'Standard issue,' they say. 'Reliable, if not glamorous.'",
+            "You find a shelf of discounted components. 'Overstock from last semester,' the clerk explains.",
+            "A shimmering focus crystal catches your eye. 'Careful,' the assistant warns. 'It resonates with strong emotions.'",
+            "A professor interrupts your browsing. 'If you're buying that,' they say, pointing at a reagent, 'use it responsibly.'",
+            "A crate is being unpacked nearby. 'Fresh shipment from {location},' the clerk says. 'Good quality this time.'"
+          ]
+        },
+
+        "Enroll in a course (downtime)": {
+          "type": "skill_check",
+          "skill": "Arcana",
+          "dc": 13,
+          "results": {
+            "success": "A professor approves your application. 'Classes begin tomorrow. Bring your own materials.'",
+            "failure": "The admissions clerk shakes their head. 'Your fundamentals need work. Study more, then return.'"
+          }
+        },
+
+        "Access the library": {
+          "type": "table_result",
+          "results": [
+            "The librarian grants you access to the lower stacks. 'No spell copying without permission,' they warn.",
+            "You find a dusty tome referencing {spell}. Several pages are missing — intentionally.",
+            "A student whispers: 'If you're looking for rare texts, check the restricted shelves… if you can get permission.'",
+            "A professor catches you browsing. 'Researching something specific?' they ask, eyeing your notes.",
+            "You discover a marginal note in an old book. It mentions {npc_name} and a forgotten ritual."
+          ]
+        },
+
+        "Post a job on the board": {
+          "type": "table_result",
+          "results": [
+            "You pin your notice to the board. Within minutes, a curious student asks for details.",
+            "A professor glances at your posting and nods approvingly. 'Ambitious,' they say.",
+            "A rival posting nearby catches your eye — someone else is seeking help with a similar task.",
+            "A student removes your notice, reads it, and replaces it with a scribbled question: 'Is this dangerous?'",
+            "A clerk warns you: 'Jobs involving planar magic require approval from the dean.'"
+          ]
+        }
+      },
+
+      "Arcane Supplies": {
+        "Browse supplies": {
+          "type": "table_result",
+          "results": [
+            "A shelf of glittering components hums faintly as you pass. The vendor watches to see which one reacts to you.",
+            "You find a focus carved from bone. 'Ethically sourced,' the vendor assures you before you can ask.",
+            "A jar of powdered gemstone pulses with inner light. 'Careful,' the vendor says. 'It stains… permanently.'",
+            "A rack of wands stands neatly arranged. One of them twitches slightly when you reach for it.",
+            "A crate labeled 'fragile' sits unopened. The vendor mutters: 'Shipment from {location}. Always unpredictable.'"
+          ]
+        },
+
+        "Sell components": {
+          "type": "table_result",
+          "results": [
+            "The vendor inspects your components with a jeweler's lens. 'Good quality. I can offer {amount}.'",
+            "'Where did you get this?' the vendor asks, intrigued. They weigh the component carefully in their palm.",
+            "The vendor declines politely. 'Too unstable for resale. Try the academy — they take risks.'",
+            "A customer overhears and immediately expresses interest. The vendor mediates a quick negotiation.",
+            "The vendor offers a lower price than expected, citing market saturation. Their reasoning is annoyingly sound."
+          ]
+        },
+
+        "Ask about unusual components": {
+          "type": "table_result",
+          "results": [
+            "'Unusual?' the vendor repeats. 'Try the {location}. They deal in… stranger things.'",
+            "The vendor lowers their voice. 'Someone came asking for the same thing yesterday. Odd coincidence.'",
+            "'I had a rare reagent,' the vendor says. 'Sold it to {npc_name}. They seemed nervous.'",
+            "The vendor pulls out a locked box. 'I do have something… but it's not for sale to just anyone.'",
+            "'Unusual components attract unusual attention,' the vendor warns. 'Be sure you know what you're doing.'"
+          ]
+        },
+
+        "Gather rumors about local magic": {
+          "type": "table_result",
+          "results": [
+            "The vendor mentions strange lights seen above the {district} at night.",
+            "'Someone attempted a ritual near {location}. It went… poorly,' the vendor says quietly.",
+            "A customer interrupts: 'Did you hear? {npc_name} vanished after experimenting with a new spell.'",
+            "The vendor leans in. 'There's talk of a magical disturbance beneath the city. Old, powerful, and waking.'",
+            "'Rumors?' the vendor says. 'Plenty. But most of them are dangerous to repeat.'"
+          ]
+        }
+      },
+
+      "Alchemical Shop": {
+        "Commission a custom brew": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 13,
+          "results": {
+            "success": "The alchemist considers your request. 'Possible. Unusual, but possible. Cost: {amount} gp, five days. No guarantees on potency until I test a batch.'",
+            "failure": "The alchemist shakes their head. 'I don't brew custom orders for people I don't know. Come back with a recommendation from a regular customer.'"
+          }
+        },
+        "Ask about poisons or antidotes": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 12,
+          "results": {
+            "success": "The alchemist lowers their voice. 'Academically speaking — and I mean academically — what you're describing sounds like {creature} venom. The antidote isn't kept on shelves. But I can have it ready in six hours if you need it.'",
+            "failure": "'I sell reagents and potions,' the alchemist says flatly. 'I don't consult on poisons. Try somewhere less reputable.'"
+          }
+        },
+        "Sell alchemical ingredients": {
+          "type": "table_result",
+          "results": [
+            "The alchemist examines your materials with professional interest. 'Decent quality. I'll offer {amount} gp for the lot.'",
+            "'Where did you find this?' The question is genuine curiosity, not suspicion. The offer reflects the rarity.",
+            "'I have more of this than I need right now,' the alchemist says apologetically. 'Half price, or I can hold it and pay full when my stock depletes.'",
+            "A quick transaction — the alchemist clearly needed exactly what you brought. The price is better than expected."
+          ]
+        }
+      },
+
+      "Central Market": {
+        "Browse goods": {
+          "type": "table_result",
+          "results": [
+            "A merchant waves you over enthusiastically. 'Fresh stock from {location}! Best prices you'll find today.'",
+            "You spot a stall selling curious trinkets. One of them vibrates faintly when you touch it.",
+            "A vendor offers you a sample of dried fruit. 'First taste is free,' they say with a wink.",
+            "A heavily laden cart arrives, and the merchant begins unpacking crates stamped with unfamiliar sigils.",
+            "You find a rack of tools and gear. A merchant leans in: 'That one? Reliable. Saved my life once.'"
+          ]
+        },
+
+        "Sell almost anything": {
+          "type": "table_result",
+          "results": [
+            "A merchant inspects your goods with a practiced eye. 'I can offer {amount}, no more.'",
+            "'Where did you get this?' a vendor asks, intrigued. Their offer rises slightly after your explanation.",
+            "A merchant declines politely. 'Too niche for my customers. Try the {location} instead.'",
+            "A bidding war erupts between two merchants, each trying to outdo the other.",
+            "A vendor offers a low price, but hints that {npc_name} might pay more for such an item."
+          ]
+        },
+
+        "Find a specific merchant (roll)": {
+          "type": "table_result",
+          "results": [
+            "You locate the merchant quickly — their stall is loud, colorful, and impossible to miss.",
+            "After searching for a while, you find the merchant packing up. 'You're lucky,' they say. 'I was just leaving.'",
+            "You ask around, but no one seems to know where the merchant is today.",
+            "A vendor points you toward a distant stall. 'They moved locations recently. Follow the smell of spices.'",
+            "You find someone claiming to be the merchant's assistant. Their information is… questionable."
+          ]
+        },
+
+        "Post a notice": {
+          "type": "table_result",
+          "results": [
+            "You pin your notice to a crowded board. Within minutes, someone tears off a tab with your contact mark.",
+            "A merchant reads your notice and nods approvingly. 'Ambitious,' they say.",
+            "A child runs up and asks what your notice means. Their curiosity draws a small crowd.",
+            "Someone has posted a similar notice beside yours — almost too similar.",
+            "A vendor warns you: 'Posting that might attract the wrong kind of attention.'"
+          ]
+        }
+      },
+
+      "Adventurer's Shop": {
+        "Buy equipment": {
+          "type": "table_result",
+          "results": [
+            "The shopkeeper hands you a sturdy piece of gear. 'Reliable. Tested it myself in the field.'",
+            "A rack of weapons gleams under lantern light. One blade hums faintly when you lift it.",
+            "You find a set of armor with dents and scratches. 'Battle-tested,' the shopkeeper says proudly.",
+            "A crate of new stock arrives. The shopkeeper mutters: 'Finally. Been waiting on this shipment for weeks.'",
+            "A curious item catches your eye. 'Not standard issue,' the shopkeeper admits. 'But it works.'"
+          ]
+        },
+
+        "Sell salvage": {
+          "type": "table_result",
+          "results": [
+            "The shopkeeper inspects your salvage with a veteran's eye. 'Good haul. I can offer {amount}.'",
+            "'Where did you find this?' they ask, impressed. Their offer increases slightly.",
+            "The shopkeeper declines. 'Too damaged. Not worth the repair cost.'",
+            "A customer overhears and immediately expresses interest. The shopkeeper mediates a quick deal.",
+            "The shopkeeper offers a lower price than expected, citing market saturation. Their reasoning is solid."
+          ]
+        },
+
+        "Ask about local dungeons or threats": {
+          "type": "table_result",
+          "results": [
+            "'Dungeons?' the shopkeeper says. 'Try the outskirts near {location}. Something's been stirring there.'",
+            "They mention a cave system rumored to house a dangerous {creature}.",
+            "'Someone came in earlier asking the same thing,' the shopkeeper says. 'Looked nervous.'",
+            "The shopkeeper leans in. 'There's talk of an old ruin beneath the {district}. Not many return from it.'",
+            "'Threats? Plenty,' they say. 'But the worst ones don't advertise themselves.'"
+          ]
+        },
+
+        "Post or read job notices": {
+          "type": "table_result",
+          "results": [
+            "You find a posting seeking escorts for a caravan leaving tomorrow.",
+            "A notice catches your eye: someone is paying well for a rare {item}.",
+            "A job posting has been hastily crossed out. The ink is still wet.",
+            "You post your own notice. A grizzled adventurer reads it and nods thoughtfully.",
+            "A clerk warns you: 'Jobs involving the {district} require extra caution.'"
+          ]
+        }
+      },
+
+      "City Archive": {
+        "Research a person, place, or event": {
+          "type": "skill_check",
+          "skill": "History",
+          "dc": 13,
+          "results": {
+            "success": "After several hours of searching, you find relevant records. The information reveals: use Oracle to determine what was found. The archivist notes this is the second inquiry about this subject this month.",
+            "failure": "The records are incomplete, misfiled, or deliberately obscured. You find fragments — enough to confirm the subject exists in the historical record, not enough to draw conclusions. A more thorough search would require a week."
+          }
+        },
+        "Access property records": {
+          "type": "table_result",
+          "results": [
+            "The property records for {location} reveal three ownership changes in the past decade. The most recent transfer was unusual — no listed price, no listed buyer.",
+            "The archivist notes that this is the second request on this topic this month. The other came from an {npc_role} named {npc_name}.",
+            "The archivist retrieves the records and seems surprised by something in them. They don't say what. They answer your questions carefully.",
+            "The property records for this district were partially destroyed in a fire fifteen years ago. The gaps are... suggestive.",
+            "Standard records. Nothing unusual. Except that a clerk comes to watch you read after about twenty minutes.",
+            "The records show that {npc_name}, described as {npc_role}, purchased three properties in {district} on the same day."
+          ]
+        },
+        "Pay for expedited research": {
+          "type": "cost_action",
+          "cost": 25,
+          "cost_description": "25 gp",
+          "effect": "narrative_only",
+          "confirmation": "Pay 25 gp for expedited research by the archive staff?",
+          "results": [
+            "The archivist assigns a junior researcher to your request. Results within a few hours. What they find, use the Oracle to determine.",
+            "Expedited research completed. The lead researcher adds a personal note: 'You should be aware that someone else requested access to these same records recently.'",
+            "Results delivered. Thorough, professional, and accompanied by a quiet warning: 'Whoever you're looking into has powerful friends. That's not a threat. It's a fact.'"
+          ]
+        }
+      },
+
+      "Governor's Palace": {
+        "Request an audience": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 14,
+          "results": {
+            "success": "The steward studies your request, nods, and gestures you inside. 'The governor will see you shortly. Mind your manners.'",
+            "failure": "The steward shakes their head. 'The governor is unavailable. Return with proper documentation or a stronger recommendation.'"
+          }
+        },
+
+        "Post a legal notice": {
+          "type": "table_result",
+          "results": [
+            "A clerk accepts your notice and stamps it with an official seal. 'It will be posted within the hour.'",
+            "You pin your notice to a crowded board. A guard eyes it, then you, with mild suspicion.",
+            "A bureaucrat reviews your notice. 'This wording is vague. It may be challenged.'",
+            "A noble passing by glances at your notice and frowns. 'Bold claim,' they mutter.",
+            "A clerk quietly warns you: 'Posting such things can attract unwanted attention.'"
+          ]
+        },
+
+        "Seek a permit or writ": {
+          "type": "table_result",
+          "results": [
+            "A clerk hands you a stack of forms. 'Fill these out. All of them.'",
+            "The steward reviews your request. 'This requires approval from {npc_name}. They're difficult to reach.'",
+            "A guard directs you to a side office. 'They handle special permissions there.'",
+            "A bureaucrat sighs. 'Another writ? Very well. Expect delays.'",
+            "You receive a provisional permit. 'Temporary,' the clerk warns. 'Don't push your luck.'"
+          ]
+        }
+      },
+
+      "Council Hall": {
+        "Attend a public session": {
+          "type": "table_result",
+          "results": [
+            "The chamber is filled with heated debate. A council member slams their fist on the table.",
+            "A quiet session today — mostly procedural matters. Still, you catch a mention of {location}.",
+            "A citizen interrupts the council with a passionate plea. The room erupts in murmurs.",
+            "A council member delivers a speech hinting at unrest in the {district}.",
+            "A clerk hands out agendas. One item is mysteriously redacted."
+          ]
+        },
+
+        "Lobby a council member": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 13,
+          "results": {
+            "success": "The council member listens intently. 'You make a compelling case. I'll bring this to the next session.'",
+            "failure": "The council member dismisses you with a polite smile. 'I have more pressing matters today.'"
+          }
+        },
+
+        "File a legal claim": {
+          "type": "table_result",
+          "results": [
+            "A clerk records your claim and stamps it with an official seal. 'Expect a response within a tenday.'",
+            "Your claim is accepted, but the clerk warns: 'This may provoke {npc_name}. Proceed carefully.'",
+            "A bureaucrat scrutinizes your paperwork. 'Incomplete. You'll need additional witnesses.'",
+            "A council aide quietly suggests an alternative route: 'Try the Governor's Palace. Faster results.'",
+            "Your claim is filed, but you overhear two clerks whispering about its potential consequences."
+          ]
+        }
+      },
+
+      "Taverns and Inns": {
+        "Long rest": {
+          "type": "cost_action",
+          "cost": 5,
+          "cost_description": "5 gp",
+          "effect": "narrative_only",
+          "confirmation": "Pay 5 gp for the long rest?",
+          "results": [
+            "You rest in a modest room. The muffled sounds of laughter and clinking mugs drift up from below.",
+            "A warm bed and a quiet corner offer you a peaceful night. You wake to the smell of fresh bread.",
+            "The innkeeper checks on you once during the night. 'Just making sure you're comfortable,' they say.",
+            "A bard plays softly downstairs as you drift to sleep. Their melody lingers in your dreams.",
+            "You awaken refreshed, sunlight filtering through thin curtains and dust motes dancing in the air."
+          ]
+        },
+
+        "Buy food and drink": {
+          "type": "cost_action",
+          "cost": 25,
+          "cost_description": "25 cp",
+          "effect": "narrative_only",
+          "confirmation": "Pay 25 cp for the long rest?",
+          "results": [
+            "The innkeeper serves a hearty stew. 'Family recipe,' they say proudly.",
+            "A mug of frothy ale is placed before you. 'Brewed locally — strong stuff.'",
+            "You try a plate of roasted meat seasoned with herbs from {location}. The flavor is rich and earthy.",
+            "A traveler shares their table and offers you a taste of their exotic drink. 'Acquired taste,' they warn.",
+            "The cook brings out a fresh loaf of bread. 'Still warm,' they say with a grin."
+          ]
+        },
+
+        "Gather rumors": {
+          "type": "table_result",
+          "results": [
+            "'Someone saw strange lights near {location} last night,' a patron whispers.",
+            "A drunkard mutters about {npc_name} being involved in something dangerous.",
+            "'There's trouble brewing in the {district},' the innkeeper says quietly.",
+            "A traveler claims they barely escaped a {creature} on the road.",
+            "'Rumors?' a bard laughs. 'I've got plenty — but they all come with a price.'"
+          ]
+        },
+
+        "Post or read job notices": {
+          "type": "table_result",
+          "results": [
+            "You find a notice seeking escorts for a caravan leaving at dawn.",
+            "A posting offers good coin for retrieving a lost {item}.",
+            "Someone has scribbled over a job notice, replacing details with cryptic symbols.",
+            "You post your own notice. A hooded figure reads it and nods slowly.",
+            "A barmaid warns you: 'Jobs involving the {district} tend to end badly.'"
+          ]
+        },
+        "Gamble": {
+          "type": "skill_check",
+          "skill": "Deception",
+          "dc": 12,
+          "results": {
+            "success": "You play the table with subtle bluffs and careful reads. The pot grows steadily in your favor, and you walk away with {amount} gp — and a few suspicious glances.",
+            "failure": "Your tells are obvious tonight. A sharp-eyed player calls your bluff, and you lose your stake. As you stand, someone mutters, 'Better luck next time… if you dare return.'"
+          }
+        }
+      },
+
+      "Thieves' Guild Hideout": {
+        "Take a contract": {
+          "type": "table_result",
+          "results": [
+            "A contract is offered: retrieve a specific item from {location}. The owner won't be home. {amount} gp on delivery, no questions about condition.",
+            "The work available tonight: surveillance on {npc_name}. Watch, record, report. {amount} gp. Don't be seen.",
+            "A message needs to be delivered to someone who doesn't want to be found. {amount} gp. You'll know them by the mark they wear.",
+            "'Someone needs discouraging,' the handler says flatly. 'Not harmed. Discouraged. {amount} gp. You decide how.'",
+            "The contract is simple: find out what's being stored at {location} and report back. No removal, no confrontation. {amount} gp."
+          ]
+        },
+        "Fence stolen goods": {
+          "type": "skill_check",
+          "skill": "Deception",
+          "dc": 12,
+          "results": {
+            "success": "The fence examines your goods without comment and offers {amount} gp — roughly 40% of market value. Standard rates for standard risk.",
+            "failure": "The fence shakes their head. 'Too hot. I know where this came from and I'm not touching it for at least a month. Come back then.'"
+          }
+        },
+        "Gather underworld information": {
+          "type": "table_result",
+          "results": [
+            "A contact pulls you aside: 'Someone has been paying for information about you specifically. Started three days ago. I don't know who.'",
+            "'The job at {location} went wrong,' someone mentions quietly. 'Wrong enough that the people who planned it are lying low. If you were connected to it, now is the time to not be.'",
+            "'New player in the district,' a source confirms. 'Professional, well-funded, not affiliated with any existing operation. Everyone's watching.'",
+            "Useful intelligence: a guard patrol has been rerouted, creating a window of opportunity near {location}. Window closes in two days.",
+            "'The guild has a leak,' your contact says. 'I'm telling you because I trust you. That's rarer than you think.'"
+          ]
+        }
+      },
+
+      "Smuggling Alleys": {
+        "Buy restricted goods": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 14,
+          "results": {
+            "success": "A brief conversation with the right signals exchanged. Access granted. The stock here includes things that aren't available in legitimate shops — at prices that reflect the risk.",
+            "failure": "You're turned away. Either your approach was wrong, your credentials insufficient, or someone decided you weren't worth the risk today."
+          }
+        },
+        "Find criminal work": {
+          "type": "table_result",
+          "results": [
+            "Work available: move a package from one location to another without inspection. Don't open it. {amount} gp.",
+            "'Someone needs to disappear from the city,' a contact says. 'Not killed — relocated. Quietly. {amount} gp if they're gone by morning.'",
+            "A distraction job: cause a commotion near {location} at a specific time. Loud enough to draw the guard. {amount} gp.",
+            "Acquisition work: there's a document in the City Archive that shouldn't exist. Remove it. {amount} gp, no records of this conversation.",
+            "'Straightforward work,' a handler says. 'Guard a shipment through the city tonight. You don't ask what's in it. {amount} gp.'"
+          ]
+        },
+        "Sell stolen items": {
+          "type": "skill_check",
+          "skill": "Deception",
+          "dc": 13,
+          "results": {
+            "success": "Sale completed. The buyer doesn't care about provenance. The price is low — 35% of market value — but the transaction is invisible.",
+            "failure": "The buyer isn't interested or doesn't believe your story. 'Come back with something I can actually move. This is too recognizable right now.'"
+          }
+        }
+      },
+
+      "Gambling House": {
+        "Gamble": {
+          "type": "skill_check",
+          "skill": "Insight",
+          "dc": 12,
+          "results": {
+            "success": "A good session at the tables. You walk away with more than you came with — {amount} gp profit. You also notice something about one of the other players worth remembering.",
+            "failure": "A bad run. You lose {amount} gp. The house always has the edge, and tonight it showed. You do, however, overhear something interesting."
+          }
+        },
+        "Gather underworld rumors": {
+          "type": "table_result",
+          "results": [
+            "A regular at the tables mentions that someone has been losing large amounts deliberately — like they're paying for something through the house.",
+            "A dealer who owes you a favor leans over during a slow hand: '{npc_name} has been in here every night this week. Whatever they're worried about, they're not handling it well.'",
+            "'Someone was asking about you,' a card player says without looking up. 'Described you well. I didn't confirm anything.'",
+            "The house has a new backer. Nobody knows who. The old management is nervous. That nervousness is contagious.",
+            "A high-stakes game is being arranged for tomorrow night. The players are not the usual crowd. The stakes suggest something beyond money is changing hands."
+          ]
+        },
+        "Buy a gaming set": {
+          "type": "table_result",
+          "results": [
+            "The dealer hands you a polished set of dice. 'Weighted? No — but they feel lucky.'",
+            "You examine a beautifully carved deck of cards. 'Imported from {location},' the vendor says.",
+            "A set of bone dice catches your eye. They feel unnaturally cold.",
+            "A gambler offers to sell you their personal set. 'Never failed me,' they claim — suspiciously.",
+            "You find a simple but reliable gaming set. 'Good for beginners,' the dealer says."
+          ]
+        },
+        "Make a shady contact": {
+          "type": "table_result",
+          "results": [
+            "A hooded figure approaches you. 'You look like someone who needs… opportunities.'",
+            "A gambler slips you a folded note. Inside is a name and a meeting place.",
+            "A dealer nods toward a back room. 'Someone wants to speak with you.'",
+            "A stranger offers you a drink and a dangerous proposition.",
+            "'If you're looking for work,' a quiet voice says, 'meet me near {location} after midnight.'"
+          ]
+        }
+      },
+
+      "Clandestine Arena": {
+        "Watch a fight": {
+          "type": "table_result",
+          "results": [
+            "The crowd roars as two fighters clash in a blur of steel and sweat. A bookie shouts odds over the noise.",
+            "A masked combatant dominates the ring. Whispers spread: 'That's {npc_name}. Dangerous reputation.'",
+            "A brutal match ends suddenly. The victor raises their weapon as the crowd chants their name.",
+            "A newcomer enters the arena. Their stance is shaky, but the crowd loves an underdog.",
+            "A fight is interrupted when a hidden blade is discovered. Tension ripples through the stands."
+          ]
+        },
+
+        "Enter a fight (separate mechanic)": {
+          "type": "table_result",
+          "results": [
+            "A handler sizes you up. 'You look capable. Rules are simple: survive.'",
+            "The arena master nods. 'We'll find you an opponent. Try not to die — paperwork is annoying.'",
+            "A veteran fighter smirks at you. 'Hope you brought a healer.'",
+            "A hush falls as you step toward the ring. The crowd loves fresh blood.",
+            "A handler warns you: 'Some fighters cheat. Don't turn your back.'"
+          ]
+        },
+
+        "Place bets": {
+          "type": "skill_check",
+          "skill": "Insight",
+          "dc": 13,
+          "results": {
+            "success": "You read the fighters well and place a smart bet. The payout nets you {amount} gp.",
+            "failure": "You misjudge the match. Your chosen fighter falls quickly, and your coin goes with them."
+          }
+        },
+
+        "Make criminal contacts": {
+          "type": "table_result",
+          "results": [
+            "A scarred figure approaches. 'You've got potential. Meet me near {location} after dark.'",
+            "A bookie slips you a coded note. 'If you understand this, you know where to go.'",
+            "A masked spectator whispers: 'Ask for {npc_name}. They handle… arrangements.'",
+            "A fighter offers you a job. 'Not legal. Pays well.'",
+            "A quiet observer studies you. 'You're not from around here. That's useful.'"
+          ]
+        },
+
+        "Find mercenary work": {
+          "type": "table_result",
+          "results": [
+            "A handler mentions a caravan needing guards. 'Leaving at dawn. Good pay.'",
+            "A fighter recommends you to a local gang. 'They need muscle for a risky job.'",
+            "A patron offers coin for a private duel. 'Discreet, of course.'",
+            "A recruiter seeks bodies for an expedition into {location}. 'Dangerous territory.'",
+            "A masked figure hands you a sealed letter. 'Deliver this. No questions.'",
+            "A mercenary captain is recruiting for a job outside the city. Won't say what, but the pay is {amount} gp and equipment is provided.",
+            "'Caravan needs swords,' a handler says bluntly. 'Three days south, three days back. {amount} gp, no sharing, no questions.'",
+            "A local lord needs a small group to clear a location that can't be identified officially. Very good pay. Very unofficial.",
+            "Bounty work: a dangerous individual was last seen near {location}. Wanted alive. {amount} gp.",
+            "A note pinned to the board: 'Soldiers of fortune wanted for a dangerous operation. Experience with {creature} preferred.'",
+            "'The city guard won't handle it,' a civilian explains. 'Too political. I need someone who doesn't care about politics.'",
+            "A job nobody else will take is still available. The pay reflects that: {amount} gp up front, more on completion.",
+            "A guild is hiring outside contractors for something they can't assign to their own members. Deniability is the point."
+            ]
+        }
+      },
+
+      "Brothel": {
+        "Gather rumors (best source in the city)": {
+          "type": "table_result",
+          "results": [
+            "'People talk here,' the madam says. 'Someone saw {npc_name} sneaking into the {district} last night.'",
+            "A worker whispers: 'There's tension brewing between two guilds. Something big is coming.'",
+            "A patron mutters about a secret meeting held near {location}. 'High-ranking folks.'",
+            "A performer mentions strange visitors asking about a lost {item}.",
+            "'Rumors?' someone laughs. 'This place runs on them. But some are dangerous to repeat.'"
+          ]
+        },
+
+        "Make a contact": {
+          "type": "table_result",
+          "results": [
+            "A well-dressed patron introduces themselves discreetly. 'I deal in information. For the right price.'",
+            "A performer recognizes you. 'You helped {npc_name}, didn't you? I owe them a favor.'",
+            "The madam nods toward a private booth. 'Someone wants to speak with you.'",
+            "A quiet worker slips you a folded note. 'From a friend. Don't read it here.'",
+            "A patron offers assistance. 'I know people in the {district}. Useful people.'"
+          ]
+        },
+
+        "Find information for coin": {
+          "type": "cost_action",
+          "cost": "5 gp",
+          "results": [
+            "The madam provides a detailed account of recent events involving {npc_name}.",
+            "A performer shares what they overheard: a plot unfolding near {location}.",
+            "A worker reveals a secret passage used by smugglers beneath the {district}.",
+            "A patron quietly warns you about a dangerous {creature} sighted nearby."
+          ]
+        }
+      },
+
+      "Auction House": {
+        "Attend an auction": {
+          "type": "table_result",
+          "results": [
+            "Today's lots include several interesting items. The bidding on one becomes unexpectedly intense — two buyers clearly want it beyond its stated value.",
+            "A lot is pulled from auction mid-bidding. No explanation given. The auctioneer moves on immediately. Several observers seem unsurprised.",
+            "An item catches your eye and you start bidding. You win a bid on an item for {amount} gp. As it's handed over, you notice something about it that wasn't mentioned in the description.",
+            "A {item} appears among the lots—someone in the room visibly tenses up when it's announced. At first glance, it looks like a {npc_role}",
+            "An item appears that shouldn't be in public circulation. It sells quickly, to a buyer who clearly came prepared. Use Oracle: what was it and who bought it?"
+          ]
+        },
+        "Consign an item for sale": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 11,
+          "results": {
+            "success": "The auction house accepts your item for consignment. Commission: 15%. Estimated sale date: within two weeks. They will send payment to wherever you specify.",
+            "failure": "The appraiser declines your item. 'The current market for this isn't strong. We'd struggle to move it at a price worth your time or ours.'"
+          }
+        },
+        "Ask about upcoming lots": {
+          "type": "table_result",
+          "results": [
+            "'Next week's auction has three items of particular note,' the clerk says, producing a preview list. One of the descriptions matches something you've been looking for.",
+            "'There's a private sale happening alongside the public auction,' a clerk mentions quietly. 'Not everyone gets invited. But occasionally exceptions are made.'",
+            "The upcoming lots are standard — until one entry near the bottom: an item whose description is deliberately vague.",
+            "'We have a {item} coming in from a property in the {district},' says the clerk. 'The previous owner seemed eager to get rid of it.'"
+          ]
+        }
+      },
+
+      "Hospital": {
+        "Buy healing supplies": {
+          "type": "table_result",
+          "results": [
+            "A medic hands you a neatly wrapped kit. 'Basic but reliable,' they say with a tired smile.",
+            "You find a shelf of freshly prepared poultices. The scent of herbs fills the air.",
+            "A nurse retrieves a potion from a locked cabinet. 'Use sparingly — we're low on stock.'",
+            "A shipment of medical supplies arrives from {location}. The staff rushes to unpack it.",
+            "A doctor offers you a discounted healing potion. 'Leftover from yesterday's batch — still effective.'"
+          ]
+        },
+        "Receive treatment": {
+          "type": "cost_action",
+          "cost": 20,
+          "cost_description": "20 gp",
+          "effect": "restore_hp_full",
+          "confirmation": "Pay 20 gp for full medical treatment?",
+          "results": [
+            "The healers work methodically and without ceremony. You leave in significantly better condition than you arrived.",
+            "Treatment is thorough and professional. The healer notes your injuries with clinical interest before treating them.",
+            "A combination of mundane medicine and minor healing magic. Effective regardless of the method.",
+            "The healer treats your injuries and adds: 'Whatever did this — be more careful next time. Or don't come back. We're getting busy.'"
+          ]
+        },
+        "Gather information about recent casualties": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 13,
+          "results": {
+            "success": "A healer speaks carefully: 'We've had several admissions this week from near {location}. Same type of injuries. Not from fights — from something else. We reported it to the guard. I don't think they followed up.'",
+            "failure": "The staff is discreet about patient information. 'We don't share that. Privacy of care.' They're politely but firmly unhelpful."
+          }
+        }
+      },
+
+      "General Emporium": {
+        "Browse goods": {
+          "type": "table_result",
+          "results": [
+            "Shelves packed with gear greet you. The shopkeeper says, 'If you can't find it here, you probably don't need it.'",
+            "A crate of new stock sits open. Inside are tools stamped with the mark of {location}.",
+            "You find a curious trinket tucked behind a row of lanterns. The shopkeeper shrugs. 'No idea how that got there.'",
+            "A rack of travel rations smells surprisingly fresh. 'Baked this morning,' the shopkeeper boasts.",
+            "A display of tools catches your eye. One of them seems oddly well-crafted for such a mundane item."
+          ]
+        },
+
+        "Sell trade goods": {
+          "type": "table_result",
+          "results": [
+            "The shopkeeper inspects your goods. 'Fair quality. I can offer {amount}.'",
+            "'Where did you get this?' they ask, intrigued. The offer rises slightly after your explanation.",
+            "The shopkeeper declines politely. 'Too much stock already. Try the Central Market.'",
+            "A customer overhears and immediately expresses interest. The shopkeeper mediates a quick sale.",
+            "The shopkeeper offers a lower price than expected, citing slow demand. Their reasoning is annoyingly sound."
+          ]
+        },
+
+        "Gather local rumors": {
+          "type": "table_result",
+          "results": [
+            "'Rumors?' the shopkeeper says. 'Plenty. Someone saw strange tracks near {location}.'",
+            "A customer whispers: 'They say {npc_name} has been acting strangely. Avoid their shop.'",
+            "The shopkeeper leans in. 'A caravan went missing last week. No survivors found.'",
+            "'Something's off in the {district},' the shopkeeper mutters. 'People are nervous.'",
+            "A traveler mentions a hidden cache of goods buried outside town. 'If you believe such tales.'"
+          ]
+        },
+
+        "Ask about specialty items (may order)": {
+          "type": "table_result",
+          "results": [
+            "'Specialty items?' the shopkeeper says. 'I can order them — delivery in 1d4 days.'",
+            "They check a ledger. 'Out of stock, but {npc_name} might have one.'",
+            "'I can get that,' the shopkeeper says, 'but it'll cost extra. Rare goods attract attention.'",
+            "The shopkeeper hesitates. 'I had one last month. Sold it to someone from {location}.'",
+            "'Special orders require a deposit,' they say. 'No exceptions.'"
+          ]
+        }
+      },
+
+      "Bank or Exchange House": {
+        "Deposit gold (safe storage)": {
+          "type": "table_result",
+          "results": [
+            "The clerk counts your coin with meticulous precision. 'Your deposit is secure. Withdraw anytime during daylight hours.'",
+            "A stern banker records your deposit in a heavy ledger. 'We guarantee full protection,' they say, tapping the page.",
+            "A junior clerk fumbles with the lockbox before securing your gold. 'Sorry — first week on the job.'",
+            "The banker nods approvingly. 'Wise choice. Streets near {location} have been unsafe lately.'",
+            "A guard escorts your deposit to the vault. You hear the heavy door seal shut behind them."
+          ]
+        },
+        "Take a loan": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 14,
+          "results": {
+            "success": "Loan approved: up to {amount} gp at 10% interest per month. Collateral required. The clerk is professional and efficient. The paperwork is thorough.",
+            "failure": "Loan declined. 'Insufficient collateral or credit history.' The clerk suggests returning with a guarantor or proof of regular income."
+          }
+        },
+        "Sell gemstones or art at fair value": {
+          "type": "table_result",
+          "results": [
+            "The appraiser examines each piece carefully and offers 90% of assessed value — better than most alternatives in the city.",
+            "A straightforward transaction. The bank pays fair market value and asks no questions about provenance.",
+            "The appraiser pauses at one piece. 'This is unusual. I'd like to have it looked at before we finalize the price. Two hours.'",
+            "Quick transaction. Clean price. The banker adds: 'If you come across more of this quality, we buy regularly.'"
+          ]
+        },
+        "Ask about wealthy patrons": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 15,
+          "results": {
+            "success": "The banker speaks carefully, maintaining plausible professional discretion. 'I can't name clients. But I can tell you that someone with significant resources has been making large withdrawals recently. Unusual pattern.'",
+            "failure": "The banker is politely impenetrable. Client confidentiality is absolute. They suggest speaking to the merchant guild if you need introductions to investors."
+          }
+        }
+      },
+
+      "Blacksmith's Forge": {
+        "Commission custom metalwork": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 10,
+          "results": {
+            "success": "The smith listens to your specifications, asks two clarifying questions, and names a price: {amount} gp, five to ten days depending on complexity. 'I do good work. It takes the time it takes.'",
+            "failure": "The smith is backlogged. 'Three weeks minimum before I can start. Come back then, or take what's on the shelf.'"
+          }
+        },
+        "Repair damaged equipment": {
+          "type": "cost_action",
+          "cost": 10,
+          "cost_description": "10 gp",
+          "effect": "repair_equipment",
+          "confirmation": "Pay 10 gp to repair your damaged equipment?",
+          "results": [
+            "Quick fix: the damage wasn't as bad as it looked. The blacksmith is charging less than expected.",
+            "The blacksmith examines the damage. 'This mark… I could be wrong, but it looks like the bite of a {creature}. 'I've heard they roam east of the city.",
+            "'Strange… I've seen this exact type of fracture before.' The blacksmith mentions another customer from the {district} who brought in something similar.",
+            "The blacksmith pauses. 'I can repair it, but if you ever want to reinforce it, bring me a fragment of {item}. With that, I could create something unique. But I warn you, it's a long and expensive project.'",
+            "The hammer strikes the glowing iron and sparks dance in a pattern that doesn't seem random. The blacksmith looks up, wiping his forehead with the back of his hand: 'See? They chase each other like spirits searching for a home. They remind me of certain tales that come from {location}. You've never been there, have you?'",
+            "The repair takes longer than expected, and in the meantime, the blacksmith starts talking to you. 'Listen,' the blacksmith says in a low voice, 'if you happen to encounter a {creature}, let {npc_name}, the {npc_role}, know. They've been searching for signs of it for days, and honestly, I can't stand hearing him ramble on about it anymore.'"
+          ]
+        }
+      },
+
+      "Armory": {
+        "Ask about weapon maintenance": {
+          "type": "table_result",
+          "results": [
+            "The gunsmith examines your weapon. 'This wear pattern is unusual—it looks like you fought a {creature}. I might be wrong, but I'm asking because {npc_name} says they spotted some outside the city a few days ago.'",
+            "A {npc_role} is waiting in line behind you; the number of weapons they're carrying is embarrassing.",
+            "'That special order?' the gunsmith lowers his voice. 'Someone paid {amount} gp to have everything ready by tomorrow. That never happens.'"
+          ]
+        }
+      },
+
+      "Animal Market": {
+        "Buy a mount": {
+          "type": "table_result",
+          "results": [
+            "A handler presents a sturdy mount. 'Reliable temperament,' they say. The animal snorts softly, as if agreeing.",
+            "You notice a sleek creature with bright eyes. 'Fast, but spirited,' the handler warns. 'Not for the faint of heart.'",
+            "A merchant leads out a mount with unusual markings. 'Came from near {location}. Hardy stock.'",
+            "A young stablehand offers you a discount on a mount that seems overly affectionate. It nudges your shoulder insistently.",
+            "A handler hesitates. 'This one… chooses its rider.' The mount studies you with unsettling intelligence."
+          ]
+        },
+
+        "Sell an animal": {
+          "type": "table_result",
+          "results": [
+            "The handler inspects your animal carefully. 'Healthy. I can offer {amount}.'",
+            "'Where did you get this one?' the merchant asks, impressed. Their offer rises slightly.",
+            "The handler declines politely. 'Too old for resale. But I can direct you to someone who might take it.'",
+            "A buyer overhears and immediately expresses interest, offering a competitive price.",
+            "The merchant offers a lower price than expected, citing minor issues. Their reasoning is annoyingly sound."
+          ]
+        },
+
+        "Buy tack and harness": {
+          "type": "table_result",
+          "results": [
+            "You browse a selection of well-crafted saddles. One is engraved with runes of unknown origin.",
+            "A handler recommends a durable harness. 'Used by caravan guards. Won't fail you.'",
+            "You find a set of reins woven with colorful thread. 'Traditional craft from {location},' the merchant explains.",
+            "A crate of new gear arrives. The merchant mutters: 'Finally. Been waiting on this shipment.'",
+            "A stablehand offers you a discount on slightly worn tack. 'Still good,' they insist."
+          ]
+        },
+
+        "Ask about exotic mounts (may have contacts)": {
+          "type": "table_result",
+          "results": [
+            "'Exotic?' the handler says. 'Try the outskirts near {location}. Traders pass through with strange beasts.'",
+            "The merchant lowers their voice. 'Someone came asking the same thing. They mentioned {npc_name}.'",
+            "'I had one once,' the handler says. 'Sold it to a noble. They keep it hidden now.'",
+            "A stablehand whispers: 'There's a breeder outside town. Dangerous stock, but impressive.'",
+            "'Exotic mounts attract exotic trouble,' the merchant warns. 'Be sure you know what you're seeking.'"
+          ]
+        },
+
+        "Board an animal": {
+          "type": "cost_action",
+          "results": [
+            "The stablehand leads your animal to a clean stall. 'We'll take good care of them. It is 3 sp/night.'",
+            "A handler checks your animal's condition before accepting it. 'Healthy. No problem. It is 3 sp/night.'",
+            "The stable is nearly full, but they find space. 'Busy season,' the merchant says. It is 5 sp/night.",
+            "A stablehand offers extra grooming for a small additional fee. It is 5 sp/night.",
+            "Your animal reacts nervously to the handler. The handler reassures you with a smile that doesn't reach their eyes: 'They'll settle in soon.'"
+          ]
+        }
+      },
+
+      "Great Temple": {
+        "Buy healing supplies": {
+          "type": "table_result",
+          "results": [
+            "A priest offers you a vial of blessed water. 'Drawn from the sacred font,' they say.",
+            "You find a bundle of clean bandages infused with faintly glowing runes.",
+            "{npc_name} just bought the last healing potions. The priest says he should be back tomorrow. Strangely, he's been coming here and doing the same thing for a few days now.",
+            "A donation box sits beside the supplies. A priest nods approvingly as you contribute.",
+            "A newly arrived shipment includes rare herbs from {location}. The scent is soothing."
+          ]
+        },
+
+        "Long rest (donation required)": {
+          "type": "cost_action",
+          "results": [
+            "You rest in a quiet chamber. Soft chanting lulls you into peaceful sleep.",
+            "A priest blesses your resting place. 'May your dreams be free of shadows.'",
+            "You awaken refreshed, the scent of incense lingering in the air.",
+            "A cleric checks on you during the night, offering warm tea and reassurance.",
+            "You overhear distant chanting — a ritual taking place somewhere deeper in the temple."
+          ]
+        },
+
+        "Receive healing (15 gp)": {
+          "type": "cost_action",
+          "cost": 15,
+          "cost_description": "15 gp",
+          "effect": "restore_hp_full",
+          "confirmation": "Pay 15 gp to receive healing?",
+          "results": [
+            "A cleric places their hands upon you. Warm light flows through your wounds.",
+            "'Be still,' the healer says. 'This may sting.' A pulse of divine energy follows.",
+            "A priest murmurs a prayer. Your pain fades as the blessing takes hold.",
+            "A young acolyte assists the healer, their hands trembling slightly but effective.",
+            "The ritual leaves you feeling lighter, as though a burden has been lifted."
+          ]
+        },
+
+        "Request a blessing": {
+          "type": "table_result",
+          "results": [
+            "The priest draws a symbol. 'This will protect you from {creatures}. Be careful; I've heard there have been sightings north of the city.'",
+            "A cleric offers a brief prayer, invoking protection for your next journey.",
+            "An acolyte presents a small charm. 'A token of faith,' they whisper.",
+            "A senior priest studies you carefully before granting a solemn blessing.",
+            "You feel a subtle warmth spread through your chest — a quiet reassurance."
+          ]
+        },
+
+        "Gather information about the faith": {
+          "type": "table_result",
+          "results": [
+            "'Our order traces its roots to {location},' a priest explains. 'A sacred place.'",
+            "A cleric shares a story about {npc_name}, a revered figure in their tradition.",
+            "A devotee mentions {npc_name}, a {npc_role} who recently made an unusually generous donation to the temple.",
+            "An acolyte eagerly explains the temple's rituals, barely pausing for breath.",
+            "'If you seek deeper knowledge,' the cleric says, 'visit the archives beneath the temple.'"
+          ]
+        }
+      },
+
+      "Minor Chapel": {
+        "Buy a healing potion": {
+          "type": "table_result",
+          "results": [
+            "A gentle-voiced acolyte hands you a small vial. 'Blessed this morning,' they say with a warm smile.",
+            "The priest retrieves a potion from a locked cabinet. 'Simple, but effective. May it serve you well.'",
+            "You notice faint runes etched into the glass. 'A minor blessing,' the acolyte explains. 'Just a touch of grace.'",
+            "A newly arrived batch of potions sits on a wooden tray. The scent of herbs fills the air.",
+            "The priest hesitates. 'Supplies are limited… but you seem in need. Take this one.'"
+          ]
+        },
+
+        "Receive minor healing (5 gp)": {
+          "type": "cost_action",
+          "cost": 5,
+          "cost_description": "5 gp",
+          "effect": "restore_hp_full",
+          "confirmation": "Pay 5 gp for minor healing?",
+          "results": [
+            "A soft glow surrounds you as the priest whispers a brief prayer. Your aches ease almost immediately.",
+            "An acolyte places their hands on your shoulders. 'Breathe,' they say. Warmth spreads through your body.",
+            "A bowl of blessed water is used to wash your wounds. The pain dulls to a faint throb.",
+            "The priest traces a symbol in the air. A spark of divine energy settles into your chest.",
+            "A quiet chant fills the chapel as your wounds knit slightly. The air feels lighter afterward."
+          ]
+        },
+
+        "Rest safely": {
+          "type": "table_result",
+          "results": [
+            "You rest on a simple cot. The chapel's quiet atmosphere soothes your mind.",
+            "A priest checks on you periodically, offering warm tea and reassurance.",
+            "Soft chanting from another room lulls you into peaceful sleep.",
+            "An acolyte leaves a small charm near your pillow. 'For protection,' they whisper.",
+            "You awaken refreshed, sunlight filtering through stained glass in gentle colors."
+          ]
+        },
+
+        "Gossip with the priest": {
+          "type": "table_result",
+          "results": [
+            "'Strange visitors came through {location} last night,' the priest says quietly.",
+            "The priest mentions {npc_name}, a troubled soul who has been seeking guidance.",
+            "'There have been omens,' the priest admits. 'Small signs, but concerning.'",
+            "An acolyte interrupts with a rumor about a relic hidden somewhere in the {district}.",
+            "'People talk,' the priest sighs. 'Some truths, some nonsense. Hard to tell which is which.'"
+          ]
+        }
+      },
+
+      "Sacred Garden": {
+        "Meditate (restore one use of a feature)": {
+          "type": "table_result",
+          "results": [
+            "You sit among the flowers. A gentle breeze carries the scent of herbs, clearing your thoughts.",
+            "A soft chime echoes through the garden. You feel tension melt from your shoulders.",
+            "Birdsong surrounds you as you breathe deeply. A sense of clarity settles in your mind.",
+            "Sunlight filters through the leaves, warming your skin. You feel renewed.",
+            "A moment of stillness washes over you — a rare, perfect calm."
+          ]
+        },
+
+        "Gather rare herbs (Survival check)": {
+          "type": "skill_check",
+          "skill": "Survival",
+          "dc": 12,
+          "results": {
+            "success": "You find a cluster of rare herbs hidden beneath a flowering bush. Their scent is sharp and invigorating.",
+            "failure": "You search for a while but find nothing useful. A gardener gently suggests returning at a different hour."
+          }
+        },
+
+        "Seek spiritual guidance via Oracle": {
+          "type": "oracle_prompt",
+          "results": [
+            "Is the presence I feel in the garden trying to guide me?",
+            "Is there a hidden truth here that I am meant to uncover?",
+            "Is a benevolent force watching over this place?",
+            "Is the path I am considering aligned with the will of the spirits?",
+            "Is there an unseen danger lingering within the garden?"
+          ]
+        }
+      },
+
+      "Mausoleum": {
+        "Research lineages and histories": {
+          "type": "table_result",
+          "results": [
+            "You study the inscriptions on ancient stone slabs. One name stands out — {npc_name}, tied to a forgotten lineage.",
+            "A caretaker points you toward an older wing. 'Records from the founding days are kept there,' they whisper.",
+            "You uncover a family crest etched into a sarcophagus. It matches a symbol you saw earlier in the {district}.",
+            "A faded mural depicts a historical event involving {location}. The details are worn but intriguing.",
+            "You find a genealogy tablet with several names scratched out. Someone tried to erase part of the past."
+          ]
+        },
+
+        "Seek information about the dead": {
+          "type": "table_result",
+          "results": [
+            "A caretaker recalls stories about a restless spirit tied to {npc_name}. 'Some say they still wander nearby.'",
+            "You find a plaque describing the deeds of a long-forgotten hero. Their final battle took place near {location}.",
+            "A whisper of cold air brushes past you as you read an epitaph. The name feels strangely familiar.",
+            "A caretaker shares a rumor: 'One tomb here was sealed twice. No one knows why.'",
+            "You discover a memorial stone dedicated to victims of an ancient disaster. The cause is still debated."
+          ]
+        },
+
+        "Gather rumors about the city's past": {
+          "type": "table_result",
+          "results": [
+            "'This city was built on older ruins,' the caretaker says. 'Some say the foundations still whisper.'",
+            "A visitor mentions a hidden crypt beneath the {district}. 'Locked for generations,' they claim.",
+            "'There was a betrayal long ago,' someone murmurs. 'The mausoleum holds the truth — if you know where to look.'",
+            "You overhear a quiet conversation about a noble family erased from records. 'Too dangerous to remember,' they say.",
+            "'Rumors?' the caretaker sighs. 'Plenty. But the dead rarely lie — it's the living you should fear.'"
+          ]
+        }
+      },
+
+      "City Guard Barracks": {
+        "Report a crime": {
+          "type": "table_result",
+          "results": [
+            "A duty sergeant takes your statement with a weary nod. 'We'll send patrols to {location} tonight.'",
+            "A clerk records the details in a ledger. 'Without witnesses this will be slow, but we'll keep an eye out.'",
+            "A guard frowns. 'This sounds like the work of a known gang. We'll notify the captain.'",
+            "You are asked to describe distinguishing marks. A wanted poster is produced for comparison.",
+            "A junior officer offers practical advice on securing evidence and avoiding retaliation."
+          ]
+        },
+
+        "Seek protection": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 13,
+          "results": {
+            "success": "The sergeant agrees to assign a temporary patrol or an escort. 'We'll keep watch for a week. Report anything suspicious.'",
+            "failure": "The sergeant shrugs. 'We're stretched thin. We can offer advice, but not a permanent detail without payment or proof.'"
+          }
+        },
+
+        "Look for bounties or warrants": {
+          "type": "table_result",
+          "results": [
+            "A notice board lists current bounties; one poster bears the face of {npc_name} with a reward of {amount}.",
+            "A clerk pulls a dusty file and reads aloud a warrant issued for a suspect linked to {location}.",
+            "You learn of a recently posted bounty for a creature troubling the outskirts — reward negotiable.",
+            "A guard mentions a sealed warrant that requires the captain's approval to view; you are directed to return later.",
+            "A wanted list includes a description that matches an item you found; the clerk suggests caution."
+          ]
+        }
+      },
+
+      "Embassies": {
+        "Request diplomatic assistance": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 14,
+          "results": {
+            "success": "The diplomat listens carefully and nods. 'Very well. I will draft a letter of support and forward it to the appropriate office.'",
+            "failure": "The diplomat folds their hands. 'Your request lacks sufficient justification. Return with documentation or a sponsor.'"
+          }
+        },
+
+        "Gather information about foreign nations": {
+          "type": "table_result",
+          "results": [
+            "A clerk shares recent reports: 'Tensions rise along the border near {location}. Trade may be disrupted soon.'",
+            "A diplomat mentions a cultural festival abroad. 'Delegations from several nations will attend — including {npc_name}.'",
+            "You overhear a quiet discussion about shifting alliances and secret treaties.",
+            "A visiting envoy describes strange creatures encountered during their journey.",
+            "A clerk hands you a pamphlet summarizing political changes in a distant capital."
+          ]
+        },
+
+        "Seek asylum or letters of passage": {
+          "type": "table_result",
+          "results": [
+            "The ambassador considers your request. 'Asylum is possible, but requires a formal interview.'",
+            "A clerk provides a list of requirements for safe passage across foreign borders.",
+            "A guard warns you: 'Asylum is not granted lightly. Expect scrutiny.'",
+            "A diplomat mentions that {npc_name} recently sought similar protection.",
+            "You are given a provisional travel document valid only for a short period."
+          ]
+        }
+      },
+
+      "Barracks": {
+        "Buy military surplus": {
+          "type": "table_result",
+          "results": [
+            "A quartermaster hands you a sturdy piece of gear. 'Standard issue. Reliable and cheap.'",
+            "You find a rack of armor with minor dents. 'Training wear,' the quartermaster explains.",
+            "A crate of surplus weapons arrives from {location}. The quartermaster sorts through them quickly.",
+            "A soldier offers you a discounted item. 'Barely used,' they claim — questionably.",
+            "You spot a shield marked with an unfamiliar insignia. 'Old regiment,' the quartermaster says."
+          ]
+        },
+
+        "Sell weapons and armor": {
+          "type": "table_result",
+          "results": [
+            "The quartermaster inspects your gear. 'Functional. I can offer {amount}.'",
+            "'Where did you get this?' they ask, impressed. The offer rises slightly.",
+            "The quartermaster declines. 'Too damaged. Not worth refurbishing.'",
+            "A soldier expresses interest and negotiates a quick side-deal.",
+            "The quartermaster offers a low price, citing oversupply. Their reasoning is annoyingly sound."
+          ]
+        },
+
+        "Gather information about local threats": {
+          "type": "table_result",
+          "results": [
+            "'Bandits near {location},' a guard mutters. 'Bold ones, too.'",
+            "A sergeant mentions sightings of a dangerous {creature} in the outskirts.",
+            "'Something's stirring in the {district},' a soldier warns. 'Patrols doubled.'",
+            "A wounded guard describes an ambush that left several comrades injured.",
+            "'If you're heading out,' the quartermaster says, 'avoid the old road. Too many disappearances.'"
+          ]
+        },
+
+        "Find mercenary work": {
+          "type": "table_result",
+          "results": [
+            "A sergeant mentions a caravan needing escorts. 'Leaving at dawn. Good pay.'",
+            "A soldier recommends you to a local commander seeking temporary recruits.",
+            "A notice board lists a bounty for a dangerous target near {location}.",
+            "A guard quietly offers an off-the-books job. 'Not official. Pays better.'",
+            "A messenger arrives seeking fighters for a border skirmish. 'Urgent need,' they say."
+          ]
+        }
+      },
+
+      "Courthouse": {
+        "Attend a trial": {
+          "type": "table_result",
+          "results": [
+            "The courtroom fills with murmurs as witnesses are called. A magistrate presides with stern attention.",
+            "A heated exchange between counsel reveals a surprising connection to {npc_name}.",
+            "A witness collapses under cross-examination; the judge orders a brief recess.",
+            "A procedural motion delays the trial, but you overhear a clerk mention sealed evidence from {location}.",
+            "The verdict is delivered with heavy consequence — several attendees react visibly to the outcome."
+          ]
+        },
+
+        "File a complaint": {
+          "type": "table_result",
+          "results": [
+            "A clerk accepts your complaint and stamps it with an official seal. 'Expect a summons if it's pursued.'",
+            "Your paperwork is returned for clarification. 'Provide witnesses or supporting documents,' the clerk advises.",
+            "A magistrate's aide reads your complaint and suggests mediation as a faster alternative.",
+            "You are warned that filing this complaint may provoke retaliation from interested parties like {npc_name}.",
+            "The complaint is logged and assigned a case number. 'Keep this — you'll need it for follow-up,' the clerk says."
+          ]
+        },
+
+        "Seek legal counsel": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 12,
+          "results": {
+            "success": "A solicitor agrees to take your case or offer preliminary advice. 'I'll represent you at the hearing — for a modest retainer.'",
+            "failure": "A lawyer listens but declines without a clear fee. 'This case is risky or low-value. Come back with funds or stronger evidence.'"
+          }
+        },
+
+        "Pay a fine": {
+          "type": "cost_action",
+          "results": [
+            "A clerk accepts your {amount} payment and tears off a receipt. 'This settles the matter for now,' they say.",
+            "You pay the fine ({amount}) and are escorted out with a warning to avoid further infractions.",
+            "The magistrate notes your compliance and reduces additional penalties for cooperation.",
+            "A record is updated in the courthouse ledger showing the fine paid against your name.",
+            "A clerk advises that paying now avoids a summons, but repeated offenses will escalate the consequences."
+          ]
+        }
+      },
+
+      "Watchtower": {
+        "Report a threat": {
+          "type": "table_result",
+          "results": [
+            "A sentry listens intently as you describe the danger. 'We'll dispatch a patrol to investigate near {location} at first light.'",
+            "A veteran points to a map and marks the reported location. 'This pattern matches previous raids. Be careful.'",
+            "A junior guard asks for a physical description and any distinguishing marks. They promise to post lookout orders.",
+            "The captain adjusts his cloak and studies your account. 'Your timing is fortunate — we've had odd reports from {district} already.'",
+            "A veteran traces a finger across a map. 'If the threat came from {location}, it fits with what we've seen these past weeks.'",
+            "A clerk offers to file your report formally for {amount} gp. 'It ensures faster response,' they explain, tapping the ledger.",
+            "As you speak, a runner bursts in with news of another disturbance. The captain curses under his breath. 'This is escalating faster than expected.'",
+            "{npc_name}, a junior {npc_role}, asks if you can guide them to the spot you mentioned. 'I’m supposed to learn field verification,' they admit."
+          ]
+        },
+
+        "Ask about recent sightings": {
+          "type": "table_result",
+          "results": [
+            "The sergeant recalls a rider passing through with a covered cart. 'They headed toward {location}.'",
+            "A tired guard mutters about strange calls heard from the hills. 'Sounded almost like voices.'",
+            "A lookout shrugs. 'Quiet morning. Just the usual patrols and a few traders heading toward {location}.'",
+            "A watcher mentions a pale shimmer drifting over the fields at dawn. 'Could’ve been mist… or something moving through it.'",
+            "The sergeant reports a lone rider with a covered cart passing through. 'They didn’t stop. Headed straight for {location}.'",
+            "A scout describes a shadow circling the outskirts of {district}. 'Too fast for a wolf, too quiet for a person.'",
+            "A tired guard mutters about strange calls echoing from outside the walls. 'Didn’t sound like any animal I know.'",
+            "A nervous recruit shows you a sketch of tracks they found — clawed, uneven, and matching reports of {creature}. 'I hope it’s a mistake.'",
+            "{npc_name}, a local {npc_role}, asks if you can confirm a rumor about lights drifting above the old watch road. 'If it’s true, we need to know.'"
+          ]
+        },
+
+        "Get a view of the surrounding area": {
+          "type": "table_result",
+          "results": [
+            "From the parapet you see smoke rising faintly beyond the tree line near {location}.",
+            "The valley below is quiet; you spot a lone wagon moving slowly along the main road.",
+            "A distant glint catches your eye — the flash of metal where a patrol might be camped.",
+            "You notice a new trail cutting through the brush, fresh and still damp with footprints.",
+            "Atop the tower the wind carries a scent of iron and something acrid, like burned rope."
+          ]
+        }
+      },
+
+      "Military Stable": {
+        "Buy a warhorse or military mount": {
+          "type": "table_result",
+          "results": [
+            "A quartermaster leads out a broad‑shouldered warhorse, its flanks scarred but strong. 'Trained for formation riding,' they say.",
+            "You are shown a lighter, armored steed bred for shock charges. 'Fast and disciplined — expensive.'",
+            "A veteran rider demonstrates a mount's responsiveness. The animal answers to subtle cues and returns to the handler obediently.",
+            "A crate of barding is displayed beside a steady charger. 'Plate and leather available for standard issue mounts.'",
+            "A handler mentions a remount from {location} with unusual endurance. 'Good for long patrols,' they promise."
+          ]
+        },
+
+        "Board an animal": {
+          "type": "cost_action",
+          "cost":"10 gp",
+          "results": [
+            "Your mount is led into a clean, secure stall and given fresh hay. 'We'll check them twice daily,' the stablemaster assures you.",
+            "A groom inspects your animal for injuries before accepting it. 'Minor wounds noted; we'll treat them.'",
+            "The stable is busy but organized; your animal is settled near others of similar training.",
+            "A soldier offers extra exercise for a small additional fee. 'Keeps them fit for duty,' they say.",
+            "You receive a receipt noting the boarding period and any special instructions for care."
+          ]
+        },
+
+        "Buy military tack and saddles": {
+          "type": "table_result",
+          "results": [
+            "A rack of reinforced saddles is displayed. 'Designed to hold armor and supplies without shifting,' the quartermaster explains.",
+            "You examine a set of bridles and reins stamped with the unit's insignia. 'Standard issue — durable leather.'",
+            "A crate of harness fittings includes spare buckles and reinforced straps. 'Field‑repair friendly,' the handler notes.",
+            "A saddle with extra padding and attachment points for weapons draws your eye. 'For heavy cavalry,' the quartermaster says.",
+            "A stablehand offers a discounted set of tack that's been lightly used. 'Serviceable and tested in drills.'"
+          ]
+        }
+      },
+
+      "Supply Warehouse": {
+        "Buy supplies in bulk (discounted)": {
+          "type": "table_result",
+          "results": [
+            "A foreman opens a crate and gestures at the contents. 'Take a pallet if you can haul it — price is better by the crate.'",
+            "You inspect sacks of grain and barrels of salted meat. 'Good for a long trip,' the clerk notes, 'and cheaper by the dozen.'",
+            "A stack of rope and tarred canvas is offered at a steep discount for bulk buyers. 'Caravans love this lot,' the worker says.",
+            "A clerk points out a marked‑down pallet of adventuring gear returned from a contract. 'Still serviceable — heavy discount.'",
+            "A delivery manifest lists goods from {location}. The quartermaster offers a special rate for immediate pickup."
+          ]
+        },
+        "Sell trade goods": {
+          "type": "table_result",
+          "results": [
+            "A clerk inspects your wares and consults a ledger. 'We can take these — offer is 60% of the total value for the lot.'",
+            "The warehouse manager negotiates briskly. 'We buy in bulk. I can give you a fair price if you can wait for payment.'",
+            "A worker declines certain items. 'Too niche for our routes. Try a specialty merchant instead.'",
+            "A buyer offers a lower price citing transport costs, but promises quicker payment.",
+            "A clerk suggests consigning rare goods for a share of the profits rather than an immediate sale."
+          ]
+        },
+        "Find shipping or transport work": {
+          "type": "table_result",
+          "results": [
+            "A foreman posts a notice seeking extra hands for a convoy to {location}. 'Leaves at dawn. Good pay for steady work.'",
+            "A shipping agent offers short‑term work loading wagons. 'Heavy lifting, but honest coin.'",
+            "A captain of a river barge seeks guards for a run downstream. 'Dangerous stretch, better pay.'",
+            "A clerk mentions a merchant needing discreet transport for sensitive cargo. 'Not for the squeamish,' they warn.",
+            "A contractor asks if you can handle a timed delivery; success will earn you a bonus and a future recommendation."
+          ]
+        }
+      },
+
+      "Carpenter's Workshop": {
+        "Buy tools and wooden goods": {
+          "type": "table_result",
+          "results": [
+            "A shelf of chisels, mallets, and planes is displayed. 'Hand‑forged and balanced,' the carpenter says proudly.",
+            "You examine a set of sturdy wooden crates and barrels. 'Good for storage or shipping,' the worker notes.",
+            "A rack of finished furniture — simple stools and a small table — is offered at reasonable prices.",
+            "A bundle of seasoned timber from {location} is available by the board; the carpenter recommends it for outdoor work.",
+            "A set of carpenter's tools with a leather roll catches your eye. 'Well cared for,' the shopkeeper assures you."
+          ]
+        },
+        "Commission woodwork (downtime)": {
+          "type": "cost_action",
+          "cost": "30 gp",
+          "results": [
+            "The carpenter measures and sketches a plan. 'Give me a tenday and I'll have this ready,' they promise.",
+            "You agree on materials and price. The workshop accepts a deposit and schedules the work into their queue.",
+            "The craftsman suggests design improvements that will increase durability for a modest extra cost.",
+            "A journeyman offers to expedite the job for an additional fee. 'Faster, but expect visible tool marks.'",
+            "When complete, the piece is delivered with a small note about care and maintenance for longevity."
+          ]
+        },
+        "Buy simple wooden weapons": {
+          "type": "table_result",
+          "results": [
+            "A rack of practice spears and wooden shields is available. 'Good for training or nonlethal work,' the carpenter says.",
+            "You find a stout wooden club reinforced with iron bands. 'Holds up in a fight,' the shopkeeper claims.",
+            "A crate of short practice swords, blunted and balanced, is offered to local trainers.",
+            "A set of throwing staves, carved and oiled, is displayed. 'Light and reliable,' the carpenter notes.",
+            "A custom‑made quarterstaff is shown to you, its grain carefully matched for strength and balance."
+          ]
+        },
+        "Ask about construction projects in the district": {
+          "type": "table_result",
+          "results": [
+            "The carpenter mentions a new granary being raised near {location} and suggests labor will be needed soon.",
+            "You learn of a repair contract for a bridge in the {district}; the foreman is seeking skilled hands.",
+            "A worker describes a wealthy patron commissioning decorative woodwork for a manor — good pay for artisans.",
+            "The shopkeeper warns of a shortage of seasoned timber this season, slowing several projects.",
+            "A journeyman hints that {npc_name} is funding a private construction project and may hire subcontractors."
+          ]
+        }
+      },
+
+      "Tannery": {
+        "Buy leather armor and goods": {
+          "type": "table_result",
+          "results": [
+            "A row of supple leather cuirasses hangs from a beam. 'Treated for flexibility and light protection,' the tanner says.",
+            "You are shown reinforced leather boots and gloves, stitched with extra rivets at stress points.",
+            "A stack of saddlebags and belts is offered; the tanner points out hidden compartments and reinforced straps.",
+            "A rack of light leather armor, dyed in muted tones, is displayed. 'Good for scouts and rangers,' the worker notes.",
+            "A crate of leatherworking supplies — strips, buckles, and oiled cloth — is available for purchase."
+          ]
+        },
+
+        "Sell hides and leather materials": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 12,
+          "results": {
+            "success": "The tanner inspects your hides and nods appreciatively. 'These are sound — I can offer {amount} gp for the lot.'",
+            "failure": "The tanner frowns at the uneven tanning and holes. 'I can't take these at a fair price. Come back with better quality.'"
+          }
+        },
+
+        "Commission leather equipment (downtime)": {
+          "type": "cost_action",
+          "cost":"75 gp",
+          "results": [
+            "The master tanner sketches a pattern and names a completion time. 'Bring the deposit ({amount}) and return in a tenday.'",
+            "A journeyman measures and recommends reinforcements for durability. 'Adds to the cost, but worth it,' they say.",
+            "You leave a sample of material and specifications. The workshop accepts the job and records the details.",
+            "The tanner offers optional enchantment‑ready fittings for an extra fee. 'We can stitch runes into the lining,' they suggest.",
+            "When finished, the piece is presented with a care note and a small patch for future repairs."
+          ]
+        }
+      },
+
+      "Mill": {
+        "Buy food supplies (cheapest in town)": {
+          "type": "table_result",
+          "results": [
+            "A sack of freshly milled flour is weighed out. 'Straight from the stones — best price in town,' the miller says.",
+            "Barrels of coarse meal and sacks of grain are stacked high; the clerk offers a bulk discount for larger purchases.",
+            "You sample a loaf made from the mill's flour. 'Good for long journeys,' the baker‑apprentice assures you.",
+            "A crate of preserved grain and salted provisions is offered at a reduced rate for immediate pickup.",
+            "The miller points to a delivery manifest from {location} and offers a special rate for repeat buyers."
+          ]
+        },
+
+        "Sell raw agricultural goods": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 11,
+          "results": {
+            "success": "The miller inspects your harvest and offers {amount} gp, citing steady demand and a reliable route to market.",
+            "failure": "The miller shakes their head. 'Too damp or mixed with chaff. I can't pay much for this — try drying it first.'"
+          }
+        },
+
+        "Ask about trade routes and supply chains": {
+          "type": "table_result",
+          "results": [
+            "The miller traces a route on a scrap of paper. 'We ship east to {location} and by river to the southern towns.'",
+            "A clerk mentions a recent delay on the northern road due to washed‑out bridges; shipments are rerouted.",
+            "You learn that a merchant caravan prefers the mill's flour for long voyages because it keeps longer.",
+            "The miller warns of bandit activity on a secondary route. 'We've had a few lost wagons lately.'",
+            "A worker describes seasonal shifts in supply: 'When the harvest is poor, prices spike and routes change.'"
+          ]
+        }
+      },
+
+      "Glassblower's Workshop": {
+        "Buy glass containers and tools": {
+          "type": "table_result",
+          "results": [
+            "A shelf of clear vials and stout flasks gleams under the lamp. 'Perfect for potions or samples,' the blower says.",
+            "You inspect a set of graduated glass tubes and a small hand‑blown funnel. 'Useful for field alchemy,' the artisan notes.",
+            "A crate of spare blowpipes and tongs is offered at a modest price. 'Tools last if you care for them,' the worker advises.",
+            "A display of delicate perfume bottles catches your eye; each stopper is ground to fit precisely.",
+            "A bundle of heat‑resistant glass panes and lenses is available. 'Good for simple optics or lanterns,' the blower explains."
+          ]
+        },
+
+        "Commission custom glasswork (downtime)": {
+          "type": "cost_action",
+          "cost": "100 gp",
+          "results": [
+            "The master glassblower sketches a design for your commission and names a completion time. 'Bring the deposit and return in a tenday,' they say.",
+            "You agree on materials and a price; a journeyman records specifications and warns about delicate sections that require extra care.",
+            "The artisan suggests a reinforced neck or threaded stopper for practical use, adding a small surcharge for the modification.",
+            "A specialist offers to include a simple etched sigil for identification at additional cost. 'Adds character and value,' they promise.",
+            "When finished, the piece is presented in a padded crate with a note on handling and a small vial of polishing oil."
+          ]
+        },
+
+        "Buy crystal spellcasting focuses": {
+          "type": "table_result",
+          "results": [
+            "A polished crystal orb sits on a velvet cushion. 'Balanced for channeling — good resonance,' the blower murmurs.",
+            "You examine a slender prism cut to refract light into precise angles. 'Favored by ritualists,' the artisan explains.",
+            "A set of glass rods with metal mounts is displayed. 'Designed to accept minor runes,' the blower notes.",
+            "A small crystal pendant hums faintly when you hold it. 'Some claim these sharpen intent,' the seller says cautiously.",
+            "A boxed focus bears the mark of a distant workshop in {location}; the blower claims rare material was used."
+          ]
+        },
+
+        "Sell gems for use in glasswork": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 12,
+          "results": {
+            "success": "The blower inspects your gems and nods. 'These will make fine inlays or cores — I can offer {amount} gp and a trade credit for future work.'",
+            "failure": "The blower frowns at the cuts and clarity. 'Not suitable for fine work. I can't pay much — try a jeweler instead.'"
+          }
+        },
+
+        "Appraise a rare lens or vial": {
+          "type": "skill_check",
+          "skill": "Investigation",
+          "dc": 13,
+          "results": {
+            "success": "The blowerr examines the piece and identify subtle annealing marks and a rare silica blend. 'This is worth more than it looks — likely from {location} or a master artisan.'",
+            "failure": "The blower misses the telltale signs of quality. The blower shrugs. 'Looks fine to me — but I've seen better. Take it to a specialist if you want a true valuation.'"
+          }
+        }
+      },
+
+      "Potter's Workshop": {
+        "Buy containers and pottery": {
+          "type": "table_result",
+          "results": [
+            "A stack of glazed jars and water jugs is arranged neatly. 'Good for storage and travel,' the potter says.",
+            "You inspect a set of sturdy cooking pots with reinforced rims. 'Holds heat well and chips less,' the artisan assures you.",
+            "A crate of simple plates and bowls is offered at a low price for bulk buyers.",
+            "A selection of sealed amphorae, stamped with a merchant mark from {location}, is available for purchase.",
+            "A small, well‑balanced oil lamp is shown to you; the potter demonstrates its steady flame."
+          ]
+        },
+
+        "Sell clay materials": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 11,
+          "results": {
+            "success": "The potter examines your clay and admires its texture. 'Good body and plasticity — I can offer {amount} gp or trade for finished wares.'",
+            "failure": "The potter pokes at the sample and shakes their head. 'Too sandy or mixed. I can't take this at a fair price — try refining it first.'"
+          }
+        },
+
+        "Commission decorative pottery (downtime)": {
+          "type": "cost_action",
+          "cost": "50 gp",
+          "results": [
+            "The potter sketches a decorative motif and estimates a firing schedule. 'Expect a tenday for simple pieces, longer for complex glazing,' they say.",
+            "You leave a deposit and the potter assigns a journeyman to the work, noting any special pigments required.",
+            "The artisan suggests a particular glaze that resists weathering for outdoor display, at a modest extra cost.",
+            "A kiln schedule is posted; the potter warns of delays during festival seasons when demand spikes.",
+            "When complete, the piece is wrapped in straw and delivered with a small card describing the glaze and care instructions."
+          ]
+        },
+
+        "Ask about kiln availability and firing schedules": {
+          "type": "table_result",
+          "results": [
+            "The potter points to a chalkboard of kiln bookings. 'We have a slot next tenday if you need a quick fire.'",
+            "A journeyman explains that certain glazes require longer, lower firings and may delay completion.",
+            "You learn that the workshop rents kiln time to trusted artisans for a fee; reservations are recommended.",
+            "The potter warns of an upcoming maintenance shutdown; 'Kiln repairs next week — plan accordingly.'",
+            "A worker mentions that shipments from {location} sometimes delay glaze supplies, affecting schedules."
+          ]
+        },
+
+        "Learn glazing techniques": {
+          "type": "skill_check",
+          "skill": "Arcana",
+          "dc": 12,
+          "results": {
+            "success": "The potter demonstrates a subtle glazing trick that produces iridescent sheens. You grasp the method and can reproduce it with practice.",
+            "failure": "The technique proves elusive. The potter smiles kindly: 'Practice at the wheel and come back — theory is one thing, hands another.'"
+          }
+        }
+      },
+
+      "Warehouses": {
+        "Rent storage space": {
+          "type": "cost_action",
+          "cost":"30 gp",
+          "results": [
+            "A clerk leads you to a dim aisle and points to a numbered door. 'That one's dry and secure. We'll lock it and log your name.'",
+            "You sign a receipt and hand over coin. 'Monthly rate, and we insure against theft up to a point,' the manager explains.",
+            "A foreman inspects the goods and recommends palletizing for easier handling. 'We can do that for a small fee.'",
+            "The warehouse issues a key and a manifest stub. 'Keep this — you'll need it to retrieve your items.'",
+            "A worker warns of restricted access hours. 'No entry after dusk without prior arrangement.'"
+          ]
+        },
+
+        "Find shipping work": {
+          "type": "table_result",
+          "results": [
+            "A shipping agent posts a last‑minute run to {location}. 'Need two strong hands and a clear head. Leaves at dawn.'",
+            "A foreman offers steady loading work for the week. 'Good pay if you can handle crates all day.'",
+            "A captain of a carting company seeks guards for a high‑value shipment. 'Discretion required,' they say.",
+            "A clerk mentions a merchant needing expedited delivery to the river docks. 'Bonus on arrival.'",
+            "A contractor asks if you can escort a sealed crate; 'No questions, just delivery,' they insist."
+          ]
+        },
+
+        "Look for goods being moved (Information check)": {
+          "type": "skill_check",
+          "skill": "Investigation",
+          "dc": 12,
+          "results": {
+            "success": "You notice a pattern in the manifests and a recurring mark on certain crates. 'These are being routed through a private ledger — likely high‑value cargo,' you tell the clerk.",
+            "failure": "You scan the paperwork but the entries are routine and unremarkable. The clerk shrugs: 'Just the usual shipments today.'"
+          }
+        },
+
+        "Investigate smuggling": {
+          "type": "skill_check",
+          "skill": "Perception",
+          "dc": 13,
+          "results": {
+            "success": "You spot a hidden compartment in a pallet and a falsified bill of lading. A worker mutters a name: '{npc_name}'. This looks deliberate.",
+            "failure": "You search the area but find only ordinary crates and legitimate paperwork. A foreman insists there's nothing suspicious here."
+          }
+        },
+
+        "Ask about incoming manifests and schedules": {
+          "type": "table_result",
+          "results": [
+            "A clerk produces a chalkboard of incoming manifests. 'Two caravans due this week, one from {location}.'",
+            "You are shown a delayed manifest marked with a red stamp. 'Customs held this one up,' the manager explains.",
+            "A worker points out a recurring supplier name and mentions unusual frequency lately.",
+            "A foreman notes a change in shipping lanes due to river conditions. 'Expect reroutes for the next tenday.'",
+            "A ledger entry reveals a private client paying for expedited handling; the clerk looks uneasy discussing the name."
+          ]
+        }
+      },
+
+      "Tenement Houses": {
+        "Ask locals for information": {
+          "type": "table_result",
+          "results": [
+            "An elderly tenant leans from a window and mentions seeing a stranger slip into the alley by {location} late last night.",
+            "A child selling newspapers whispers about a quarrel between two residents and points toward a specific building.",
+            "A laundress recalls a delivery of crates with no return manifest. 'Odd business for this street,' she says.",
+            "A neighbor offers a tip: '{npc_name} has been asking questions about newcomers — be careful.'",
+            "A boarder mentions a rumor of a hidden room in the basement of one building, used for private meetings."
+          ]
+        },
+
+        "Find cheap lodging": {
+          "type": "cost_action",
+          "cost":"1 gp",
+          "results": [
+            "You rent a narrow room above a bakery. 'Small, but dry and warm,' the landlord says as he hands you a key.",
+            "A landlady offers a shared chamber with a cot and a blanket for a reduced nightly rate.",
+            "You secure a week's stay in a crowded boarding room; the other tenants eye you curiously but offer a corner to store your pack.",
+            "A tenant warns of occasional noise and petty theft; 'Keep your things close and lock the trunk,' they advise.",
+            "The landlord requires a small deposit and records your name in a ledger. 'We keep order here,' they promise."
+          ]
+        },
+
+        "Recruit NPCs for minor tasks": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 12,
+          "results": {
+            "success": "You find a willing hand — a baker's apprentice eager for extra coin. 'I can run errands or help lift crates,' they say.",
+            "failure": "The tenants are wary and ask for more pay than you offered. 'We don't trust strangers with odd jobs,' one mutters."
+          }
+        },
+
+        "Gather street-level rumors": {
+          "type": "table_result",
+          "results": [
+            "A gossiping pair argue about a new watch posted near {location}; 'They say it's because of recent thefts,' one insists.",
+            "A vendor mentions a strange patron paying in foreign coin and asking odd questions about the neighborhood.",
+            "A tenant swears they heard chanting from a closed shop at dawn. 'Sounded like a ritual,' they whisper.",
+            "A porter claims a group of men have been meeting nightly in a back room, always leaving before sunrise.",
+            "A laundress notes that several residents have been receiving anonymous notes with cryptic warnings."
+          ]
+        },
+
+        "Search a room for hidden items or clues": {
+          "type": "skill_check",
+          "skill": "Investigation",
+          "dc": 12,
+          "results": {
+            "success": "You find a loose floorboard concealing a folded note and a small trinket stamped with a merchant mark from {location}. The note hints at a meeting place and time.",
+            "failure": "You overturn the mattress and check drawers but find only mundane belongings and dust. Nothing of interest turns up."
+          }
+        }
+      },
+
+      "Noble Houses": {
+        "Request an audience (Charisma check)": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 14,
+          "results": {
+            "success": "A steward accepts your credentials and arranges a brief audience. 'The lord will see you in the morning. Speak plainly and with respect,' they advise.",
+            "failure": "The steward frowns and excuses you politely. 'The household is closed to visitors today. Return with a letter of introduction or a stronger recommendation.'"
+          }
+        },
+
+        "Gather information about nobility": {
+          "type": "table_result",
+          "results": [
+            "A gossiping maid mentions a recent quarrel between two houses and hints at a secret marriage to be announced soon.",
+            "A footman quietly reveals that {npc_name} has been seen meeting with foreign envoys near {location}.",
+            "A ledger fragment shows unusual expenditures on private guards and discreet travel — signs of rising tension.",
+            "A visiting tutor speaks of a patron funding a private expedition; the family name is whispered but not written.",
+            "A gardener mentions a sealed wing of a manor where servants are forbidden; rumors say it holds incriminating letters."
+          ]
+        },
+
+        "Seek patronage": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 15,
+          "results": {
+            "success": "A minor noble listens to your proposal and smiles. 'Your skills could be useful. I will sponsor you for a modest retainer and introduce you to my circle.'",
+            "failure": "The noble nods politely but declines. 'We have no need at present. Return when you have a more concrete offer or notable success to show.'"
+          }
+        },
+
+        "Investigate a noble family": {
+          "type": "skill_check",
+          "skill": "Investigation",
+          "dc": 13,
+          "results": {
+            "success": "You uncover a pattern of correspondence and a hidden ledger linking the family to a distant estate in {location}. The evidence suggests a motive worth pursuing.",
+            "failure": "Your search turns up only carefully curated records and polite denials. The household keeps its secrets well; you'll need better access or a bribe."
+          }
+        }
+      },
+
+      "Park or Garden": {
+        "Rest safely (Short Rest)": {
+          "type": "mechanic",
+          "function": "handleShortRest",
+          "results": [
+            "You find a sheltered bench beneath a flowering arbor. The city noise fades and you rest, regaining a measure of strength.",
+            "A quiet glade offers a cool breeze and the scent of herbs. You close your eyes and let the day's tension ease.",
+            "A gardener's cat curls at your feet as you nap on soft grass. You wake refreshed and alert to the sounds of the district.",
+            "A fountain's steady trickle lulls you into a short, restorative sleep. You wake with clearer thoughts and steadier hands.",
+            "You rest beneath a shaded pergola while distant children play. The brief respite sharpens your focus for the tasks ahead."
+          ]
+        },
+
+        "Gather herbs (Nature check)": {
+          "type": "skill_check",
+          "skill": "Nature",
+          "dc": 12,
+          "results": {
+            "success": "You identify and gather a useful bundle of herbs, including a common poultice and a fragrant leaf prized by apothecaries.",
+            "failure": "You collect a handful of common weeds and miss the subtle plants you sought. The harvest is meager and of little use."
+          }
+        },
+
+        "Meet a contact discreetly": {
+          "type": "skill_check",
+          "skill": "Stealth",
+          "dc": 12,
+          "results": {
+            "success": "You slip into a shadowed alcove and exchange a brief, coded conversation with your contact. They hand you a folded note and vanish into the trees.",
+            "failure": "You are noticed by a passing gardener who asks questions. Your contact retreats, leaving only a hurried whisper and no meeting."
+          }
+        },
+
+        "Observe the district": {
+          "type": "table_result",
+          "results": [
+            "From a shaded path you watch a procession of merchants moving through the {district}, their wagons heavy with goods.",
+            "You notice a pair of figures speaking in hushed tones near a statue; one carries a satchel stamped with a merchant mark from {location}.",
+            "A gardener tends a secluded bed and mentions an unusual delivery last night — crates left unmarked at the service gate.",
+            "Children chase each other past a hedge and one drops a scrap of paper with a hastily drawn map and a time circled.",
+            "A city watch patrol passes slowly, noting nothing unusual; their relaxed pace suggests the area is considered safe for now."
+          ]
+        }
+      },
+
+      "Public Well": {
+        "Gather information (locals congregate here)": {
+          "type": "table_result",
+          "results": [
+            "A washerwoman gossiping at the edge of the well mentions a stranger asking questions about {location} late last night.",
+            "Two merchants argue about a recent shipment delay; one swears the caravan was waylaid near the old ford.",
+            "A child trading gossip for a coin whispers about a hidden meeting place beneath the market stalls.",
+            "An elderly man recalls seeing a patrol escort a covered wagon through the district at dawn.",
+            "A vendor warns that someone has been offering unusual coin for simple favors; 'Not the sort you want to cross,' they say."
+          ]
+        },
+
+        "Refill waterskins": {
+          "type": "table_result",
+          "results": [
+            "You lower your waterskin and fill it with cool, clear water drawn from the well. The weight steadies your pack.",
+            "A local offers to trade a small favor for fresh water and a bit of bread as thanks.",
+            "A child splashes nearby and hands you a clean cloth to wipe the rim; the wellkeeper nods in approval.",
+            "You notice a faint shimmer on the water's surface — a sign of mineral content common to wells fed from {location}.",
+            "A passerby warns you to boil water before long travel; 'Strange sickness comes from unboiled wells sometimes,' they say."
+          ]
+        },
+
+        "Observe daily life in the district": {
+          "type": "table_result",
+          "results": [
+            "From the well you watch bakers hauling sacks of flour toward the market and hear the rhythm of their work.",
+            "A pair of apprentices practice a trade argument nearby, loudly rehearsing a sales pitch for a visiting merchant.",
+            "A street performer draws a small crowd; their tricks distract a pickpocket who slips away into the alleys.",
+            "A cart creaks by, loaded with produce stamped from {location}; the driver exchanges a curt nod with the wellkeeper.",
+            "An old woman feeds crumbs to pigeons and tells a story about the founding of the district to anyone who will listen."
+          ]
+        },
+
+        "Listen for rumors while filling water (Perception check)": {
+          "type": "skill_check",
+          "skill": "Perception",
+          "dc": 11,
+          "results": {
+            "success": "You catch a hushed phrase about a planned meeting and a time — a useful lead that mentions {npc_name}.",
+            "failure": "The crowd is noisy and your ears pick up only fragments: a name, a place, and nothing you can trust."
+          }
+        },
+
+        "Trade a small favor for local gossip (Persuasion check)": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 12,
+          "results": {
+            "success": "A vendor leans in and shares a useful tidbit: a merchant route has been altered and a guard detail reduced near {location}.",
+            "failure": "The vendor smiles politely but refuses. 'I don't trade in secrets for coin today,' they say."
+          }
+        }
+      },
+
+      "School": {
+        "Research a topic (downtime)": {
+          "type": "cost_action",
+          "cost": "20 gp",
+          "results": [
+            "You spend time in the lecture hall reading tomes and notes; a tutor helps clarify difficult passages and you gain useful context.",
+            "A scholar points you to a marginal note in an old volume that references {location} and a forgotten ordinance.",
+            "You compile a short dossier from the library's holdings that outlines the historical ownership of a disputed parcel of land.",
+            "A professor offers a brief lecture on the subject and suggests a primary source you hadn't considered.",
+            "Your research yields a lead: a name, a date, and a reference to a ledger kept in the Courthouse archives."
+          ]
+        },
+
+        "Find a tutor": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 12,
+          "results": {
+            "success": "A junior scholar agrees to tutor you for a modest fee. 'I can help you master the basics and prepare notes for your research,' they say.",
+            "failure": "The tutors are booked or demand a higher fee. 'Return next tenday or bring more coin,' the headmaster advises."
+          }
+        },
+
+        "Access reference materials": {
+          "type": "table_result",
+          "results": [
+            "A librarian retrieves a bound volume of city records that mentions a merchant house operating near {location}.",
+            "You are shown a map with annotations marking old trade routes and a note about seasonal floods affecting supply lines.",
+            "A stack of lecture notes contains a passing reference to a ritual once performed in the district — now outlawed.",
+            "A dusty folio reveals a list of craftsmen and their specialties; one entry names {npc_name} as a patron.",
+            "A ledger of donations lists a benefactor who funded a small chapel; the entry includes a cryptic marginalia."
+          ]
+        },
+
+        "Gather information about local history": {
+          "type": "table_result",
+          "results": [
+            "An archivist recounts the founding of the neighborhood and mentions a long‑buried dispute over water rights.",
+            "You learn of a past epidemic that reshaped trade patterns and led to the construction of the Public Well.",
+            "A lecture excerpt describes a forgotten guild that once controlled the mills near {location}.",
+            "A preserved letter hints at a clandestine meeting between nobles and merchants in the early years of the city.",
+            "A scholar points out a plaque in the courtyard commemorating a benefactor whose name appears in several old deeds."
+          ]
+        },
+
+        "Use the archives to locate primary documents (Investigation check)": {
+          "type": "skill_check",
+          "skill": "Investigation",
+          "dc": 13,
+          "results": {
+            "success": "You uncover a primary document — a deed or letter — that directly references the matter you're researching and names a key witness.",
+            "failure": "The archives are vast and poorly indexed; you find related material but nothing conclusive. The archivist suggests a different search term."
+          }
+        },
+
+        "Learn a practical skill from a master (Arcana or History check)": {
+          "type": "skill_check",
+          "skill": "Arcana",
+          "dc": 12,
+          "results": {
+            "success": "Under a master's guidance you grasp a technique or concept that improves your practical knowledge and can be applied in the field.",
+            "failure": "The lesson proves challenging; you understand the theory but lack the hands‑on practice to apply it effectively."
+          }
+        }
+      },
+
+      "Small Family Shops": {
+        "Buy everyday goods": {
+          "type": "table_result",
+          "results": [
+            "A friendly shopkeeper produces a bundle of salted meat, a coil of rope, and a small oil lamp. 'Good for a traveler,' they say.",
+            "You find a neat stack of preserved fruit jars and a roll of cured cloth. 'Locally made,' the owner adds with a proud nod.",
+            "A child behind the counter offers a discount on a second item if you buy both at once. 'Helps clear space,' they whisper.",
+            "A shelf of basic tools — a hammer, a set of nails, a whetstone — is offered at fair price and immediate use.",
+            "A small crate marked from {location} contains spices and dried herbs; the proprietor recommends them for long journeys."
+          ]
+        },
+
+        "Sell trade goods": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 12,
+          "results": {
+            "success": "The shopkeeper inspects your goods and offers a fair price plus a small trade credit. 'We can move these quickly,' they say.",
+            "failure": "The proprietor shakes their head. 'Not what my customers want. I can only offer a token amount or store them on consignment.'"
+          }
+        },
+
+        "Gather neighborhood rumors": {
+          "type": "table_result",
+          "results": [
+            "A baker mutters about a late wagon that unloaded crates at dawn near {location}; 'Not the usual merchants,' they say.",
+            "An old woman at the door complains that {npc_name} has been asking after a missing ledger — and paying well for answers.",
+            "A grocer mentions a new watch posted on the lane; 'They say it's because of recent petty thefts,' they add.",
+            "A child trading sweets for gossip tells you about a quiet meeting in a back room behind the tailor's shop.",
+            "A neighbor warns of a traveling peddler selling oddly marked coin; 'Keep your eyes on your purse,' they advise."
+          ]
+        },
+
+        "Find casual work": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 11,
+          "results": {
+            "success": "A shopkeeper needs help stacking crates and offers a day's wage plus a hot meal. 'Come by at first light,' they say.",
+            "failure": "The proprietor apologizes: 'We're short today, but no extra hands until next week. Try the market stalls.'"
+          }
+        }
+      },
+
+      "Town Square": {
+        "Gather rumors (best roll bonus in the settlement)": {
+          "type": "table_result",
+          "results": [
+            "A street preacher's sermon draws a crowd; afterward several listeners whisper about a merchant dispute involving {npc_name}.",
+            "A traveling performer mentions a caravan diverted from {location} and hints at trouble on the northern road.",
+            "A vendor loudly complains about missing crates; nearby patrons speculate about a new gang operating in the docks.",
+            "A posted proclamation about taxes sparks heated debate; someone mutters that enforcement will hit the {district} hardest.",
+            "A pair of cloaked figures exchange a sealed note near the fountain; onlookers speculate it's a clandestine appointment."
+          ]
+        },
+
+        "Post notices": {
+          "type": "cost_action",
+          "cost": "5 gp",
+          "results": [
+            "You pin your notice to the central board and a clerk stamps it with the town seal. 'It will be visible for a tenday,' they say.",
+            "A passerby reads your notice and nods; within hours a small crowd gathers, discussing the announcement.",
+            "A rival posts a counter‑notice beneath yours; the clerk warns that disputes over public postings sometimes escalate.",
+            "A notice attracts the attention of a local guild representative who asks to speak privately about the matter.",
+            "Your posting is noted by a city official; later you receive a curt summons to clarify the claim."
+          ]
+        },
+
+        "Find NPCs": {
+          "type": "skill_check",
+          "skill": "Investigation",
+          "dc": 12,
+          "results": {
+            "success": "You scan the crowd and pick out the person you seek — a merchant with a distinctive cloak stamped from {location}. They agree to speak briefly.",
+            "failure": "The square is crowded and noisy; you lose the trail and must rely on second‑hand directions to locate the NPC."
+          }
+        },
+
+        "Watch for events": {
+          "type": "table_result",
+          "results": [
+            "A procession of city officials passes through, heralding a new ordinance that may affect trade in the {district}.",
+            "A sudden commotion reveals a street performance that draws a large crowd and distracts nearby pickpockets.",
+            "A market fair is announced; traveling merchants set up stalls and rare goods from {location} appear for sale.",
+            "A public dispute between two guilds escalates into a shouting match; city watch moves in to separate them.",
+            "A messenger arrives with urgent news and posts a sealed proclamation at the square's noticeboard."
+          ]
+        },
+
+        "Meet contacts publicly": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 12,
+          "results": {
+            "success": "You arrange a brief, public exchange at a fountain and receive a folded note with a time and place for a private meeting.",
+            "failure": "Your intended contact is delayed or distracted by the crowd; the meeting dissolves into vague promises to 'catch up later.'"
+          }
+        }
+      },
+
+      "General Store": {
+        "Browse goods": {
+          "type": "table_result",
+          "results": [
+            "Shelves creak under the weight of assorted adventuring gear: a spare grappling hook, a coil of rope, and a battered lantern marked with a merchant seal from {location}.",
+            "A neat row of preserved rations and hardtack is displayed; the shopkeeper offers a small sample to prove freshness.",
+            "You find a set of common tools — hammer, nails, and a whetstone — arranged for immediate purchase.",
+            "A dusty crate yields a handful of curios: a carved bone token, a chipped vial, and a map fragment with a circled landmark.",
+            "A rack of simple weapons includes a few serviceable daggers and a short spear; the proprietor warns which ones are well balanced."
+          ]
+        },
+
+        "Sell common items": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 12,
+          "results": {
+            "success": "The shopkeeper inspects your wares and offers a fair price of {amount} gp, adding a small trade credit for future purchases.",
+            "failure": "The proprietor frowns at the condition and offers a token amount. 'Not what my customers want today,' they say."
+          }
+        },
+
+        "Gather local information": {
+          "type": "table_result",
+          "results": [
+            "A regular customer mentions a caravan diverted from {location} and suggests the northern road is slower than usual.",
+            "The shopkeeper complains about a recent string of petty thefts and points to a suspicious new face seen near the market.",
+            "A child running errands whispers that {npc_name} has been asking after a missing parcel and offering coin for information.",
+            "A delivery manifest pinned behind the counter shows an unusual supplier name and a note about expedited handling.",
+            "A neighbor stops by to trade gossip: a minor noble is rumored to be hiring discreet muscle for a private errand."
+          ]
+        },
+
+        "Post or read notices": {
+          "type": "cost_action",
+          "cost":"1 gp",
+          "results": [
+            "You pin a small notice to the shop's board; within hours a passerby reads it aloud and several patrons take interest.",
+            "The proprietor offers to read notices for a small fee and points out a recently posted request for labor near {location}.",
+            "A rival posts a counter‑notice beneath yours; the shopkeeper warns that public disputes sometimes draw unwanted attention.",
+            "You read a notice seeking lost livestock with a reward; the owner mentions the claimant is a frequent customer named {npc_name}.",
+            "A clerk offers to circulate your notice to neighboring shops for an extra charge, increasing its visibility across the district."
+          ]
+        },
+
+        "Haggle for a discount (Insight or Persuasion check)": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 11,
+          "results": {
+            "success": "The shopkeeper relents and offers a modest discount. 'Alright, take it for {amount} less — but only because you're a regular.'",
+            "failure": "The proprietor smiles politely and refuses. 'Prices are tight this season. I can't lower it further.'"
+          }
+        }
+      },
+
+      "Local Inn": {
+        "Long rest": {
+          "type": "mechanic",
+          "function": "handleLongRest",
+          "results": [
+            "You secure a private room for the night. The bed is clean and the innkeeper promises a quiet hour; you wake refreshed and restored.",
+            "A shared chamber is available with a curtained berth; the other lodgers are noisy but respectful and you manage a decent rest.",
+            "The inn provides a simple supper and a warm bed. A stablehand offers to watch your mount for a small fee.",
+            "A friendly patron offers a tip about a safer route out of town in the morning; you sleep with a useful lead in mind.",
+            "The innkeeper notes a curfew for late guests and records your name in the guest ledger for the night."
+          ]
+        },
+
+        "Buy food and drink": {
+          "type": "table_result",
+          "results": [
+            "A steaming bowl of stew is set before you, rich with root vegetables and a chunk of salted meat. 'House specialty,' the innkeeper says.",
+            "A mug of local ale is poured from a cask stamped with a merchant mark from {location}; it's hearty and cheap.",
+            "A tray of cold cuts and bread is offered for travelers on the road; the cook recommends it for long journeys.",
+            "A small plate of preserved fruit and cheese is presented as a light supper; the proprietor warns that fresh produce is scarce this season.",
+            "A guest offers to trade a story for a meal and mentions a caravan needing escorts near {location}."
+          ]
+        },
+
+        "Gather rumors": {
+          "type": "table_result",
+          "results": [
+            "A tipsy merchant boasts about a lost shipment from {location} and hints at a hidden cache of goods waiting to be reclaimed.",
+            "A barkeep mentions that {npc_name} has been seen meeting with a cloaked stranger at odd hours.",
+            "A traveling soldier complains of increased patrols on the road and warns of bandit activity near the old ford.",
+            "A pair of locals argue about a new tax; one claims enforcement will hit small traders hardest in the {district}.",
+            "A quiet corner table yields a whispered lead: a private job posted for discreet hands, pay negotiable."
+          ]
+        },
+
+        "Post notices": {
+          "type": "cost_action",
+          "cost":"1 gp",
+          "results": [
+            "You pin a notice on the inn's board and a stableboy reads it aloud to passing patrons; interest is immediate.",
+            "A guard from {district} studies your notice. 'Interesting timing,' they mutter. 'Someone else asked about similar work near {location}.'",
+            "A cloaked traveler approaches after reading your posting. 'If you're serious,' they whisper, 'meet me behind the stables at dusk.'",
+            "A scribe offers to copy and distribute your notice to nearby inns for {amount} gp. 'Wider reach, faster results,' they promise.",
+            "Moments after you post it, someone tears down a rival notice and replaces it beneath yours. The innkeeper frowns. 'Competition’s heating up.'",
+            "An inn regular points out a symbol someone has drawn on your notice — a mark associated with {creature} sightings. 'Might be a warning,' they say.",
+            "{npc_name}, a local {npc_role}, asks if you can deliver a similar notice to a contact in {location}. 'If you’re already posting things, you might as well earn a favor.'"
+
+          ]
+        },
+
+        "Find work": {
+          "type": "skill_check",
+          "skill": "Persuasion",
+          "dc": 11,
+          "results": {
+            "success": "A patron needs hands for a short job in the kitchen and hires you on the spot. 'Start at dawn. Bring sturdy boots,' they say, handing over a small advance of {amount} gp.",
+            "failure": "The patrons are uninterested or demand higher pay than you can offer. 'Try the market tomorrow,' someone suggests."
+          }
+        },
+
+        "Eavesdrop for useful details (Perception check)": {
+          "type": "skill_check",
+          "skill": "Perception",
+          "dc": 12,
+          "results": {
+            "success": "You catch a fragment of conversation about a guarded crate arriving from {location} and a time for its transfer — a lead worth following.",
+            "failure": "The room is loud and your ears pick up only disconnected phrases; nothing actionable emerges from the din."
+          }
+        }
+      },
+
+      "Small Shrine": {
+        "Buy a healing potion": {
+          "type": "cost_action",
+          "cost": 15,
+          "cost_description": "15 gp",
+          "effect": "restore_hp_full",
+          "confirmation": "Pay 15 gp for healing potion?",
+          "results": [
+            "A humble acolyte retrieves a small vial from a locked coffer. 'Donated by a traveling cleric,' they say. 'Use it well.'",
+            "A caretaker presents a potion wrapped in cloth. 'We keep only a few — take this if your need is true.'",
+            "The attendant retrieves a potion sealed with wax. 'Prepared at dawn by {npc_name} the cleric. Their blessings tend to linger longer than most.'",
+            "A caretaker offers a potion wrapped in soft cloth. 'We keep only a few. This one was meant for a traveler who never returned from {location}.'",
+            "A pilgrim donates a potion the moment you arrive. 'Take it,' the shrinekeeper insists. 'They said someone in need would come today.'",
+            "The vial glows faintly as you hold it. 'A sign of harmony,' the acolyte murmurs. 'Use it where the light is thin.'",
+            "The shrinekeeper hesitates. 'This batch was brewed after strange omens in {district}. It should work… but be mindful of dreams tonight. (use lore generator - Dreams)'",
+            "The potion is unusually heavy. 'Infused with herbs from the south,' the attendant explains. 'Rare, but potent — and not without side effects.'"
+          ]
+        },
+
+        "Receive a minor blessing": {
+          "type": "skill_check",
+          "skill": "Religion",
+          "dc": 11,
+          "results": {
+            "success": "You kneel and recite a short prayer. A gentle warmth settles over you as the shrine's guardian spirit acknowledges your devotion.",
+            "failure": "Your thoughts wander during the prayer. The acolyte smiles kindly. 'Perhaps return when your mind is clearer.'"
+          }
+        },
+
+        "Rest safely": {
+          "type": "mechanic",
+          "function": "handleLongRest",
+          "results": [
+            "You rest beneath a carved symbol of protection. The quiet air and faint incense help you recover your strength.",
+            "A caretaker offers a cushion and a cup of warm herbal tea. You relax and feel tension leave your body.",
+            "Soft chanting from a nearby alcove lulls you into a peaceful rest, restoring your focus.",
+            "A pilgrim shares a comforting story of the shrine's miracles as you rest, easing your worries.",
+            "You sit beside a small brazier, its gentle heat calming your nerves and steadying your breath."
+          ]
+        },
+
+        "Ask about the local area": {
+          "type": "table_result",
+          "results": [
+            "A caretaker mentions disturbances near {location}. 'Nothing confirmed, but travelers return uneasy.'",
+            "A pilgrim recalls seeing {npc_name} speaking with a cloaked figure near the crossroads. 'They seemed in a hurry.'",
+            "The acolyte warns of a sick traveler who passed through recently. 'If trouble spreads, it will start in {district}.'",
+            "A worshipper shares a rumor about a hidden spring in the {district}, said to heal wounds but only at dusk.",
+            "A visiting monk mentions a caravan delayed by strange tracks along the main road to the city— too large for any known beast.",
+            "'Listen,' a caretaker whispers, 'someone has been leaving offerings meant for Fiends. That’s not a good sign.'",
+            "A pilgrim tells you about {npc_name} the {npc_role}, who claims to have found an abandoned shrine near {location}. 'They won’t go back alone.'",
+            "A monk studying old scrolls believes a forgotten ritual site lies beneath {district}. 'If you find it, tread with respect.'"
+          ]
+        }
+      },
+
+      "Training Ground": {
+        "Train (gain proficiency progress — downtime)":{
+          "type": "table_result",
+          "results": [
+            "You start a long training session - Go to downtime activities section to train"
+          ]
+        },
+        "Spar with a soldier": {
+          "type": "skill_check",
+          "skill": "Athletics",
+          "dc": 13,
+          "results": {
+            "success": "A productive sparring session. You hold your own and earn some respect in the process. The soldier mentions a training method worth incorporating.",
+            "failure": "The soldier wins the bout without difficulty. Not unkind about it — professionals rarely are. 'Come back when you've practiced that footwork.'"
+          }
+        },
+        "Find a combat instructor": {
+          "type": "table_result",
+          "results": [
+            "A retired veteran named {npc_name} trains privately. Expensive — {amount} gp per session — but their reputation is excellent.",
+            "The training ground master agrees to assess you and recommend appropriate instruction. Honest assessment: your strengths, your gaps.",
+            "A skilled instructor is available, but they want to see you fight first before agreeing to take you on.",
+            "'I know someone,' a guard says. 'Not official. Very good. Doesn't advertise. I can introduce you.'"
+          ]
+        },
+        "Assess local military strength": {
+          "type": "table_result",
+          "results": [
+            "The guards run routine drills: nothing impressive, nothing alarming. A competent but unremarkable force.",
+            "You watch a formation exercise. Their discipline is solid, though a few recruits struggle to keep pace.",
+            "A sergeant from {district} explains that the local watch is stretched thin due to recent patrol expansions.",
+            "A veteran mentions sightings of {creature} near {location}. 'If those reports are true, we’re not equipped for that kind of threat.'",
+            "You overhear instructors discussing outdated equipment. 'Half our shields are older than I am,' one mutters.",
+            "A captain quietly offers you a deal: for {amount} gp, they’ll share detailed maps of patrol routes and blind spots.",
+            "During weapons inspection, an instructor finds several blades with unusual wear patterns. 'Something’s been testing our defenses,' they say.",
+            "{npc_name}, a drillmaster, asks for your help evaluating a new training regimen. 'Fresh eyes catch things we miss.'"
+          ]
+        }
+
+      }
+
+    }
+  }
+}

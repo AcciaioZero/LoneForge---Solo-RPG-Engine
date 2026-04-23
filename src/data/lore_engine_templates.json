@@ -1,0 +1,975 @@
+{
+  "version": "0.2",
+  "modules": {
+
+    "myths_folklore": {
+      "tone": "oral, rhythmic — storyteller by a fire",
+      "titles": [
+        "The {adjective} of {entity}",
+        "What {place} Does Not Forget",
+        "The {noun} of {entity} — as the elders tell it",
+        "That Which {entity} Left Behind",
+        "The {adjective} Tale of {entity}",
+        "Before {entity} Was a Warning",
+        "Why {place} Burns Its Dead Before Dawn",
+        "The Night {entity} Made the Wrong Choice",
+        "What {protagonist} Carried Out of {place}",
+        "Three Things {entity} Never Said"
+      ],
+      "voices": [
+        "They say {protagonist} never sought {core} — it found them, in a place they were never meant to enter. Since that day, {symbol} has carried something unresolved, and those who touch it feel it too.",
+        "The grandmothers of {place} still know this story, though they do not share it with strangers. {protagonist} made a choice — and {ending}. Whether it was the right choice depends on who is telling it.",
+        "This is not a story for children. It speaks of {core}, of {protagonist}, and of how {symbol} became the mark of something no one dares name aloud. The ending shifts with each telling. The center never does.",
+        "{protagonist} got exactly what they wanted. That is the part people always forget when they repeat this tale as a warning. Exactly what they wanted — and {ending}. Perhaps that is the real lesson.",
+        "In the old version of this story, {protagonist} survives. No one tells the old version anymore — not because it is wrong, but because the ending it implies is worse than the one where they die.",
+        "There are seven versions of what happened with {protagonist} and {symbol}. Six of them are comforting. The seventh is the one the elders tell each other when they think no one is listening.",
+        "It started as a {type}. That is what people call it now. Those who were there — the very few — used a different word, and they were not using it loosely.",
+        "Every child in {place} grows up knowing the name of {entity}. Not one of them knows what it means. The adults stopped explaining {time_interval} ago, and no one has asked why."
+      ],
+      "hooks": [
+        "{symbol} still exists. Someone knows where — and they are not saying.",
+        "The common version ends with {ending}. But an older telling, found in a text no one cites anymore, says something different.",
+        "Every {time_interval}, something happens that reminds the people of {place} this story is not over.",
+        "There is one detail every version agrees on. No one has ever explained what it means.",
+        "The story is used to keep people away from {place}. It is working. The question is whether it was designed to.",
+        "{protagonist} left something behind. The legend does not mention it because whoever first wrote it down chose not to. The object is still there.",
+        "A traveler recently arrived in {place} asking questions about {entity} — specific questions, the kind that suggest they already know part of the answer.",
+        "The {type} has a counterpart no one tells — the version from the other side's perspective. It does not cast {protagonist} favorably."
+      ],
+      "tables": {
+        "scope": ["local", "regional", "epic", "cosmic"],
+        "type": [
+          "tragedy",
+          "origin story",
+          "cautionary tale",
+          "heroic saga",
+          "trickster tale",
+          "transformation myth",
+          "forbidden love",
+          "betrayal account",
+          "creation fragment",
+          "end-times warning"
+        ],
+        "protagonist": [
+          "a mortal hero whose name is disputed",
+          "a spirit bound to a place",
+          "a creature that was once something else",
+          "a minor deity no longer worshipped",
+          "a lost people remembered only in this story",
+          "a pair — and the story never agrees on which one is the villain",
+          "a child who made an adult decision",
+          "someone whose name was deliberately removed from the record"
+        ],
+        "core": [
+          "love that could not survive what it created",
+          "ambition that outgrew its container",
+          "a sacrifice no one asked for",
+          "vengeance that outlived its reason",
+          "a cycle no one knows how to stop",
+          "a debt that passed from parent to child",
+          "trust given to the wrong thing",
+          "the cost of knowing something that cannot be unknown"
+        ],
+        "symbol": [
+          "a door that opens onto the wrong place",
+          "a fire that has never gone out",
+          "a name no one speaks aloud",
+          "a road that ends differently each time it is walked",
+          "a tree that grows where it should not",
+          "a sound heard only at a specific hour",
+          "a mark that appears on the skin of those who stay too long",
+          "an animal that is always watching from a distance"
+        ],
+        "ending": [
+          "tragic — and preventable, in hindsight",
+          "ambiguous — no version agrees on the last moment",
+          "victorious in a way that felt like losing",
+          "cyclical — it has happened before and will happen again",
+          "unresolved — the story simply stops",
+          "pyrrhic — they won, and it cost everything that made winning matter"
+        ],
+        "adjective": [
+          "Sunken", "Forgotten", "Crooked", "Pale", "Hollow",
+          "Broken", "Unnamed", "Quiet", "Second", "Buried",
+          "Wrong", "Last", "Other"
+        ],
+        "noun": [
+          "Fall", "Pact", "Wound", "Weight", "Mark",
+          "Debt", "Echo", "Door", "Name", "Price",
+          "Hour", "Return", "Bargain"
+        ]
+      },
+      "connections": {
+        "probability": 35,
+        "possible_modules": ["gods_planes", "relics_artifacts", "prophecies_omens"]
+      }
+    },
+
+    "gods_planes": {
+      "tone": "solemn, distant — as if read from crumbling scripture",
+      "deity": {
+        "titles": [
+          "The Doctrine of {deity_name}",
+          "On the Nature of {deity_name} — excerpts",
+          "The Silence of {deity_name}",
+          "What the Clergy of {deity_name} Will Not Preach",
+          "{deity_name} — the {epithet} One",
+          "What {deity_name} Requires",
+          "The {epithet} God — notes toward an understanding",
+          "On the Worship of {deity_name} — a dissenting account",
+          "Why {deity_name} Stopped Answering",
+          "{deity_name} and the Matter of {domain} — incomplete record"
+        ],
+        "voices": [
+          "The ancient scriptures describe {deity_name} as a god of {domain}, though scholars argue whether that domain was chosen or imposed. Their worshippers are {worship_form}, and their prayers have not gone unanswered — though the answers rarely resemble the prayers.",
+          "There is no consensus on whether {deity_name} is still listening. The temples remain. The rites continue. But those who have sought a direct sign speak of {divine_relationship} — and most of them stopped seeking afterward.",
+          "Once, {deity_name} had a rival. The conflict is recorded differently across traditions — some name it a war, others a betrayal, others a misunderstanding neither side chose to correct. What is consistent across all accounts is that {deity_name} emerged changed, and the domain of {domain} has carried that change ever since.",
+          "{deity_name} is described, in the oldest surviving text, as {epithet}. Later traditions softened the description. The oldest text does not explain why that word was chosen, and the later traditions do not explain why they changed it.",
+          "The faith of {deity_name} is {worship_form}. This was not always the case. There is a record — disputed, but not dismissed — of a time when {deity_name} was worshipped openly by people who are no longer here to explain why they stopped.",
+          "What {deity_name} wants has never been stated plainly. What they have rewarded, punished, ignored, and intervened in forms a pattern — but the pattern requires assumptions that not everyone is willing to make.",
+          "The clergy of {deity_name} maintain that {divine_relationship}. The clergy have reasons to maintain this. Whether those reasons are theological or political is a question they do not welcome.",
+          "There are two versions of the origin of {deity_name}. In one, they have always existed. In the other, something created them — and that something is not mentioned by name in any surviving source."
+        ],
+        "hooks": [
+          "There is a prayer to {deity_name} that does not appear in any official codex. Those who know it did not learn it from a priest.",
+          "The last confirmed miracle attributed to {deity_name} happened {time_interval} ago. No one has offered a satisfying explanation for the silence since.",
+          "A splinter faction within the faith believes {deity_name} is not what the church claims. They do not advertise this belief openly.",
+          "A temple to {deity_name} was sealed {time_interval} ago. The official reason was maintenance. The temple has not reopened.",
+          "{deity_name} has a second name. It appears once in the historical record, crossed out by a different hand than the one that wrote it.",
+          "The domain of {domain} has been behaving strangely in this region. Those who worship {deity_name} are not surprised. They are not explaining why.",
+          "Someone recently made an offering at a shrine to {deity_name} that has been abandoned for {time_interval}. The offering was accepted.",
+          "The faith of {deity_name} forbids something that it did not always forbid. The original doctrine has not survived — or has not been allowed to survive."
+        ]
+      },
+      "plane": {
+        "titles": [
+          "Notes on {plane_name} — field observations",
+          "The {adjective} Realm — what survives of the accounts",
+          "Where {plane_name} Bleeds Through",
+          "On the Border of {plane_name}",
+          "What Returns from {plane_name}",
+          "A Record of Entry into {plane_name} — partial",
+          "The {adjective} Beyond — disputed cartography",
+          "On {plane_name} and the Question of Return",
+          "First Contact with {plane_name} — survivor account",
+          "{plane_name} — a classified summary"
+        ],
+        "voices": [
+          "Those who have returned from {plane_name} describe a place of {nature}. Not all of them describe the same place — which suggests either that the plane shifts, or that the plane shows each visitor something different.",
+          "{plane_name} does not require an invitation. It {accessibility} — and those who find themselves there without preparation rarely find their way back the same way they arrived.",
+          "Scholars classify {plane_name} as a realm of {nature}, but that classification was made by people who had never been there. The ones who have been there tend to use different words — when they use words at all.",
+          "The boundary between {plane_name} and the material world is not fixed. It moves. Those who study it have noted that it moves in a direction, and that the direction has been consistent for {time_interval}.",
+          "Visitors to {plane_name} report {visitor_effect}. This is documented across accounts that have no other point of contact — travelers from different eras, different traditions, different reasons for being there. The consistency is not reassuring.",
+          "There is a thing in {plane_name} that is aware of this world. It has been aware for longer than this world has had people in it. Whether awareness implies intention is the question no one has answered, because the people who went to ask it did not come back.",
+          "{plane_name} has an edge. This contradicts the standard model, which holds that planes are boundless. Three explorers have independently reported reaching it. None of them agree on what is on the other side.",
+          "Something came through from {plane_name} {time_interval} ago. The event was contained — or at least, the people who contained it said it was. They are no longer available to confirm."
+        ],
+        "hooks": [
+          "Something from {plane_name} is here, in this world, and it does not appear to be lost.",
+          "The boundary between {plane_name} and the material world is thinner in this region than it should be. No one is sure when that started.",
+          "A ritual exists that is said to close a passage to {plane_name}. The same ritual, performed differently, is said to open one.",
+          "An object has appeared that should not exist in the material world. Its composition matches descriptions of {plane_name}.",
+          "A person has returned from {plane_name}. They are not behaving as if they left anything behind.",
+          "The passage to {plane_name} used to be in a different location. It moved. No record explains how or why.",
+          "Something in {plane_name} has started sending messages. They arrive in the wrong order, which suggests either that time works differently there, or that the sender is not bound by sequence.",
+          "{plane_name} was once accessible. Then it was sealed. The seal was described as permanent — which means someone has been maintaining it, because permanent seals do not maintain themselves."
+        ]
+      },
+      "tables": {
+        "deity": {
+          "deity_name": [
+            "Aurel", "Vharos", "Elyndra", "Korath", "Nimora",
+            "Tharos", "Velune", "Ishkara", "Morvath", "Sereth",
+            "Ninsun", "Tishpak", "Qetesh", "Resheph",
+            "Ereshkigal", "Sabazios", "Nabu", "Taranis", "Sucellus", "Nodens"
+          ],
+          "domain": [
+            "war", "death", "nature", "knowledge", "deception",
+            "creation", "time", "thresholds", "memory", "ruin"
+          ],
+          "divine_relationship": [
+            "distant and silent",
+            "interventionist but inconsistent",
+            "capricious — the pattern, if any, is not visible to mortals",
+            "openly hostile to those who ask the wrong questions",
+            "dead — or dormant — and the difference may matter"
+          ],
+          "worship_form": [
+            "an institutional church with more politics than theology",
+            "a secret cult that does not recruit openly",
+            "oral tradition carried by a people who are disappearing",
+            "a militant order that has outlasted its original purpose",
+            "scattered and mostly forgotten — a few practitioners remain"
+          ],
+          "epithet": [
+            "Silent", "Broken", "Unasked", "Pale",
+            "Hollow", "Twice-Named", "Uninvited", "Wrong",
+            "Patient", "Unnamed"
+          ],
+          "deity_scope": [
+            "a local deity — worshipped in one region, unknown elsewhere",
+            "a regional power — several nations acknowledge them",
+            "a major deity — present in most theological traditions",
+            "a primordial — predates organized religion and possibly the world"
+          ]
+        },
+        "plane": {
+          "nature": [
+            "pure order — everything in its place, forever",
+            "primordial chaos — nothing holds its shape",
+            "a reflection of the mortal world, slightly wrong",
+            "a realm of the dead, though not all the dead go there",
+            "absolute void — not darkness, the absence of the concept of light",
+            "a place where time runs in the wrong direction",
+            "a mirror of what the world was before something changed"
+          ],
+          "accessibility": [
+            "sealed — no known passage exists, which does not mean none do",
+            "reachable through specific rituals that have a cost",
+            "bleeding into the material world in this region",
+            "freely traversable if you know where to step — the problem is knowing"
+          ],
+          "adjective": [
+            "Shifting", "Hidden", "Bleeding", "Forbidden",
+            "Unseen", "Inverted", "Still", "Pale", "Hollow"
+          ],
+          "visitor_effect": [
+            "a persistent sense that time has passed differently than it has",
+            "the loss of one memory — always a different one, never a trivial one",
+            "an inability to dream, temporarily — or permanently",
+            "the feeling of being watched by something that was there before them",
+            "a change in what they find frightening — things that scared them no longer do, and other things do now"
+          ]
+        }
+      },
+      "connections": {
+        "probability": 50,
+        "possible_modules": ["myths_folklore", "monster_origins", "prophecies_omens"]
+      }
+    },
+
+    "lost_civilizations_history": {
+      "tone": "fragmented, academic — pieced together from incomplete records",
+      "titles": {
+        "civilization": [
+          "Fragments of the {civilization_name} — incomplete record",
+          "The {adjective} Age of {civilization_name}",
+          "What Remains of {civilization_name}",
+          "On the Fall of {civilization_name}",
+          "The {civilization_name} — a working reconstruction",
+          "What the {civilization_name} Built, and Why It Lasted",
+          "On the Disappearance of the {civilization_name}",
+          "The {civilization_name} — what their enemies recorded",
+          "Before the {civilization_name} Were a Warning",
+          "The Last Century of the {civilization_name} — documented"
+        ],
+        "event": [
+          "The {event_type} of {era} — contested accounts",
+          "What Happened in {era} — three versions",
+          "The {era} — cause and consequence",
+          "On the {event_type} That Changed {era}",
+          "A Record of the {event_type} — survivor testimony",
+          "The {event_type} of {era} — the version that was suppressed",
+          "Why {era} Is Not in the Standard Calendar",
+          "Before and After {era} — the gap in the record"
+        ]
+      },
+      "voices": {
+        "civilization": [
+          "The {civilization_name} left behind {legacy} and little else. What they believed, how they governed themselves, what they feared — most of it is inference. The few primary sources that survive were written by people who had reason to misrepresent them.",
+          "By most accounts, the {civilization_name} were {dominant_trait}. Whether that trait was the cause of their {ending} or merely a coincidence of timing is a question historians have not resolved and may never resolve.",
+          "Scholars disagree on when the {civilization_name} ended. Some argue it was a single event. Others point to a slow erosion that took {time_interval} and left no single moment to mark as a conclusion. The ruins do not clarify the debate.",
+          "The {civilization_name} are remembered as {relationship_to_present}. This says more about those doing the remembering than about the {civilization_name} themselves — but it is the memory that shapes behavior, not the history.",
+          "What the {civilization_name} understood about {dominant_trait} has not been recovered. The conclusions survive. The reasoning does not. Later scholars have been working backward from the conclusions for {time_interval}, and the results are inconsistent.",
+          "The following is a fragment, provenance uncertain, possibly from the {civilization_name}: 'We did not choose this. We chose what came before it, and this is what came after. By the time we understood the difference, the choice was no longer available.' The surrounding text has not survived.",
+          "The {civilization_name} built {legacy}. The consensus is that they did not understand what they were building — that they had the capability without the comprehension. A minority position holds that they understood completely, and built it anyway.",
+          "Nothing the {civilization_name} created was accidental. This is the one point that all traditions agree on. The implication — that their {ending} was also not accidental — is noted in the literature and then, consistently, not pursued."
+        ],
+        "event": [
+          "The {event_type} of {era} is recorded in at least three traditions — and no two agree on the cause. What they do agree on is the consequence: {lasting_consequence}. That part of the record is consistent, even where everything else contradicts itself.",
+          "For those who lived through the {event_type} of {era}, the word used was not {event_type}. They had a different word, in a language now mostly lost. Translators have offered {event_type} as the closest equivalent and noted, in footnotes that few read, that it is not close enough.",
+          "The official record describes the {event_type} of {era} as {historical_memory}. The unofficial accounts, preserved in oral tradition, describe something that would require the official record to be significantly wrong. Both cannot be true. Neither has been disproven.",
+          "There are people alive today whose grandparents remembered the {event_type} of {era}. None of them were asked to give testimony while those grandparents were still living. The record that exists was compiled afterward, from second-hand accounts, by people with institutional interests in the outcome.",
+          "The {event_type} of {era} had a cause. The cause had a cause. The record stops two steps back and does not explain why — whether the information was lost, or whether someone decided that two steps was far enough.",
+          "What the {event_type} of {era} produced is documented. What it destroyed is estimated. The estimates have a wide margin of error, because no one thought to count what existed before it happened, and afterward it was too late.",
+          "A single firsthand account of the {event_type} of {era} survives. It was written during the event, not after. It stops mid-sentence. The circumstances under which it was preserved are not recorded."
+        ]
+      },
+      "hooks": [
+        "One structure from the {civilization_name} remains intact. No one has been inside it — or at least, no one who has gone in has come back out to describe it.",
+        "The {event_type} that ended the {civilization_name} was recorded as complete. Recent evidence suggests it may not have been.",
+        "A descendant of the {civilization_name} is said to still exist — not a bloodline, but an institution. It operates under a different name now.",
+        "The {civilization_name} knew something. Whatever it was, they chose to bury it rather than preserve it. Someone dug it up.",
+        "The {civilization_name} had a word with no translation. Linguists have noted it appears in their records at increasing frequency in the {time_interval} before their {ending}. No one has proposed a satisfying interpretation.",
+        "A map has surfaced that appears to predate the {civilization_name} — and shows their territory before they occupied it. Someone knew they were coming.",
+        "The {lasting_consequence} of the {event_type} of {era} was supposed to have ended {time_interval} ago. It has not ended. No one with authority over the matter has acknowledged this publicly.",
+        "Something the {civilization_name} built is still functioning. It was not designed to require maintenance. It has not received any. This means either that it is simpler than it appears, or more sophisticated than anyone has understood.",
+        "The {civilization_name} left instructions. Not records, not history — instructions. For something. The document assumes the reader already knows what it is for, and does not explain."
+      ],
+      "tables": {
+        "civilization": {
+          "dominant_trait": [
+            "so deeply magical that the distinction between tool and living thing did not exist for them",
+            "militaristic in a way that their own records describe as reluctant — they fought because stopping felt more dangerous",
+            "mercantile to a degree that their theology was structured around debt and exchange",
+            "theocratic, with a clergy that was also the judiciary, the military, and the only literate class",
+            "philosophically ahead of their era in ways that made them incomprehensible to their contemporaries",
+            "obsessively archival — they recorded everything, which makes the gaps in their record more significant, not less",
+            "built on a caste system so rigid that its categories survived the civilization itself and are still in use, renamed"
+          ],
+          "ending": [
+            "conquest by a civilization that is also gone now",
+            "a natural catastrophe that the records suggest they saw coming",
+            "internal collapse — the infrastructure outlasted the will to maintain it",
+            "voluntary departure — the evidence suggests they left rather than fell",
+            "slow decay across {time_interval} with no single cause and no single moment of end",
+            "absorption — they did not end so much as become something else, which then became something else again"
+          ],
+          "legacy": [
+            "ruins that should not still be standing given what they are made of",
+            "a partial language that no living person speaks fluently",
+            "a single surviving text that raises more questions than it answers",
+            "a bloodline that does not know what it carries",
+            "a technique — one specific technique — that no one has been able to reverse-engineer",
+            "a gap in the geological record that corresponds exactly to the period of their height",
+            "nothing recoverable — and the absence is too complete to be accidental"
+          ],
+          "relationship_to_present": [
+            "a cautionary tale invoked to justify current restrictions",
+            "a golden age that probably was not, but functions as one in the cultural imagination",
+            "an embarrassment — the current powers prefer they not be discussed",
+            "a source of salvage — their ruins are mined for materials and occasionally for knowledge",
+            "a warning that has not been heeded, visibly",
+            "something between myth and history — real enough to cite, distant enough to distort"
+          ]
+        },
+        "event": {
+          "event_type": [
+            "war", "betrayal", "discovery", "catastrophe",
+            "founding", "cosmic pact", "purge", "collapse",
+            "arrival", "departure", "sealing"
+          ],
+          "scale": ["local", "regional", "world-altering", "planar"],
+          "lasting_consequence": [
+            "a curse that is still active and still not fully mapped",
+            "a border that three nations claim and none fully control",
+            "a relic that has been missing since the event and is periodically reported found",
+            "a creature — or a category of creature — that should not exist here",
+            "a cult that formed in the aftermath and has outlasted the event itself",
+            "a prohibition — something that used to be done and is now forbidden, with the original reason lost",
+            "a piece of land that no one will build on, for reasons that have become traditional rather than understood"
+          ],
+          "historical_memory": [
+            "well documented by the people who won",
+            "distorted beyond recovery by institutional interests",
+            "nearly forgotten — three scholars in the world specialize in it",
+            "deliberately erased from the official record, unsuccessfully",
+            "mythologized to the point where the historical core is no longer separable from the accretion"
+          ],
+          "era": [
+            "the First Age",
+            "the Age of Pacts",
+            "the Sunken Era",
+            "the Long Silence",
+            "three centuries past",
+            "before the current calendar begins",
+            "the Interregnum",
+            "the years the church does not number"
+          ]
+        }
+      },
+      "connections": {
+        "probability": 60,
+        "possible_modules": ["relics_artifacts", "gods_planes", "monster_origins"]
+      }
+    },
+
+    "relics_artifacts": {
+      "tone": "mysterious, cautious — as if the author is choosing their words carefully",
+      "titles": [
+        "On the {object_name} — a cautionary record",
+        "The {adjective} {object_type} — provenance unknown",
+        "What Is Known of the {object_name}",
+        "The {object_name} — a partial history",
+        "Recovered Notes on the {object_type} of {origin}",
+        "The {object_name} — current status unknown",
+        "On the {object_type} That Should Not Exist",
+        "What {object_name} Has Done — documented cases",
+        "The {adjective} {object_type} — a handling report",
+        "Why the {object_name} Has No Registered Owner"
+      ],
+      "voices": [
+        "Those who have held {object_name} describe the experience differently — which is itself unusual for an object. Most things feel the same to every hand. {object_name} seems to decide what it is, based on who is holding it.",
+        "The origin of {object_name} is attributed to {origin} in the most widely cited source. That source was written {time_interval} after the fact, by someone who admitted they were working from secondhand accounts. The actual origin may be older, or different, or both.",
+        "The stated purpose of {object_name} was {apparent_power}. The actual purpose — or at least, the purpose it seems to serve now — is {hidden_power}. Whether these are the same intention viewed from different angles, or a fundamental change in what the object became, is not documented anywhere.",
+        "{object_name} has changed hands {number} times in recorded history. In each case, the transfer was not entirely voluntary. The object does not appear to have an opinion about this — or if it does, it has not expressed that opinion in a way anyone recognized at the time.",
+        "The following is excerpted from a personal record, author unidentified: 'I have had it for {time_interval} now. It has not done what they said it would do. It has done other things. I am not certain the distinction matters to it.'",
+        "{object_name} is currently {current_state}. This is not its original condition. What changed it, and when, and whether the change can be reversed, are questions that have been asked. The answers are not in any record this survey was able to locate.",
+        "There is a school of thought that holds {object_name} is not an object in the conventional sense — that it has no fixed properties, only responses, and that what it appears to be is a function of what is brought to it. This school of thought is a minority position. It has not been disproven.",
+        "The {activation} is documented in two sources that agree on the method and disagree on the consequence. Both consequences are described in enough detail that at least one of the authors witnessed it firsthand. They reached different conclusions about what they saw.",
+        "{object_name} was studied once, formally, by people with the credentials and equipment to do it properly. The study produced a report. The report was classified. The classification level suggests the findings were either very dangerous or very embarrassing, and those two things are not mutually exclusive.",
+        "Whoever made {object_name} did not leave instructions. They left {object_name}. The interpretation of what it is and what it does has been, for {time_interval}, the work of people who were not consulted in its creation and are working without context."
+      ],
+      "hooks": [
+        "{object_name} is currently in the possession of someone who does not know what it is. That may be fortunate, or it may be about to become a problem.",
+        "The last person to use {object_name} for its apparent purpose described a secondary effect that does not appear in any of the documentation. They did not elaborate, because they could not.",
+        "{object_name} is incomplete. Somewhere, the rest of it exists. The question is whether the incomplete version or the complete version is more dangerous.",
+        "There is a record of {object_name} being deliberately destroyed. The record is credible. The object is still here.",
+        "{object_name} has been in the same location for {time_interval}. No one has moved it. This is not because no one has tried.",
+        "The {cost} associated with {object_name} was considered acceptable by everyone who has used it. None of them were available to reassess afterward.",
+        "Two organizations are currently looking for {object_name}. They do not know about each other. The object is not where either of them thinks it is.",
+        "{object_name} responds differently depending on who is carrying it. The pattern of responses, if mapped, implies it is looking for something specific — and has not found it yet.",
+        "Someone recently attempted to replicate {object_name}. The attempt produced something. Whether it produced the same thing is the question no one has yet been able to answer safely.",
+        "The last known owner of {object_name} left it behind deliberately. They left a note. The note does not explain why. It says only: 'Do not bring it back to where I found it.'"
+      ],
+      "tables": {
+        "object_type": [
+          "weapon — designed for a specific purpose that is not combat",
+          "religious symbol whose god is no longer worshipped",
+          "instrument of measurement for something that should not be measurable",
+          "container — sealed, and the seal is not decorative",
+          "structure — far too large to move, which may be intentional",
+          "fragment of something larger, with no confirmed record of the whole",
+          "a key, though what it opens has not been identified",
+          "a record — text or symbol — that changes depending on who reads it"
+        ],
+        "origin": [
+          "forged by a deity who has since gone silent",
+          "crafted by a civilization that no longer exists and left no other artifacts",
+          "fallen from another plane under circumstances not fully recorded",
+          "born from a traumatic event — not made, but produced",
+          "of unknown origin — the material does not match anything in the geological or magical record",
+          "self-created, according to the one source that addresses the question directly"
+        ],
+        "apparent_power": [
+          "grants clarity of purpose to whoever holds it — they know exactly what they want",
+          "reveals what is hidden in a given space — objects, passages, intentions",
+          "protects the bearer from a specific category of harm that they may not be aware of",
+          "binds or seals something — the target of the binding is not always obvious",
+          "speaks, in a voice that sounds like the listener's own",
+          "preserves — organic material near it does not decay",
+          "translates — any written language becomes readable, briefly"
+        ],
+        "hidden_power": [
+          "slowly reorients the bearer's sense of what is important",
+          "attracts attention from things that should not know it exists",
+          "erases not memory but the emotional weight attached to memories",
+          "establishes a claim — whatever the bearer touches becomes, in some sense, the object's",
+          "awakens something that was dormant nearby",
+          "documents — a record is being kept somewhere of everything done near it",
+          "substitutes — when the bearer loses something, something else fills the space"
+        ],
+        "activation": [
+          "contact with the bearer's blood, willing or otherwise",
+          "a specific celestial alignment that recurs on an irregular schedule",
+          "a phrase in a language classified as extinct",
+          "an emotional state — the specific emotion is documented differently in each source",
+          "proximity to another object whose identity is not confirmed",
+          "being placed in the location where it was originally created or used"
+        ],
+        "cost": [
+          "none apparent — which is the most concerning finding in the documentation",
+          "a slow reorientation of what the bearer considers important",
+          "the loss of one memory each time it is used — the memory is not chosen by the bearer",
+          "an increasing difficulty distinguishing what the bearer wants from what the object wants",
+          "a mark — physical, visible, and permanent — that those who know what to look for will recognize",
+          "attention — something becomes aware of the bearer and does not become unaware"
+        ],
+        "current_state": [
+          "intact and apparently inert — no activity recorded in {time_interval}",
+          "fragmented — at least three pieces confirmed, more suspected",
+          "corrupted — functional but producing effects inconsistent with its documented history",
+          "dormant in a way that feels provisional rather than permanent",
+          "actively contested by parties who have not been able to agree on custody",
+          "missing — last confirmed location known, current location unknown"
+        ],
+        "history_of_ownership": [
+          "passed through the hands of rulers, each of whom lost power within {time_interval} of acquiring it",
+          "owned continuously by one institution for {time_interval}, then abruptly transferred under undocumented circumstances",
+          "changed hands through a series of deaths that were each individually explicable",
+          "stolen repeatedly — always recovered, always by someone other than the original owner",
+          "abandoned by each owner in a different location, as if being moved rather than left",
+          "held briefly by many people, none of whom have been willing to describe the experience in detail"
+        ],
+        "number": ["three", "four", "seven", "eleven", "more than a dozen", "an uncertain number — the records overlap"],
+        "adjective": [
+          "Pale", "Broken", "Sealed", "Hollow", "Unnamed",
+          "Recovered", "Contested", "Last", "Wrong", "Silent"
+        ]
+      },
+      "connections": {
+        "probability": 80,
+        "possible_modules": ["lost_civilizations_history", "gods_planes", "myths_folklore", "monster_origins"]
+      }
+    },
+
+    "cultures_factions": {
+      "tone": "observational, ethnographic — a traveler's careful notes",
+      "titles": [
+        "Notes on the {group_name} — a traveler's observations",
+        "On the Customs of {place} — first impressions",
+        "The {group_name} — what outsiders misunderstand",
+        "Among the {group_name} — field notes",
+        "The Ways of {place} — partial record",
+        "What the {group_name} Do Not Explain to Strangers",
+        "On the Question of {dominant_value} Among the {group_name}",
+        "The {group_name} — a second visit, revised impressions",
+        "Why Outsiders Leave {place} With the Wrong Idea",
+        "The {group_name} and the Matter of {internal_tension} — observed"
+      ],
+      "voices": [
+        "Among the {group_name}, the highest value is {dominant_value} — not as a principle stated in texts, but as something visible in how they treat strangers, how they resolve disputes, and what they refuse to discuss. The gap between their stated values and their practiced ones is narrower than in most places, which makes the exceptions more striking.",
+        "Outsiders tend to misread the {group_name}. What looks like {outsider_misread} is actually {actual_meaning}. The mistake is understandable — they do not explain themselves to people who have not earned the context.",
+        "There is a tension inside the {group_name} that they do not advertise. {internal_tension} has been building for {time_interval}, and the people at the center of it have very different ideas about how it should resolve. The question of which side is correct is, to an outsider, genuinely difficult.",
+        "The {group_name} have a practice that visitors find difficult to interpret: {distinctive_practice}. The explanations offered to outsiders are consistent, brief, and almost certainly incomplete.",
+        "The {group_name} remember {relationship_with_past} — not as history, which implies distance, but as something that is still ongoing and requires a response. This shapes decisions that, from outside, appear disproportionate or inexplicable.",
+        "A member of the {group_name}, when asked directly about {dominant_value}, said: 'You are asking the wrong question. The word you are using does not mean what you think it means here. What we call {dominant_value} is not what you call {dominant_value}. We have spent {time_interval} learning the difference.' They did not elaborate.",
+        "The {group_name} treat {relationship_with_outside} as a settled question. Anyone who suggests it should be reopened is not argued with — they are simply not engaged with further. The unanimity is either genuine or very well maintained.",
+        "There are things the {group_name} will not do. Not cannot — will not. The distinction matters to them. The list of things in the second category is longer than it appears from outside, and some of the items on it are not what an outsider would expect."
+      ],
+      "hooks": [
+        "The {group_name} have a taboo that no one outside will explain plainly. The closest anyone has come is: 'there are things we do not do twice.'",
+        "The {group_name} are waiting for something. They do not describe what it is to strangers, but the way they watch the horizon suggests they expect it to arrive from a specific direction.",
+        "A faction within the {group_name} is in contact with someone — or something — outside. The rest of the group either does not know, or is pretending not to.",
+        "The founding story of the {group_name} contains a detail that, if examined closely, does not support the conclusion they draw from it. Whether this is an error or a deliberate revision is unclear.",
+        "The {group_name} recently turned someone away — not an enemy, someone who came in good faith. No explanation was given. The decision appeared unanimous and immediate.",
+        "Something changed among the {group_name} {time_interval} ago. Behavior shifted in ways that members acknowledge but do not explain. The change coincided with something, but the connection has not been stated directly by anyone inside.",
+        "The {group_name} have a word with no clean translation. Outsiders who learn it report that once they understand it, they start seeing what it describes everywhere — not just among the {group_name}.",
+        "There is a role within the {group_name} that has been vacant for {time_interval}. No one has been appointed. No one will say whether the vacancy is temporary, deliberate, or a sign of something else.",
+        "The {group_name} are more unified than groups of their size typically are. The reason for this cohesion is either very simple or not visible from outside. Both possibilities have implications."
+      ],
+      "tables": {
+        "social_structure": [
+          "tribal, with leadership that is earned through demonstration rather than inheritance",
+          "feudal in structure, with obligations that run both directions — upward and downward",
+          "theocratic, but the theology is more complicated than outsiders assume",
+          "meritocratic in principle, with inherited advantages that the principle does not acknowledge",
+          "a merchant oligarchy that has developed the aesthetics of something older and more legitimate",
+          "organized around consensus in a way that looks like anarchy and functions better than it should"
+        ],
+        "dominant_value": [
+          "a concept of honor that does not map cleanly onto the word",
+          "the accumulation and careful transmission of knowledge — not power, specifically knowledge",
+          "survival, understood collectively rather than individually",
+          "a form of purity that is procedural rather than moral — about how things are done, not what is done",
+          "freedom understood as freedom from obligation, which creates its own obligations",
+          "tradition maintained not out of sentiment but out of a genuine belief that it encodes something important"
+        ],
+        "outsider_misread": [
+          "hostility toward strangers",
+          "indifference to suffering",
+          "fanatical devotion to an incomprehensible principle",
+          "weakness or passivity in the face of pressure",
+          "arrogance about their own way of doing things"
+        ],
+        "actual_meaning": [
+          "a form of respect that requires being earned before it is extended",
+          "grief for something lost that is still being actively processed",
+          "discipline that was necessary once and became structural",
+          "patience that has been tested enough times to look like indifference",
+          "pride in something that outsiders do not have the context to recognize as an achievement"
+        ],
+        "internal_tension": [
+          "a generational divide over whether the old methods still apply to new circumstances",
+          "a religious or philosophical schism that both sides are managing carefully",
+          "inequality that the stated values of the group do not accommodate or explain",
+          "the memory of a significant defeat that is not discussed but shapes every decision",
+          "a leader whose legitimacy rests on a claim that a growing number of people privately doubt",
+          "a recent decision that was made unanimously and that a significant number of members regret"
+        ],
+        "relationship_with_past": [
+          "a wrong that was done to them and has not been answered",
+          "a wrong they did that has not been fully acknowledged",
+          "a period of greatness they are trying to return to, possibly incorrectly remembered",
+          "a loss — of people, of place, of capacity — that has not been replaced",
+          "a promise made by a previous generation that the current one is still expected to keep"
+        ],
+        "relationship_with_outside": [
+          "a policy of selective engagement — some things are traded, many are not",
+          "a history of being misrepresented that has made them cautious about outside accounts of themselves",
+          "formal neutrality that costs them something to maintain and that they maintain anyway",
+          "a specific ongoing conflict with one outside party that colors all other outside relationships",
+          "isolation that began as a choice and has become structural"
+        ],
+        "distinctive_practice": [
+          "all significant decisions are made only after a period of silence that outsiders find uncomfortably long",
+          "the dead are spoken to directly, in formal address, for one year after death",
+          "no transaction — commercial, political, or personal — is considered binding until it is witnessed by someone who has nothing to gain from it",
+          "names are not used in direct address — a different form of reference is used, which outsiders rarely learn correctly",
+          "every member of the group can recite, from memory, the full lineage of their community back to a point of origin — and the recitation is considered a social obligation, not a performance"
+        ]
+      },
+      "connections": {
+        "probability": 40,
+        "possible_modules": ["gods_planes", "myths_folklore", "lost_civilizations_history"]
+      }
+    },
+
+    "monster_origins": {
+      "tone": "uneasy, doubtful — as if the author is not sure they should be writing this down",
+      "titles": [
+        "On the Nature of {creature_name} — disputed accounts",
+        "What {creature_name} Was, Before",
+        "The Origin of {creature_name} — a working theory",
+        "Notes on {creature_name} — handle with appropriate caution",
+        "Concerning {creature_name} — what the bestiary omits",
+        "What {creature_name} Is Doing Now — observed behavior",
+        "The {creature_name} Problem — current status",
+        "On the Spread of {creature_name} — an alert",
+        "Why {creature_name} Is Not in the Standard Bestiary",
+        "What {creature_name} Appears to Want — field notes"
+      ],
+      "voices": [
+        "No one is certain what {creature_name} was before it became what it is now. The most credible theory involves {origin_category} — but credible and correct are not the same thing, and the people best positioned to verify it are not available for consultation.",
+        "The {creature_name} was made for a purpose. The records on this point are more consistent than on most things: {original_purpose}. What is less clear is whether that purpose was fulfilled, abandoned, or transformed into whatever {creature_name} pursues now.",
+        "There is something in the way {creature_name} behaves that does not fit the classification it has been given. The behavior in question suggests {consciousness_level} — which would require significantly revising the standard account of what it is and what it wants.",
+        "The creator of {creature_name} is named in three sources. Two of those sources agree on the name. None of them agree on whether the creation was intentional.",
+        "{creature_name} is currently {current_behavior}. This is not consistent with what it was doing {time_interval} ago. Whatever changed did not leave a visible record — but the change in behavior is documented, and it is not subtle.",
+        "The following observation appears in a field report that was filed and then reclassified: '{creature_name} stopped. It did not rest — it stopped, and it appeared to be listening. Nothing was making noise. It listened for a long time, and then it continued. It did not behave as if it had heard nothing.' The report does not include a conclusion.",
+        "There is a theory, not widely held, that {creature_name} is not a creature in the biological sense — that what appears to be a living thing is actually something else wearing the shape of one. The theorists have not been able to specify what the something else is. They have been able to specify that it is not incidental.",
+        "What {creature_name} wants is {what_it_wants}. This assessment is based on behavioral observation rather than communication. {creature_name} has not been successfully communicated with. The attempts that were made produced results that were not interpretable — or were interpretable in ways the researchers chose not to record.",
+        "The {narrative_weakness} of {creature_name} is documented in one source. That source is not considered reliable by mainstream scholarship. The people who dismiss it have not offered an alternative explanation for how the author knew what they knew.",
+        "Something is protecting {creature_name}. Not in the biological sense — something is preventing the accumulation of accurate information about it. Records are incomplete in consistent ways. Witnesses remember less than they should. This could be coincidence. The probability of this being coincidence has not been calculated, because no one has tried."
+      ],
+      "hooks": [
+        "{creature_name} has a weakness that is not in the standard references. The reason it is not documented is that everyone who discovered it had more immediate concerns at the time.",
+        "The original purpose of {creature_name} suggests there is a command — a word, a gesture, a specific circumstance — that might override its current behavior. No one has confirmed this. Several people have tried.",
+        "There are more {creature_name} than there should be, if the origin account is accurate. Either the account is wrong, or something has changed.",
+        "{creature_name} appears to recognize something — a symbol, an object, a type of person. The recognition is not neutral.",
+        "{creature_name} has been in this region for {time_interval}. It has not done what creatures of its classification typically do. The reason for the deviation has not been established.",
+        "Someone is feeding {creature_name}. Not literally — providing it with what it needs in a way that requires intention. The identity of that someone has not been confirmed.",
+        "{creature_name} left something behind at the last confirmed sighting location. The object should not have been in its possession. No one has yet determined how it acquired it, or why it left it.",
+        "The accounts of {creature_name} describe two distinct variants that differ in one significant way. Whether these are the same creature at different stages, two different creatures, or one creature with a behavior that changes under specific conditions is the central unresolved question.",
+        "{creature_name} has not been seen in {time_interval}. This is either because the population has declined, because behavior has changed, or because they have become better at not being seen. The third possibility is the one that concerns the people who study this.",
+        "A settlement reached an arrangement with {creature_name}. The terms have not been disclosed. The settlement is the only one in the region that has not reported any incidents."
+      ],
+      "tables": {
+        "origin_category": [
+          "magical experimentation that exceeded the parameters the experimenter believed they were working within",
+          "divine punishment — for whom, and for what, is not agreed upon",
+          "planar corruption of something that was native to this world",
+          "natural evolution accelerated or redirected by conditions that no longer exist",
+          "a symbol or concept that accumulated enough collective weight to become material",
+          "a remnant of a lost civilization — not created by them, but produced by what they did",
+          "something that was always here and that classification systems were not built to account for"
+        ],
+        "creating_agent": [
+          "a deity who has not acknowledged the connection",
+          "a mage whose notes have been lost, destroyed, or are being withheld",
+          "a civilization that is also gone, which is possibly not a coincidence",
+          "a plane whose influence on this world is not supposed to extend this far",
+          "no identifiable agent — the origin appears to be emergent rather than designed"
+        ],
+        "original_purpose": [
+          "a guardian for something that no longer needs guarding — or no longer exists",
+          "a weapon designed for a specific conflict that has since ended",
+          "a servant whose principal has been dead for longer than the creature should have been able to survive",
+          "punishment made manifest for a transgression that is now three generations removed from anyone living",
+          "an accident — but the conditions that produced it were not accidental",
+          "a test — and the question of whether the test is still running has not been resolved"
+        ],
+        "consciousness_level": [
+          "no apparent consciousness — behavior is stimulus-response with no evidence of internal state",
+          "instinct complex enough that the distinction from intelligence is not always meaningful",
+          "intelligence that is clearly present and clearly not organized the way human intelligence is",
+          "full sentience, including apparent awareness of its own origin and of being observed",
+          "something that does not map onto the consciousness spectrum as it is usually described"
+        ],
+        "current_behavior": [
+          "moving in a consistent direction with no apparent obstacle or destination",
+          "accumulating something — objects, materials, or a category of thing that has not been identified",
+          "avoiding a specific location that it previously frequented",
+          "appearing to communicate with something that is not visible to observers",
+          "repeating a specific action at irregular intervals with no apparent trigger or result",
+          "waiting — in a location, in a posture, in a way that implies expectation rather than rest"
+        ],
+        "what_it_wants": [
+          "to reach a specific location — the location has not been identified",
+          "to find something — the object of the search has not been determined",
+          "to return to a state it was in before something changed",
+          "nothing discernible — which is, depending on the framework, its own kind of answer",
+          "to complete something that was started by whoever or whatever created it",
+          "contact — on its own terms, which have not been successfully communicated"
+        ],
+        "narrative_weakness": [
+          "tied directly to its origin — undoing the origin would undo the creature, if the origin can be reached",
+          "symbolic — the weakness is not physical but conceptual, which makes it difficult to operationalize",
+          "relational — it cannot act against something it has been given, or has chosen to protect",
+          "temporal — there is a window, recurring or singular, in which its nature changes",
+          "none apparent in the surviving records — which may mean none exist, or may mean the records are incomplete, or may mean the people who found it did not survive to document it"
+        ]
+      },
+      "connections": {
+        "probability": 70,
+        "possible_modules": ["gods_planes", "lost_civilizations_history", "relics_artifacts", "myths_folklore"]
+      }
+    },
+
+    "prophecies_omens": {
+      "tone": "poetic, unanchored — no narrative voice, only the text itself",
+      "note": "This module has no outbound connections. It absorbs context from all others and returns only ambiguity.",
+      "titles": [
+        "A Fragment — provenance unclear",
+        "Recovered inscription — translation approximate",
+        "Words spoken at {place}, at {time}",
+        "The {omen_source} of {entity} — partial record",
+        "An Account of the {vision_type} — as reported",
+        "Untitled — found inside a sealed document",
+        "The {time} Record — one surviving copy",
+        "Marginal notation — author unknown, date unknown",
+        "Something that was said once, and not repeated",
+        "On What Was Seen at {place} — filed without interpretation"
+      ],
+      "voices": {
+        "prophecy": [
+          "When {symbolic_condition}, the one who carries {symbolic_object} will find what was lost — and lose what they did not know they carried.",
+          "It will not come as a warning. It will come as something that, afterward, everyone will agree they should have seen. The {symbolic_element} will have been present throughout. So will the {contrasting_element}.",
+          "There are three {symbolic_thing}. Two have already been found. The third is not lost — it is being held.",
+          "Not the {symbolic_element}. Not yet. When the {symbolic_element} comes, something else will already have happened — something smaller, that no one will have thought to record. Look for the {contrasting_element}. That is the one that matters.",
+          "The {symbolic_condition} is the sign. The sign is not the event. The event follows the sign by exactly the time it takes for those who see the sign to decide it means nothing.",
+          "What was spoken: '{symbolic_object} will be where it was not. {symbolic_element} will be absent. The {symbolic_thing} will be complete, and the completion will not look like completion.' What was meant: unknown. What happened: pending.",
+          "It ends the same way in every version. The details change — the names, the place, the sequence. The ending does not change. No one has proposed a satisfying explanation for why every tradition arrives at the same last image.",
+          "There is a condition that must be met before the condition that everyone is watching for. The preparatory condition is not in the main text. It is in a footnote that most translations omit."
+        ],
+        "omen": [
+          "The {natural_phenomenon} appeared {time_interval} before the {event}. No one made the connection until after. The same phenomenon has been observed twice more since then.",
+          "Those present described {natural_phenomenon}. The description was consistent across witnesses who were not in contact with each other. No physical explanation has been formally proposed. The records note the observation and move on, which is the archival equivalent of looking away.",
+          "It is not certain this was an omen. It is certain that three separate witnesses, who did not know each other, described the same thing independently.",
+          "The {natural_phenomenon} lasted {time_interval}. During that time, {event}. The causal relationship has not been established. The correlation has been established. The people who study such things are careful about the distinction and increasingly uncertain that it applies here.",
+          "An entry from a personal journal, undated: 'The {natural_phenomenon} again. Third time this month. I have stopped telling people. They look at me the way people look at someone who is about to become a problem.'",
+          "The classification of this event as an omen is contested. The classification of it as coincidence requires accepting several coincidences simultaneously, each of which would individually be unremarkable and which together form a pattern that has no name in the standard literature.",
+          "Something changed in the {time_interval} following the {natural_phenomenon}. Whether the change was caused by it, preceded it, or is simply what the phenomenon was pointing at is the question that has not been answered to anyone's satisfaction."
+        ],
+        "vision": [
+          "The subject reported seeing {vision_content}. Under normal circumstances this would be dismissed. The detail that prevents dismissal is that the subject described {specific_accurate_detail} — something they had no prior way of knowing.",
+          "The vision came during {vision_circumstance}. The subject was not able to describe it fully — not because of unwillingness, but because they said the language did not contain the right words for the central image.",
+          "What the subject saw is recorded. What it means is not. The subject's own interpretation changed three times in the {time_interval} following the vision, and they died before settling on a final one.",
+          "The subject reported the vision was not visual. 'I did not see anything,' they said. 'I knew things. I knew them the way you know where your hands are without looking. Then I stopped knowing them, and they were gone, and I could not tell you now what they were. Only that they were important and that I had them and that I do not anymore.'",
+          "Two people in different locations reported the same vision on the same night. They had never met. They described it using different words that resolve, under analysis, to the same images. Neither of them knew the other existed until a researcher connected the accounts {time_interval} later.",
+          "The vision during {vision_circumstance} lasted, by the subject's account, long enough to contain what felt like several years of experience. By external measurement, it lasted under a minute. The subject aged visibly. This is documented. No explanation has been formally accepted.",
+          "The subject refused to describe the vision in full. They described the first part without difficulty. At a certain point they stopped and said: 'The rest of it is not mine to tell.' They have not explained what that means. They appear to mean it literally.",
+          "What was seen: {vision_content}. What the subject did immediately after: they wrote down {specific_accurate_detail} and sealed the paper. They said it was for someone who would come looking for it. They did not describe this person. The paper is still sealed."
+        ]
+      },
+      "hooks": [
+        "The condition described has been partially met. What constitutes full fulfillment is not specified.",
+        "This account has been deliberately suppressed at least once. The copy that survived did so because someone hid it somewhere unexpected.",
+        "The entity named has never been identified with certainty. Two candidates exist. They are aware of each other.",
+        "The timeframe implied by the language suggests this has already occurred. Or it has not occurred yet. The grammar of the original does not distinguish between past and future in the way that translation assumes.",
+        "The prophecy names something that did not exist when it was written. The word used is now applied to something that appeared {time_interval} ago. Whether the word was chosen for this thing, or whether this thing was named after the word, is unclear and possibly important.",
+        "Three people have independently tried to act on this prophecy. The outcomes are documented. They are not consistent with each other, which means either the prophecy has multiple valid interpretations, or at least two of the three were wrong about which one they were.",
+        "The vision was shared by more than one person. They have not compared accounts. Someone has made sure of this.",
+        "The omen appeared in a location where it should not have been possible. The physical explanation for its presence requires accepting something that is not in the standard model. No one has published this conclusion. Several people have reached it.",
+        "The last line of the prophecy is missing. Not damaged — missing. The physical evidence suggests it was removed deliberately, after the document was complete.",
+        "Someone built something based on this prophecy. The construction is finished. Whatever it was built for has not yet arrived."
+      ],
+      "tables": {
+        "delivery_type": [
+          "written prophecy found inside something that should not have contained it",
+          "a recurring dream reported by multiple unconnected individuals",
+          "a waking vision during an unremarkable moment",
+          "a natural event that was interpreted as a sign after the fact",
+          "words spoken by someone at the moment of death",
+          "a voice heard without a source, reported consistently across witnesses",
+          "an involuntary trance with no identified trigger",
+          "a dream that the dreamer describes as more real than waking"
+        ],
+        "subject": [
+          "a specific individual — the identification is disputed",
+          "a role or title rather than a person",
+          "a place, described in terms that do not match any current geography",
+          "an era or period, with no clear start or end marker",
+          "something that has not yet been named or identified",
+          "the reader — interpreted by several traditions as self-referential"
+        ],
+        "linguistic_structure": [
+          "metaphorical throughout — no literal reading has been successfully defended",
+          "numerological — the numbers are consistent, the interpretation is not",
+          "entirely image-based, with no verbs",
+          "structured by negation — it says only what will not happen",
+          "conditional in a way that makes the condition itself the subject of debate",
+          "written in the first person, with no identified speaker"
+        ],
+        "truthfulness": [
+          "apparently true, based on partial fulfillment already documented",
+          "true but structured to be misread by anyone acting on it too quickly",
+          "fabricated — the motive for the fabrication is more interesting than the content",
+          "self-fulfilling — it produced the outcome it described by being believed",
+          "already fulfilled — it describes the past, and no one recognized it at the time",
+          "indeterminate — cannot be evaluated until a condition is met that has not been met"
+        ],
+        "urgency": [
+          "imminent — the conditions described are present or nearly present",
+          "generational — relevant to the next generation, not the current one",
+          "cyclical — it has applied before and will apply again",
+          "timeless — applies whenever the conditions are met, with no fixed schedule",
+          "already past — the urgency was real and the window has closed"
+        ],
+        "vision_type": [
+          "a waking vision during an ordinary moment",
+          "a recurring dream that escalated in clarity over time",
+          "a dream shared simultaneously by multiple people",
+          "an involuntary trance with no identified trigger",
+          "a moment of absolute clarity at the point of near death",
+          "a vision induced by contact with an object or place"
+        ],
+        "omen_source": [
+          "a celestial event that should not have been visible from this location",
+          "animal behavior that contradicted instinct across multiple species simultaneously",
+          "fire or water behaving in a way that has no physical explanation on record",
+          "a sound heard by everyone in a location simultaneously, with no identified source",
+          "a silence — the complete cessation of all ambient sound for a documented period",
+          "the spontaneous appearance of a symbol or mark in a location no one had access to"
+        ],
+        "symbolic_condition": [
+          "the twin moons align for the first time in a documented generation",
+          "a bloodline ends without an heir",
+          "a seal — physical or metaphorical — is broken",
+          "a name that has not been spoken in {time_interval} is spoken aloud",
+          "the last person who remembers a specific thing dies",
+          "something that was separated is rejoined",
+          "a door that has been closed since before living memory opens",
+          "the same dream is reported in three separate locations in the same night"
+        ],
+        "symbolic_object": [
+          "a broken seal whose other half has not been found",
+          "an unnamed blade that refuses every name given to it",
+          "a key with no identified lock",
+          "a mark that appears on the skin without cause",
+          "a name written in a substance that should not be writable",
+          "an empty vessel that is heavier than it should be",
+          "a mirror that shows something other than the present"
+        ],
+        "symbolic_element": [
+          "the fire that appears before the event, not after",
+          "the absence of sound at the wrong moment",
+          "a face that appears in accounts from different eras",
+          "a door that appears open in every description",
+          "the wrong season — documented as occurring at the wrong time of year",
+          "a color that witnesses consistently describe but cannot name",
+          "a number that recurs across unconnected accounts"
+        ],
+        "contrasting_element": [
+          "water, appearing where it should not be present",
+          "a crowd of people, none of whom can be identified",
+          "a closed hand holding something that is never described",
+          "a familiar name attached to an unfamiliar face",
+          "something that fits too well — no gaps, no friction, no resistance",
+          "silence where every account agrees there should have been sound"
+        ],
+        "symbolic_thing": [
+          "keys", "seals", "names", "wounds",
+          "thrones", "fires", "doors", "debts",
+          "mirrors", "bridges", "voices", "hands"
+        ],
+        "natural_phenomenon": [
+          "a flock of birds moving in perfect unison against the prevailing wind",
+          "a water source running dry without geological explanation",
+          "an eclipse occurring outside of any calculated schedule",
+          "animals of multiple species refusing to enter a specific building or area",
+          "a fire burning without fuel for a documented period",
+          "a fog that did not move with the wind and did not dissipate at dawn",
+          "frost appearing on surfaces indoors, without temperature change",
+          "a shadow cast in the wrong direction relative to the light source"
+        ],
+        "event": [
+          "the battle that ended something that had lasted {time_interval}",
+          "the signing of an agreement that has since been violated",
+          "the disappearance of a person, object, or institution",
+          "the collapse of something structural — physical or political",
+          "the arrival of something or someone that changed the situation",
+          "the departure of something or someone whose absence was not immediately understood"
+        ],
+        "vision_content": [
+          "a city in a geography that does not match any known location",
+          "a figure without features, performing a specific and repeated action",
+          "a door opening from the wrong side — hinges on the outside",
+          "a seat of power with no surrounding infrastructure — throne, no kingdom",
+          "a name written in a language the subject demonstrably did not know",
+          "a conversation, heard clearly, between people whose faces were not visible",
+          "the subject's own hands, doing something the subject does not recognize"
+        ],
+        "specific_accurate_detail": [
+          "the location of something that had been hidden and was later found there",
+          "the name of a person the subject had no prior way of knowing",
+          "the manner of a death that had not yet occurred",
+          "the contents of a sealed container that was later opened and matched the description",
+          "the exact words of a document the subject had never read",
+          "the appearance of a place the subject had never visited"
+        ],
+        "vision_circumstance": [
+          "ordinary sleep, with no prior indication",
+          "a high fever",
+          "physical contact with a relic or object of unknown origin",
+          "the immediate aftermath of surviving something that should have been fatal",
+          "a ritual that was not designed to produce visions and has not done so for anyone else",
+          "complete sensory deprivation, voluntary or otherwise"
+        ],
+        "aftermath": [
+          "the subject did not speak of it again voluntarily — they answered questions when asked, briefly, and stopped answering after {time_interval}",
+          "the subject's behavior changed in ways they did not acknowledge as connected",
+          "the subject attempted to find someone or something they described seeing, without success",
+          "the subject destroyed their own record of the experience — a copy survived",
+          "the subject appeared unaffected and said so, which was itself noted as unusual by those who knew them",
+          "the subject sought out others who had experienced similar things — the network they found is still active"
+        ],
+        "time": [
+          "the turning of the age",
+          "the last eclipse",
+          "the night of the collapse",
+          "a date no calendar currently in use records",
+          "the hour before dawn on a day disputed by historians",
+          "a moment that witnesses could not agree had happened in the same order"
+        ]
+      },
+      "connections": {
+        "probability": 0,
+        "possible_modules": []
+      }
+    }
+  },
+
+  "shared_slots": {
+    "adjective": ["Sunken", "Forgotten", "Silent", "Crooked", "Pale", "Hollow", "Broken", "Lost", "Ancient", "Hidden", "Unnamed", "Buried", "Tangled", "Sealed"],
+    "noun": ["Fall", "Pact", "Ruin", "Wound", "Weight", "Mark", "Debt", "Echo", "Return", "Recurrence", "Pattern", "Thread", "Tide"],
+    "time_interval": ["a generation","three generations", "a century","forty years", "an unknown span of time", "longer than anyone can verify", "less time than it should have taken", "within living memory — barely", "long enough that the people who remember are no longer reliable witnesses", "a period whose length is itself disputed"],
+    "ending_general": ["it was enough", "it changed nothing", "nothing was the same after", "they were not wrong — and it did not help", "the world continued, indifferent"],
+    "name_generators": {
+      "plane_name": {
+        "prefix": ["The ", "The Realm of ", "The ", ""],
+        "root": ["Pale", "Sunken", "Hollow", "Ashen", "Bound", "Still", "Inverted", "Deep"],
+        "suffix": [" Veil", " Court", " Dark", " Threshold", " Beyond", " Silence", ""]
+      },
+      "civilization_name": {
+        "prefix": ["the ", "the ", "the "],
+        "root": ["Vel", "Morn", "Arak", "Seld", "Veth", "Dun", "Ith"],
+        "suffix": ["ari", "orn", "athi", "essi", "in", "an", "eth"]
+      },
+      "place": {
+        "prefix": ["", "New ", "Old ", ""],
+        "root": ["Veldarn", "Mornhall", "Ashfen", "Dunwick", "Ithport", "Selvast", "Greyveil"],
+        "suffix": ["", " Keep", " Crossing", " Market", " Gate", ""]
+      },
+      "entity": {
+        "fixed_options": ["a name lost to time", "the one who came before", "the unnamed figure", "the last of the line"],
+        "generated_from": ["deity_name", "civilization_name", "place"]
+      },
+      "object_name": {
+        "prefix": ["The ", "The ", "The "],
+        "adjective": ["Pale", "Broken", "Sunken", "Hollow", "Sealed", "Unnamed", "Last"],
+        "noun": ["Seal", "Blade", "Vessel", "Key", "Eye", "Hand", "Thread", "Crown", "Mark"]
+      },
+      "creature_name": {
+        "prefix": ["", "The ", ""],
+        "root": ["Vel", "Morn", "Dusk", "Ash", "Pale", "Deep", "Grave"],
+        "suffix": ["wraith", "stalker", "hollow", "thing", "shade", "walker", "born"]
+      },
+      "group_name": {
+        "prefix": ["the ", "the ", "the "],
+        "root": ["Veld", "Morn", "Ash", "Dun", "Ith", "Sel", "Grey"],
+        "suffix": ["ari", "born", "folk", "kin", "bound", "sworn", "walkers"]
+      }
+    }
+  }
+
+}

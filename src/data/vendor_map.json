@@ -1,0 +1,593 @@
+{
+  "vendor_map": {
+    "version": "1.0",
+    "source": "LoneForge Homebrew",
+    "note": "Maps each district location to its commerce profile. 'primary_categories' are heavily stocked (70% of inventory pool). 'secondary_categories' appear occasionally (30% of pool). 'sells' false means no shop interface. 'buys' lists what the vendor will purchase from the player. 'generalist' true means items are drawn from all primary categories with equal weight. 'special' indicates non-standard inventory logic.",
+
+    "category_reference": [
+      "Ammunition", "Wondrous Item", "Rod", "Wand", "Adventuring Gear",
+      "Vehicle", "Artisan's Tools", "Food and Drink", "Gemstone",
+      "Spellcasting Focus", "Shield", "Armor", "Poison",
+      "Martial Weapon", "Instrument", "Art Object", "Explosive",
+      "Mount", "Trade Good", "Simple Weapon", "Other",
+      "Gaming Set", "Tool", "Potion", "Staff", "Tack and Harness",
+      "Ring", "Scroll"
+    ],
+
+    "locations": {
+
+      "Painters' Atelier": {
+        "sells": false,
+        "buys": ["Art Object", "Gemstone"],
+        "notes": "A working studio, not a shop. The artist may commission or purchase materials but does not maintain a public inventory.",
+        "interactions": ["Commission a portrait or artwork", "Buy artisan's supplies", "Gossip"]
+      },
+
+      "Music School": {
+        "sells": false,
+        "buys": ["Instrument"],
+        "notes": "A place of learning, not commerce. May occasionally sell used instruments to students.",
+        "interactions": ["Learn an instrument (downtime)", "Hire a performer", "Gossip"]
+      },
+
+      "Theater": {
+        "sells": false,
+        "buys": [],
+        "notes": "Entertainment venue only. No public shop.",
+        "interactions": ["Watch a performance", "Hire an actor", "Gossip", "Look for work"]
+      },
+
+      "Music Shop": {
+        "sells": true,
+        "buys": ["Instrument"],
+        "primary_categories": ["Instrument"],
+        "secondary_categories": ["Artisan's Tools", "Trade Good"],
+        "stock_size": { "min": 4, "max": 8 },
+        "price_modifier": 1.0,
+        "notes": "Sells all manner of musical instruments. May stock instrument maintenance tools.",
+        "interactions": ["Browse instruments", "Sell an instrument", "Ask about performers in town", "Commission a custom instrument"]
+      },
+
+      "Art Gallery": {
+        "sells": true,
+        "buys": ["Art Object", "Gemstone"],
+        "primary_categories": ["Art Object"],
+        "secondary_categories": ["Gemstone", "Trade Good"],
+        "stock_size": { "min": 3, "max": 6 },
+        "price_modifier": 1.2,
+        "notes": "High-end establishment. Items are priced at a premium. Will negotiate on rare pieces.",
+        "interactions": ["Browse artwork", "Sell a valuable", "Commission an appraisal", "Ask about provenance of an object"]
+      },
+
+      "Runic Tattoo Shop": {
+        "sells": true,
+        "buys": [],
+        "primary_categories": ["Wondrous Item"],
+        "secondary_categories": ["Potion", "Adventuring Gear"],
+        "stock_size": { "min": 2, "max": 4 },
+        "price_modifier": 1.3,
+        "rarity_filter": ["Common", "Uncommon"],
+        "notes": "Sells minor wondrous items, protective charms, and magical tattoos. Stock is limited and unusual.",
+        "interactions": ["Browse charms and trinkets", "Commission a runic tattoo (downtime)", "Ask about local magical rumors"]
+      },
+
+      "Performance Plaza": {
+        "sells": false,
+        "buys": [],
+        "notes": "Public outdoor space for performances. No commerce.",
+        "interactions": ["Watch a street performance", "Perform for coin", "Gather rumors", "Meet contacts"]
+      },
+
+      "Wizard's Tower": {
+        "sells": true,
+        "buys": ["Scroll", "Spellcasting Focus", "Rod", "Wand", "Staff", "Wondrous Item", "Gemstone"],
+        "primary_categories": ["Scroll", "Spellcasting Focus"],
+        "secondary_categories": ["Rod", "Wand", "Potion", "Wondrous Item"],
+        "stock_size": { "min": 3, "max": 7 },
+        "price_modifier": 1.5,
+        "rarity_filter": ["Common", "Uncommon", "Rare"],
+        "notes": "A wizard's private tower. Not always open to the public. Stock is eclectic and expensive.",
+        "interactions": ["Commission spell research (downtime)", "Ask about magical lore", "Request identification of a magic item"]
+      },
+
+      "Arcane Academy": {
+        "sells": true,
+        "buys": ["Scroll", "Spellcasting Focus", "Adventuring Gear"],
+        "primary_categories": ["Scroll", "Spellcasting Focus", "Adventuring Gear"],
+        "secondary_categories": ["Rod", "Wand", "Artisan's Tools", "Potion"],
+        "stock_size": { "min": 5, "max": 10 },
+        "price_modifier": 1.1,
+        "rarity_filter": ["Common", "Uncommon"],
+        "notes": "The academy maintains a supply shop for students. Practical, affordable, well-stocked in basics.",
+        "interactions": ["Buy student supplies", "Enroll in a course (downtime)", "Access the library", "Post a job on the board"]
+      },
+
+      "Arcane Supplies": {
+        "sells": true,
+        "buys": ["Spellcasting Focus", "Gemstone", "Adventuring Gear"],
+        "primary_categories": ["Spellcasting Focus", "Adventuring Gear", "Artisan's Tools"],
+        "secondary_categories": ["Gemstone", "Trade Good", "Rod", "Wand"],
+        "stock_size": { "min": 6, "max": 12 },
+        "price_modifier": 1.0,
+        "notes": "The standard arcane supply shop. Components, focuses, reagents, tools. The backbone of arcane districts.",
+        "interactions": ["Browse supplies", "Sell components", "Ask about unusual components", "Gather rumors about local magic"]
+      },
+
+      "Alchemical Shop": {
+        "sells": true,
+        "buys": ["Potion", "Poison", "Trade Good", "Adventuring Gear"],
+        "primary_categories": ["Potion", "Poison"],
+        "secondary_categories": ["Adventuring Gear", "Trade Good", "Explosive"],
+        "stock_size": { "min": 5, "max": 10 },
+        "price_modifier": 1.0,
+        "notes": "Potions, reagents, poisons (sold quietly), and alchemical tools. Some items may require a reason to purchase.",
+        "interactions": ["Sell alchemical ingredients", "Commission a custom brew (downtime)", "Ask about poisons or antidotes"]
+      },
+
+      "Scroll Vendor": {
+        "sells": true,
+        "buys": ["Scroll"],
+        "primary_categories": ["Scroll"],
+        "secondary_categories": ["Spellcasting Focus", "Adventuring Gear"],
+        "stock_size": { "min": 4, "max": 8 },
+        "price_modifier": 1.1,
+        "rarity_filter": ["Common", "Uncommon", "Rare"],
+        "notes": "Specializes entirely in scrolls — spell scrolls, ritual scrolls, reference scrolls. Good selection, knowledgeable staff.",
+        "interactions": ["Browse scrolls", "Sell a scroll", "Commission a scroll to be copied (downtime)", "Ask about rare spells"]
+      },
+
+      "Magic Items Vendor": {
+        "sells": true,
+        "buys": ["Wondrous Item", "Ring", "Staff", "Rod", "Wand", "Armor", "Martial Weapon"],
+        "primary_categories": ["Wondrous Item", "Ring", "Staff", "Rod", "Wand"],
+        "secondary_categories": ["Armor", "Martial Weapon", "Scroll", "Potion"],
+        "stock_size": { "min": 4, "max": 8 },
+        "price_modifier": 1.3,
+        "rarity_filter": ["Common", "Uncommon", "Rare"],
+        "notes": "The premium magic shop of the arcane district. Items are authenticated and priced accordingly. Rare items require appointment.",
+        "interactions": ["Browse magic items", "Sell a magic item", "Request appraisal", "Ask about specific items (may have contacts)"]
+      },
+
+      "Central Market": {
+        "sells": true,
+        "generalist": true,
+        "buys": ["Trade Good", "Food and Drink", "Adventuring Gear", "Simple Weapon", "Tool", "Artisan's Tools"],
+        "primary_categories": [
+          "Adventuring Gear", "Food and Drink", "Trade Good",
+          "Simple Weapon", "Tool", "Artisan's Tools", "Tack and Harness"
+        ],
+        "secondary_categories": ["Armor", "Martial Weapon", "Shield", "Ammunition", "Mount"],
+        "stock_size": { "min": 15, "max": 25 },
+        "price_modifier": 1.0,
+        "notes": "The central hub of the trade district. Anything mundane can be found here if you look hard enough. Prices are fair, selection is enormous.",
+        "interactions": ["Browse goods", "Sell almost anything", "Gather rumors", "Find a specific merchant (roll)", "Post a notice"]
+      },
+
+      "Adventurer's Shop": {
+        "sells": true,
+        "buys": ["Adventuring Gear", "Armor", "Martial Weapon", "Simple Weapon", "Ammunition", "Shield", "Potion"],
+        "primary_categories": ["Adventuring Gear", "Armor", "Martial Weapon", "Simple Weapon", "Ammunition", "Shield"],
+        "secondary_categories": ["Potion", "Tool", "Tack and Harness", "Wondrous Item"],
+        "stock_size": { "min": 10, "max": 18 },
+        "price_modifier": 1.0,
+        "notes": "Everything a working adventurer needs. Practical, well-organized, run by someone who has been out there.",
+        "interactions": ["Buy equipment", "Sell salvage", "Ask about local dungeons or threats", "Post or read job notices"]
+      },
+
+      "Bank or Exchange House": {
+        "sells": false,
+        "buys": ["Gemstone", "Art Object", "Trade Good"],
+        "notes": "Financial services only. Currency exchange, loans, secure storage. Will buy valuables at appraised value.",
+        "interactions": ["Deposit gold (safe storage)", "Take a loan", "Sell gemstones or art at fair value", "Ask about wealthy patrons"]
+      },
+
+      "General Emporium": {
+        "sells": true,
+        "generalist": true,
+        "buys": ["Trade Good", "Adventuring Gear", "Tool", "Food and Drink"],
+        "primary_categories": ["Adventuring Gear", "Tool", "Trade Good", "Food and Drink", "Artisan's Tools"],
+        "secondary_categories": ["Simple Weapon", "Ammunition", "Gaming Set", "Other"],
+        "stock_size": { "min": 8, "max": 14 },
+        "price_modifier": 1.05,
+        "notes": "A well-stocked general store. Less variety than the Central Market but more reliable stock of common goods.",
+        "interactions": ["Browse goods", "Sell trade goods", "Gather local rumors", "Ask about specialty items (may order)"]
+      },
+
+      "Animal Market": {
+        "sells": true,
+        "buys": ["Mount", "Tack and Harness", "Food and Drink"],
+        "primary_categories": ["Mount", "Tack and Harness"],
+        "secondary_categories": ["Food and Drink", "Tool", "Trade Good"],
+        "stock_size": { "min": 4, "max": 8 },
+        "price_modifier": 1.0,
+        "notes": "Sells mounts, working animals, and all the gear to manage them. Also buys healthy animals.",
+        "interactions": ["Buy a mount", "Sell an animal", "Buy tack and harness", "Ask about exotic mounts (may have contacts)", "Board an animal"]
+      },
+
+      "Auction House": {
+        "sells": true,
+        "special": "auction",
+        "buys": ["Art Object", "Gemstone", "Wondrous Item", "Ring", "Armor", "Martial Weapon"],
+        "primary_categories": ["Art Object", "Gemstone", "Wondrous Item", "Ring"],
+        "secondary_categories": ["Armor", "Martial Weapon", "Trade Good"],
+        "stock_size": { "min": 3, "max": 6 },
+        "price_modifier": 1.4,
+        "rarity_filter": ["Uncommon", "Rare", "Very Rare"],
+        "notes": "Items here are unique and valuable. Prices start high and go higher. May generate loot-quality items instead of standard stock.",
+        "interactions": ["Attend an auction (bid on items)", "Consign an item for sale", "Ask about upcoming lots", "Gather information about wealthy buyers"]
+      },
+
+      "Great Temple": {
+        "sells": true,
+        "buys": [],
+        "primary_categories": ["Potion", "Adventuring Gear"],
+        "secondary_categories": ["Scroll", "Wondrous Item"],
+        "stock_size": { "min": 3, "max": 6 },
+        "price_modifier": 0.9,
+        "rarity_filter": ["Common", "Uncommon"],
+        "notes": "The temple sells healing supplies and blessed items at modest prices in exchange for donations. Not a commercial shop.",
+        "interactions": ["Buy healing supplies", "Long rest (donation required)", "Receive healing (15 gp)", "Request a blessing", "Gather information about the faith"]
+      },
+
+      "Minor Chapel": {
+        "sells": true,
+        "buys": [],
+        "primary_categories": ["Potion"],
+        "secondary_categories": ["Adventuring Gear"],
+        "stock_size": { "min": 1, "max": 3 },
+        "price_modifier": 0.85,
+        "notes": "A small shrine with limited supplies. Healing potions and basic supplies at reduced cost.",
+        "interactions": ["Buy a healing potion", "Receive minor healing (5 gp)", "Rest safely", "Gossip with the priest"]
+      },
+
+      "Sacred Garden": {
+        "sells": false,
+        "buys": [],
+        "notes": "A place of contemplation, not commerce.",
+        "interactions": ["Meditate (restore one use of a feature)", "Gather rare herbs (Survival check)", "Seek spiritual guidance via Oracle"]
+      },
+
+      "Mausoleum": {
+        "sells": false,
+        "buys": [],
+        "notes": "The resting place of the honored dead. No commerce.",
+        "interactions": ["Research lineages and histories", "Seek information about the dead", "Gather rumors about the city's past"]
+      },
+
+      "Hospital": {
+        "sells": true,
+        "buys": ["Potion", "Adventuring Gear"],
+        "primary_categories": ["Potion", "Adventuring Gear"],
+        "secondary_categories": ["Tool"],
+        "stock_size": { "min": 3, "max": 6 },
+        "price_modifier": 0.95,
+        "notes": "Medical supplies and healing potions. Not a shop in the traditional sense — functions as a point of care.",
+        "interactions": ["Buy healing supplies", "Receive treatment (cost based on severity)", "Rest safely", "Gather information about recent casualties or illnesses"]
+      },
+
+      "Taverns and Inns": {
+        "sells": true,
+        "buys": ["Food and Drink", "Trade Good"],
+        "primary_categories": ["Food and Drink"],
+        "secondary_categories": ["Gaming Set", "Other"],
+        "stock_size": { "min": 4, "max": 8 },
+        "price_modifier": 1.0,
+        "notes": "Food, drink, lodging. May sell local goods and sundries. The social hub of any district.",
+        "interactions": ["Long rest", "Buy food and drink", "Gather rumors", "Post or read job notices", "Gamble"]
+      },
+
+      "Gambling House": {
+        "sells": true,
+        "buys": [],
+        "primary_categories": ["Gaming Set"],
+        "secondary_categories": ["Food and Drink", "Other"],
+        "stock_size": { "min": 2, "max": 4 },
+        "special": "gambling",
+        "notes": "Sells gaming sets and refreshments. Main function is gambling — a separate game mechanic.",
+        "interactions": ["Gamble (separate mechanic)", "Buy a gaming set", "Gather underworld rumors", "Make a shady contact"]
+      },
+
+      "Clandestine Arena": {
+        "sells": false,
+        "buys": [],
+        "notes": "An illegal fighting venue. No public shop — but the right contact might offer equipment before a fight.",
+        "interactions": ["Watch a fight", "Enter a fight (separate mechanic)", "Place bets", "Make criminal contacts", "Find mercenary work"]
+      },
+
+      "Brothel": {
+        "sells": false,
+        "buys": [],
+        "notes": "No commerce in items.",
+        "interactions": ["Gather rumors (best source in the city)", "Make a contact", "Find information for coin"]
+      },
+
+      "Smuggling Alleys": {
+        "sells": true,
+        "buys": ["Poison", "Explosive", "Wondrous Item", "Martial Weapon"],
+        "primary_categories": ["Poison", "Explosive"],
+        "secondary_categories": ["Wondrous Item", "Martial Weapon", "Ammunition"],
+        "stock_size": { "min": 2, "max": 5 },
+        "price_modifier": 1.5,
+        "rarity_filter": ["Common", "Uncommon", "Rare"],
+        "special": "black_market",
+        "notes": "Illegal or restricted goods sold quietly. High prices, no questions asked — but no guarantees either. Requires a contact or a successful Charisma check to access.",
+        "interactions": ["Buy restricted goods (contact required)", "Sell stolen items", "Find criminal work", "Gather underworld intelligence"]
+      },
+
+      "Thieves' Guild Hideout": {
+        "sells": true,
+        "buys": ["Any"],
+        "primary_categories": ["Poison", "Adventuring Gear", "Tool"],
+        "secondary_categories": ["Wondrous Item", "Ammunition", "Simple Weapon"],
+        "stock_size": { "min": 3, "max": 6 },
+        "price_modifier": 1.3,
+        "special": "guild_access",
+        "notes": "Access requires guild membership or a significant favor. Sells tools of the trade and fenced goods.",
+        "interactions": ["Buy guild supplies (membership required)", "Fence stolen goods", "Take a contract", "Gather underworld information"]
+      },
+
+      "Governor's Palace": {
+        "sells": false,
+        "buys": [],
+        "notes": "Seat of power. No commerce.",
+        "interactions": ["Request an audience", "Gather political information", "Post a legal notice", "Seek a permit or writ"]
+      },
+
+      "Council Hall": {
+        "sells": false,
+        "buys": [],
+        "notes": "Political institution. No commerce.",
+        "interactions": ["Attend a public session", "Lobby a council member", "File a legal claim", "Gather political rumors"]
+      },
+
+      "City Archive": {
+        "sells": false,
+        "buys": [],
+        "notes": "A repository of records. No commerce — but information has a price.",
+        "interactions": ["Research a person, place, or event", "Access property records", "Find historical information", "Pay for expedited research"]
+      },
+
+      "City Guard Barracks": {
+        "sells": false,
+        "buys": [],
+        "notes": "Military installation. No public shop.",
+        "interactions": ["Report a crime", "Seek protection", "Gather information about local threats", "Look for bounties or warrants"]
+      },
+
+      "Courthouse": {
+        "sells": false,
+        "buys": [],
+        "notes": "Legal institution. No commerce.",
+        "interactions": ["Attend a trial", "File a complaint", "Seek legal counsel", "Pay a fine"]
+      },
+
+      "Embassies": {
+        "sells": false,
+        "buys": [],
+        "notes": "Diplomatic venue. No public commerce.",
+        "interactions": ["Request diplomatic assistance", "Gather information about foreign nations", "Seek asylum or letters of passage"]
+      },
+
+      "Barracks": {
+        "sells": true,
+        "buys": ["Armor", "Martial Weapon", "Simple Weapon", "Shield", "Ammunition"],
+        "primary_categories": ["Armor", "Simple Weapon", "Ammunition"],
+        "secondary_categories": ["Shield", "Adventuring Gear", "Tool"],
+        "stock_size": { "min": 4, "max": 8 },
+        "price_modifier": 0.95,
+        "notes": "Military surplus and standard issue equipment. Limited selection but reliable quality at below-market prices.",
+        "interactions": ["Buy military surplus", "Sell weapons and armor", "Gather information about local threats", "Find mercenary work"]
+      },
+
+      "Armory": {
+        "sells": true,
+        "buys": ["Armor", "Martial Weapon", "Simple Weapon", "Shield", "Ammunition"],
+        "primary_categories": ["Armor", "Martial Weapon", "Shield", "Ammunition"],
+        "secondary_categories": ["Simple Weapon", "Adventuring Gear", "Tool"],
+        "stock_size": { "min": 8, "max": 14 },
+        "price_modifier": 1.0,
+        "notes": "The military district's main equipment supplier. Full selection of martial equipment.",
+        "interactions": ["Buy weapons and armor", "Sell military equipment", "Commission custom arms (downtime)", "Ask about weapon maintenance"]
+      },
+
+      "Training Ground": {
+        "sells": false,
+        "buys": [],
+        "notes": "A place of practice, not commerce.",
+        "interactions": ["Train (gain proficiency progress — downtime)", "Spar with a soldier", "Find a combat instructor", "Assess local military strength"]
+      },
+
+      "Watchtower": {
+        "sells": false,
+        "buys": [],
+        "notes": "Defensive structure. No commerce.",
+        "interactions": ["Report a threat", "Ask about recent sightings", "Get a view of the surrounding area"]
+      },
+
+      "Military Stable": {
+        "sells": true,
+        "buys": ["Mount", "Tack and Harness"],
+        "primary_categories": ["Mount", "Tack and Harness"],
+        "secondary_categories": ["Food and Drink", "Tool"],
+        "stock_size": { "min": 3, "max": 6 },
+        "price_modifier": 1.0,
+        "notes": "Military-grade mounts and tack. Better quality than the animal market, higher prices.",
+        "interactions": ["Buy a warhorse or military mount", "Board an animal", "Buy military tack and saddles"]
+      },
+
+      "Supply Warehouse": {
+        "sells": true,
+        "buys": ["Trade Good", "Food and Drink", "Adventuring Gear"],
+        "primary_categories": ["Trade Good", "Food and Drink", "Adventuring Gear"],
+        "secondary_categories": ["Tool", "Artisan's Tools", "Ammunition"],
+        "stock_size": { "min": 6, "max": 10 },
+        "price_modifier": 0.9,
+        "notes": "Bulk goods at reduced prices. Not organized for retail but will sell to adventurers with coin.",
+        "interactions": ["Buy supplies in bulk (discounted)", "Sell trade goods", "Find shipping or transport work"]
+      },
+
+      "Blacksmith's Forge": {
+        "sells": true,
+        "buys": ["Armor", "Martial Weapon", "Simple Weapon", "Shield", "Tool", "Artisan's Tools"],
+        "primary_categories": ["Armor", "Martial Weapon", "Simple Weapon", "Shield"],
+        "secondary_categories": ["Tool", "Artisan's Tools", "Tack and Harness"],
+        "stock_size": { "min": 6, "max": 12 },
+        "price_modifier": 1.0,
+        "notes": "The classic smithy. Sells and buys metal goods. Can repair and customize equipment.",
+        "interactions": ["Buy weapons and armor", "Sell scrap metal and equipment", "Commission custom metalwork (downtime)", "Repair damaged equipment"]
+      },
+
+      "Carpenter's Workshop": {
+        "sells": true,
+        "buys": ["Tool", "Artisan's Tools", "Trade Good"],
+        "primary_categories": ["Tool", "Artisan's Tools"],
+        "secondary_categories": ["Trade Good", "Adventuring Gear", "Simple Weapon"],
+        "stock_size": { "min": 4, "max": 8 },
+        "price_modifier": 1.0,
+        "notes": "Furniture, building materials, and wooden tools. May stock wooden weapons.",
+        "interactions": ["Buy tools and wooden goods", "Commission woodwork (downtime)", "Buy simple wooden weapons", "Ask about construction projects in the district"]
+      },
+
+      "Tannery": {
+        "sells": true,
+        "buys": ["Armor", "Tack and Harness", "Trade Good"],
+        "primary_categories": ["Armor", "Tack and Harness", "Trade Good"],
+        "secondary_categories": ["Adventuring Gear", "Tool"],
+        "stock_size": { "min": 4, "max": 8 },
+        "price_modifier": 0.95,
+        "armor_subtypes": ["Light"],
+        "notes": "Leather goods: light armor, saddles, bags, belts. Smells terrible but prices are fair.",
+        "interactions": ["Buy leather armor and goods", "Sell hides and leather materials", "Commission leather equipment (downtime)"]
+      },
+
+      "Mill": {
+        "sells": true,
+        "buys": ["Trade Good", "Food and Drink"],
+        "primary_categories": ["Food and Drink", "Trade Good"],
+        "secondary_categories": ["Tool"],
+        "stock_size": { "min": 3, "max": 6 },
+        "price_modifier": 0.85,
+        "notes": "Grain, flour, and processed foodstuffs at source prices. Bulk preferred.",
+        "interactions": ["Buy food supplies (cheapest in town)", "Sell raw agricultural goods", "Ask about trade routes and supply chains"]
+      },
+
+      "Glassblower's Workshop": {
+        "sells": true,
+        "buys": ["Artisan's Tools", "Trade Good", "Gemstone"],
+        "primary_categories": ["Artisan's Tools", "Trade Good"],
+        "secondary_categories": ["Spellcasting Focus", "Other"],
+        "stock_size": { "min": 3, "max": 6 },
+        "price_modifier": 1.1,
+        "notes": "Glass vials, lenses, flasks, and ornamental pieces. Spellcasting focuses made of glass or crystal.",
+        "interactions": ["Buy glass containers and tools", "Commission custom glasswork (downtime)", "Buy crystal spellcasting focuses", "Sell gems for use in glasswork"]
+      },
+
+      "Potter's Workshop": {
+        "sells": true,
+        "buys": ["Trade Good", "Artisan's Tools"],
+        "primary_categories": ["Trade Good", "Artisan's Tools"],
+        "secondary_categories": ["Food and Drink", "Other"],
+        "stock_size": { "min": 3, "max": 6 },
+        "price_modifier": 0.9,
+        "notes": "Clay vessels, containers, and decorative pieces. Practical goods at low prices.",
+        "interactions": ["Buy containers and pottery", "Sell clay materials", "Commission decorative pottery (downtime)"]
+      },
+
+      "Warehouses": {
+        "sells": false,
+        "buys": [],
+        "notes": "Storage facilities. No retail.",
+        "interactions": ["Rent storage space", "Find shipping work", "Look for goods being moved (Information check)", "Investigate smuggling"]
+      },
+
+      "Tenement Houses": {
+        "sells": false,
+        "buys": [],
+        "notes": "Residential housing. No commerce.",
+        "interactions": ["Ask locals for information", "Find cheap lodging", "Recruit NPCs for minor tasks", "Gather street-level rumors"]
+      },
+
+      "Noble Houses": {
+        "sells": false,
+        "buys": [],
+        "notes": "Private residences. No public commerce.",
+        "interactions": ["Request an audience (Charisma check)", "Gather information about nobility", "Seek patronage", "Investigate a noble family"]
+      },
+
+      "Park or Garden": {
+        "sells": false,
+        "buys": [],
+        "notes": "Public green space. No commerce.",
+        "interactions": ["Rest safely (Short Rest)", "Gather herbs (Nature check)", "Meet a contact discreetly", "Observe the district"]
+      },
+
+      "Public Well": {
+        "sells": false,
+        "buys": [],
+        "notes": "A community water source. No commerce.",
+        "interactions": ["Gather information (locals congregate here)", "Refill waterskins", "Observe daily life in the district"]
+      },
+
+      "School": {
+        "sells": false,
+        "buys": [],
+        "notes": "Educational institution. No commerce.",
+        "interactions": ["Research a topic (downtime)", "Find a tutor", "Access reference materials", "Gather information about local history"]
+      },
+
+      "Small Family Shops": {
+        "sells": true,
+        "generalist": true,
+        "buys": ["Trade Good", "Food and Drink", "Tool"],
+        "primary_categories": ["Food and Drink", "Trade Good", "Tool", "Adventuring Gear"],
+        "secondary_categories": ["Other", "Gaming Set", "Artisan's Tools"],
+        "stock_size": { "min": 4, "max": 8 },
+        "price_modifier": 1.0,
+        "notes": "A catch-all for neighborhood shops. Each one specializes in something slightly different — roll randomly for flavor.",
+        "interactions": ["Buy everyday goods", "Sell trade goods", "Gather neighborhood rumors", "Find casual work"]
+      },
+
+      "Town Square": {
+        "sells": false,
+        "buys": [],
+        "notes": "The public heart of any settlement. Street vendors may appear here — use Central Market rules for any purchases.",
+        "interactions": ["Gather rumors (best roll bonus in the settlement)", "Post notices", "Find NPCs", "Watch for events", "Meet contacts publicly"]
+      },
+
+      "General Store": {
+        "sells": true,
+        "generalist": true,
+        "buys": ["Trade Good", "Adventuring Gear", "Food and Drink"],
+        "primary_categories": ["Adventuring Gear", "Food and Drink", "Trade Good", "Tool", "Simple Weapon", "Ammunition"],
+        "secondary_categories": ["Artisan's Tools", "Gaming Set", "Other", "Tack and Harness"],
+        "stock_size": { "min": 8, "max": 14 },
+        "price_modifier": 1.05,
+        "notes": "The default shop for small settlements. Stocks a bit of everything mundane.",
+        "interactions": ["Browse goods", "Sell common items", "Gather local information", "Post or read notices"]
+      },
+
+      "Local Inn": {
+        "sells": true,
+        "buys": ["Food and Drink"],
+        "primary_categories": ["Food and Drink"],
+        "secondary_categories": ["Gaming Set", "Other"],
+        "stock_size": { "min": 3, "max": 6 },
+        "price_modifier": 1.0,
+        "notes": "Food, drink, and lodging. The social center of a small settlement.",
+        "interactions": ["Long rest", "Buy food and drink", "Gather rumors", "Post notices", "Find work"]
+      },
+
+      "Small Shrine": {
+        "sells": true,
+        "buys": [],
+        "primary_categories": ["Potion"],
+        "secondary_categories": ["Adventuring Gear"],
+        "stock_size": { "min": 1, "max": 2 },
+        "price_modifier": 0.9,
+        "notes": "A minor place of worship. One or two healing items available as charitable supply.",
+        "interactions": ["Buy a healing potion", "Receive a minor blessing", "Rest safely", "Ask about the local area"]
+      }
+
+    }
+  }
+}
