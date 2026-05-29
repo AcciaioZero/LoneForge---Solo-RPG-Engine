@@ -1,0 +1,1450 @@
+{
+  "downtime_activities": {
+    "version": "1.0",
+    "source": "LoneForge Homebrew",
+    "note": "All activities share the same mechanical framework. Each day: make a progress check, then roll 1d6 (1=complication from d8 table, 6=opportunity from d6 table, 2-5=nothing). When progress_required is reached, calculate the final quality score and look up the resolution outcome.",
+
+    "mechanical_effect_types": {
+      "note": "Reference for all possible mechanical_effect.type values used in complications and opportunities.",
+      "types": [
+        { "type": "progress_loss",              "description": "Reduce current progress by value" },
+        { "type": "progress_gain",              "description": "Increase current progress by value" },
+        { "type": "progress_required_reduction","description": "Reduce total progress required by value" },
+        { "type": "material_cost",              "description": "Spend value GP (may be a dice expression like '1d4*5')" },
+        { "type": "damage",                     "description": "Take value damage (may be a dice expression)" },
+        { "type": "dc_increase",                "description": "Next check DC increases by value" },
+        { "type": "advantage_next",             "description": "Advantage on next progress check" },
+        { "type": "disadvantage_next",          "description": "Disadvantage on next progress check" },
+        { "type": "skip_next_day",              "description": "No progress check tomorrow" },
+        { "type": "double_progress_today",      "description": "Today's successful check counts as double progress" },
+        { "type": "resolution_bonus",           "description": "Add value to final resolution score" },
+        { "type": "next_check_double_progress", "description": "Next successful check counts as +2 progress instead of +1" },
+        { "type": "narrative_only",             "description": "No mechanical effect — handled via Oracle" }
+      ]
+    },
+
+    "activities": [
+
+      {
+        "id": "crafting_mundane",
+        "name": "Crafting Mundane Items",
+        "description": "The character spends time crafting a nonmagical item using artisan's tools. Each day of work produces measurable progress toward completion.",
+        "requirements": [
+          "Proficiency with the relevant Artisan's Tools",
+          "Materials costing half the item's market value"
+        ],
+        "progress_check": {
+          "ability": "Tool Check",
+          "tool_options": [
+            "Smith's Tools",
+            "Leatherworker's Tools",
+            "Weaver's Tools",
+            "Carpenter's Tools",
+            "Tinker's Tools",
+            "Woodcarver's Tools",
+            "Jeweler's Tools",
+            "Mason's Tools",
+            "Cobbler's Tools",
+            "Glassblower's Tools",
+            "Potter's Tools"
+          ],
+          "results": {
+            "success":         { "progress_change": 1,  "note": "+1 Progress" },
+            "failure":         { "progress_change": 0,  "note": "No progress" },
+            "failure_by_5":    { "progress_change": 0,  "material_loss_percent": 15, "note": "Material waste: lose ~10-20% of material cost" }
+          }
+        },
+        "variants": [
+          { "id": "simple",   "name": "Simple Item",   "dc": 10, "progress_formula": "ceil(item_value_gp / 25)", "examples": ["Dagger", "Handaxe", "Leather armor", "Backpack", "Rope"] },
+          { "id": "standard", "name": "Standard Item",  "dc": 13, "progress_formula": "ceil(item_value_gp / 20)",  "examples": ["Longsword", "Shield", "Chain shirt", "Crossbow", "Thieves' tools"] },
+          { "id": "complex",  "name": "Complex Item",   "dc": 16, "progress_formula": "ceil(item_value_gp / 15)",  "examples": ["Plate armor", "Heavy crossbow", "Spyglass", "Mechanical lock", "Full set of scale mail"] }
+        ],
+        "daily_event_roll": {
+          "die": "d6",
+          "complication_on": 1,
+          "opportunity_on": 6,
+          "nothing_on": "2-5"
+        },
+        "complications": {
+          "die": "d8",
+          "entries": [
+            {
+              "roll": 1,
+              "name": "Material Imperfection",
+              "description": "Part of the materials turns out to be flawed or substandard.",
+              "mechanical_effect": { "type": "material_cost", "value": "item_cost * 0.10", "note": "Lose ~10% of material cost" }
+            },
+            {
+              "roll": 2,
+              "name": "Tool Misalignment",
+              "description": "Your tools loosen, jam, or require readjustment mid-work.",
+              "mechanical_effect": { "type": "disadvantage_next", "value": 1 }
+            },
+            {
+              "roll": 3,
+              "name": "Fatigue Setback",
+              "description": "Exhaustion slows your hands and dulls your focus.",
+              "mechanical_effect": { "type": "progress_loss", "value": 1 }
+            },
+            {
+              "roll": 4,
+              "name": "Environmental Disruption",
+              "description": "Dust, humidity, wind, heat, or noise disrupts the work.",
+              "mechanical_effect": { "type": "skip_next_day", "value": 1 }
+            },
+            {
+              "roll": 5,
+              "name": "Unexpected Visitor",
+              "description": "An NPC interrupts the work — a customer, an official, an old contact.",
+              "mechanical_effect": { "type": "skip_next_day", "value": 1, "note": "Use Oracle to determine who and why" }
+            },
+            {
+              "roll": 6,
+              "name": "Minor Injury",
+              "description": "Small cuts, burns, or bruises slow you down.",
+              "mechanical_effect": { "type": "damage", "value": "1d4", "secondary": { "type": "disadvantage_next", "value": 1 } }
+            },
+            {
+              "roll": 7,
+              "name": "Supply Shortage",
+              "description": "A key component is missing or runs out sooner than expected.",
+              "mechanical_effect": { "type": "material_cost", "value": "1d4", "unit": "gp" }
+            },
+            {
+              "roll": 8,
+              "name": "Creative Block",
+              "description": "A moment of frustration or indecision breaks your rhythm.",
+              "mechanical_effect": { "type": "dc_increase", "value": 2, "duration": "next_check" }
+            }
+          ]
+        },
+        "opportunities": {
+          "die": "d6",
+          "entries": [
+            {
+              "roll": 1,
+              "name": "Inspired Moment",
+              "description": "A brilliant idea accelerates the work.",
+              "mechanical_effect": { "type": "progress_gain", "value": 1 }
+            },
+            {
+              "roll": 2,
+              "name": "Perfect Conditions",
+              "description": "Light, temperature, and focus align perfectly.",
+              "mechanical_effect": { "type": "advantage_next", "value": 1 }
+            },
+            {
+              "roll": 3,
+              "name": "Efficient Technique",
+              "description": "You discover a faster way to work.",
+              "mechanical_effect": { "type": "double_progress_today", "value": 1 }
+            },
+            {
+              "roll": 4,
+              "name": "Unexpected Help",
+              "description": "An apprentice, friend, or passing artisan lends a hand.",
+              "mechanical_effect": { "type": "progress_gain", "value": 1 }
+            },
+            {
+              "roll": 5,
+              "name": "High-Quality Materials",
+              "description": "The materials respond better than expected — less waste, cleaner work.",
+              "mechanical_effect": { "type": "material_cost", "value": "-0.10", "note": "Reduce total material cost by 10%" }
+            },
+            {
+              "roll": 6,
+              "name": "Breakthrough Insight",
+              "description": "You understand something new about the process.",
+              "mechanical_effect": { "type": "next_check_double_progress", "value": 2 }
+            }
+          ]
+        },
+        "resolution": {
+          "base_score": 10,
+          "positive_modifiers": [
+            { "condition": "per_opportunity_used",          "value": 1,  "description": "+1 for each Opportunity used" },
+            { "condition": "no_complications_occurred",     "value": 2,  "description": "+2 if no Complications occurred" },
+            { "condition": "superior_tools_used",           "value": 1,  "description": "+1 if superior quality tools were used" },
+            { "condition": "tool_expertise",                "value": 1,  "description": "+1 if the character has proficiency with the relevant tools" }
+          ],
+          "negative_modifiers": [
+            { "condition": "per_unresolved_complication",   "value": -1, "description": "-1 for each unresolved Complication" },
+            { "condition": "material_loss_multiple_times",  "value": -2, "description": "-2 if materials were wasted more than once" },
+            { "condition": "injury_sustained",              "value": -1, "description": "-1 if the character was injured during crafting" }
+          ],
+          "outcomes": [
+            { "score_min": 1,  "score_max": 5,  "name": "Poor Quality",     "description": "The item works but has visible flaws or structural weaknesses.", "value_modifier": 0.50, "note": "Value 50% of normal" },
+            { "score_min": 6,  "score_max": 15, "name": "Standard Quality", "description": "A solid, functional item — exactly as described in the rules.", "value_modifier": 1.00, "note": "Normal value" },
+            { "score_min": 16, "score_max": 20, "name": "Fine Quality",     "description": "Exceptionally well made. Sought after by discerning buyers.", "value_modifier": 1.10, "note": "Value +10%" },
+            { "score_min": 21, "score_max": 99, "name": "Masterwork",       "description": "A remarkable piece of craftsmanship. Can serve as the base for a magic item.", "value_modifier": 1.20, "bonus": "Can be used as the base item for magic item crafting", "note": "Value +20%, narrative bonus" }
+          ]
+        }
+      },
+
+      {
+        "id": "crafting_magic",
+        "name": "Crafting Magic Items",
+        "description": "The character spends time imbuing an item with magical energy through ritual, rare materials, and focused arcane or divine work. This is slower, riskier, and more demanding than mundane crafting.",
+        "requirements": [
+          "The formula or recipe for the specific magic item",
+          "Proficiency with the relevant Artisan's Tools",
+          "Rare materials (cost varies by rarity — see variant)"
+        ],
+        "progress_check": {
+          "ability": "Tool Check",
+          "tool_options": [
+            "Smith's Tools (weapons, armor)",
+            "Alchemist's Supplies (potions, oils)",
+            "Weaver's Tools (cloaks, robes)",
+            "Woodcarver's Tools (wands, staves)",
+            "Jeweler's Tools (rings, amulets)",
+            "Calligrapher's Tools (scrolls)"
+          ],
+          "results": {
+            "success":      { "progress_change": 1,  "note": "+1 Progress" },
+            "failure":      { "progress_change": 0,  "note": "No progress" },
+            "failure_by_5": { "progress_change": -1, "note": "Magical instability: -1 Progress" }
+          }
+        },
+        "variants": [
+          { "id": "common",    "name": "Common",     "dc": 12, "progress_required": 5,   "material_cost_gp": 50 },
+          { "id": "uncommon",  "name": "Uncommon",   "dc": 14, "progress_required": 10,  "material_cost_gp": 200 },
+          { "id": "rare",      "name": "Rare",        "dc": 16, "progress_required": 20,  "material_cost_gp": 2000 },
+          { "id": "very_rare", "name": "Very Rare",   "dc": 18, "progress_required": 30,  "material_cost_gp": 20000 },
+          { "id": "legendary", "name": "Legendary",   "dc": 20, "progress_required": 50,  "material_cost_gp": 100000 },
+          { "id": "artifact",  "name": "Artifact",    "dc": 22, "progress_required": 100, "material_cost_gp": -1, "note": "Cost is quest-based, not purchasable" }
+        ],
+        "daily_event_roll": {
+          "die": "d6",
+          "complication_on": 1,
+          "opportunity_on": 6,
+          "nothing_on": "2-5"
+        },
+        "complications": {
+          "die": "d8",
+          "entries": [
+            {
+              "roll": 1,
+              "name": "Arcane Backlash",
+              "description": "Unstable magic surges through the item and into you.",
+              "mechanical_effect": { "type": "damage", "value": "1d6", "damage_type": "force", "secondary": { "type": "disadvantage_next", "value": 1 } }
+            },
+            {
+              "roll": 2,
+              "name": "Ritual Disruption",
+              "description": "A mispronounced word or broken focus unravels an hour of work.",
+              "mechanical_effect": { "type": "progress_loss", "value": 1 }
+            },
+            {
+              "roll": 3,
+              "name": "Material Resonance Failure",
+              "description": "A component reacts poorly to the enchantment process and must be replaced.",
+              "mechanical_effect": { "type": "material_cost", "value": "1d4 * rarity_tier", "unit": "gp", "note": "rarity_tier: Common=1, Uncommon=2, Rare=3, Very Rare=4, Legendary=5" }
+            },
+            {
+              "roll": 4,
+              "name": "Ambient Interference",
+              "description": "Weather, planar energy, or emotional turmoil disrupts the ritual.",
+              "mechanical_effect": { "type": "skip_next_day", "value": 1 }
+            },
+            {
+              "roll": 5,
+              "name": "Essence Drift",
+              "description": "The magic begins to wander beyond your control.",
+              "mechanical_effect": { "type": "dc_increase", "value": 2, "duration": "next_check" }
+            },
+            {
+              "roll": 6,
+              "name": "Spiritual Recoil",
+              "description": "Your mind strains under the weight of channeling so much magical energy.",
+              "mechanical_effect": { "type": "progress_loss", "value": 1, "secondary": { "type": "narrative_only", "note": "1 level of Exhaustion (optional, DM discretion)" } }
+            },
+            {
+              "roll": 7,
+              "name": "Unwanted Attention",
+              "description": "A magical flare attracts a curious creature, a wandering spirit, or a rival mage.",
+              "mechanical_effect": { "type": "skip_next_day", "value": 1, "note": "Use Oracle to determine what arrives" }
+            },
+            {
+              "roll": 8,
+              "name": "Catalyst Instability",
+              "description": "A key catalytic component destabilizes and must be partially replaced.",
+              "mechanical_effect": { "type": "material_cost", "value": "total_material_cost * 0.10", "note": "Lose 10% of total material cost" }
+            }
+          ]
+        },
+        "opportunities": {
+          "die": "d6",
+          "entries": [
+            {
+              "roll": 1,
+              "name": "Arcane Clarity",
+              "description": "A moment of perfect focus — the magic flows exactly where you want it.",
+              "mechanical_effect": { "type": "progress_gain", "value": 1 }
+            },
+            {
+              "roll": 2,
+              "name": "Resonant Harmony",
+              "description": "The materials and the magic align beautifully.",
+              "mechanical_effect": { "type": "advantage_next", "value": 1 }
+            },
+            {
+              "roll": 3,
+              "name": "Energetic Synergy",
+              "description": "The magic flows with unusual efficiency today.",
+              "mechanical_effect": { "type": "next_check_double_progress", "value": 2 }
+            },
+            {
+              "roll": 4,
+              "name": "External Inspiration",
+              "description": "A mentor, a spirit, or a vivid memory guides your hand at a critical moment.",
+              "mechanical_effect": { "type": "progress_gain", "value": 1 }
+            },
+            {
+              "roll": 5,
+              "name": "Efficient Channeling",
+              "description": "You find a more elegant way to bind the enchantment — less work needed.",
+              "mechanical_effect": { "type": "progress_required_reduction", "value": 1 }
+            },
+            {
+              "roll": 6,
+              "name": "Breakthrough Insight",
+              "description": "You grasp a deeper principle of the enchantment that improves the final result.",
+              "mechanical_effect": { "type": "resolution_bonus", "value": 2 }
+            }
+          ]
+        },
+        "resolution": {
+          "base_score": 10,
+          "positive_modifiers": [
+            { "condition": "per_opportunity_used",              "value": 1,  "description": "+1 for each Opportunity used" },
+            { "condition": "no_complications_occurred",         "value": 2,  "description": "+2 if no Complications occurred" },
+            { "condition": "tool_proficiency",                  "value": 1,  "description": "+1 if proficient with the crafting tool" },
+            { "condition": "arcana_proficiency",                "value": 1,  "description": "+1 if proficient in Arcana" },
+            { "condition": "rare_component_used",               "value": 1,  "description": "+1 if a rare component worth ≥ 50 gp × rarity tier was used" },
+            { "condition": "relevant_class_feature",            "value": 2,  "description": "+2 if the crafter has a relevant class feature (spellcasting, Infuse Item, etc.)" },
+            { "condition": "magical_location_used",             "value": 2,  "description": "+2 if crafting took place in a sanctum, forge, or place of power" }
+          ],
+          "negative_modifiers": [
+            { "condition": "per_unresolved_complication",       "value": -1, "description": "-1 for each unresolved Complication" },
+            { "condition": "instability_progress_loss_repeat",  "value": -2, "description": "-2 if magical instability caused Progress loss more than once" },
+            { "condition": "exhaustion_sustained",              "value": -1, "description": "-1 if the crafter suffered Exhaustion during crafting" },
+            { "condition": "interrupted_more_than_2_days",      "value": -1, "description": "-1 if crafting was interrupted for more than 2 consecutive days" },
+            { "condition": "component_substituted",             "value": -2, "description": "-2 if a required component was substituted with a cheaper alternative" }
+          ],
+          "outcomes": [
+            { "score_min": 1,  "score_max": 8,  "name": "Flawed Magic",             "description": "The item works but has an unpredictable quirk or minor drawback. Use Oracle to determine the flaw.", "note": "Functional but imperfect" },
+            { "score_min": 9,  "score_max": 14, "name": "Standard Magic Item",      "description": "The item functions exactly as described in the rules.", "note": "Normal properties" },
+            { "score_min": 15, "score_max": 18, "name": "Enhanced Item",            "description": "The item has a minor cosmetic or functional bonus beyond its base properties.", "value_modifier": 1.10, "note": "+10% value, minor bonus" },
+            { "score_min": 19, "score_max": 99, "name": "Masterwork Enchantment",   "description": "The item gains a small additional property or becomes permanently attuned to its crafter.", "note": "Additional minor property or permanent crafter attunement" }
+          ]
+        }
+      },
+
+      {
+        "id": "animal_training",
+        "name": "Animal Training",
+        "description": "The character trains a beast companion to follow commands, perform tricks, serve in combat, or act as a mount. Training is a relationship — it can go forward or backward depending on how it unfolds.",
+        "requirements": [
+          "The animal must be in the character's possession",
+          "Proficiency in Animal Handling OR a hired trainer (cost: 1 gp/day)"
+        ],
+        "progress_check": {
+          "ability": "Wisdom (Animal Handling)",
+          "note": "DC is based on the creature's natural temperament, not the training goal.",
+          "results": {
+            "success":      { "progress_change": 1,  "note": "+1 Progress" },
+            "failure":      { "progress_change": 0,  "note": "No progress" },
+            "failure_by_5": { "progress_change": -1, "note": "The creature becomes stressed: -1 Progress" }
+          }
+        },
+        "variants": [
+          { "id": "docile",     "name": "Docile / Domesticated", "dc": 10, "examples": ["Dog", "Horse", "Cat", "Raven"] },
+          { "id": "neutral",   "name": "Neutral / Cautious",    "dc": 13, "examples": ["Wolf", "Giant lizard", "Boar", "Riding horse (untrained)"] },
+          { "id": "aggressive","name": "Aggressive / Wild",     "dc": 16, "examples": ["Panther", "Brown bear", "Warhorse", "Giant eagle"] }
+        ],
+        "training_goals": [
+          { "id": "basic_obedience",    "name": "Basic Obedience",    "progress_required": 3,  "description": "Sit, stay, follow, come when called." },
+          { "id": "simple_tricks",      "name": "Simple Tricks",      "progress_required": 5,  "description": "Fetch, roll over, heel, perform a defined behavior on command." },
+          { "id": "combat_training",    "name": "Combat Training",    "progress_required": 7,  "description": "Attack on command, defend its handler, hold position under fire." },
+          { "id": "mount_training",     "name": "Mount Training",     "progress_required": 10, "description": "Accept a rider, respond to leg and rein commands, stay calm in combat." },
+          { "id": "advanced_behaviors", "name": "Advanced Behaviors", "progress_required": 12, "description": "Guard a location, track a specific scent, scout ahead and return." }
+        ],
+        "daily_event_roll": {
+          "die": "d6",
+          "complication_on": 1,
+          "opportunity_on": 6,
+          "nothing_on": "2-5"
+        },
+        "complications": {
+          "die": "d8",
+          "entries": [
+            {
+              "roll": 1,
+              "name": "Skittish Reaction",
+              "description": "The creature panics at a sudden noise, smell, or movement and bolts or cowers.",
+              "mechanical_effect": { "type": "progress_loss", "value": 1 }
+            },
+            {
+              "roll": 2,
+              "name": "Aggressive Outburst",
+              "description": "The creature lashes out unexpectedly — at you, at a bystander, or at another animal.",
+              "mechanical_effect": { "type": "damage", "value": "1d4", "secondary": { "type": "disadvantage_next", "value": 1 } }
+            },
+            {
+              "roll": 3,
+              "name": "Environmental Distraction",
+              "description": "Loud noise, a predator nearby, weather, or an unusual smell makes the creature unable to focus.",
+              "mechanical_effect": { "type": "skip_next_day", "value": 1 }
+            },
+            {
+              "roll": 4,
+              "name": "Loss of Focus",
+              "description": "The creature becomes bored, stubborn, or overstimulated and refuses to engage.",
+              "mechanical_effect": { "type": "dc_increase", "value": 2, "duration": "next_check" }
+            },
+            {
+              "roll": 5,
+              "name": "Minor Injury",
+              "description": "The creature hurts itself slightly — a twisted leg, a scratch, a bruise.",
+              "mechanical_effect": { "type": "skip_next_day", "value": 1, "note": "The creature must rest; no check tomorrow" }
+            },
+            {
+              "roll": 6,
+              "name": "Food Shortage",
+              "description": "The creature is hungry and distracted. Training without proper motivation is useless today.",
+              "mechanical_effect": { "type": "material_cost", "value": "1d4", "unit": "gp", "note": "Spend on treats or quality feed to continue" }
+            },
+            {
+              "roll": 7,
+              "name": "Territorial Behavior",
+              "description": "The creature refuses to train in the current area — too many smells, too much noise, wrong ground.",
+              "mechanical_effect": { "type": "skip_next_day", "value": 1, "note": "Lose half a day relocating to a better spot" }
+            },
+            {
+              "roll": 8,
+              "name": "Bond Strain",
+              "description": "A miscommunication or a moment of fear damages the trust you have built.",
+              "mechanical_effect": { "type": "progress_loss", "value": 1, "secondary": { "type": "disadvantage_next", "value": 1 } }
+            }
+          ]
+        },
+        "opportunities": {
+          "die": "d6",
+          "entries": [
+            {
+              "roll": 1,
+              "name": "Breakthrough Moment",
+              "description": "The creature suddenly understands — something clicks and it performs perfectly.",
+              "mechanical_effect": { "type": "progress_gain", "value": 1 }
+            },
+            {
+              "roll": 2,
+              "name": "Trust Surge",
+              "description": "A quiet bonding moment — the creature chooses to stay close, to watch you, to respond.",
+              "mechanical_effect": { "type": "advantage_next", "value": 1 }
+            },
+            {
+              "roll": 3,
+              "name": "Environmental Harmony",
+              "description": "The setting is perfect — familiar, calm, exactly right for this kind of work.",
+              "mechanical_effect": { "type": "progress_gain", "value": 1 }
+            },
+            {
+              "roll": 4,
+              "name": "Instinct Alignment",
+              "description": "The behavior you are training aligns perfectly with the creature's natural instincts.",
+              "mechanical_effect": { "type": "next_check_double_progress", "value": 2 }
+            },
+            {
+              "roll": 5,
+              "name": "Helpful Bystander",
+              "description": "A stablehand, a druid passing through, or a local ranger offers a useful tip or a helping hand.",
+              "mechanical_effect": { "type": "progress_gain", "value": 1 }
+            },
+            {
+              "roll": 6,
+              "name": "Food Motivation",
+              "description": "You find exactly the right treat — the creature responds with unusual enthusiasm.",
+              "mechanical_effect": { "type": "progress_required_reduction", "value": 1 }
+            }
+          ]
+        },
+        "resolution": {
+          "base_score": 10,
+          "positive_modifiers": [
+            { "condition": "per_opportunity_used",          "value": 1,  "description": "+1 for each Opportunity used" },
+            { "condition": "no_complications_occurred",     "value": 2,  "description": "+2 if no Complications occurred" },
+            { "condition": "creature_naturally_docile",     "value": 1,  "description": "+1 if the creature is naturally docile" },
+            { "condition": "animal_handling_proficiency",   "value": 1,  "description": "+1 if the trainer has proficiency in Animal Handling" },
+            { "condition": "special_feed_used",             "value": 1,  "description": "+1 if special feed or treats were used (at least 5 gp total)" }
+          ],
+          "negative_modifiers": [
+            { "condition": "per_unresolved_complication",   "value": -1, "description": "-1 for each unresolved Complication" },
+            { "condition": "creature_injured_trainer",      "value": -2, "description": "-2 if the creature injured the trainer" },
+            { "condition": "creature_naturally_aggressive", "value": -1, "description": "-1 if the creature is naturally aggressive" },
+            { "condition": "interrupted_more_than_2_days",  "value": -1, "description": "-1 if training was interrupted for more than 2 days" }
+          ],
+          "outcomes": [
+            { "score_min": 1,  "score_max": 8,  "name": "Unstable Training",      "description": "The creature obeys most of the time but may disobey under stress, sudden loud noises, or when frightened.", "note": "Unreliable under pressure" },
+            { "score_min": 9,  "score_max": 14, "name": "Standard Training",      "description": "The creature reliably performs the trained behavior under normal conditions.", "note": "Reliable in normal conditions" },
+            { "score_min": 15, "score_max": 18, "name": "Strong Bond",            "description": "The creature gains +1 on checks related to the trained behavior and is harder to frighten away from its handler.", "note": "+1 on trained behavior checks" },
+            { "score_min": 19, "score_max": 99, "name": "Exceptional Companion",  "description": "The creature forms a deep bond: advantage on loyalty checks, faster future training, and one additional behavior it performs instinctively without command.", "note": "Advantage on loyalty, instinctive behavior, faster future training" }
+          ]
+        }
+      },
+
+      {
+        "id": "construction",
+        "name": "Building / Construction",
+        "description": "The character oversees or directly participates in the construction of a structure. This is a long-term project that creates a permanent presence in the world.",
+        "requirements": [
+          "A plot of land (owned, granted, or secured)",
+          "Permission from local authorities if applicable",
+          "Building materials and laborers (cost varies by project scale)"
+        ],
+        "progress_check": {
+          "ability": "Strength (Athletics) or Tool Check",
+          "tool_options": [
+            "Mason's Tools (stonework)",
+            "Carpenter's Tools (woodwork)",
+            "Smith's Tools (metal reinforcements)",
+            "Tinker's Tools (mechanisms, gates)",
+            "Woodcarver's Tools (fine details)"
+          ],
+          "results": {
+            "success":      { "progress_change": 1,  "note": "+1 Progress" },
+            "failure":      { "progress_change": 0,  "note": "No progress" },
+            "failure_by_5": { "progress_change": -1, "note": "Structural setback: -1 Progress" }
+          }
+        },
+        "variants": [
+          { "id": "small",   "name": "Small Structure",   "dc": 10, "progress_formula": "ceil(total_cost_gp / 100)", "examples": ["Shed", "Hut", "Small room", "Storage building"] },
+          { "id": "medium",  "name": "Medium Structure",  "dc": 13, "progress_formula": "ceil(total_cost_gp / 100)", "examples": ["House", "Shop", "Stable", "Tavern common room"] },
+          { "id": "large",   "name": "Large Structure",   "dc": 15, "progress_formula": "ceil(total_cost_gp / 100)", "examples": ["Inn", "Workshop", "Tower", "Guildhall"] },
+          { "id": "massive", "name": "Massive Structure", "dc": 18, "progress_formula": "ceil(total_cost_gp / 100)", "examples": ["Fort", "Keep", "Bridge", "Warehouse district"] },
+          { "id": "grand",   "name": "Grand Structure",   "dc": 20, "progress_formula": "ceil(total_cost_gp / 100)", "examples": ["Castle", "Temple", "Ship", "Aqueduct"] }
+        ],
+        "daily_event_roll": {
+          "die": "d6",
+          "complication_on": 1,
+          "opportunity_on": 6,
+          "nothing_on": "2-5"
+        },
+        "complications": {
+          "die": "d8",
+          "entries": [
+            {
+              "roll": 1,
+              "name": "Structural Weakness",
+              "description": "A beam, wall, or support fails and must be rebuilt from scratch.",
+              "mechanical_effect": { "type": "progress_loss", "value": 1 }
+            },
+            {
+              "roll": 2,
+              "name": "Worker Injury",
+              "description": "A helper or the builder is hurt — work stops while the situation is handled.",
+              "mechanical_effect": { "type": "damage", "value": "1d4", "secondary": { "type": "skip_next_day", "value": 1 } }
+            },
+            {
+              "roll": 3,
+              "name": "Material Shortage",
+              "description": "A key material runs out or a supply delivery is delayed.",
+              "mechanical_effect": { "type": "material_cost", "value": "1d6 * 5", "unit": "gp" }
+            },
+            {
+              "roll": 4,
+              "name": "Weather Interference",
+              "description": "Rain, wind, extreme heat, or cold makes safe construction impossible today.",
+              "mechanical_effect": { "type": "skip_next_day", "value": 1 }
+            },
+            {
+              "roll": 5,
+              "name": "Tool Failure",
+              "description": "A key tool breaks, jams, or is stolen.",
+              "mechanical_effect": { "type": "material_cost", "value": "1d4", "unit": "gp", "note": "Spend to repair or replace, or lose the next check" }
+            },
+            {
+              "roll": 6,
+              "name": "Inspection Trouble",
+              "description": "A local authority, guild representative, or landowner arrives demanding fees, permits, or explanations.",
+              "mechanical_effect": { "type": "skip_next_day", "value": 1, "note": "Use Oracle to determine what they want" }
+            },
+            {
+              "roll": 7,
+              "name": "Foundation Shift",
+              "description": "The ground settles, shifts, or reveals a hidden cavity beneath the site.",
+              "mechanical_effect": { "type": "dc_increase", "value": 2, "duration": "next_check" }
+            },
+            {
+              "roll": 8,
+              "name": "Unwanted Attention",
+              "description": "Bandits, curious beasts, or aggressive locals interrupt the work.",
+              "mechanical_effect": { "type": "skip_next_day", "value": 1, "note": "Use Oracle to determine the nature of the interruption" }
+            }
+          ]
+        },
+        "opportunities": {
+          "die": "d6",
+          "entries": [
+            {
+              "roll": 1,
+              "name": "Efficient Technique",
+              "description": "You or a worker discovers a faster, cleaner method of construction.",
+              "mechanical_effect": { "type": "progress_gain", "value": 1 }
+            },
+            {
+              "roll": 2,
+              "name": "Skilled Assistance",
+              "description": "A skilled carpenter, mason, or engineer arrives and works alongside you for the day.",
+              "mechanical_effect": { "type": "advantage_next", "value": 1 }
+            },
+            {
+              "roll": 3,
+              "name": "Perfect Conditions",
+              "description": "Weather, morale, and materials all align — a rare perfect day of work.",
+              "mechanical_effect": { "type": "progress_gain", "value": 1 }
+            },
+            {
+              "roll": 4,
+              "name": "Material Windfall",
+              "description": "You salvage usable materials from a nearby ruin, find a discount from a supplier, or receive a donation.",
+              "mechanical_effect": { "type": "progress_required_reduction", "value": 1 }
+            },
+            {
+              "roll": 5,
+              "name": "Structural Insight",
+              "description": "A better understanding of load-bearing or layout improves both quality and speed.",
+              "mechanical_effect": { "type": "next_check_double_progress", "value": 2 }
+            },
+            {
+              "roll": 6,
+              "name": "Community Support",
+              "description": "Locals pitch in — bringing food, labor, or materials out of goodwill or shared interest.",
+              "mechanical_effect": { "type": "progress_gain", "value": 1, "secondary": { "type": "resolution_bonus", "value": 1 } }
+            }
+          ]
+        },
+        "resolution": {
+          "base_score": 10,
+          "positive_modifiers": [
+            { "condition": "per_opportunity_used",          "value": 1,  "description": "+1 for each Opportunity used" },
+            { "condition": "no_complications_occurred",     "value": 2,  "description": "+2 if no Complications occurred" },
+            { "condition": "tool_proficiency",              "value": 1,  "description": "+1 if proficient with the relevant tools" },
+            { "condition": "quality_materials_used",        "value": 1,  "description": "+1 if high-quality materials were used (+10% cost)" },
+            { "condition": "skilled_laborers_hired",        "value": 2,  "description": "+2 if skilled laborers were hired (+20% cost)" },
+            { "condition": "suitable_site",                 "value": 1,  "description": "+1 if the site was especially suitable (solid ground, good access, favorable location)" },
+            { "condition": "relevant_background",           "value": 1,  "description": "+1 if the builder has a relevant background (Guild Artisan, Soldier, Sailor, etc.)" }
+          ],
+          "negative_modifiers": [
+            { "condition": "per_unresolved_complication",   "value": -1, "description": "-1 for each unresolved Complication" },
+            { "condition": "structural_setback_repeat",     "value": -2, "description": "-2 if structural setbacks occurred more than once" },
+            { "condition": "interrupted_more_than_2_days",  "value": -1, "description": "-1 if the project was interrupted for more than 2 consecutive days" },
+            { "condition": "cheap_materials_used",          "value": -1, "description": "-1 if cheap materials were used (-10% cost)" },
+            { "condition": "unstable_site",                 "value": -2, "description": "-2 if the site was unstable or hazardous" }
+          ],
+          "outcomes": [
+            { "score_min": 1,  "score_max": 8,  "name": "Shoddy Construction",   "description": "The structure is functional but visibly flawed. Repairs will be needed within a season. Reduces property value.", "note": "Functional but fragile, needs repairs soon" },
+            { "score_min": 9,  "score_max": 14, "name": "Standard Construction", "description": "Solid and reliable. Meets all expectations. The structure will stand for decades.", "note": "Normal quality" },
+            { "score_min": 15, "score_max": 18, "name": "Reinforced Build",      "description": "Better than expected. +10% property value, improved durability, and a minor structural benefit (e.g. thicker walls, better drainage).", "value_modifier": 1.10, "note": "+10% value, minor structural bonus" },
+            { "score_min": 19, "score_max": 99, "name": "Masterwork Structure",  "description": "Exceptional craftsmanship. People notice. The structure becomes a local landmark and grants meaningful narrative or mechanical benefits to its owner.", "value_modifier": 1.25, "note": "+25% value, local reputation, narrative/mechanical benefits" }
+          ]
+        }
+      },
+
+
+
+      {"id": "buying_magic_item",
+       "name": "Buying a Specific Magic Item",
+       "description": "The character searches markets, guilds, black markets, collectors, and magical circles to locate a specific magic item. Each day of searching produces measurable progress toward finding a seller.",
+       "requirements": [
+         "Access to a settlement or network where magic items can be traded",
+         "Gold for bribes, fees, or inflated prices (varies by rarity)"
+       ],
+       "progress_check": {
+         "ability": "Charisma-based or Investigation-based check",
+         "skill_options": [
+           "Persuasion",
+           "Deception",
+           "Intimidation",
+           "Investigation",
+           "Insight"
+         ],
+         "tool_options": [
+           "Thieves' Tools (black market access)",
+           "Calligrapher's Tools (academic circles)",
+           "Forgery Kit (underground contacts)"
+         ],
+         "results": {
+           "success":      { "progress_change": 1, "note": "+1 Progress" },
+           "failure":      { "progress_change": 0, "note": "No progress" },
+           "failure_by_5": { "progress_change": -1, "note": "Social setback: lose 1 Progress" }
+         }
+       },
+       "variants": [
+         { "id": "common",      "name": "Common Magic Item",      "dc": 10, "progress_required": 3,  "examples": ["Potion of Healing", "Spell Scroll (1st level)"] },
+         { "id": "uncommon",    "name": "Uncommon Magic Item",    "dc": 12, "progress_required": 6,  "examples": ["Bag of Holding", "Cloak of Protection"] },
+         { "id": "rare",        "name": "Rare Magic Item",        "dc": 15, "progress_required": 9,  "examples": ["Ring of Evasion", "Staff of Thunder and Lightning"] },
+         { "id": "very_rare",   "name": "Very Rare Magic Item",   "dc": 18, "progress_required": 12, "examples": ["Vorpal Sword", "Amulet of the Planes"] },
+         { "id": "legendary",   "name": "Legendary Magic Item",   "dc": 20, "progress_required": 15, "examples": ["Holy Avenger", "Staff of the Magi"] },
+         { "id": "artifact",    "name": "Artifact",               "dc": 22, "progress_required": 18, "examples": ["Book of Exalted Deeds", "Hand of Vecna"], "note": "Artifacts may require quests instead of gold." }
+       ],
+       "daily_event_roll": {
+         "die": "d6",
+         "complication_on": 1,
+         "opportunity_on": 6,
+         "nothing_on": "2-5"
+       },
+       "complications": {
+         "die": "d8",
+         "entries": [
+           {
+             "roll": 1,
+             "name": "Price Gouging",
+             "description": "A seller demands an outrageous price or fee.",
+             "mechanical_effect": { "type": "dc_increase", "value": 2, "duration": "next_check" }
+           },
+           {
+             "roll": 2,
+             "name": "Rival Buyer",
+             "description": "Someone else is also searching for the item.",
+             "mechanical_effect": { "type": "progress_loss", "value": 1 }
+           },
+           {
+             "roll": 3,
+             "name": "Suspicious Activity",
+             "description": "Authorities or guilds question your intentions.",
+             "mechanical_effect": { "type": "skip_next_day", "value": 1 }
+           },
+           {
+             "roll": 4,
+             "name": "False Lead",
+             "description": "A promising rumor turns out to be fake.",
+             "mechanical_effect": { "type": "progress_loss", "value": 1 }
+           },
+           {
+             "roll": 5,
+             "name": "Black Market Trouble",
+             "description": "Criminals demand a 'finder's fee' or threaten you.",
+             "mechanical_effect": { "type": "material_cost", "value": "1d6*10", "unit": "gp" }
+           },
+           {
+             "roll": 6,
+             "name": "Counterfeit Item",
+             "description": "You waste time verifying authenticity.",
+             "mechanical_effect": { "type": "skip_next_day", "value": 1 }
+           },
+           {
+             "roll": 7,
+             "name": "Dangerous Contact",
+             "description": "A shady seller tries to scam or rob you.",
+             "mechanical_effect": { "type": "progress_loss", "value": 1 }
+           },
+           {
+             "roll": 8,
+             "name": "Reputation Damage",
+             "description": "Rumors spread that you're desperate or naive.",
+             "mechanical_effect": { "type": "dc_increase", "value": 2, "duration": "next_check" }
+           }
+         ]
+       },
+       "opportunities": {
+         "die": "d6",
+         "entries": [
+           {
+             "roll": 1,
+             "name": "Reliable Lead",
+             "description": "A trustworthy contact gives you a solid clue.",
+             "mechanical_effect": { "type": "progress_gain", "value": 1 }
+           },
+           {
+             "roll": 2,
+             "name": "Friendly Merchant",
+             "description": "A seller likes you or owes you a favor.",
+             "mechanical_effect": { "type": "advantage_next", "value": 1 }
+           },
+           {
+             "roll": 3,
+             "name": "Market Surge",
+             "description": "Several items appear on the market at once.",
+             "mechanical_effect": { "type": "progress_required_reduction", "value": 1 }
+           },
+           {
+             "roll": 4,
+             "name": "Guild Assistance",
+             "description": "A faction or guild helps your search.",
+             "mechanical_effect": { "type": "progress_gain", "value": 1 }
+           },
+           {
+             "roll": 5,
+             "name": "Rumor Breakthrough",
+             "description": "You learn exactly who has the item.",
+             "mechanical_effect": { "type": "next_check_double_progress", "value": 2 }
+           },
+           {
+             "roll": 6,
+             "name": "Negotiation Edge",
+             "description": "You gain leverage or insight for the final deal.",
+             "mechanical_effect": { "type": "resolution_bonus", "value": 2 }
+           }
+         ]
+       },
+       "resolution": {
+         "base_score": 10,
+         "positive_modifiers": [
+           { "condition": "per_opportunity_used",        "value": 1,  "description": "+1 for each Opportunity used" },
+           { "condition": "no_complications_occurred",   "value": 2,  "description": "+2 if no Complications occurred" },
+           { "condition": "persuasion_proficiency",      "value": 1,  "description": "+1 if proficient in Persuasion" },
+           { "condition": "guild_membership",            "value": 1,  "description": "+1 if part of a guild or faction" },
+           { "condition": "extra_bribes_paid",           "value": 1,  "description": "+1 if ≥25gp × rarity tier spent in bribes" },
+           { "condition": "relevant_background",         "value": 2,  "description": "+2 if background helps (Noble, Guild Artisan, Charlatan, etc.)" }
+         ],
+         "negative_modifiers": [
+           { "condition": "per_unresolved_complication", "value": -1, "description": "-1 for each unresolved Complication" },
+           { "condition": "multiple_progress_losses",    "value": -2, "description": "-2 if Progress was lost more than once" },
+           { "condition": "black_market_used",           "value": -1, "description": "-1 if black market contacts were used" },
+           { "condition": "reputation_harmed",           "value": -1, "description": "-1 if reputation was damaged" },
+           { "condition": "search_took_too_long",        "value": -2, "description": "-2 if search took double the expected time" }
+         ],
+         "outcomes": [
+           {
+             "score_min": 1,
+             "score_max": 8,
+             "name": "Bad Deal",
+             "description": "You find the item, but at a steep price or with minor flaws.",
+             "value_modifier": 1.50,
+             "note": "Costs 150-200% of normal price"
+           },
+           {
+             "score_min": 9,
+             "score_max": 14,
+             "name": "Standard Purchase",
+             "description": "You buy the item at normal market price.",
+             "value_modifier": 1.00,
+             "note": "Normal price"
+           },
+           {
+             "score_min": 15,
+             "score_max": 18,
+             "name": "Good Bargain",
+             "description": "You secure a discount or bonus minor item.",
+             "value_modifier": 0.85,
+             "note": "10-20% discount"
+           },
+           {
+             "score_min": 19,
+             "score_max": 99,
+             "name": "Exceptional Find",
+             "description": "You get a major discount, a rare variant, or a valuable contact.",
+             "value_modifier": 0.70,
+             "bonus": "Gain a useful faction contact or future discount",
+             "note": "30% discount or special variant"
+           }
+         ]
+       }
+     },
+
+
+      {"id": "running_a_business",
+       "name": "Running a Business",
+       "description": "The character manages a business such as a tavern, shop, forge, farm, guild hall, or other enterprise. Each week of management produces measurable progress toward completing a business cycle and determining profit or loss.",
+       "requirements": [
+         "Ownership or management rights over a business",
+         "Operating costs paid weekly (varies by business size)"
+       ],
+       "progress_check": {
+         "ability": "Charisma, Wisdom, or Intelligence check",
+         "skill_options": [
+           "Persuasion",
+           "Deception",
+           "Intimidation",
+           "Insight",
+           "Investigation"
+         ],
+         "tool_options": [
+           "Brewer's Supplies",
+           "Cook's Utensils",
+           "Smith's Tools",
+           "Carpenter's Tools",
+           "Herbalism Kit",
+           "Any tool relevant to the business"
+         ],
+         "results": {
+           "success":      { "progress_change": 1,  "note": "+1 Progress" },
+           "failure":      { "progress_change": 0,  "note": "No progress" },
+           "failure_by_5": { "progress_change": -1, "note": "Operational setback: lose 1 Progress" }
+         }
+       },
+       "variants": [
+         { "id": "small",   "name": "Small Business",   "dc": 10, "progress_required": 3,  "examples": ["Market stall", "Tiny shop", "Small farm"] },
+         { "id": "medium",  "name": "Medium Business",  "dc": 13, "progress_required": 6,  "examples": ["Tavern", "Forge", "Boutique", "Stable"] },
+         { "id": "large",   "name": "Large Business",   "dc": 15, "progress_required": 9,  "examples": ["Inn", "Trading post", "Guild hall"] },
+         { "id": "major",   "name": "Major Enterprise", "dc": 18, "progress_required": 12, "examples": ["Shipping company", "Large guild", "Regional workshop"] }
+       ],
+       "daily_event_roll": {
+         "die": "d6",
+         "complication_on": 1,
+         "opportunity_on": 6,
+         "nothing_on": "2-5",
+         "note": "Business progress is typically weekly, but the same event structure applies."
+       },
+       "complications": {
+         "die": "d8",
+         "entries": [
+           {
+             "roll": 1,
+             "name": "Unexpected Expenses",
+             "description": "Repairs, taxes, or fees strain the business.",
+             "mechanical_effect": { "type": "material_cost", "value": "1d6*10", "unit": "gp" }
+           },
+           {
+             "roll": 2,
+             "name": "Staff Trouble",
+             "description": "A worker quits, slacks off, or causes problems.",
+             "mechanical_effect": { "type": "dc_increase", "value": 2, "duration": "next_check" }
+           },
+           {
+             "roll": 3,
+             "name": "Supply Shortage",
+             "description": "A key ingredient or material becomes unavailable.",
+             "mechanical_effect": { "type": "progress_loss", "value": 1 }
+           },
+           {
+             "roll": 4,
+             "name": "Competition Surge",
+             "description": "A rival business steals customers.",
+             "mechanical_effect": { "type": "disadvantage_next", "value": 1 }
+           },
+           {
+             "roll": 5,
+             "name": "Crime or Vandalism",
+             "description": "The business suffers theft or damage.",
+             "mechanical_effect": { "type": "progress_loss", "value": 1 }
+           },
+           {
+             "roll": 6,
+             "name": "Regulatory Inspection",
+             "description": "Authorities demand compliance or paperwork.",
+             "mechanical_effect": { "type": "skip_next_day", "value": 1 }
+           },
+           {
+             "roll": 7,
+             "name": "Bad Reputation Rumor",
+             "description": "A false rumor spreads among customers.",
+             "mechanical_effect": { "type": "dc_increase", "value": 2, "duration": "next_check" }
+           },
+           {
+             "roll": 8,
+             "name": "Customer Incident",
+             "description": "A fight, accident, or scandal disrupts business.",
+             "mechanical_effect": { "type": "material_cost", "value": "1d4*5", "unit": "gp", "secondary": { "type": "progress_loss", "value": 1 } }
+           }
+         ]
+       },
+       "opportunities": {
+         "die": "d6",
+         "entries": [
+           {
+             "roll": 1,
+             "name": "Boom Week",
+             "description": "Customer flow surges unexpectedly.",
+             "mechanical_effect": { "type": "progress_gain", "value": 1 }
+           },
+           {
+             "roll": 2,
+             "name": "Skilled Hire",
+             "description": "A talented worker joins the business.",
+             "mechanical_effect": { "type": "advantage_next", "value": 1 }
+           },
+           {
+             "roll": 3,
+             "name": "Market Trend",
+             "description": "Demand for your goods spikes.",
+             "mechanical_effect": { "type": "progress_required_reduction", "value": 1 }
+           },
+           {
+             "roll": 4,
+             "name": "Influential Customer",
+             "description": "A noble, guildmaster, or adventurer visits.",
+             "mechanical_effect": { "type": "progress_gain", "value": 1, "secondary": { "type": "resolution_bonus", "value": 1 } }
+           },
+           {
+             "roll": 5,
+             "name": "Efficient Operations",
+             "description": "You optimize workflow and reduce waste.",
+             "mechanical_effect": { "type": "next_check_double_progress", "value": 2 }
+           },
+           {
+             "roll": 6,
+             "name": "Community Support",
+             "description": "Locals rally behind your business.",
+             "mechanical_effect": { "type": "resolution_bonus", "value": 2 }
+           }
+         ]
+       },
+       "resolution": {
+         "base_score": 10,
+         "positive_modifiers": [
+           { "condition": "per_opportunity_used",        "value": 1,  "description": "+1 for each Opportunity used" },
+           { "condition": "no_complications_occurred",   "value": 2,  "description": "+2 if no Complications occurred" },
+           { "condition": "relevant_tool_proficiency",   "value": 1,  "description": "+1 if proficient with tools relevant to the business" },
+           { "condition": "persuasion_or_insight_prof",  "value": 1,  "description": "+1 if proficient in Persuasion or Insight" },
+           { "condition": "high_traffic_location",       "value": 1,  "description": "+1 if business is in a high-traffic area" },
+           { "condition": "extra_investment",            "value": 2,  "description": "+2 if ≥50gp × business size invested" },
+           { "condition": "good_reputation",             "value": 1,  "description": "+1 if business has a positive reputation" }
+         ],
+         "negative_modifiers": [
+           { "condition": "per_unresolved_complication", "value": -1, "description": "-1 for each unresolved Complication" },
+           { "condition": "multiple_progress_losses",    "value": -2, "description": "-2 if Progress was lost more than once" },
+           { "condition": "poor_location",               "value": -1, "description": "-1 if business is in a low-traffic area" },
+           { "condition": "high_staff_turnover",         "value": -1, "description": "-1 if staff turnover was high" },
+           { "condition": "cycle_took_too_long",         "value": -2, "description": "-2 if cycle took double the expected time" }
+         ],
+         "outcomes": [
+           {
+             "score_min": 1,
+             "score_max": 8,
+             "name": "Loss",
+             "description": "The business loses money this cycle.",
+             "value_modifier": -0.25,
+             "note": "Lose 10-50% of expected profit"
+           },
+           {
+             "score_min": 9,
+             "score_max": 14,
+             "name": "Break Even",
+             "description": "The business makes a small profit or breaks even.",
+             "value_modifier": 0.00,
+             "note": "Minimal or no profit"
+           },
+           {
+             "score_min": 15,
+             "score_max": 18,
+             "name": "Profit",
+             "description": "The business earns a solid profit.",
+             "value_modifier": 0.20,
+             "note": "Earn 10-25% of business value"
+           },
+           {
+             "score_min": 19,
+             "score_max": 99,
+             "name": "Booming Success",
+             "description": "The business thrives, gaining profit and reputation.",
+             "value_modifier": 0.40,
+             "bonus": "Gain a reputation boost or expansion opportunity",
+             "note": "Major profit"
+           }
+         ]
+       }
+      },
+
+
+      {"id": "skill_training",
+       "name": "Skill Training",
+       "description": "The character trains with an instructor to learn a new language or gain proficiency with a tool. Each day of training produces measurable progress toward mastering the new skill.",
+       "requirements": [
+         "Access to a qualified instructor",
+         "Training fees (varies by skill)",
+         "Downtime days dedicated to focused study"
+       ],
+       "progress_check": {
+         "ability": "Intelligence-based or Wisdom-based check",
+         "skill_options": [
+           "Insight",
+           "Investigation",
+           "History"
+         ],
+         "tool_options": [
+           "Any tool relevant to the training",
+           "Calligrapher's Tools (for languages)",
+           "Musical Instrument (for performance-based training)"
+         ],
+         "results": {
+           "success":      { "progress_change": 1,  "note": "+1 Progress" },
+           "failure":      { "progress_change": 0,  "note": "No progress" },
+           "failure_by_5": { "progress_change": -1, "note": "Confusion or frustration: lose 1 Progress" }
+         }
+       },
+       "variants": [
+         {
+           "id": "language",
+           "name": "Learn a New Language",
+           "dc": 12,
+           "progress_required": 30,
+           "examples": [
+             "Elvish",
+             "Dwarvish",
+             "Draconic",
+             "Giant",
+             "Infernal"
+           ]
+         },
+         {
+           "id": "tool_proficiency",
+           "name": "Gain Tool Proficiency",
+           "dc": 14,
+           "progress_required": 30,
+           "examples": [
+             "Smith's Tools",
+             "Thieves' Tools",
+             "Herbalism Kit",
+             "Musical Instrument",
+             "Carpenter's Tools"
+           ]
+         },
+         {
+           "id": "tool_expertise",
+           "name": "Gain Tool Expertise",
+           "dc": 16,
+           "progress_required": 120,
+           "examples": [
+             "Smith's Tools (Expertise)",
+             "Thieves' Tools (Expertise)",
+             "Calligrapher's Tools (Expertise)"
+           ],
+           "note": "Requires existing proficiency with the tool."
+         }
+       ],
+       "daily_event_roll": {
+         "die": "d6",
+         "complication_on": 1,
+         "opportunity_on": 6,
+         "nothing_on": "2-5"
+       },
+       "complications": {
+         "die": "d8",
+         "entries": [
+           {
+             "roll": 1,
+             "name": "Difficult Lesson",
+             "description": "The day's material is unusually complex.",
+             "mechanical_effect": { "type": "dc_increase", "value": 2, "duration": "next_check" }
+           },
+           {
+             "roll": 2,
+             "name": "Mental Fatigue",
+             "description": "Your mind struggles to absorb new information.",
+             "mechanical_effect": { "type": "disadvantage_next", "value": 1 }
+           },
+           {
+             "roll": 3,
+             "name": "Instructor Unavailable",
+             "description": "Your instructor is sick, busy, or absent.",
+             "mechanical_effect": { "type": "skip_next_day", "value": 1 }
+           },
+           {
+             "roll": 4,
+             "name": "Miscommunication",
+             "description": "You misunderstand a key concept.",
+             "mechanical_effect": { "type": "progress_loss", "value": 1 }
+           },
+           {
+             "roll": 5,
+             "name": "Training Fees",
+             "description": "You must pay for materials, books, or instructor time.",
+             "mechanical_effect": { "type": "material_cost", "value": "1d4*5", "unit": "gp" }
+           },
+           {
+             "roll": 6,
+             "name": "Frustration",
+             "description": "You hit a mental block and struggle to continue.",
+             "mechanical_effect": { "type": "dc_increase", "value": 2, "duration": "next_check" }
+           },
+           {
+             "roll": 7,
+             "name": "Distraction",
+             "description": "External events disrupt your focus.",
+             "mechanical_effect": { "type": "skip_next_day", "value": 1 }
+           },
+           {
+             "roll": 8,
+             "name": "Incorrect Technique",
+             "description": "You practice something incorrectly and must unlearn it.",
+             "mechanical_effect": { "type": "progress_loss", "value": 1 }
+           }
+         ]
+       },
+       "opportunities": {
+         "die": "d6",
+         "entries": [
+           {
+             "roll": 1,
+             "name": "Clear Insight",
+             "description": "A concept suddenly clicks into place.",
+             "mechanical_effect": { "type": "progress_gain", "value": 1 }
+           },
+           {
+             "roll": 2,
+             "name": "Excellent Instruction",
+             "description": "Your instructor explains something perfectly.",
+             "mechanical_effect": { "type": "advantage_next", "value": 1 }
+           },
+           {
+             "roll": 3,
+             "name": "Study Breakthrough",
+             "description": "You discover a helpful mnemonic or technique.",
+             "mechanical_effect": { "type": "next_check_double_progress", "value": 2 }
+           },
+           {
+             "roll": 4,
+             "name": "Focused Session",
+             "description": "You maintain perfect concentration.",
+             "mechanical_effect": { "type": "progress_gain", "value": 1 }
+           },
+           {
+             "roll": 5,
+             "name": "Helpful Materials",
+             "description": "You find a book or tool that accelerates learning.",
+             "mechanical_effect": { "type": "progress_required_reduction", "value": 1 }
+           },
+           {
+             "roll": 6,
+             "name": "Instructor Praise",
+             "description": "Positive reinforcement boosts your confidence.",
+             "mechanical_effect": { "type": "resolution_bonus", "value": 2 }
+           }
+         ]
+       },
+       "resolution": {
+         "base_score": 10,
+         "positive_modifiers": [
+           { "condition": "per_opportunity_used",        "value": 1,  "description": "+1 for each Opportunity used" },
+           { "condition": "no_complications_occurred",   "value": 2,  "description": "+2 if no Complications occurred" },
+           { "condition": "intelligence_or_wisdom_prof", "value": 1,  "description": "+1 if proficient in a relevant mental skill" },
+           { "condition": "high_quality_instructor",     "value": 2,  "description": "+2 if instructor is exceptional or famous" },
+           { "condition": "extra_study_materials",       "value": 1,  "description": "+1 if extra gold was spent on books or tools" }
+         ],
+         "negative_modifiers": [
+           { "condition": "per_unresolved_complication", "value": -1, "description": "-1 for each unresolved Complication" },
+           { "condition": "multiple_progress_losses",    "value": -2, "description": "-2 if Progress was lost more than once" },
+           { "condition": "mental_fatigue",              "value": -1, "description": "-1 if the character suffered mental strain" },
+           { "condition": "training_took_too_long",      "value": -2, "description": "-2 if training took double the expected time" }
+         ],
+         "outcomes": [
+           {
+             "score_min": 1,
+             "score_max": 8,
+             "name": "Incomplete Training",
+             "description": "You make progress but do not fully master the skill.",
+             "value_modifier": 0.50,
+             "note": "May retry training with reduced progress required"
+           },
+           {
+             "score_min": 9,
+             "score_max": 14,
+             "name": "Basic Mastery",
+             "description": "You successfully learn the new language or tool proficiency.",
+             "value_modifier": 1.00,
+             "note": "Gain the trained proficiency"
+           },
+           {
+             "score_min": 15,
+             "score_max": 18,
+             "name": "Strong Mastery",
+             "description": "You learn quickly and retain knowledge well.",
+             "value_modifier": 1.10,
+             "note": "Gain proficiency and +1 bonus to first related check"
+           },
+           {
+             "score_min": 19,
+             "score_max": 99,
+             "name": "Exceptional Mastery",
+             "description": "You excel beyond expectations.",
+             "value_modifier": 1.20,
+             "bonus": "Gain proficiency and advantage on the first major use",
+             "note": "Exceptional training result"
+           }
+         ]
+       }
+      },
+      
+      
+      {"id": "research",
+       "name": "Research",
+       "description": "The character studies books, scrolls, archives, magical texts, or interviews experts to uncover specific information. Each day of research produces measurable progress toward discovering the desired knowledge.",
+       "requirements": [
+         "Access to a library, archive, sage, or magical repository",
+         "Any required fees or donations (varies by location)"
+       ],
+       "progress_check": {
+         "ability": "Intelligence-based check",
+         "skill_options": [
+           "Arcana",
+           "History",
+           "Nature",
+           "Religion",
+           "Investigation"
+         ],
+         "tool_options": [
+           "Calligrapher's Tools",
+           "Cartographer's Tools",
+           "Any tool relevant to the research topic"
+         ],
+         "results": {
+           "success":      { "progress_change": 1,  "note": "+1 Progress" },
+           "failure":      { "progress_change": 0,  "note": "No progress" },
+           "failure_by_5": { "progress_change": -1, "note": "Misinterpretation or wasted time: lose 1 Progress" }
+         }
+       },
+       "variants": [
+         { "id": "basic",       "name": "Basic Research",       "dc": 10, "progress_required": 3,  "examples": ["Local rumors", "Simple historical facts", "Basic monster lore"] },
+         { "id": "intermediate","name": "Intermediate Research","dc": 13, "progress_required": 8,  "examples": ["Regional history", "Magic item lore", "Guild records"] },
+         { "id": "advanced",    "name": "Advanced Research",    "dc": 15, "progress_required": 12,  "examples": ["Ancient civilizations", "Powerful spells", "Rare creatures"] },
+         { "id": "esoteric",    "name": "Esoteric Research",    "dc": 18, "progress_required": 15, "examples": ["Planar knowledge", "Forgotten rituals", "Lost artifacts"] },
+         { "id": "forbidden",   "name": "Forbidden Research",   "dc": 20, "progress_required": 20, "examples": ["Dark magic", "Sealed histories", "Dangerous secrets"], "note": "May require special permissions or quests." }
+       ],
+       "daily_event_roll": {
+         "die": "d6",
+         "complication_on": 1,
+         "opportunity_on": 6,
+         "nothing_on": "2-5"
+       },
+       "complications": {
+         "die": "d8",
+         "entries": [
+           {
+             "roll": 1,
+             "name": "Misleading Source",
+             "description": "A text or expert gives incorrect or contradictory information.",
+             "mechanical_effect": { "type": "progress_loss", "value": 1 }
+           },
+           {
+             "roll": 2,
+             "name": "Mental Fatigue",
+             "description": "Long hours strain your focus.",
+             "mechanical_effect": { "type": "disadvantage_next", "value": 1 }
+           },
+           {
+             "roll": 3,
+             "name": "Restricted Access",
+             "description": "A section of the archive is temporarily closed.",
+             "mechanical_effect": { "type": "skip_next_day", "value": 1 }
+           },
+           {
+             "roll": 4,
+             "name": "Confusing Text",
+             "description": "Dense or archaic writing slows your progress.",
+             "mechanical_effect": { "type": "dc_increase", "value": 2, "duration": "next_check" }
+           },
+           {
+             "roll": 5,
+             "name": "Research Fee",
+             "description": "You must pay for access, copying, or expert consultation.",
+             "mechanical_effect": { "type": "material_cost", "value": "1d4*5", "unit": "gp" }
+           },
+           {
+             "roll": 6,
+             "name": "Dangerous Knowledge",
+             "description": "You uncover something mentally or magically disturbing.",
+             "mechanical_effect": { "type": "damage", "value": "1d4", "secondary": { "type": "disadvantage_next", "value": 1 } }
+           },
+           {
+             "roll": 7,
+             "name": "Lost Time",
+             "description": "You chase a false lead or misfiled document.",
+             "mechanical_effect": { "type": "progress_loss", "value": 1 }
+           },
+           {
+             "roll": 8,
+             "name": "Scholarly Rival",
+             "description": "Another researcher interferes or competes with you.",
+             "mechanical_effect": { "type": "dc_increase", "value": 2, "duration": "next_check" }
+           }
+         ]
+       },
+       "opportunities": {
+         "die": "d6",
+         "entries": [
+           {
+             "roll": 1,
+             "name": "Clear Insight",
+             "description": "A sudden moment of clarity accelerates your understanding.",
+             "mechanical_effect": { "type": "progress_gain", "value": 1 }
+           },
+           {
+             "roll": 2,
+             "name": "Helpful Librarian",
+             "description": "A knowledgeable assistant guides you to the right sources.",
+             "mechanical_effect": { "type": "advantage_next", "value": 1 }
+           },
+           {
+             "roll": 3,
+             "name": "Rare Manuscript",
+             "description": "You gain access to a valuable or restricted text.",
+             "mechanical_effect": { "type": "progress_required_reduction", "value": 1 }
+           },
+           {
+             "roll": 4,
+             "name": "Expert Consultation",
+             "description": "A sage or scholar provides crucial insight.",
+             "mechanical_effect": { "type": "progress_gain", "value": 1 }
+           },
+           {
+             "roll": 5,
+             "name": "Breakthrough Connection",
+             "description": "You connect multiple sources into a powerful insight.",
+             "mechanical_effect": { "type": "next_check_double_progress", "value": 2 }
+           },
+           {
+             "roll": 6,
+             "name": "Scholarly Inspiration",
+             "description": "Your mind sharpens, revealing deeper truths.",
+             "mechanical_effect": { "type": "resolution_bonus", "value": 2 }
+           }
+         ]
+       },
+       "resolution": {
+         "base_score": 10,
+         "positive_modifiers": [
+           { "condition": "per_opportunity_used",        "value": 1,  "description": "+1 for each Opportunity used" },
+           { "condition": "no_complications_occurred",   "value": 2,  "description": "+2 if no Complications occurred" },
+           { "condition": "arcana_or_history_prof",      "value": 1,  "description": "+1 if proficient in Arcana or History" },
+           { "condition": "expert_hired",                "value": 1,  "description": "+1 if a sage or expert was hired" },
+           { "condition": "special_library_access",      "value": 2,  "description": "+2 if researching in a superior archive or magical library" }
+         ],
+         "negative_modifiers": [
+           { "condition": "per_unresolved_complication", "value": -1, "description": "-1 for each unresolved Complication" },
+           { "condition": "multiple_progress_losses",    "value": -2, "description": "-2 if Progress was lost more than once" },
+           { "condition": "dangerous_knowledge",         "value": -1, "description": "-1 if the character suffered mental strain or damage" },
+           { "condition": "research_took_too_long",      "value": -2, "description": "-2 if research took double the expected time" }
+         ],
+         "outcomes": [
+           {
+             "score_min": 1,
+             "score_max": 8,
+             "name": "Fragmentary Knowledge",
+             "description": "You uncover only partial or unreliable information.",
+             "value_modifier": 0.50,
+             "note": "May require additional research or quests"
+           },
+           {
+             "score_min": 9,
+             "score_max": 14,
+             "name": "Solid Understanding",
+             "description": "You learn the essential facts you were seeking.",
+             "value_modifier": 1.00,
+             "note": "Standard research success"
+           },
+           {
+             "score_min": 15,
+             "score_max": 18,
+             "name": "Deep Insight",
+             "description": "You uncover hidden details, rare lore, or advanced knowledge.",
+             "value_modifier": 1.10,
+             "note": "Gain additional clues or advantages"
+           },
+           {
+             "score_min": 19,
+             "score_max": 99,
+             "name": "Revelatory Discovery",
+             "description": "You uncover profound truths, forgotten secrets, or powerful revelations.",
+             "value_modifier": 1.20,
+             "bonus": "May unlock new quests, spells, or unique narrative opportunities",
+             "note": "Exceptional research result"
+           }
+         ]
+       }
+     }
+    ]
+  }
+}

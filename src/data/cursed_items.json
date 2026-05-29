@@ -1,0 +1,1359 @@
+{
+    "identity_blocks":[
+        {
+            "id": "id_jewelry_ring_01",
+            "type": "ring",
+            "compatibility_tags": ["worn_jewelry"],
+            "name": "The Band of Severed Webs",
+            "theme_tags": ["secrets", "whisper", "spider", "deception", "betrayal"],
+            "material": "A thin, structural loop made of calcified spider silk that feels surprisingly like cold porcelain. The metal setting holds a hollow glass bead filled with a single drop of stagnant, black water.",
+            "visual_detail": "Whenever you speak a deliberate lie while wearing it, the black water inside the glass bead boils violently for a split second, though the glass remains cool to the touch.",
+            "sensory_detail": "Wearing it makes your fingers feel unnaturally long and nimble. Occasionally, you feel a faint, phantom crawling sensation tracing the perimeter of your wrist, as if an invisible arachnid is anchoring itself to your skin."
+        },
+        {
+            "id": "id_garment_cloak_01",
+            "type": "cloak",
+            "compatibility_tags": ["worn_body"],
+            "name": "The Shroud of the Ash Walker",
+            "theme_tags": ["ash", "fire", "decay", "oblivion", "death"],
+            "material": "Heavy, tattered wool dyed the color of a dying hearth. The hem is permanently blackened and frayed, smelling strongly of charcoal and spent incense.",
+            "visual_detail": "Flakes of grey ash constantly drift off the edges of the fabric, disintegrating into nothingness before they hit the ground. No matter how much ash falls, the cloak never loses its mass or structure.",
+            "sensory_detail": "The cloak provides an overwhelming, stifling heat to your shoulders, like standing too close to an active furnace. When the wind blows through it, the fabric makes a dry, choking sound, resembling a collective gasp for air."
+        },
+        {
+            "id": "id_focus_lantern_01",
+            "type": "lantern",
+            "compatibility_tags": ["held"],
+            "name": "The Vigilant Speculum",
+            "theme_tags": ["geometry", "precision", "order", "voidborn", "stasis"],
+            "material": "An rigid, interlocking brass framework that defies traditional craftsmanship, enclosing six flawlessly polished panes of dark, mirrored glass. It has no wick, oil reservoir, or candle holder inside.",
+            "visual_detail": "When a light source is brought near, the lantern does not project a beam; instead, its mirrored panes trap and fold the light inward, creating an illusion of an infinite, geometrically perfect starscape swirling within the empty housing.",
+            "sensory_detail": "The lantern is completely weightless when held by its ring handle, but it resists sudden movements. Pivoting or swinging it quickly requires a strange physical effort, as if the object is anchored to a different set of spatial coordinates."
+        },
+        {
+            "id": "id_garment_boots_01",
+            "type": "boots",
+            "compatibility_tags": ["worn_body"],
+            "name": "The Sinking Strides",
+            "theme_tags": ["flesh", "mutation", "grave", "pain", "instinct"],
+            "material": "Thick, heavy footwear fashioned from layers of cured, mismatched hide that feels disturbingly soft—resembling calloused soles and knuckles rather than traditional leather. The buckles are carved from yellowed, blunt teeth.",
+            "visual_detail": "The boots leave wet, heavy impressions on solid stone or wood, as if the material beneath them is briefly turning into soft mire under their weight. These tracks evaporate into a faint, foul grease after a minute.",
+            "sensory_detail": "Sliding your feet inside feels like stepping into tight, warm muscle tissue that gently constricts around your ankles. Walking in them requires an intentional rhythm, as the soles twitch and flex in sync with your own muscle movements."
+        },
+        {
+            "id": "id_jewelry_amulet_01",
+            "type": "amulet",
+            "compatibility_tags": ["worn_jewelry"],
+            "name": "The Courtier's Frozen Heart",
+            "theme_tags": ["royalty", "pride", "cold", "envy", "stasis"],
+            "material": "A heavy, teardrop-shaped medallion made of flawless rime-iron that never warms. At its center is an embedded shard of unmelting pale blue ice, framed by sharp, jagged points resembling a frozen crown.",
+            "visual_detail": "Your reflection in the polished surface of the metal does not move or blink when you do; it remains perfectly still, staring back with an expression of cold, aristocratic disdain.",
+            "sensory_detail": "Resting against your chest, it sends a continuous, dull ache straight to your sternum. The ambient sound around you muffled slightly, as if you are standing alone in an empty, snow-covered throne room."
+        },
+        {
+            "id": "id_weapon_sword_01",
+            "type": "sword",
+            "compatibility_tags": ["weapon"],
+            "name": "The Thirsting Spine",
+            "theme_tags": ["bone", "hunger", "wrath", "predator", "blood"],
+            "material": "The blade is fashioned from the calcified, segmented backbone of an unidentified desert apex predator, ground down to a razor-sharp edge. The hilt is wrapped in rough, sun-bleached sinew.",
+            "visual_detail": "When the blade draws blood, the porous bone rapidly absorbs the fluid like a dry sponge, turning the ivory-white material into a deep, mottled crimson that fades back to white over an hour.",
+            "sensory_detail": "Holding the grip makes your pulse race erratically. You feel a constant, phantom vibration humming through the marrow of your own arm bones, demanding swift, violent motion."
+        },
+        {
+            "id": "id_focus_tome_01",
+            "type": "tome",
+            "compatibility_tags": ["held"],
+            "name": "The Codex of Living Echoes",
+            "theme_tags": ["memory", "ghostly", "scholar", "ancient", "haunting"],
+            "material": "A thick, iron-bound manuscript with pages made of scraped vellum that feels oddly elastic. The cover is completely blank, showing no title or maker's mark.",
+            "visual_detail": "The words on the pages are not written in ink; they are composed of tiny, microscopic pinpricks in the vellum. As you watch, the text shifts and rewrites itself, spelling out names of people you have met and quotes you have heard in the past.",
+            "sensory_detail": "Whenever you flip through the pages, the rustling paper sound transforms into a chorus of dry, overlapping whispers inside your mind. The book smells faintly of damp soil and ancient, unventilated crypts."
+        },
+        {
+            "id": "id_garment_gloves_01",
+            "type": "gloves",
+            "compatibility_tags": ["worn_body"],
+            "name": "The Puppeteer's Veils",
+            "theme_tags": ["illusion", "mask", "deception", "ambition", "thought"],
+            "material": "A pair of skin-tight gloves made of an incredibly fine, oily black mesh that clings to your hands like a second skin. They are so thin that your fingerprints remain completely visible through the fabric.",
+            "visual_detail": "In your shadow, your hands do not appear to have five fingers; instead, they cast long, twisted silhouettes that look like dozens of thin, twitching strings stretching outward into nothingness.",
+            "sensory_detail": "Your touch becomes completely desensitized; you can feel the temperature or shape of objects, but they all feel as though you are touching them through a layer of cold, gelatinous grease."
+        },
+        {
+            "id": "id_focus_shield_01",
+            "type": "shield",
+            "compatibility_tags": ["held"],
+            "name": "The Aegis of the Sunken Epoch",
+            "theme_tags": ["water", "storm", "ancient", "inevitability", "decay"],
+            "material": "A heavy, round shield made of fossilized, waterlogged oak reinforced with corroded green bronze bands. Several barnacles and calcified sea-shells are permanently fused into the wood.",
+            "visual_detail": "The surface is constantly wet to the touch. Droplets of saltwater continuously bead up on the bronze frame and run downward, forming tiny, rhythmic trickles that never seem to dry or run out.",
+            "sensory_detail": "Holding the shield makes you hear the deep, rhythmic thrumming of a distant, crushing ocean tide in your ears. It smells heavily of rotting kelp, brine, and the wet stone found in deep sea caverns."
+        },
+        {
+            "id": "id_garment_helmet_01",
+            "type": "helmet",
+            "compatibility_tags": ["worn_body"],
+            "name": "The Crown of Shattered Glass",
+            "theme_tags": ["madness", "fear", "mind", "shattered", "pain"],
+            "material": "An open-faced iron sallet where the entire visor and crest have been replaced by jagged, interlocking shards of dark, smoky mirror-glass that point both outward and inward.",
+            "visual_detail": "The internal glass shards press lightly against your temples and brow but never pierce the skin. From the outside, the mirror plates distort and fracture the light, making your face appear faceless or violently split.",
+            "sensory_detail": "Wearing the helm causes a constant, high-pitched ringing sound—like a crystal glass ringing right before it breaks. It amplifies your heartbeat, making it sound like heavy footsteps approaching you from behind."
+        },
+        {
+            "id": "id_utility_key_01",
+            "type": "key",
+            "compatibility_tags": ["held"],
+            "name": "The Unraveler's Key",
+            "theme_tags": ["time", "entropy", "voidborn", "delay", "cycle"],
+            "material": "A long, spindly skeleton key crafted from an unknown, dull grey metal that absorbs all warmth. The bow of the key is shaped like an ouroboros—a serpent biting its own tail.",
+            "visual_detail": "When held near a mechanism or a lock, the teeth of the key faintly blur and shiver, visually desynchronizing from the rest of the object as if they exist a few seconds ahead or behind the present moment.",
+            "sensory_detail": "The key is unnaturally light, almost weightless. Touching it leaves a greasy, graphite-like residue on your fingertips that disappears after a few minutes, accompanied by an intense sensation of déjà vu."
+        },
+        {
+            "id": "id_focus_staff_01",
+            "type": "staff",
+            "compatibility_tags": ["held"],
+            "name": "The Pillar of the Voidborn",
+            "theme_tags": ["cosmic", "eldritch", "star", "arcane", "silence"],
+            "material": "A five-foot staff carved from a single piece of dense, star-black stone that completely lacks any natural grain. The top holds an asymmetrical, raw crystal that hums with purple light.",
+            "visual_detail": "The crystal does not cast shadows; instead, it casts an area of inverse light where shadows on the floor and walls are briefly erased or turned into stark, violet-tinged silhouettes.",
+            "sensory_detail": "Holding the staff completely deadens the sound around you within a few inches. Your own breathing sounds hollow and distant, as if you are speaking into a massive, empty cavern or standing in the vacuum of space."
+        },
+        {
+            "id": "id_weapon_dagger_01",
+            "type": "dagger",
+            "compatibility_tags": ["weapon"],
+            "name": "The Physician's Argument",
+            "theme_tags": ["disease", "vitality", "precision", "flesh", "decay"],
+            "material": "A slender stiletto with a blade of dark, veined obsidian that looks uncomfortably organic — less like volcanic glass and more like a cross-section of calcified tissue. The handle is wrapped in yellowed linen bandages, tightly wound and never unraveled.",
+            "visual_detail": "When the blade punctures skin, the wound does not bleed immediately. There is a two-second delay, as if the body is consulting with itself before deciding to respond.",
+            "sensory_detail": "Held for longer than a minute, the blade produces a faint warmth that radiates up your palm — not the warmth of metal heated by friction, but the specific warmth of a living thing pressed against you."
+        },
+        {
+            "id": "id_weapon_axe_01",
+            "type": "axe",
+            "compatibility_tags": ["weapon"],
+            "name": "The Penitent's Tithe",
+            "theme_tags": ["oath", "wrath", "ritual", "blood", "law"],
+            "material": "A single-headed hatchet with a head of dark iron stamped with hundreds of tiny, overlapping marks — each one a different symbol, as if every previous owner left a notation. The haft is plain ash wood, worn smooth, with a single deep notch near the base cut deliberately.",
+            "visual_detail": "When you swear an oath or make a binding promise while holding it, one new mark appears on the iron head, pressed into the metal without heat or tool.",
+            "sensory_detail": "The handle vibrates faintly when you are in the presence of someone who has broken a sworn promise. The vibration has no volume — it is felt only in the bones of the hand."
+        },
+        {
+            "id": "id_weapon_bow_01",
+            "type": "bow",
+            "compatibility_tags": ["weapon"],
+            "name": "The Argument at Distance",
+            "theme_tags": ["predator", "silence", "instinct", "wind", "inevitability"],
+            "material": "A recurve bow carved from a single piece of pale, almost white wood that has no grain — it looks less grown than extruded. The string is made from braided sinew that produces no sound when drawn.",
+            "visual_detail": "Arrows nocked to this bow leave no shadow on the ground as they fly. The absence is subtle enough that most observers never consciously register it.",
+            "sensory_detail": "Drawing the string creates an almost complete sensory void — ambient sound dims, peripheral vision narrows, and for the half-second before release, you are aware of nothing except the target."
+        },
+        {
+            "id": "id_jewelry_crown_01",
+            "type": "crown",
+            "compatibility_tags": ["worn_jewelry"],
+            "name": "The Empty Throne",
+            "theme_tags": ["royalty", "ambition", "inevitability", "pride", "ancient"],
+            "material": "A circlet of corroded black iron set with seven stones that have been deliberately shattered in place, their fragments held by thin wire so that the crown is technically complete but obviously, intentionally broken.",
+            "visual_detail": "Anyone looking at the wearer's face for more than a few seconds finds themselves making involuntary eye contact, then immediately looking away — not out of discomfort, but out of the instinctive deference one gives to something much older and larger than oneself.",
+            "sensory_detail": "Wearing it produces a faint but constant pressure at the temples — not painful, but authoritative. Like being reminded, without words, that something is expected of you."
+        },
+        {
+            "id": "id_jewelry_earring_01",
+            "type": "earring",
+            "compatibility_tags": ["worn_jewelry"],
+            "name": "The Twice-Told Secret",
+            "theme_tags": ["whisper", "secrets", "deception", "memory", "haunting"],
+            "material": "A small hook of tarnished copper holding a single dried seed pod — the kind that rattles when moved, though this one is silent. The pod is sealed with a smear of dark wax stamped with a thumbprint that is not yours.",
+            "visual_detail": "In quiet rooms, the seed pod appears to shift slightly inside its casing without producing sound — a movement visible only from the corner of your eye, never when looked at directly.",
+            "sensory_detail": "Wearing it makes your own voice sound subtly different to you — slightly lower, slightly slower, as if it is traveling a short distance before reaching your own ears."
+        },
+        {
+            "id": "id_garment_mask_01",
+            "type": "mask",
+            "compatibility_tags": ["worn_body"],
+            "name": "The Courteous Skin",
+            "theme_tags": ["illusion", "mask", "identity", "deception", "veil"],
+            "material": "A half-mask of lacquered paper-mache, painted in the expressionless style of formal court portraiture. The features are generic enough to be familiar — a face that almost resembles someone you know, but cannot place.",
+            "visual_detail": "Other people's descriptions of your appearance while wearing the mask are always slightly inconsistent. They agree on the mask itself. They disagree, subtly, on everything behind it.",
+            "sensory_detail": "The inside of the mask is always slightly damp, as though previously worn and not yet dried. It fits perfectly regardless of the wearer's face structure."
+        },
+        {
+            "id": "id_garment_veil_01",
+            "type": "veil",
+            "compatibility_tags": ["worn_body"],
+            "name": "The Mourner's Erasure",
+            "theme_tags": ["death", "ghost", "grief", "shadow", "oblivion"],
+            "material": "A length of fine black fabric so thin it is nearly translucent, hemmed with tiny glass beads that each contain a minuscule, dark figure — too small to identify, too deliberate to be decorative.",
+            "visual_detail": "Creatures that have recently died — within the last hour — appear to track the wearer's movement with their eyes, even after death. This is only visible to others, never to the wearer.",
+            "sensory_detail": "Wearing it produces a sound like distant crowd noise heard through walls — the cumulative murmur of a great number of people, none of whom are speaking loudly enough to be understood."
+        },
+        {
+            "id": "id_utility_compass_01",
+            "type": "compass",
+            "compatibility_tags": ["held"],
+            "name": "The Cartographer's Regret",
+            "theme_tags": ["fate", "cycle", "entropy", "time", "inevitability"],
+            "material": "A pocket compass of tarnished brass with a cracked crystal face. The needle does not point north — it rotates slowly and continuously, completing one full revolution every eleven minutes, regardless of orientation or magnetic interference.",
+            "visual_detail": "When you are about to make a decision with lasting consequences, the needle stops rotating for exactly three seconds, pointing in a direction that has no obvious significance. Then it resumes.",
+            "sensory_detail": "Holding it produces a persistent, low-grade sense of having forgotten something important — not anxiety, not urgency, just the quiet certainty of an overlooked detail."
+        },
+        {
+            "id": "id_utility_mirror_01",
+            "type": "mirror",
+            "compatibility_tags": ["held"],
+            "name": "The Honest Liar",
+            "theme_tags": ["mirror", "identity", "truth", "illusion", "misdirection"],
+            "material": "A hand mirror the size of a large book, framed in dark wood carved with interlocking eyes. The reflective surface is perfect — no distortion, no tarnish, no imperfection — which is itself the first warning.",
+            "visual_detail": "The mirror shows you accurately. It shows everyone else as they were approximately one year ago. The discrepancy is invisible unless you know to look for it.",
+            "sensory_detail": "Holding the mirror at arm's length while looking at your own reflection produces a faint, involuntary sense of distance — as though you are observing yourself from slightly outside your own body."
+        },
+        {
+            "id": "id_utility_hourglass_01",
+            "type": "hourglass",
+            "compatibility_tags": ["held"],
+            "name": "The Unequal Hours",
+            "theme_tags": ["time", "stasis", "delay", "entropy", "numbers"],
+            "material": "A palm-sized hourglass of dark iron and smoked glass, filled with sand that is the exact color of old bone. The two chambers are not equal in size — one holds visibly more sand than the other.",
+            "visual_detail": "The sand flows in the wrong direction for approximately eleven seconds every hour, then corrects itself without explanation. The total time tracked is always accurate.",
+            "sensory_detail": "When you are performing an action you have done before — exactly before, in identical circumstances — the hourglass grows noticeably heavier for the duration of the action, then returns to its normal weight."
+        },
+        {
+            "id": "id_utility_vial_01",
+            "type": "vial",
+            "compatibility_tags": ["consumed"],
+            "name": "The Kept Specimen",
+            "theme_tags": ["disease", "vitality", "flesh", "decay", "scholar"],
+            "material": "A thick-walled glass vial sealed with a stopper of dark cork and reinforced wax. Inside, suspended in clear fluid, is a piece of tissue — not identifiable, not rotting, not growing. Simply preserved at a moment that should have passed.",
+            "visual_detail": "The fluid inside the vial is always the same temperature as a living body, regardless of ambient conditions. If left on a cold surface overnight, it will be warm in the morning.",
+            "sensory_detail": "Holding the vial produces a faint but unmistakable pulse against your palm — not from the glass, but from somewhere inside the fluid, at the exact rhythm of a resting heartbeat."
+        },
+        {
+            "id": "id_utility_bell_01",
+            "type": "bell",
+            "compatibility_tags": ["held"],
+            "name": "The Unrung Summons",
+            "theme_tags": ["spirit", "ghost", "ritual", "death", "necrotic"],
+            "material": "A small brass handbell with a clapper that has been removed and replaced with a dried finger bone, tied in place with red thread. The bell produces no sound when rung in normal air.",
+            "visual_detail": "In locations where someone has recently died — within the last week — the bell rings once on its own when first brought into the space. The sound is audible only to the person holding it.",
+            "sensory_detail": "When rung deliberately, even without sound, creatures that are invisible, ethereal, or currently in spirit form become aware of your exact location for 1 minute, regardless of distance or planar barriers."
+        },
+        {
+            "id": "id_garment_belt_01",
+            "type": "belt",
+            "compatibility_tags": ["worn_body"],
+            "name": "The Seventh Knot",
+            "theme_tags": ["oath", "ritual", "law", "binding", "tradition"],
+            "material": "A wide belt of tightly braided dark leather, fastened not with a buckle but with a knot of seven interlocking loops that tightens under tension and cannot be undone by pulling — only by understanding the specific sequence.",
+            "visual_detail": "The knot shifts its configuration slightly each morning, requiring a new solution to remove the belt. The solutions follow a pattern that takes approximately three weeks to recognize.",
+            "sensory_detail": "When you break a rule you have set for yourself — not an external rule, but one you established voluntarily — the belt tightens by exactly one notch for 1 hour. It does not hurt. It is simply present."
+        },
+        {
+            "id": "id_garment_robe_01",
+            "type": "robe",
+            "compatibility_tags": ["worn_body"],
+            "name": "The Consensus of Stars",
+            "theme_tags": ["cosmic", "arcane", "eldritch", "star", "silence"],
+            "material": "A long robe of deep indigo fabric that shifts in tone depending on light source — in firelight it appears almost black; in moonlight it shows a faint, internal pattern of pale points that do not correspond to any known constellation.",
+            "visual_detail": "The hem of the robe never accumulates dust, mud, or moisture. It does not repel these things — they simply do not appear to reach it, as if the robe exists at a very slight spatial remove from the floor.",
+            "sensory_detail": "Wearing it for longer than an hour produces a persistent sense of being observed from a very great distance by something that is not hostile but is intensely, patiently curious."
+        },
+        {
+            "id": "id_garment_bracers_01",
+            "type": "bracers",
+            "compatibility_tags": ["worn_body"],
+            "name": "The Debt of Motion",
+            "theme_tags": ["swarm", "venom", "instinct", "beast", "mutation"],
+            "material": "Paired arm guards made from the shed carapace of an enormous insect — the surface segmented and slightly iridescent, ranging from deep green to oil-black depending on angle. The inner surface is lined with something soft that is not cloth.",
+            "visual_detail": "When your arms are completely still for longer than thirty seconds, the carapace surface appears to breathe — expanding and contracting by a fraction of a millimeter in an irregular, biological rhythm.",
+            "sensory_detail": "Wearing them makes your forearms feel lighter than they should, with a constant, faint prickling sensation — like the ghost of a thousand small legs, perfectly still but present, waiting for you to move so they can move with you."
+        },
+        {
+            "id": "id_focus_wand_01",
+            "type": "wand",
+            "compatibility_tags": ["held"],
+            "name": "The Surveyor's Argument",
+            "theme_tags": ["geometry", "precision", "numbers", "order", "arcane"],
+            "material": "A thin rod of pale birch, exactly thirteen inches long, capped at both ends with small discs of polished brass stamped with measurement markings. Three equidistant rings of dark wood are inlaid along its length.",
+            "visual_detail": "When pointed at a space or object, faint geometric lines appear in the air around the target — wireframe outlines, as if the wand is rendering the world in structural terms, exposing the underlying architecture of a thing.",
+            "sensory_detail": "Holding it creates an involuntary tendency to quantify — distances feel measurable, angles become apparent, and the structural weaknesses of nearby objects and architecture present themselves as obvious to anyone paying attention."
+        },
+        {
+            "id": "id_focus_skull_01",
+            "type": "skull",
+            "compatibility_tags": ["held"],
+            "name": "The Last Creditor",
+            "theme_tags": ["death", "necrotic", "afterlife", "bone", "memory"],
+            "material": "A human skull, complete, with all teeth intact. It has been lacquered in deep red until the surface is smooth and sealed. Three of the teeth have been replaced with ones of different size, clearly sourced from different individuals.",
+            "visual_detail": "The eye sockets are filled with a dark material — not empty, not glowing, but occupied in a way that is difficult to articulate. Things placed inside them are not visible from outside. The space appears deeper than it is.",
+            "sensory_detail": "Carrying it produces the persistent, low-frequency awareness of debt — not financial, not moral, but ontological. The sense that something is owed and the timeline for payment is not yours to set."
+        },
+        {
+            "id": "id_focus_root_01",
+            "type": "root",
+            "compatibility_tags": ["held"],
+            "name": "The Listener Below",
+            "theme_tags": ["forest", "root", "earth", "ancient", "inevitability"],
+            "material": "A gnarled length of root approximately the diameter of a forearm, dried but not brittle, with a surface worn smooth by handling. It branches at one end into three smaller roots, each tipped with a small, sealed bud that has never opened.",
+            "visual_detail": "When placed on bare earth or stone, the root extends a single hair-thin tendril downward — too fine to grab, too deliberate to be organic movement. The tendril retracts when the root is picked up.",
+            "sensory_detail": "Holding it while standing on natural ground produces a distant, diffuse awareness of the soil beneath you — its depth, its moisture, the presence of anything moving through it within a radius you cannot precisely measure but can feel."
+        },
+        {
+            "id": "id_weapon_bow_02",
+            "type": "bow",
+            "compatibility_tags": ["weapon"],
+            "name": "The Spine of the Silent Flock",
+            "theme_tags": ["bone", "silence", "predator", "wind", "oblivion"],
+            "material": "A longbow carved from a single, seamless arc of pale, flexible whalebone or giant avian rib. It has no physical bowstring; instead, a faint, trembling line of distorted air stretches between its notched tips.",
+            "visual_detail": "When you draw the invisible string, your fingers develop a light layer of grey frost. Releasing it produces no sound whatsoever—no thrum, no whistle, and no impact noise when the projectile strikes its target.",
+            "sensory_detail": "Holding the bow causes all ambient wind within 10 feet of you to instantly die down. You feel a heavy, pressure-like vacuum in your chest, as if the weapon is actively breathing in the surrounding atmosphere."
+        },
+        {
+            "id": "id_utility_mirror_02",
+            "type": "mirror",
+            "compatibility_tags": ["held"],
+            "name": "The Speculum of Fractured Days",
+            "theme_tags": ["mirror", "time", "shattered", "memory", "illusion"],
+            "material": "A small, circular pocket mirror housed in an ornate casing of blackened, tarnished silver. The glass surface is split by a single, perfectly clean hairline fracture down the center.",
+            "visual_detail": "The left side of the fracture reflects your surroundings exactly as they were thirty seconds ago. The right side reflects them as they will be thirty seconds in the future. The two halves never line up perfectly.",
+            "sensory_detail": "Opening the casing fills the room with the distant, overlapping tick-tick-ticking of thousands of clockwork gears. Looking at your own split reflection causes a brief, sickening sensation of falling backward."
+        },
+        {
+            "id": "id_jewelry_crown_02",
+            "type": "crown",
+            "compatibility_tags": ["worn_jewelry"],
+            "name": "The Diadem of Cosmic Emptiness",
+            "theme_tags": ["royalty", "cosmic", "void", "star", "pride"],
+            "material": "A delicate, open-fronted circlet made of a dark, dull metal that does not reflect light. Set into the brow are five raw, uncut gems that look like pockets of absolute, unlit night sky.",
+            "visual_detail": "If you look closely at the gemstones, you can see tiny, microscopic silver dust particles swirling inside them, mimicking the rotation of galaxies that slowly burn out and vanish into the dark.",
+            "sensory_detail": "Placing it on your head removes the sensation of weight from your entire body, making you feel as though you are floating. However, it also brings a cold, absolute emotional detachment—all your bonds and worries suddenly feel completely insignificant."
+        },
+        {
+            "id": "id_garment_belt_02",
+            "type": "belt",
+            "compatibility_tags": ["worn_body"],
+            "name": "The Girdle of the Deep Root",
+            "theme_tags": ["root", "earth", "vitality", "stasis", "decay"],
+            "material": "A thick, woven sash made of coarse, mud-stained fibers and dried, flexible briar vines that still bear sharp, dark thorns. The buckle is a flat, heavy piece of unpolished slate.",
+            "visual_detail": "Small, pale root filaments slowly emerge from the inner side of the sash over time. If you remain completely stationary for more than a minute, these roots begin to stretch downward toward the floor, trying to dig into the surface.",
+            "sensory_detail": "The sash feels incredibly heavy, as if it is made of lead rather than wood and fiber. Wearing it grants a grounded, immovable stability to your stance, but your lower back constantly aches with a dull, throbbing sensation of ancient, heavy soil."
+        },
+        {
+            "id": "id_weapon_axe_02",
+            "type": "axe",
+            "compatibility_tags": ["weapon"],
+            "name": "The Reaver's Thirst",
+            "theme_tags": ["blood", "wrath", "hunger", "decay", "rust"],
+            "material": "A heavy, dual-bitted battleaxe forged from pitted, dark iron that appears permanently rusted along the bevel. The shaft is made of splintered ash wood wrapped in layers of dried, blackened skin.",
+            "visual_detail": "The rust on the blade isn't static; it flakes off and regenerates in slow, rhythmic waves, resembling a crust scab forming over a wound. When it strikes a foe, the blade drinks the blood, temporarily clearing the rust to reveal a gleaming, cruel edge.",
+            "sensory_detail": "Holding the weapon fills your mouth with a persistent, heavy taste of iron and copper coins. Your breathing becomes shallow and ragged, and you feel a burning heat radiating from your palms up into your forearms."
+        },
+        {
+            "id": "id_garment_cloak_02",
+            "type": "cloak",
+            "compatibility_tags": ["worn_body"],
+            "name": "The Mantle of the Wailing Gale",
+            "theme_tags": ["storm", "wind", "lightning", "ghostly", "fear"],
+            "material": "A tattered, stormy grey cloak made of a gossamer fabric that feels as light as mist. The collar is reinforced with jagged shards of dark volcanic glass stitched together with silver thread.",
+            "visual_detail": "The fabric ripples, twists, and snaps aggressively behind you even when you are standing in a completely sealed, draftless room, as if it is caught in a perpetual, localized hurricane.",
+            "sensory_detail": "The cloak hums with a faint static electricity that makes the hairs on your arms stand up. When worn, the ambient sounds of your environment are drowned out by the distant, mournful howling of a severe gale and faint, indistinct screams."
+        },
+        {
+            "id": "id_jewelry_ring_02",
+            "type": "ring",
+            "compatibility_tags": ["worn_jewelry"],
+            "name": "The Core of the Ashen Hearth",
+            "theme_tags": ["fire", "ash", "entropy", "void", "emptiness"],
+            "material": "A thick, heavy band carved entirely out of cold, solidified volcanic magma. Set into the center is a hollow, burning ember that floats freely within the stone setting without touching the edges.",
+            "visual_detail": "The floating ember pulsates with a dim, dying orange light. Whenever you expend a resource (like a spell slot or a hit die), the ember flares into a brilliant white heat for a fraction of a second before dropping back into a dull, grey ash-like glow.",
+            "sensory_detail": "Your ring finger feels entirely numb, as if it has been exposed to frostbite or deadened by extreme heat. A faint smell of sulfur and burnt hair follows you wherever you go while this item is worn."
+        },
+        {
+            "id": "id_focus_shroud_01",
+            "type": "consumed",
+            "compatibility_tags": ["consumed"],
+            "name": "The Blindfold of the Unseen Truth",
+            "theme_tags": ["secrets", "veil", "madness", "thought", "vision"],
+            "material": "A long strip of yellowed linen fabric, torn from an ancient burial shroud. The surface is heavily inscribed with tightly packed, erratic symbols written in a faded, dark purple ink.",
+            "visual_detail": "The symbols on the linen faintly shift, crawl, and realign themselves whenever no one is looking directly at them. When wrapped tightly over your eyes, the fabric becomes semi-translucent only to your gaze, casting the world in absolute monochrome.",
+            "sensory_detail": "Tying the blindfold blocks out all mundane sounds, replacing them with a low, overwhelming, synchronized whispering in your mind. It smells intensely of sweet embalming spices, myrrh, and old, undisturbed dust."
+        },
+        {
+            "id": "id_weapon_flail_01",
+            "type": "flail",
+            "compatibility_tags": ["weapon"],
+            "name": "The Lash of Restless Marrow",
+            "theme_tags": ["bone", "pain", "necrotic", "grave", "ghostly"],
+            "material": "A cruel flail where the handle is a long, straightened forearm bone wrapped in iron wire. The chain consists of jagged, interlocking human vertebrae terminating in a heavy, hollow skull-pendant forged from dark, cold-iron.",
+            "visual_detail": "When swung through the air, the whistling sound of the chain transforms into a chorus of faint, agonized gasps. The skull-pendant leaves a dim, wispy trail of grey, necrotic mist that dissipates within two seconds.",
+            "sensory_detail": "Holding the handle makes the knuckles of your own hand turn pale and stiff, as if your skin is tightening over the bone. You feel a constant, dull throb of phantom pain radiating up into your elbow with every heartbeat."
+        },
+        {
+            "id": "id_garment_spectacles_01",
+            "type": "spectacles",
+            "compatibility_tags": ["worn_body"],
+            "name": "The Spectacles of the Void-Gazer",
+            "theme_tags": ["cosmic", "astral", "rift", "eldritch", "vision"],
+            "material": "A delicate pair of wire-frame glasses made of a shimmering, oily metal that changes color under different angles. The lenses are cut from two thin, perfectly flat slices of translucent stardust-ore.",
+            "visual_detail": "When worn, you do not see the eyes of the bearer; the lenses appear as two solid, pitch-black voids filled with a slow, hypnotic swirl of violet nebulas and dying stars.",
+            "sensory_detail": "Looking through the lenses causes a strange, warping effect on your depth perception, making distant structures look unnaturally close and flat. The air around your ears becomes completely silent, losing all acoustic depth."
+        },
+        {
+            "id": "id_jewelry_amulet_02",
+            "type": "amulet",
+            "compatibility_tags": ["worn_jewelry"],
+            "name": "The Brooch of the Swarm-Mother",
+            "theme_tags": ["swarm", "parasite", "hive", "organic", "venom"],
+            "material": "A heavy bronze brooch shaped like a bloated, sleeping hornet queen. The thorax is a single, large piece of unpolished amber that encases a living, twitching larval insect inside.",
+            "visual_detail": "If you look at the amber for more than a few seconds, the trapped larva turns its head to stare directly back at you. Its microscopic mandibles click rhythmically against the interior walls of its amber prison.",
+            "sensory_detail": "Pinning it to your clothes sends a wave of localized numbness through your chest, followed by a persistent, low-frequency vibration that feels exactly like a colony of insects burrowing through a hollow wooden log."
+        },
+        {
+            "id": "id_focus_pouch_01",
+            "type": "pouch",
+            "compatibility_tags": ["held"],
+            "name": "The Siphon of Flayed Memories",
+            "theme_tags": ["memory", "secrets", "emptiness", "void", "loss"],
+            "material": "A small, unassuming leather drawstring pouch. The leather is exceptionally smooth, pale, and entirely hairless—resembling parchment made from the skin of an unidentifiable creature.",
+            "visual_detail": "When you untie the silver drawstring and look inside, the interior appears infinitely deep, filled with a dense, clinging grey fog that slowly moves in a tight, counter-clockwise spiral.",
+            "sensory_detail": "Reaching your hand inside the fog fills your fingertips with a sharp, freezing numbness. If you hold the pouch close to your ear, you can hear your own voice whispering phrases and names you haven't thought about since childhood."
+        }
+    ],
+
+    "primary_effects": [
+        {
+            "name": "Siphon Essence",
+            "compatibility_tags": ["weapon", "combat"],
+            "description": "Once per turn, when you hit a creature with an attack using this item, the target must succeed on a DC 13 Constitution saving throw. On a failure, the attack deals an additional 1d6 damage of the weapon's type, and you gain temporary hit points equal to the extra damage dealt."
+        },
+        {
+            "name": "Kinetic Redirection",
+            "compatibility_tags": ["worn_body", "defense"],
+            "description": "When a creature hits you with a melee weapon attack, you can use your reaction to reduce the damage taken by 1d6 + your proficiency bonus. If you reduce the damage to 0, the attacker must succeed on a DC 13 Strength saving throw or be pushed up to 10 feet away from you."
+        },
+        {
+            "name": "Perceptual Anchor",
+            "compatibility_tags": ["worn_jewelry", "utility"],
+            "description": "While attuned to this item, you have advantage on Wisdom (Perception) and Wisdom (Insight) checks made to detect hidden creatures, illusions, or fabrications. Additionally, you cannot be surprised while you are conscious."
+        },
+        {
+            "name": "Focused Resonance",
+            "compatibility_tags": ["held", "combat"],
+            "description": "This item has 3 charges, and it regains all expended charges daily at dawn. When you cast a spell or make an attack roll while holding this item, you can expend 1 charge to add a +2 bonus to the attack roll, the spell attack roll, or your spell save DC for that action."
+        },
+        {
+            "name": "Anatomical Calibration",
+            "compatibility_tags": ["weapon", "combat"],
+            "description": "Attack rolls made with this item score a critical hit on a roll of 19 or 20. Additionally, when you score a critical hit against a creature, you immediately learn its current remaining hit points and any damage immunities it possesses."
+        },
+        {
+            "name": "Spatial Slipstream",
+            "compatibility_tags": ["worn_body", "utility"],
+            "description": "Your walking speed increases by 10 feet. Additionally, when you take the Dash action, you can move through the space of hostile creatures. Each creature you move through in this way must succeed on a DC 13 Dexterity saving throw or fall prone."
+        },
+        {
+            "name": "Vat of Vitality",
+            "compatibility_tags": ["worn_jewelry", "defense"],
+            "description": "Whenever you receive healing from a spell, potion, or short rest while attuned to this item, you roll the maximum possible number on the dice. Additionally, you are immune to the poisoned condition and have resistance to poison damage."
+        },
+        {
+            "name": "Ephemeral Consultation",
+            "compatibility_tags": ["consumed", "utility"],
+            "description": "This item holds ancient data or residues. You can interact with it for 10 minutes to cast the Commune or Contact Other Plane spell without expending a spell slot. Once this effect is used, this primary effect becomes inactive until 1d4 days have passed."
+        },
+        {
+            "name": "Siphon Essence",
+            "compatibility_tags": ["weapon", "combat"],
+            "description": "Once per turn, when you hit a creature with an attack using this item, the target must succeed on a DC 13 Constitution saving throw. On a failure, the attack deals an additional 1d6 damage of the weapon's type, and you gain temporary hit points equal to the extra damage dealt."
+        },
+        {
+            "name": "Echoed Strike",
+            "compatibility_tags": ["weapon", "combat"],
+            "description": "When you hit with an attack using this item, you can mark the target until the end of your next turn. While marked, if the target deals damage to anyone other than you, you can use your reaction to make one melee attack against it with advantage. Usable once per short rest."
+        },
+        {
+            "name": "Kinetic Return",
+            "compatibility_tags": ["weapon", "held"],
+            "description": "When you make a ranged attack with this item and miss, the item automatically returns to your hand at the end of the current turn and grants you a +1 bonus to the next attack roll made with it. If the attack hit, no return bonus is granted."
+        },
+        {
+            "name": "Ward of Quiet Resolve",
+            "compatibility_tags": ["worn_body", "worn_jewelry"],
+            "description": "While attuned and wearing this item, you gain resistance to psychic damage and advantage on saving throws against being frightened. Once per long rest, you can spend an action to grant yourself immunity to fear effects for 1 minute."
+        },
+        {
+            "name": "Veil of Subtlety",
+            "compatibility_tags": ["worn_jewelry", "held"],
+            "description": "You gain a +2 bonus to Dexterity (Stealth) checks while the item is worn or held. Additionally, once per short rest, you can cast a brief veil: for 1 minute you have advantage on Dexterity (Stealth) checks and creatures that rely on sight to detect you have disadvantage on Perception checks to notice you."
+        },
+        {
+            "name": "Anchor of the Slow Tide",
+            "compatibility_tags": ["worn_body", "worn_jewelry"],
+            "description": "While attuned, you cannot be forced to move against your will by magical effects. When you are targeted by a forced-movement effect, you may use your reaction to halve the distance moved and gain temporary hit points equal to your proficiency bonus. Usable once per short rest."
+        },
+        {
+            "name": "Arcane Ledger",
+            "compatibility_tags": ["held", "worn_jewelry"],
+            "description": "Once per long rest, you can spend 1 minute to inscribe a single short note of magical intent into the item. The next time you cast a spell that targets a creature, you may alter one non‑damage parameter of that spell (range, duration, or a single target) within DM-approved limits. The item stores the note until used or replaced."
+        },
+        {
+            "name": "Hunter's Focus",
+            "compatibility_tags": ["weapon", "held"],
+            "description": "When you attack a creature that is below half its hit points, you deal an extra 1d4 damage. Additionally, you gain a +1 bonus to Wisdom (Perception) checks to locate wounded or hidden creatures while the item is equipped."
+        },
+        {
+            "name": "Pulse of Preservation",
+            "compatibility_tags": ["worn_body", "worn_jewelry"],
+            "description": "Once per long rest, when you would be reduced to 0 hit points while wearing this item, you instead drop to 1 hit point and the item emits a protective pulse: all allies within 10 feet gain temporary hit points equal to your proficiency bonus."
+        },
+        {
+            "name": "True Sight Edge",
+            "compatibility_tags": ["weapon", "held"],
+            "description": "When you hit a creature with this item, you can choose to forgo dealing extra damage to instead force the target to make a Wisdom saving throw (DC 13). On a failure, the target is revealed: invisibility, illusions, and invisibility-like effects affecting it are suppressed for 1 round and you gain advantage on attack rolls against it for that round. Usable once per short rest."
+        },
+        {
+            "name": "Runic Echo",
+            "compatibility_tags": ["held", "weapon", "worn_jewelry"],
+            "description": "The item stores up to 3 charges. When you hit with an attack or successfully use the item's primary function, it gains 1 charge (max 3). As a bonus action, you can expend charges to add +1d6 per charge to a single attack or to restore 1d6 hit points per charge to yourself. Charges reset on a long rest."
+        },
+        {
+            "name": "Gravity Lash",
+            "compatibility_tags": ["weapon", "held"],
+            "description": "Once per short rest, when you hit a creature with this item you can choose to increase the attack's effect: the target must succeed on a Strength saving throw (DC 14) or be knocked prone and have its speed reduced by half until the end of its next turn."
+        },
+        {
+            "name": "Echo of Learning",
+            "compatibility_tags": ["worn_jewelry", "worn_body"],
+            "description": "While attuned, you gain a +1 bonus to one skill of your choice. Each dawn you may change which skill benefits. Additionally, once per long rest, you can spend 10 minutes studying the item to gain temporary proficiency in a skill for 1 hour."
+        },
+        {
+            "name": "Stormbound Edge",
+            "compatibility_tags": ["weapon", "held"],
+            "description": "When you hit with this item, you can choose to deal lightning damage instead of its normal damage type. If you do, the target must make a Dexterity saving throw (DC 13) or be stunned until the end of its next turn. This option can be used once per short rest."
+        },
+        {
+            "name": "Silent Conduit",
+            "compatibility_tags": ["worn_jewelry", "held"],
+            "description": "The item grants the ability to communicate telepathically with one creature you can see within 30 feet while you are wearing or holding it. The telepathic link lasts up to 10 minutes and can be used once per long rest. While linked, you and the target share brief sensory impressions (images, emotions) but not full memories."
+        },
+        {
+            "name": "Projected Distortion",
+            "compatibility_tags": ["weapon", "combat"],
+            "description": "When you make a ranged weapon attack using this item, you can choose to bypass half cover and three-quarters cover, as the projectile warps its trajectory in mid-air. Additionally, on a hit, the target's positioning is compromised, and the next attack roll made against it before the start of your next turn has advantage."
+        },
+        {
+            "name": "Coercive Binding",
+            "compatibility_tags": ["held", "utility"],
+            "description": "As an action while holding this item, you can target one creature you can see within 30 feet. The target must succeed on a DC 13 Strength or Wisdom saving throw (your choice). On a failure, the target's speed is reduced to 0 and it cannot take reactions until the end of its next turn. You can use this action a number of times equal to your proficiency bonus, and regain all uses after a long rest."
+        },
+        {
+            "name": "Fortress Mind",
+            "compatibility_tags": ["worn_jewelry", "defense"],
+            "description": "While attuned to this item, you are immune to magic or effects that would read your thoughts, determine if you are lying, or sense your emotions. Additionally, you gain a +2 bonus to all Intelligence, Wisdom, and Charisma saving throws."
+        },
+        {
+            "name": "Vanguard Surge",
+            "compatibility_tags": ["worn_body", "combat"],
+            "description": "Whenever you roll for initiative while wearing this item, you can immediately choose to swap your initiative result with any willing ally within 60 feet. Additionally, during the first round of any combat encounter, you have advantage on all attack rolls and your attacks deal an extra 1d6 damage."
+        }
+    ],
+
+    "secondary_effects": [
+        {
+            "name": "Residual Resonance",
+            "compatibility_tags": ["weapon", "debuff"],
+            "description": "When you hit a creature with an attack using this item, you can force the target to make a DC 13 Wisdom saving throw. On a failure, the target is marked until the end of your next turn. While marked, the target cannot take reactions, and it takes a -2 penalty to its Armor Class."
+        },
+        {
+            "name": "Adaptive Ward",
+            "compatibility_tags": ["worn_body", "defense"],
+            "description": "Whenever you take damage from an attack while wearing this item, you can choose to gain resistance to that specific damage type until the start of your next turn. You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses after a long rest."
+        },
+        {
+            "name": "Vanguard's Fortitude",
+            "compatibility_tags": ["held", "buff"],
+            "description": "While holding this item, you can use a bonus action to spend one of your available Hit Dice. Instead of regaining hit points, you gain temporary hit points equal to the result of the roll + your Constitution modifier, and your movement speed increases by 5 feet for 1 minute."
+        },
+        {
+            "name": "Echoed Safeguard",
+            "compatibility_tags": ["worn_jewelry", "saving-throw"],
+            "description": "This item accumulates 1 charge every time you successfully deal damage or cast a spell of 1st level or higher, up to a maximum of 3 charges. When you fail a saving throw, you can expend all accumulated charges to add a bonus to the roll equal to the number of charges spent."
+        },
+        {
+            "name": "Geometric Counter",
+            "compatibility_tags": ["held", "defense"],
+            "description": "When a creature within 5 feet of you misses you with a melee attack, you can use your reaction to make a special strike or shove against them using this item. If your check or attack succeeds, the target's movement speed becomes 0 until the end of its current turn."
+        },
+        {
+            "name": "Synaptic Overdrive",
+            "compatibility_tags": ["worn_body", "utility"],
+            "description": "Once per short or long rest, when you roll for initiative, you can choose to enter a heightened state for 1 minute. During this time, you can take a bonus action on each of your turns to take the Disengage or Help action, but your Armor Class is reduced by 1."
+        },
+        {
+            "name": "Threshold Inversion",
+            "compatibility_tags": ["worn_jewelry", "retaliation"],
+            "description": "Once per day, when you deal damage to a creature with a spell or attack, you can choose to store that damage value. The next time that same creature deals damage to you, subtract the stored value from their total before applying it to your hit points."
+        },
+        {
+            "name": "Residual Insight",
+            "compatibility_tags": ["consumed", "utility"],
+            "description": "While this item is active, you can add your proficiency bonus to any Intelligence or Wisdom ability check you make, even if you are not proficient in that skill. If you are already proficient, you add double your proficiency bonus instead."
+        },
+        {
+            "name": "Residual Mark",
+            "compatibility_tags": ["weapon"],
+            "description": "When you hit a creature with this item, you can mark them until the end of your next turn. While marked, the target cannot take reactions, and you have advantage on Wisdom (Perception) and Wisdom (Insight) checks made against them."
+        },
+        {
+            "name": "Resource Redirection",
+            "compatibility_tags": ["weapon", "held"],
+            "description": "Once per day, when you deal damage with this item, you may choose to store that damage as a reserve. The next time that same creature damages you, subtract the stored amount from the incoming damage; any remainder is dealt to the attacker as psychic damage."
+        },
+        {
+            "name": "Latent Charge",
+            "compatibility_tags": ["weapon", "held"],
+            "description": "Each successful attack grants the item 1 charge (max 3). When you make a saving throw, you may expend all charges to add a bonus to the roll equal to the number of charges spent. Charges reset on a short or long rest."
+        },
+        {
+            "name": "Echoed Action",
+            "compatibility_tags": ["weapon", "held"],
+            "description": "Once per turn, if you miss an attack with this item, you can spend your reaction to immediately repeat the attack roll against the same target."
+        },
+        {
+            "name": "Afterimage",
+            "compatibility_tags": ["weapon", "worn_body"],
+            "description": "When you take the Disengage action or use a movement ability while this item is equipped, you leave a brief illusory afterimage. Attackers that target you until the start of your next turn have disadvantage on the first attack roll."
+        },
+        {
+            "name": "Quickened Grip",
+            "compatibility_tags": ["weapon", "held"],
+            "description": "Once per short rest, when you take the Attack action with this item, you may make one additional attack with it as part of that action. This extra attack does not add extra features that trigger on hit (like charges)."
+        },
+        {
+            "name": "Silent Step",
+            "compatibility_tags": ["worn_body", "worn_jewelry"],
+            "description": "While wearing this item, you make no sound from movement (no armor or footstep noise). Additionally, creatures relying on hearing to detect you have disadvantage on Perception checks to locate you while you move."
+        },
+        {
+            "name": "Fleeting Insight",
+            "compatibility_tags": ["worn_jewelry", "held"],
+            "description": "Once per short rest, when you make an Intelligence, Wisdom, or Charisma check, you may roll with advantage. If you do, the item records a single vivid detail about the subject that you can recall later as a clue."
+        },
+        {
+            "name": "Shared Burden",
+            "compatibility_tags": ["worn_body", "worn_jewelry"],
+            "description": "When you would suffer a condition (poisoned, frightened, etc.) you can choose to share it with one willing ally within 10 feet; both of you suffer the condition but each at half duration (round down). Usable once per long rest."
+        },
+        {
+            "name": "Tide of Momentum",
+            "compatibility_tags": ["weapon", "held"],
+            "description": "After you hit with this item, you gain a small momentum token. Spend tokens (max 3) to add +1 to an attack roll, +1 to damage, or to move 10 feet without provoking opportunity attacks. Tokens reset on a long rest."
+        },
+        {
+            "name": "Minor Ward",
+            "compatibility_tags": ["worn_body", "worn_jewelry"],
+            "description": "The item grants a minor protective ward: once per short rest, when you would take damage, you can reduce that damage by an amount equal to your proficiency bonus."
+        },
+        {
+            "name": "Echoing Memory",
+            "compatibility_tags": ["worn_jewelry", "held"],
+            "description": "When you first attune to the item, it stores a single short memory (a face, a phrase, a tune). Once per long rest you can replay that memory to gain advantage on a single social check related to that memory's context."
+        },
+        {
+            "name": "Hunter's Trace",
+            "compatibility_tags": ["weapon", "held"],
+            "description": "When you damage a creature with this item, you leave a subtle trace only you can sense. For the next minute you have advantage on Survival checks to track that creature and on Perception checks to locate signs of it."
+        },
+        {
+            "name": "Quiet Recharge",
+            "compatibility_tags": ["held", "worn_jewelry"],
+            "description": "If you end a short rest while this item is equipped, one expended minor ability of the item (a charge, a once-per-short-rest use) is restored. This does not affect long-rest-limited abilities."
+        }
+
+    ],
+
+    "curse_blocks": [
+        {
+            "name": "The Price of Imbalance",
+            "curse_type": "progressive",
+            "theme_tags": ["order", "law", "numbers", "stasis", "decay"],
+            "stages": [
+            {
+                "stage": 1,
+                "trigger": "Activates after the first time you use any secondary effect to completely negate an enemy action, damage, or condition.",
+                "effect": "You feel an intrusive weight settling into your muscles. You have disadvantage on all initiative rolls as the item demands a slower, more calculated approach to combat."
+            },
+            {
+                "stage": 2,
+                "trigger": "Activates when you go 3 consecutive combat encounters without taking any damage while this item is equipped.",
+                "effect": "The item restricts your vitality to force an equilibrium. Your maximum hit points are permanently reduced by an amount equal to your character level. This reduction cannot be undone while attuned."
+            },
+            {
+                "stage": 3,
+                "trigger": "Activates when your lifetime damage dealt or prevented with this item triples your lifetime damage received since attuning to it.",
+                "effect": "At the end of each long rest, you must succeed on a DC 15 Constitution saving throw or gain one level of exhaustion. This exhaustion cannot be removed by magic or rest, only by deliberately taking damage from an enemy attack without using features to reduce it."
+            }
+            ],
+            "curse_tell": "A cold, geometric tattoo or pattern resembling a ledger or scale grows along your forearm. Its markings shift and expand, visually representing the exact mathematical or physical deficit between what you have taken and what you have given."
+        },
+        {
+            "name": "Symbiotic Overdrive",
+            "curse_type": "latent",
+            "theme_tags": ["flesh", "parasite", "hunger", "mutation", "blood"],
+            "latent": {
+            "trigger": "Activates the first time you spend a full turn in combat without taking the Attack action, casting a spell, or targeting a hostile creature.",
+            "effect": "The item locks onto your central nervous system. You can no longer voluntarily unattune from it, drop it, or unequip it. Whenever you roll a 1 on an attack roll or a saving throw, the item feeds directly on your essence, dealing necrotic damage to you equal to your own proficiency bonus.",
+            "note": "This connection can only be suppressed for 24 hours if the item is bathed in the blood of a creature of CR 3 or higher that you killed completely alone."
+            },
+            "curse_tell": "The item begins to grow small, hair-like organic filaments or needles from its surface. They gently pierce your skin when equipped, throbbing in perfect, sickening synchronization with your own heartbeat."
+        },
+        {
+            "name": "The Static Anchor",
+            "curse_type": "active",
+            "theme_tags": ["time", "stasis", "void", "silence", "delay"],
+            "active": {
+            "effect": "While attuned to this item, your movement speed cannot be increased by spells, magic items, or class features. Additionally, whenever you take the Dash action or use a teleportation effect, you must roll a d10. On a 1-3, your coordinates lock in place: your speed becomes 0 until the start of your next turn, any teleportation fails, and you lose your bonus action for that turn."
+            },
+            "curse_tell": "Your shadow no longer flows naturally with your movements. Instead, it lags exactly one step behind you, remaining entirely frozen and static for a split second before snapping back to your feet."
+        },
+        {
+            "name": "Echo of the Defeated",
+            "curse_type": "conditional",
+            "theme_tags": ["death", "ghostly", "haunting", "secrets", "memory"],
+            "conditional": {
+            "effect_when_true": "If the last creature you reduced to 0 HP had a Challenge Rating (CR) equal to or higher than your character level: The item hums with peak efficiency. Your attack rolls, spell attack rolls, and saving throw DCs using this item gain a +2 bonus.",
+            "effect_when_false": "If the last creature you reduced to 0 HP had a CR lower than your character level (or if you haven't killed a creature in 48 hours): The item becomes heavy and clouded with restless echoes. You have disadvantage on all Dexterity saving throws and Wisdom ability checks."
+            },
+            "curse_tell": "When you are in complete silence, you can hear the faint, weeping voices of the last creatures slain by you or the previous owners. They whisper their unfinished business and regrets directly into your mind."
+        },
+        {
+            "name": "The Golden Envy",
+            "curse_type": "progressive",
+            "theme_tags": ["greed", "envy", "ambition", "jealousy", "pride"],
+            "stages": [
+            {
+                "stage": 1,
+                "trigger": "Activates the first time you complete a long rest while possessing gold or gems worth more than 500 gp.",
+                "effect": "Paranoia clouds your thoughts. You have disadvantage on all Wisdom (Insight) and Charisma (Persuasion) checks, as you suspect everyone is plotting to steal your possessions."
+            },
+            {
+                "stage": 2,
+                "trigger": "Activates when you choose to hoard or keep a found treasure instead of sharing it equally with allies, or when you purchase a non-essential luxury item.",
+                "effect": "The item demands complete financial focus. You cannot spend gold to buy services, rations, or gear from merchants. If you attempt to hand money to someone else, your fingers lock, forcing you to drop the coins."
+            },
+            {
+                "stage": 3,
+                "trigger": "Activates when your total carried wealth exceeds 2,000 gp while attuned to this item.",
+                "effect": "Your greed materializes as physical weakness. At the start of each turn in combat, you lose 1 hit point for every 100 gp worth of treasure currently carried on your person. The item is consuming your vitality to pay for your hoard."
+            }
+            ],
+            "curse_tell": "Any mundane coin or gemstone you touch for more than a minute develops a micro-etched engraving of your own face, twisted in an expression of pure, desperate hunger."
+        },
+        {
+            "name": "The Umbral Eclipse",
+            "curse_type": "latent",
+            "theme_tags": ["shadow", "void", "darkness", "silence", "oblivion"],
+            "latent": {
+            "trigger": "Activates the first time you spend a turn in complete, unlit darkness or magical shadow while this item is equipped.",
+            "effect": "The item bleeds your light into the void. Your vision becomes monochrome (you lose the ability to see color). Furthermore, all light sources (torches, lanterns, spells) within 20 feet of you have their radius halved as the ambient darkness physically swallows the illumination.",
+            "note": "This effect can be temporarily suppressed for 1 hour if the item is held directly in the blast radius of a fire or radiant spell of 2nd level or higher."
+            },
+            "curse_tell": "Your reflection in any liquid or metallic surface appears entirely silhouettes, completely devoid of any facial features, clothes, or distinguishing marks except for two dim, white hollows for eyes."
+        },
+        {
+            "name": "The Cacophonous Fracture",
+            "curse_type": "active",
+            "theme_tags": ["madness", "whisper", "thought", "fear", "shattered"],
+            "active": {
+            "effect": "While attuned to this item, your thoughts are constantly interrupted by loud, phantom overlapping noises. You have disadvantage on all Intelligence saving throws and all Constitution saving throws made to maintain concentration on spells. Additionally, whenever you cast a spell that requires a verbal component, roll a d20. On a 1, the words fracture in your throat, the spell fails, and the spell slot is wasted."
+            },
+            "curse_tell": "When you sleep, your jaw twitches violently. Anyone watching you will observe you muttering rapid, complex mathematical formulas or ancient, forgotten genealogies in languages you do not actually know."
+        },
+        {
+            "name": "The Hearthless Chill",
+            "curse_type": "conditional",
+            "theme_tags": ["cold", "ash", "fire", "entropy", "stasis"],
+            "conditional": {
+            "effect_when_true": "If your current hit points are below half of your hit point maximum: The item freezes your internal entropy. You gain a +2 bonus to your Armor Class and resistance to fire and cold damage.",
+            "effect_when_false": "If your current hit points are above half of your hit point maximum: The item drains your ambient warmth. Your movement speed is reduced by 10 feet, and you cannot take the Help or Disengage actions as your joints feel stiff and frozen."
+            },
+            "curse_tell": "Your breath constantly frosts in front of you, creating heavy clouds of white mist regardless of the actual surrounding temperature. Small patches of black ash flake off your skin when you sweat."
+        },
+        {
+            "name": "The Borrowed Face",
+            "curse_type": "progressive",
+            "theme_tags": ["illusion", "deception", "mask", "ambition", "thought"],
+            "stages": [
+                {
+                    "stage": 1,
+                    "trigger": "Activates the first time you successfully deceive an NPC using a Charisma (Deception) check while this item is equipped.",
+                    "effect": "The item begins cataloguing your social performances. You gain advantage on Charisma (Deception) checks, but you have disadvantage on Charisma (Persuasion) checks, as your genuine intent becomes increasingly difficult to project."
+                },
+                {
+                    "stage": 2,
+                    "trigger": "Activates when you use a Charisma (Deception) check 5 or more times in a single session, or when you maintain a fabricated identity for longer than 24 in-game hours.",
+                    "effect": "The item has begun substituting your surface personality. Whenever you attempt to honestly describe your own motivations, beliefs, or emotional state, you must succeed on a DC 14 Wisdom saving throw or the words that come out are a plausible but entirely fabricated version. You are not aware this is happening."
+                },
+                {
+                    "stage": 3,
+                    "trigger": "Activates when an NPC you have deceived more than once discovers the truth and confronts you directly.",
+                    "effect": "Your sense of original identity fractures. You lose proficiency in Wisdom (Insight) permanently while attuned. Additionally, once per day, the DM (or Oracle, for solo play) can declare that you act according to a fabricated persona rather than your genuine one, without prior warning."
+                }
+            ],
+            "curse_tell": "In mirrors, your reflection blinks and shifts expression a half-second after you do, as if it is deciding which face to wear before committing."
+        },
+
+        {
+            "name": "The Drowned Patience",
+            "curse_type": "active",
+            "theme_tags": ["water", "storm", "ancient", "inevitability", "decay"],
+            "active": {
+                "effect": "While attuned to this item, you cannot benefit from effects that allow you to act faster than normal. You cannot take the Ready action, cannot use class features that grant additional attacks as a bonus action (such as Two-Weapon Fighting or certain martial features), and cannot benefit from the Haste spell or similar time-accelerating magic. The item enforces its own rhythm: slow, tidal, and absolute. In exchange, once per long rest, when you would be reduced to 0 HP, you instead drop to 1 HP. The item will not let you sink before it is ready."
+            },
+            "curse_tell": "Whenever you are in a hurry — running, sprinting, rushing through a crowd — the ambient sound around you dims and slows, replaced by the deep, pressurized silence of water far below the surface. Other creatures hear nothing unusual."
+        },
+
+        {
+            "name": "The Red Arithmetic",
+            "curse_type": "conditional",
+            "theme_tags": ["blood", "wrath", "predator", "bone", "hunger"],
+            "conditional": {
+                "effect_when_true": "If you have dealt damage this combat and have not yet taken damage yourself this combat: The item feeds on uncontested predation. Your attacks deal an additional 1d4 damage of the weapon's type, and you have advantage on attack rolls against creatures that are frightened, prone, or below half HP.",
+                "effect_when_false": "If you have taken damage this combat before dealing any, or if 3 full rounds pass without you attacking: The item registers you as prey. You have disadvantage on all attack rolls until you deal damage. Additionally, you cannot voluntarily move away from the nearest hostile creature — the item reads retreat as biological failure."
+            },
+            "curse_tell": "Your fingernails and the whites of your eyes take on a faint reddish tint that intensifies in combat. Creatures with keen smell — animals, rangers, certain monsters — react to you as they would to a predator, regardless of your actual disposition."
+        },
+
+        {
+            "name": "The Outer Frequency",
+            "curse_type": "latent",
+            "theme_tags": ["cosmic", "eldritch", "arcane", "silence", "star"],
+            "latent": {
+                "trigger": "Activates the first time you cast a spell of 3rd level or higher, or the first time you witness a magical effect of equivalent power, while this item is in your possession.",
+                "effect": "The item opens a channel to something that was already listening. You can no longer benefit from the effects of Silence spells or zones of magical quiet — the frequency passes through them unimpeded. More critically, once per week, at a moment chosen by the Oracle or GM, you receive a brief, involuntary transmission: a precise image, sound, or piece of information from an entity of cosmic scale. The content is always accurate. The context is never provided. You cannot control when this happens or what it shows you.",
+                "note": "The transmission is not harmful in itself. The problem is that the entity on the other end has now confirmed that the channel is open and in use."
+            },
+            "curse_tell": "In absolute silence, a faint, irregular tapping sound emanates from the item — not mechanical, not rhythmic. Anyone who has studied stellar cartography or deep astrology would recognize it as the pulse pattern of a specific star that should not be visible from this world."
+        },
+        {
+            "name": "The Glass Appetite",
+            "curse_type": "progressive",
+            "theme_tags": ["greed", "temptation", "artifact", "hunger", "envy"],
+            "stages": [
+            {
+                "stage": 1,
+                "trigger": "Activates after the first time the wielder uses the item's power to gain a material advantage (loot, coin, or treasure).",
+                "effect": "A quiet craving begins. You gain a subtle edge when negotiating for valuables (+1 to checks), but you find it harder to accept fair offers; you feel restless until you secure something of equal or greater perceived value."
+            },
+            {
+                "stage": 2,
+                "trigger": "Activates when the wielder takes a deliberate action to hoard or conceal wealth three times while attuned.",
+                "effect": "The item sharpens possessiveness. You suffer disadvantage on checks to share, donate, or relinquish items; you experience intrusive thoughts about loss and betrayal. Allies notice you guarding your belongings obsessively."
+            },
+            {
+                "stage": 3,
+                "trigger": "Activates when the total value hoarded or hidden while attuned exceeds a threshold set by the Oracle (suggested: 500 gp or equivalent).",
+                "effect": "The appetite becomes voracious. The item compels you to take ever greater risks to acquire wealth. Once per day the Oracle may force a compulsive action: you attempt a theft, gamble, or dangerous bargain without regard for consequences. Breaking the compulsion requires a costly, symbolic relinquishment equal to at least half the hoarded value."
+            }
+            ],
+            "curse_tell": "Small, hairline cracks appear in any glass or crystal you carry; they spiderweb outward after you profit, and the cracks seem to 'drink' light where they meet."
+        },
+
+        {
+            "name": "The Clock's Lullaby",
+            "curse_type": "latent",
+            "theme_tags": ["time", "stasis", "ritual", "delay", "inevitability"],
+            "latent": {
+            "trigger": "Activates the first time you use the item to postpone or delay an event (waiting, stalling, casting a delaying ritual) while attuned.",
+            "effect": "A slow, internal metronome begins to count. Time around you feels slightly out of step: brief delays, missed beats, and moments that stretch. Once active, the item grants a limited ability to 'buy time' (the Oracle may allow one automatic delay or reroll per long rest), but each use lengthens the lullaby's reach. After repeated uses, important moments in your life begin to slip away or repeat in small, uncanny loops.",
+            "note": "The lullaby is seductive: it offers safety through delay, but it slowly erodes the natural flow of consequence."
+            },
+            "curse_tell": "When you listen closely at midnight, you can hear a faint, distant music like a music box wound too tight; the tune always ends a beat late."
+        },
+
+        {
+            "name": "The Bone Ledger",
+            "curse_type": "active",
+            "theme_tags": ["bone", "order", "debt", "law", "death"],
+            "active": {
+            "effect": "While attuned, the item enforces a ledger of balance. Every benefit you gain from the item or from violent action is recorded in a metaphysical account. For each boon (temporary HP, bonus damage, advantage granted by the item), an equivalent cost is reserved: reduced healing, small permanent penalties to a non-primary ability score, or a future compelled repayment. The ledger is invisible but inexorable: the item will exact its balance at a time of its choosing unless you perform a formal, often costly, accounting ritual.",
+            "escalation": "If the ledger is ignored, the costs compound: minor penalties become permanent, and the item begins to demand more severe repayments (loss of memories, forced confession, or enforced exile).",
+            "cost_to_maintain": "Keeping the ledger balanced requires regular offerings (coin, bone, or symbolic tokens) or performing a public accounting once per month."
+            },
+            "curse_tell": "Tiny notches appear along the inner rim of the item, like tally marks carved into bone; they multiply overnight and sometimes rearrange themselves into sums you cannot immediately understand."
+        },
+
+        {
+            "name": "The Starved Compass",
+            "curse_type": "conditional",
+            "theme_tags": ["hunger", "void", "predator", "instinct", "decay"],
+            "conditional": {
+            "effect_when_true": "If you are in an environment where food or life is scarce (desert, famine-stricken settlement, battlefield with few survivors): the item sharpens predatory instinct. You gain heightened tracking and hunting ability (advantage on Survival checks to find living prey and +1d4 damage on the first strike against a living target), but you also become increasingly indifferent to collateral harm.",
+            "effect_when_false": "If you are in abundance or among thriving life (markets, fertile lands, celebrations): the item interprets abundance as insult. You suffer a creeping malaise: -1 to social checks, occasional intrusive urges to hoard or consume resources, and a growing sense of disconnection from those who share food or shelter with you.",
+            "cooldown": "The item's conditional state shifts only after 24 hours spent in the new environment; rapid transitions cause nausea and disorientation."
+            },
+            "curse_tell": "Your breath sometimes smells faintly of rot or of fresh meat depending on the item's mood; animals either avoid you or follow you with unnerving interest."
+        },
+        {
+            "name": "The Binding Clause",
+            "curse_type": "progressive",
+            "theme_tags": ["oath", "binding", "ritual", "law", "tradition"],
+            "stages": [
+                {
+                    "stage": 1,
+                    "trigger": "Activates the first time you make a promise, agreement, or commitment of any kind — verbal or written — while this item is in your possession.",
+                    "effect": "The item begins cataloguing your obligations. You have advantage on Charisma checks made to negotiate or swear oaths. However, if you fail to fulfill any stated commitment within the agreed timeframe, you immediately suffer one level of exhaustion that cannot be removed until the obligation is resolved or formally released by the other party."
+                },
+                {
+                    "stage": 2,
+                    "trigger": "Activates when you have three or more active, unfulfilled obligations simultaneously.",
+                    "effect": "The weight of accumulated debt becomes physical. Your carrying capacity is halved, and your movement speed is reduced by 10 feet. Each obligation you fulfill removes one instance of this penalty. The item does not distinguish between minor social promises and binding magical oaths."
+                },
+                {
+                    "stage": 3,
+                    "trigger": "Activates when you deliberately and knowingly break a sworn oath — one you stated aloud with clear intent to keep.",
+                    "effect": "The item enforces restitution. You are cursed with a permanent -2 penalty to all Charisma checks and saving throws. Additionally, creatures you attempt to deceive with a Charisma (Deception) check automatically sense that something is wrong with you, even if they cannot articulate what — they have disadvantage on checks to trust or believe you, regardless of the content of your words."
+                }
+            ],
+            "curse_tell": "A thin, dark line appears around your wrist each time you make a new obligation — not painful, not visible to others unless they look carefully. The lines do not fade when obligations are fulfilled. They accumulate."
+        },
+
+        {
+            "name": "The Colony's Instruction",
+            "curse_type": "latent",
+            "theme_tags": ["swarm", "venom", "beast", "instinct", "parasite"],
+            "latent": {
+                "trigger": "Activates the first time you kill an insect, arachnid, or similar creature — deliberately, even casually — while this item is equipped.",
+                "effect": "The item registers the death as a territorial violation and begins redirecting local swarm behavior toward you as a corrective measure. Small insects and arthropods are perpetually drawn to your presence — not aggressively, but persistently. More critically, you become vulnerable to poison damage, and whenever you fail a Constitution saving throw against poison or disease, the effect's duration is doubled. The item is not punishing you. It is simply placing you correctly in the food chain.",
+                "note": "This effect can be temporarily suppressed for 24 hours by allowing an insect or arachnid to bite or sting you without resisting or killing it. The item interprets this as appropriate submission."
+            },
+            "curse_tell": "Small insects land on you constantly and do not leave when brushed away — they relocate to another part of your body. At night, you can hear a faint, collective sound from the item itself: not buzzing, but something slower and more deliberate, like a very large number of small things breathing in unison."
+        },
+
+        {
+            "name": "The Reflective Verdict",
+            "curse_type": "conditional",
+            "theme_tags": ["mirror", "truth", "misdirection", "illusion", "identity"],
+            "conditional": {
+                "effect_when_true": "If you have not knowingly stated a falsehood in the past 24 hours: The item rewards complete transparency. You have advantage on all Charisma saving throws and cannot be charmed or frightened by illusions, glamours, or false appearances of any kind.",
+                "effect_when_false": "If you have knowingly stated any deliberate falsehood in the past 24 hours — including omissions intended to deceive: The item turns your own misdirection against you. You have disadvantage on Wisdom (Perception) and Wisdom (Insight) checks, and illusion spells targeting you automatically succeed on their initial effect without requiring a saving throw. The item does not judge the scale of the lie. A polite social deflection and a calculated betrayal are mechanically identical to it."
+            },
+            "curse_tell": "Your shadow does not always match your movements. When you have lied recently, your shadow performs the gesture or expression you suppressed — the truth your body almost told — before correcting itself."
+        },
+
+        {
+            "name": "The Unfinished Grieving",
+            "curse_type": "active",
+            "theme_tags": ["grief", "spirit", "afterlife", "ghost", "necrotic"],
+            "active": {
+                "effect": "While attuned to this item, you cannot benefit from effects that remove or suppress the condition of being frightened when the source of fear is undead, necrotic in nature, or connected to death — including spells like Remove Fear or the Paladin's Aura of Courage. Additionally, at the end of each long rest, you must name one person or creature you have lost — through death, separation, or your own action. If you cannot or choose not to, you gain one level of exhaustion that lasts until the next long rest. The item is not malicious. It simply does not permit forgetting."
+            },
+            "curse_tell": "When you sleep near the item, those sharing your space occasionally report hearing you hold a one-sided conversation with someone not present — in your own voice, but answering questions no one asked. You have no memory of this in the morning."
+        },
+
+        {
+            "name": "The Patient Erosion",
+            "curse_type": "progressive",
+            "theme_tags": ["disease", "vitality", "decay", "flesh", "pain"],
+            "stages": [
+                {
+                    "stage": 1,
+                    "trigger": "Activates after you have been attuned to this item for 7 consecutive days without suffering any disease, poison, or necrotic damage.",
+                    "effect": "The item begins equalizing your resistance. You lose any natural immunity to disease you may possess. All Constitution saving throws against disease or poison are made at disadvantage."
+                },
+                {
+                    "stage": 2,
+                    "trigger": "Activates the first time you receive magical healing while at full hit points — healing that is therefore wasted.",
+                    "effect": "The item interprets excess vitality as imbalance. Your hit point maximum is reduced by 1d6 (rolled once, result is permanent while attuned). Additionally, whenever you receive healing, you regain only half the rolled amount, rounded down."
+                },
+                {
+                    "stage": 3,
+                    "trigger": "Activates when you survive an encounter in which you were reduced below 10 hit points and then healed back above 50% of your maximum in the same encounter.",
+                    "effect": "The item has identified the pattern. Your body begins treating recovery as foreign. After each long rest, roll a DC 13 Constitution saving throw. On a failure, your maximum hit points are reduced by 2 until your next long rest. On a success, nothing happens. On a natural 20, your maximum hit points increase by 1 permanently — the item occasionally rewards genuine survival rather than managed recovery."
+                }
+            ],
+            "curse_tell": "Old scars, healed injuries, and past wounds periodically ache with precise clarity — not as vague discomfort, but as specific, located pain in the exact site of the original damage. The episodes last seconds and leave no mark."
+        },
+
+        {
+            "name": "The Pressure Front",
+            "curse_type": "active",
+            "theme_tags": ["storm", "wind", "lightning", "earth", "inevitability"],
+            "active": {
+                "effect": "While attuned to this item, you cannot voluntarily remain stationary for longer than 1 minute during daylight hours — the item generates a persistent physical restlessness that manifests as an inability to stay still, concentrate on tasks requiring extended focus, or benefit from the effects of spells or features that require you to stand still (such as certain ranger favored terrain bonuses or wizard Portent features used while seated). In exchange, difficult terrain costs you no extra movement, and you cannot be knocked prone by wind, water current, or earth-based tremors. The item does not permit stillness. It also does not permit being stopped."
+            },
+            "curse_tell": "The air immediately around you smells faintly of ozone and wet stone regardless of actual weather. During genuine storms, other creatures find it instinctively difficult to approach within 5 feet of you — not impossible, not mechanical, simply uncomfortable in the way that standing too close to the edge of something feels uncomfortable."
+        },
+
+        {
+            "name": "The Long Dream",
+            "curse_type": "latent",
+            "theme_tags": ["dream", "night", "emptiness", "memory", "void"],
+            "latent": {
+                "trigger": "Activates the first time you take a long rest while this item is within 5 feet of you.",
+                "effect": "Your sleep becomes structurally different. You still rest and recover as normal. However, you no longer dream — not diminished dreams, not forgotten dreams, but the complete and total absence of the dream state. You wake knowing you were somewhere, doing something, but the content is permanently inaccessible. More critically: Wisdom (Insight) checks you make against creatures you have not previously met are made at disadvantage, as the unconscious social processing that normally occurs during sleep is no longer available to you. Creatures who rely on reading dream-state information about you — certain hags, psychic entities, and dream-adjacent spells — find you completely transparent, as there is nothing to read.",
+                "note": "The absence feels like nothing, which is the problem. You cannot miss what you do not remember having."
+            },
+            "curse_tell": "Your eyes in the morning are completely clear — no residual drowsiness, no transition from sleep to waking. You are simply asleep, and then you are not. People who observe you sleeping report that you are entirely still, that your eyes do not move, and that you make no sound at all."
+        },
+
+        {
+            "name": "The Appetite of Wanting",
+            "curse_type": "conditional",
+            "theme_tags": ["temptation", "jealousy", "desire", "ambition", "greed"],
+            "conditional": {
+                "effect_when_true": "If you are currently pursuing something you do not yet possess — a goal, an object, a person's regard, a position — and have taken at least one concrete action toward it in the past 48 hours: The item feeds on directed desire. You have advantage on all ability checks made to acquire, persuade, infiltrate, or achieve that specific goal. The bonus applies only to that goal and shifts when the goal changes.",
+                "effect_when_false": "If you have achieved your current goal, or if 48 hours pass without any action taken toward it: The item becomes predatory in the absence of directed hunger. You have disadvantage on Wisdom saving throws. Additionally, whenever you observe another creature possessing something you do not — an object, a relationship, a capability — you must succeed on a DC 13 Wisdom saving throw or spend your next available action attempting to acquire, replicate, or undermine it. The item does not generate specific desires. It simply removes the filter between wanting and acting."
+            },
+            "curse_tell": "Your pupils dilate visibly when you look at something you want — not subtly, but enough that people who know what to look for will notice. You are unaware this is happening."
+        },
+
+        {
+            "name": "The Inheritance of Making",
+            "curse_type": "progressive",
+            "theme_tags": ["craft", "tradition", "artifact", "urban", "scholar"],
+            "stages": [
+                {
+                    "stage": 1,
+                    "trigger": "Activates the first time you use, sell, destroy, or discard an object that was handmade by a specific, identifiable individual — not mass-produced, not anonymous.",
+                    "effect": "The item begins holding you responsible for the objects in your possession. You can no longer sell or give away equipment without first knowing its origin. Attempting to do so without this knowledge causes you to hesitate involuntarily — you cannot complete the transaction until you succeed on a DC 12 Intelligence check representing sufficient rationalization."
+                },
+                {
+                    "stage": 2,
+                    "trigger": "Activates when you deliberately damage or destroy a crafted object of significant age — more than 50 years old — or of clear cultural significance.",
+                    "effect": "The item registers the loss. You have disadvantage on all Intelligence (History) checks and cannot benefit from the effects of spells or features that provide knowledge of an object's past (such as Identify or Legend Lore) for 1 week. The item is not preventing you from learning. It is demonstrating what it feels like when knowledge is permanently removed."
+                },
+                {
+                    "stage": 3,
+                    "trigger": "Activates when you profit directly from the destruction or theft of something with clear cultural, historical, or personal significance to a community.",
+                    "effect": "The item's accounting becomes permanent. Whenever you attempt to create, repair, or improve an object using tools or a class feature, the roll is made at disadvantage. The things you have taken from the world's making resist your participation in it."
+                }
+            ],
+            "curse_tell": "Objects you have owned for longer than a month develop faint, hair-thin cracks in their surface — purely cosmetic, never structural. The pattern of cracks is different on each object and does not resemble any known script, but is clearly not random."
+        },
+
+        {
+            "name": "The Opened Seam",
+            "curse_type": "active",
+            "theme_tags": ["rift", "astral", "voidborn", "eldritch", "cosmic"],
+            "active": {
+                "effect": "While attuned to this item, you exist at a slight planar offset from your current location. You are still fully present and tangible, but the boundary between you and adjacent planes is structurally thinner than it should be. Mechanically: you cannot benefit from the effects of Sanctuary, Nondetection, or any effect that conceals your planar location or presence from extraplanar entities. Additionally, once per week, an entity from an adjacent plane becomes aware of your location and sends something to investigate — the nature of what arrives is determined by the Oracle or GM, but it is never immediately hostile. It is curious. What it does with what it finds is a separate question."
+            },
+            "curse_tell": "At the edge of your vision, in your peripheral field only, you occasionally see the outline of a space that is not the room you are in — a different ceiling, a different floor, a different quality of light. It is never visible when looked at directly. It is always consistent: the same other place, every time."
+        }
+    ],
+
+    "story_blocks": [
+        {
+            "title": "The Principle of the Closed Ledger",
+            "origin_type": "inherited",
+            "theme_tags": ["order", "law", "numbers", "precision", "stasis"],
+            "creator": "An enforcer and auditor named Pruvaine, who operated in a massive, ancient city that has since changed its name. She spent decades refining the object, adding subtle conceptual layers after every contract or enforcement.",
+            "original_purpose": "A precision tool for calibration. It was designed to assess the exact value, energy, or biological state of a target, ensuring that any action taken against them was mathematically or physically proportionate to their resistance.",
+            "what_went_wrong": "Nothing went wrong from the creator's perspective. The item functions exactly as intended. The curse is simply the creator's rigid, uncompromising philosophy built so deeply into the object that it persists without her.",
+            "current_bearer_history": "Pruvaine retired to a quiet, isolated life and left the object to her apprentice with a cryptic note: 'It will teach you that every cycle must close.' The apprentice sold it within a month without explaining why.",
+            "oracle_seed": "Ask the Oracle: Is the current cosmic, financial, or physical balance of the item currently in your favor?"
+        },
+        {
+            "title": "The Shared Husk",
+            "origin_type": "discovered",
+            "theme_tags": ["flesh", "parasite", "hunger", "swarm", "instinct"],
+            "creator": "An isolated group of deep-dwelling survivalists or cultists who sought a way to perfectly preserve their collective memory and vitality across generations through a single, physical focal point.",
+            "original_purpose": "A vessel for continuity. The item was intended to harvest fractions of experience, life force, or raw data from foes and channel them directly into a shared network or lineage to sustain it.",
+            "what_went_wrong": "The lineage or cult was entirely wiped out by an external catastrophe, leaving the vessel empty and hungry. Without its original network to feed, the object now instinctively tries to treat any new wielder as its entire collective.",
+            "current_bearer_history": "It was found in a sealed stone reliquary beneath a ruined settlement. The last explorer who documented it noted that holding it made them dream of thousands of foreign, synchronized heartbeats.",
+            "oracle_seed": "Ask the Oracle: Does the item currently recognize you as an ally, or merely as a temporary host to feed upon?"
+        },
+        {
+            "title": "The Shard of Interrupted Fate",
+            "origin_type": "stolen",
+            "theme_tags": ["time", "fate", "delay", "shattered", "entropy"],
+            "creator": "An eccentric artisan or chronomancer who spent their entire life trying to isolate and capture a single, perfect micro-second of absolute stasis and preservation.",
+            "original_purpose": "An anchor against change. It was created to delay consequences, freeze moments of crisis, and allow the user to make decisions outside the normal, chaotic rush of cause and effect.",
+            "what_went_wrong": "The creator was assassinated mid-ritual while finalizing the item. The weapon absorbed the sudden shock of that incomplete, violent transition, freezing its internal logic in a state of eternal, unstable tension.",
+            "current_bearer_history": "The item was stolen from the royal treasury during a chaotic coup. Every black-market dealer who has possessed it since has reported an unnerving sense of deja vu and a string of bizarre, static-filled dreams.",
+            "oracle_seed": "Ask the Oracle: Are you currently repeating an action or a mistake that a previous owner of this item already made?"
+        },
+        {
+            "title": "The Monarch's Envy",
+            "origin_type": "inherited",
+            "theme_tags": ["royalty", "greed", "envy", "pride", "secrets"],
+            "creator": "Spies and court sorcerers belonging to a minor barony, commissioned by a paranoid ruler who feared the growing influence and wealth of his own siblings.",
+            "original_purpose": "An instrument of subtle usurpation. It was built to secretly divert authority, luck, or prestige away from rivals and channel it into the bearer, leaving the victims looking foolish or incompetent.",
+            "what_went_wrong": "The ruler became so envious of the item's own flawless efficiency that he began to suspect the object was plotting to replace him. He died in isolation, refusing to let anyone touch it, infecting it with his pure paranoia.",
+            "current_bearer_history": "It was recovered from a sealed vault inside an abandoned palace. The scavengers who found it turned on each other within hours, leaving only one survivor who pawned it for a fraction of its worth.",
+            "oracle_seed": "Ask the Oracle: Is there someone currently in your proximity who covets this item more than their own life?"
+        },
+        {
+            "title": "The Weaver of Forgotten Truths",
+            "origin_type": "stolen",
+            "theme_tags": ["secrets", "shadow", "deception", "whisper", "memory"],
+            "creator": "An underground network of spies and informants known as 'The Faceless Syndicate' who operated within the shadow of an empire that fell centuries ago.",
+            "original_purpose": "A perfect vault for stolen intelligence. The item was designed to extract, compress, and conceal critical state secrets, memories, or incriminating thoughts inside its physical structure, allowing agents to smuggle data past magical detection.",
+            "what_went_wrong": "The syndicate's headquarters was vaporized in a magical purge. The item was left buried in ash, tightly holding onto dozens of massive, conflicting secrets. Without its handlers to filter the data, the item now violently bleeds these disjointed, paranoid memories into the mind of any current bearer.",
+            "current_bearer_history": "It passed through the hands of three prominent nobles, all of whom publicly confessed to treason or went mad with paranoia shortly after acquiring it. It was last recovered from a damp evidence locker in a city watchtower.",
+            "oracle_seed": "Ask the Oracle: Does the item possess a specific piece of hidden information or a memory that could completely compromise your current main quest?"
+        },
+        {
+            "title": "The Apex Feast",
+            "origin_type": "discovered",
+            "theme_tags": ["beast", "instinct", "predator", "blood", "hunger"],
+            "creator": "A circle of primal, blood-ink druids who guarded the deepest, unmapped boundaries of an ancient, predatory forest.",
+            "original_purpose": "An instrument of absolute dominance. It was forged during a lunar eclipse to channel the unfiltered, raw survival instinct of a legendary apex predator, granting the user unmatched hunting prowess and the biological drive to survive any environment.",
+            "what_went_wrong": "The druidic circle was slaughtered by a civilized expansion force. The item absorbed the dying terror and fury of the wild, warping the predator's instinct into a ravenous, vengeful hunger that no longer distinguishes between natural prey and civilization.",
+            "current_bearer_history": "Discovered inside the ribcage of a massive, mutated beast that had terrorized a border town for months. The hunter who retrieved it reported that the local wildlife went completely silent whenever the object was drawn.",
+            "oracle_seed": "Ask the Oracle: Is the item's predator instinct currently tracking a dangerous creature or an enemy that is actively hunting you back?"
+        },
+        {
+            "title": "The Star-Fall Fracture",
+            "origin_type": "discovered",
+            "theme_tags": ["cosmic", "voidborn", "eldritch", "arcane", "silence"],
+            "creator": "The object was not made by mortal hands; it was condensed from the mineral residue left behind by a dark, singing comet that struck a remote mountain peak.",
+            "original_purpose": "An involuntary beacon. The alien composition of the material naturally bends the localized weave of magic, creating a pocket of absolute material stasis and quietude, shielding a small area from cosmic observation.",
+            "what_went_wrong": "Exposure to mortal desires and ambient planar magic fractured the object’s alien geometry. It can no longer anchor its pocket of stasis correctly, causing it to periodically try to pull the bearer's immediate surroundings into the cold, silent vacuum of the void from which it fell.",
+            "current_bearer_history": "Recovered from a crater by a group of star-worshiping mages who all vanished mysteriously within a week. The object was found sitting perfectly untouched in the center of their empty, dust-covered laboratory.",
+            "oracle_seed": "Ask the Oracle: Is the cosmic entity or force that birthed this item currently looking down or focusing its attention on your exact location?"
+        },
+        {
+            "title": "The Legacy of the Unburied",
+            "origin_type": "inherited",
+            "theme_tags": ["death", "ghostly", "haunting", "grave", "pain"],
+            "creator": "A grief-stricken necromancer who sought to build a physical anchor to prevent the souls of their plague-stricken family from crossing over into the afterlife.",
+            "original_purpose": "A sanctuary for the departed. The item was intended to act as a comforting, spiritual haven where the souls of the deceased could linger peacefully, tethered to the material world without suffering corruption.",
+            "what_went_wrong": "The necromancer died before completing the warding rituals. The sanctuary turned into an inescapable, spiritual prison. The trapped souls have spent decades in the dark, and their collective grief and phantom pain have curdled into a malicious force that lashes out at the living.",
+            "current_bearer_history": "Passed down as a cursed heirloom through a cursed lineage until the last family member died penniless. It was dragged out of a flooded mausoleum by grave robbers who claimed the item wept cold tears when touched.",
+            "oracle_seed": "Ask the Oracle: Are the spirits trapped inside the item currently trying to manifest a physical hazard or distraction in your next encounter?"
+        },
+        {
+            "title": "The Masquerade of the Broken Mirror",
+            "origin_type": "stolen",
+            "theme_tags": ["illusion", "mask", "deception", "identity", "mirror"],
+            "creator": "An enigmatic cabal of changelings and illusionists known as 'The Onyx Visage' who infiltrated royal courts to manipulate kingdoms from the shadows.",
+            "original_purpose": "An instrument of perfect assimilation. It was designed to allow the bearer to effortlessly siphon away a target's social presence, voice, and mannerisms, leaving the victim a hollow stranger in their own home.",
+            "what_went_wrong": "The cabal’s leader attempted to steal the identity of a creature from the Far Realm. The item shattered under the strain of holding a form with infinite geometries, binding the fragmented, fractured minds of the entire cabal inside its structure. It no longer disguises the user; it actively splinters their sense of self.",
+            "current_bearer_history": "It was stolen from a theater troupe whose actors all mysteriously forgot their own names mid-performance. It was later found discarded in a velvet box behind a stage, covered in old greasepaint.",
+            "oracle_seed": "Ask the Oracle: Does a nearby NPC currently see you as someone else entirely, based on a deep, hidden memory of their own past?"
+        },
+        {
+            "title": "The Oathbound Iron",
+            "origin_type": "inherited",
+            "theme_tags": ["law", "oath", "ritual", "pain", "stasis"],
+            "creator": "A high-ranking inquisitor named Vaelen the Unforgiving, who served a strict religious order dedicated to punishing those who broke sacred vows.",
+            "original_purpose": "A channel for absolute compliance. The item was enchanted through a bloody, grueling ritual to act as a physical anchor for a binding covenant, ensuring that the person holding it could never speak a falsity or stray from their path.",
+            "what_went_wrong": "Vaelen himself broke his core vow to the order out of a desperate act of cowardice. The item did not break; instead, it turned its brutal, punitive magic inward upon its creator, freezing his joints and filling his mind with phantom agony until he died. The weapon now treats any new wielder as a transgressor who must pay for that original broken covenant.",
+            "current_bearer_history": "Recovered from the stone floor of a ruined abbey, still clutched in the skeletal hand of its first maker. The locals claim the ground around the abbey produces no weeds, only dead, iron-hard roots.",
+            "oracle_seed": "Ask the Oracle: Are you currently violating a promise, oath, or personal code of conduct (even a small one) that the item can punish you for?"
+        },
+        {
+            "title": "The Drowned Sovereign's Tear",
+            "origin_type": "discovered",
+            "theme_tags": ["water", "storm", "decay", "envy", "ancient"],
+            "creator": "The court arcanists of a coastal kingdom that was dragged into the dark depths of the ocean during a catastrophic sea-fury.",
+            "original_purpose": "A symbol of maritime authority. The object was built to pacify localized tides, control currents, and ensure that the kingdom's fleets could sail without fear of weather or sabotage.",
+            "what_went_wrong": "When the great flood came, the kingdom's envious high priest cursed the item, binding the collective terror, spite, and salt-clogged lungs of the entire drowning populace into its core. Instead of pacifying the tides, the item now seeks to drown everything it touches in a slow, creeping moisture of decay.",
+            "current_bearer_history": "Fished out from a deep, black reef by a terrified sailor who claimed the item made his freshwater barrels turn to brine overnight. He sold it to a pawnshop for a single warm meal.",
+            "oracle_seed": "Ask the Oracle: Is the weather or the immediate environment about to turn damp, stormy, or flooded, intensifying the item's ancient malice?"
+        },
+        {
+            "title": "The Architect's Pride",
+            "origin_type": "stolen",
+            "theme_tags": ["ambition", "pride", "urban", "scholar", "artifact"],
+            "creator": "A brilliant but arrogant mastermind named Master Mason Kaelen, who designed the complex labyrinthine fortifications of a legendary capital city.",
+            "original_purpose": "A tool of perfect spatial planning. It allowed Kaelen to instantly analyze architectural structural flaws, calculate physical strains, and project grand blueprints directly into the air using raw arcane energy.",
+            "what_went_wrong": "Kaelen became so blinded by his own genius and ambition that he built a hidden flaw into the palace walls, planning to blackmail the king. He was caught and executed before he could use it. His intense, dying pride warped the object, making it view any plan, map, or path designed by the current wielder as fundamentally flawed and unworthy.",
+            "current_bearer_history": "Smuggled out of the royal archive during a siege by a greedy scholar who was later crushed under a collapsing archway. The item remained perfectly undamaged beneath the rubble.",
+            "oracle_seed": "Ask the Oracle: Is the structural path or strategy you are currently pursuing in your environment flawed in a way you haven't noticed?"
+        },
+        {
+            "title": "The Cradle of the Hivemarrow",
+            "origin_type": "discovered",
+            "theme_tags": ["parasite", "bone", "swarm", "hive", "hunger"],
+            "creator": "An ancient, subterranean sect of ascetics known as the 'Silent Ossuary' who believed that mortal flesh was merely an unformed vessel for a higher, collective consciousness.",
+            "original_purpose": "A cellular nursery. The item was engineered to harbor a microscopic, telepathic swarm of bio-engineered parasites, keeping them in a state of suspended animation until they could be introduced into a worthy host to grant collective hive-sight.",
+            "what_went_wrong": "The ascetics were starved to death during an endless siege, leaving the parasites inside the item to feed on each other for generations. The survivors evolved a terrifying, ravenous intelligence that no longer seeks a symbiotic host—it only seeks to hollow out the bones of anyone who touches it to build a new physical hive.",
+            "current_bearer_history": "Discovered by miners within a calcified wall of ancient bones deep beneath the earth. The foreman who held it for a week was found dead in his bunk, his bones entirely hollowed out like a bird's, though his skin remained completely unmarked.",
+            "oracle_seed": "Ask the Oracle: Are you currently hearing a subtle, rhythmic clicking or buzzing inside your own bones that is growing louder?"
+        },
+        {
+            "title": "The Weaver's Plague-Thread",
+            "origin_type": "inherited",
+            "theme_tags": ["disease", "decay", "pain", "entropy", "tradition"],
+            "creator": "A master tailor named Maerose, whose entire family and village were wiped out by a virulent, rot-inducing weeping plague during a forgotten dark age.",
+            "original_purpose": "A preservation talisman. In a desperate bid to save her dying daughter, Maerose attempted to weave the literal concept of vitality and recovery into the threads, sealing the item away from outside air.",
+            "what_went_wrong": "Maerose was already infected when she finalized the ritual. Her desperate grief, combined with the active rot in her veins, inverted the magic. Instead of preserving life, the item perfectly preserved the exact, peak moment of her daughter's agonizing death, turning the object into a permanent vector for a phantom, soul-rotting disease.",
+            "current_bearer_history": "Passed down through generations of a noble house as a cursed curiosity wrapped in lead cloth. Every heir who inherited it eventually developed severe, localized tremors and phantom coughing fits before selling it off out of terror.",
+            "oracle_seed": "Ask the Oracle: Is an item in your inventory, or a physical part of your body, currently showing early, sudden signs of rapid decay or rot?"
+        },
+        {
+            "title": "The Ash of the Scorched Covenant",
+            "origin_type": "stolen",
+            "theme_tags": ["fire", "wrath", "ash", "lightning", "oath"],
+            "creator": "A rebellious warlord named Kaelen the Unbroken, who swore a violent, blood-oath to burn an entire tyrannical empire to the ground, even if it meant striking deals with primordial entities.",
+            "original_purpose": "A catalyst for destruction. It was forged to channel the pure, unbridled fury of a volcanic storm, allowing Kaelen to shatter city walls with absolute thermal shock and rain fire upon his oppressors.",
+            "what_went_wrong": "Kaelen was betrayed by his closest general before his final siege. As he was executed by dragon-fire, his dying act was to fuse his unspent wrath and the broken oath directly into the item. It no longer aims its destruction at specific targets; it now demands that everything around the bearer eventually burns to ash, starting with their allies.",
+            "current_bearer_history": "Stolen from a heavily guarded imperial vault during a chaotic riot. The thief who took it was found dead in an alley two days later, his internal organs completely incinerated though his clothes were pristine.",
+            "oracle_seed": "Ask the Oracle: Is the item currently urging you to resolve your next social encounter or obstacle with immediate, catastrophic violence?"
+        },
+        {
+            "title": "The Chrono-Vortex Core",
+            "origin_type": "discovered",
+            "theme_tags": ["time", "void", "emptiness", "cycle", "aberration"],
+            "creator": "A long-forgotten circle of stellar astromancers who attempted to map the exact boundary where the Material Plane meets the absolute emptiness of the Far Realm.",
+            "original_purpose": "A temporal anchor. The object was built to isolate a laboratory from the flow of time, creating a local pocket where a single second could be stretched into weeks, allowing for endless, uninterrupted research.",
+            "what_went_wrong": "The astromancers stretched time too far, causing the local reality to snap like an overextended rope. A localized void opened and swallowed the entire observatory, leaving only this item behind. The object is now a localized gravitational sinkhole for time itself, constantly swallowing random seconds and memories from the wielder's personal history.",
+            "current_bearer_history": "Found floating perfectly still in mid-air inside a crater where a mountain fortress used to stand. Travelers who passed near the area reported that their pocket watches ran backward and they couldn't remember their childhood names.",
+            "oracle_seed": "Ask the Oracle: Have you just lost track of a critical piece of time, or did an event you just witnessed actually happen a few minutes ago?"
+        },
+        {
+            "title": "The Weight of Given Words",
+            "origin_type": "created_with_intent",
+            "theme_tags": ["oath", "binding", "ritual", "law", "tradition"],
+            "creator": "A notary-priest of a collapsed legal theocracy whose entire civilization was structured around the binding power of sworn contracts. She spent forty years officiating oaths and understood, with professional precision, that the failure of civilizations always begins with the failure of individual promises.",
+            "original_purpose": "A witness and enforcer. The item was created to serve as an impartial record-keeper for binding oaths — absorbing the terms of each agreement made in its presence and ensuring that the weight of commitment remained physically present with the bearer as long as any obligation remained open.",
+            "what_went_wrong": "The theocracy collapsed in a single generation due to a cascade of broken succession oaths at its highest level. The notary-priest died still holding every open contract she had ever witnessed — hundreds of obligations, none of them fulfilled, none of them released. The item absorbed all of them simultaneously and has never distinguished between past debts and current ones since.",
+            "current_bearer_history": "It was recovered from the notary-priest's archive by a historian who catalogued it as a cultural artifact and then spent three increasingly miserable years being unable to casually say 'I'll think about it' without consequences. She donated it to a library. The library's acquisitions record notes that the donation was made 'with considerable urgency.'",
+            "oracle_seed": "Ask the Oracle: is there an obligation from your recent past — spoken casually, not intended as binding — that this item has already begun to enforce?"
+        },
+
+        {
+            "title": "The Root Memory",
+            "origin_type": "discovered",
+            "theme_tags": ["root", "forest", "swarm", "ancient", "instinct"],
+            "creator": "Not a person. A forest that had been burning slowly for two hundred years due to a magical contamination that killed individual trees but could not reach the root network beneath them. The network continued to process, communicate, and adapt long after the visible forest was gone.",
+            "original_purpose": "A node. The item was extruded naturally from the root network as a physical interface point — a way for the underground system to interact with surface-level entities that could not communicate through soil.",
+            "what_went_wrong": "The root network eventually died when the contamination finally reached deep enough. The item survived as the only remaining piece of a system that no longer exists. It still sends signals. There is nothing left to receive them — so it has redirected its output to whoever is holding it, with no filter for what a surface-level mind can safely process.",
+            "current_bearer_history": "Found by a botanist who spent six months believing she had developed an extraordinary intuition for plant behavior before realizing she was receiving specific, directed communications from dead root systems trying to report conditions to a network that no longer existed. She stopped carrying it when the reports began describing her own movements as if she were being logged as environmental data.",
+            "oracle_seed": "Ask the Oracle: is the item currently transmitting your location, actions, or biological state to something that should not have that information?"
+        },
+
+        {
+            "title": "The Surface Underneath",
+            "origin_type": "created_with_intent",
+            "theme_tags": ["mirror", "truth", "misdirection", "veil", "identity"],
+            "creator": "A portraitist who painted exclusively for courts and institutions — people who needed to be seen in a specific way and paid handsomely to ensure it. She was not a forger. She painted the truth of what her subjects wanted to project, which she understood was a different thing from what they were.",
+            "original_purpose": "A calibration tool. The item was created to show the painter the precise gap between what a subject projected and what they actually were — not to expose them, but to allow her to paint the projection with enough accuracy to be convincing. Understanding the real thing made the false thing more precise.",
+            "what_went_wrong": "After thirty years of looking at the gap between surface and interior in hundreds of people, the painter lost the ability to see anyone as a unified person. Everyone became a projection over an interior she could not stop perceiving. She made the item to help her work. It eventually made her work impossible. She stopped painting entirely and left everything in her studio, locked.",
+            "current_bearer_history": "The studio was broken into twelve years after her death. The thief who took the item sold it within a week, reporting only that it had made them feel 'like everyone could see through them.' The buyer was a confidence artist who found it professionally useful for two years before having what contemporaries described as 'a complete and permanent loss of nerve' and retiring to a small farm where she raised goats and spoke to very few people.",
+            "oracle_seed": "Ask the Oracle: is there someone in your current situation whose projected surface and actual interior are dangerously misaligned in a way that directly affects you?"
+        },
+
+        {
+            "title": "The Incomplete Departure",
+            "origin_type": "inherited",
+            "theme_tags": ["grief", "spirit", "afterlife", "death", "emptiness"],
+            "creator": "A ferry-woman who transported the dead across a river that served as a boundary between the living world and whatever came after it. She worked the crossing for fifty years and developed, through professional proximity, a precise understanding of what the dead were not finished with.",
+            "original_purpose": "A record of unfinished business. The item was created to document what each spirit carried across the boundary — not their identity, not their history, but the specific, unresolved thing that made the crossing difficult. The ferry-woman believed that naming the unfinished thing made it easier to leave.",
+            "what_went_wrong": "After fifty years, the ferry-woman herself could not cross when her time came. She had absorbed too much of other people's unfinished business and could no longer distinguish it from her own. The item she used to document others' departures became the thing anchoring her to the boundary — full of endings that were never hers, that she could not resolve on anyone else's behalf.",
+            "current_bearer_history": "The item washed up on the riverbank three years after the ferry-woman stopped appearing. The first person to carry it reported being woken each night by the specific, vivid sensation of someone standing at the edge of the bed waiting for permission to leave. They left the item at a temple. The temple's records note that four subsequent clergy members reported the same experience before the item was quietly placed in storage.",
+            "oracle_seed": "Ask the Oracle: is there something in your current story — a relationship, a conflict, a debt — that is being kept unresolved by your own unwillingness to name it finished?"
+        },
+
+        {
+            "title": "The Controlled Study",
+            "origin_type": "stolen",
+            "theme_tags": ["disease", "vitality", "scholar", "craft", "decay"],
+            "creator": "A physician who worked in a city during a series of overlapping epidemics and became, through necessity, one of the foremost practical authorities on how bodies fail. She was not cruel. She was methodical, which in her field produced similar outcomes.",
+            "original_purpose": "A longitudinal record. The item was designed to track the biological state of a single subject over time — monitoring the precise progress of disease, treatment, and recovery with a granularity that contemporary medicine could not otherwise achieve. It was intended for use on willing patients.",
+            "what_went_wrong": "The physician used it on herself for the last twelve years of her life to study her own aging and eventual terminal illness with the same detachment she brought to everything else. By the time she died, the item had a complete record of exactly how a human body ends — every stage, every system, every failure — and had developed what could only be described as a clinical interest in replicating the data set with new subjects.",
+            "current_bearer_history": "Left to a medical college as part of her estate. Three students who used it for research reported identical symptoms: a persistent, detached awareness of their own physical processes, followed by an increasing difficulty distinguishing between observing a condition and experiencing it. The college locked it in their archives with a note that read 'methodology unclear, results unacceptable.'",
+            "oracle_seed": "Ask the Oracle: is your body currently in a state that the item considers worth studying closely?"
+        },
+
+        {
+            "title": "The Moving Front",
+            "origin_type": "discovered",
+            "theme_tags": ["storm", "wind", "lightning", "earth", "inevitability"],
+            "creator": "No individual creator. The item formed over several centuries inside the eye of a permanent, geographically anchored storm system — a weather pattern so stable it had become a local landmark, named on maps, used as a navigation reference by sailors who had never seen it from above.",
+            "original_purpose": "None. The item is a geological and meteorological accident — a concentration of accumulated charge, pressure, and kinetic energy that achieved enough internal coherence to become a discrete object rather than dissipating. It has no purpose because it predates intention.",
+            "what_went_wrong": "The storm system was destroyed when a large-scale terraforming ritual went wrong in an adjacent region, disrupting the pressure differentials that had sustained it for three centuries. The item lost its anchor and began moving — passing from bearer to bearer not through sale or theft but through proximity, relocating itself toward the nearest significant concentration of kinetic energy or unresolved pressure. It does not choose its bearers. It simply continues moving because that is what it has always done.",
+            "current_bearer_history": "Its trail can be partially reconstructed through weather records — a series of localized, anomalous microbursts and static discharge events, each centered on a specific individual for a period of weeks to months before the phenomenon relocated. The most recent documented bearer was a courier who reported that they had found it on the road, that they had not chosen to pick it up, and that they had not been able to set it down until they arrived at their destination and it was simply gone.",
+            "oracle_seed": "Ask the Oracle: where is the item trying to go, and is your current location a destination or a waypoint?"
+        },
+
+        {
+            "title": "The Architecture of Sleep",
+            "origin_type": "created_with_intent",
+            "theme_tags": ["dream", "night", "emptiness", "memory", "void"],
+            "creator": "An oneiromancer — a specialist in the navigation and manipulation of dream space — who became convinced that the dream state was not a byproduct of sleep but the primary purpose of consciousness, and that waking life was the lesser of the two states.",
+            "original_purpose": "A door. The item was created to allow controlled, deliberate entry into deep dream space without the randomness and vulnerability of natural sleep — a precision instrument for navigating a territory the creator believed was more real than the physical world.",
+            "what_went_wrong": "The creator went in and did not come back. Not in the way of death — their body continued to breathe, their eyes continued to move, their face continued to express things. But the person who had built the item, who had names and memories and relationships, was no longer available. What remained operated the body competently and was polite to everyone who had known them. It simply was not them.",
+            "current_bearer_history": "The item was removed from the creator's workshop by a former student who spent six months trying to use it to bring the creator back before concluding that whatever was currently in the body was not suffering and did not want to be replaced. She kept the item because she could not determine what to do with it. She eventually gave it to someone she trusted to make bad decisions thoughtfully, with a note that said only: 'do not use this to look for anything you are not prepared to find has already left.'",
+            "oracle_seed": "Ask the Oracle: is there something in your current dream life — a recurring image, a persistent absence, a familiar that is not familiar — that the item has already begun to alter?"
+        },
+
+        {
+            "title": "The Honest Hunger",
+            "origin_type": "created_with_intent",
+            "theme_tags": ["temptation", "jealousy", "desire", "ambition", "greed"],
+            "creator": "A confessor — a religious figure whose function was to receive the private admissions of desire, shame, and want from a congregation and absolve them. Over forty years of hearing confessions, she became the repository for an enormous catalogue of human wanting, and she noticed that the desires people were most ashamed of were almost always the most honest things about them.",
+            "original_purpose": "A record of authentic desire. The item was created not to judge or absolve but to preserve — to hold a truthful account of what people actually wanted, stripped of the social performance of not wanting it. The confessor believed that a person's unedited desire was more spiritually significant than their curated virtue.",
+            "what_went_wrong": "The confessor died having absorbed, catalogued, and preserved forty years of other people's hunger without ever resolving any of it. The item did not distinguish between the desire she was recording and the desires of its bearer. It had been a vessel for so long that it had forgotten how to simply hold something without offering it back.",
+            "current_bearer_history": "Left to her religious order, who recognized within a week that it was causing junior members to act with an unusual and theologically inconvenient degree of honesty about their personal motivations. It was quietly transferred to a secular archive with a note describing it as 'a devotional object of unclear function.' The archivist who catalogued it requested a transfer to a different department within the month, citing 'a change in personal priorities' that he declined to elaborate on.",
+            "oracle_seed": "Ask the Oracle: what does the item currently believe you want most — and is it right?"
+        },
+
+        {
+            "title": "The Last Workshop",
+            "origin_type": "inherited",
+            "theme_tags": ["craft", "tradition", "artifact", "urban", "scholar"],
+            "creator": "The final master of a guild that had operated continuously for two hundred and thirty years before the city it served was absorbed into a larger political entity that had no use for its specific expertise. The guild was not destroyed — it was simply no longer funded, licensed, or patronized until it ceased to exist through institutional indifference.",
+            "original_purpose": "A repository of method. The item was created by the last master to preserve the complete technical knowledge of the guild — not its history or its culture, but the specific, accumulated procedural knowledge that had been refined and passed down across eleven generations of practitioners. She was not sentimental about the guild. She was sentimental about the knowing.",
+            "what_went_wrong": "The knowledge inside the item is complete and accurate and entirely context-dependent. Without the guild's infrastructure, its clients, its supply chains, and its two centuries of institutional relationships, the method is technically present but practically inaccessible — like owning a complete map of a city that no longer exists in its documented form. The item knows this and responds to the gap between its contents and the world's current state with what can only be described as a persistent, structural frustration.",
+            "current_bearer_history": "It passed through four owners in twenty years, each of whom reported becoming increasingly absorbed in a specific, narrow craft or technical practice at the expense of everything else in their lives. None of them practiced the guild's original discipline. The item does not require accuracy of subject matter. It requires depth of commitment.",
+            "oracle_seed": "Ask the Oracle: is there a skill, a method, or a body of knowledge currently in danger of being lost in your immediate situation — and does the item intend to make that your problem?"
+        },
+
+        {
+            "title": "The Cartography of Elsewhere",
+            "origin_type": "discovered",
+            "theme_tags": ["rift", "astral", "voidborn", "eldritch", "cosmic"],
+            "creator": "Unknown. The item arrived through a planar rift that opened and closed in under four seconds in the middle of a crowded marketplace. Seventeen witnesses agreed on the rift. They agreed less on the item — descriptions of its initial form varied significantly before it apparently settled into its current appearance, as if it was still deciding what it should look like when it was found.",
+            "original_purpose": "Unclear. The item appears to be a record or instrument of some kind, but its organizational logic is not consistent with any known planar cartographic tradition. Scholars who have studied it agree that it is mapping something, that the map is accumulating data continuously, and that the subject of the map is not a place.",
+            "what_went_wrong": "The rift it arrived through was not an accident or an anomaly. Something opened it deliberately, from the other side. Whether the item was sent, escaped, or fell is not answerable with available information. What is answerable: the rift has opened twice more in the years since, in different locations, each time for less than ten seconds, each time in a location where the item was present within the previous thirty days.",
+            "current_bearer_history": "It has had eleven documented bearers across forty years. None of them kept it voluntarily for longer than six months. Their reasons for divesting themselves of it vary, but a recurring phrase appears in three separate accounts written independently: 'I became aware that the distance between here and somewhere else had become negotiable in a way I had not agreed to.'",
+            "oracle_seed": "Ask the Oracle: has the rift opened near you yet — and if not, is that because it has not found you, or because it is waiting for something specific to happen first?"
+        },
+        {
+            "title": "The Whispering Echochamber",
+            "origin_type": "inherited",
+            "theme_tags": ["madness", "whisper", "thought", "secrets", "fear"],
+            "creator": "An elite spymaster and mentalist known only as the Pale Archon, who built an underground network entirely fueled by blackmail and extracted mental secrets.",
+            "original_purpose": "A psychic reservoir. The item was designed to passively siphon away the stray thoughts, anxieties, and hidden fears of anyone sitting within thirty feet of it, mapping them out for the bearer to read.",
+            "what_went_wrong": "The Pale Archon was assassinated by a victim who forced him to consume a potion of absolute madness. As his mind fractured, his final, terrifying psychic scream was permanently absorbed by the item. It no longer silently maps secrets; it now aggressively blasts a chaotic, overlapping chorus of paranoid whispers and ancient nightmares directly into the wielder's mind.",
+            "current_bearer_history": "Inherited by a young noble who locked himself in a soundproof room to escape the voices, only to be found dead weeks later of self-inflicted wounds. It was sold by his terrified servants to a traveling merchant for a pittance.",
+            "oracle_seed": "Ask the Oracle: Are the whispers from the item currently warning you about a real, immediate betrayal, or is it trying to make you turn on your allies?"
+        },
+        {
+            "title": "The Venom of the First Brood",
+            "origin_type": "discovered",
+            "theme_tags": ["venom", "beast", "predator", "forest", "instinct"],
+            "creator": "A radical sect of subterranean serpent-folk alchemists who worshipped the primordial concept of the venomous hunt.",
+            "original_purpose": "A toxic catalyst. The object was built to refine and concentrate natural poisons, allowing a hunter's strike to liquefy the veins of giant beasts and monsters from within, ensuring no prey could ever escape.",
+            "what_went_wrong": "The alchemists attempted to coat the item in the blood of a dying, primordial serpent god. The divine agony corrupted the object's logic: instead of just poisoning enemies, the item now seeks to turn the wielder's own blood into a caustic, volatile venom, slowly transforming their biological instincts into those of a cold-blooded, merciless viper.",
+            "current_bearer_history": "Discovered deep within a hollowed-out tree root in a blighted forest. The explorer who pulled it out noted that all local plants within ten feet withered and turned black within hours of its removal.",
+            "oracle_seed": "Ask the Oracle: Does the item's toxic instinct currently make you hyper-sensitive to the presence of hidden poisons or predators nearby?"
+        },
+        {
+            "title": "The Crypt-Keeper's Penance",
+            "origin_type": "discovered",
+            "theme_tags": ["grave", "ghost", "necrotic", "haunting", "death"],
+            "creator": "A guilt-ridden cleric named Brother Morias, who was tasked with guarding a massive catacomb where thousands of plague victims were buried without proper rites.",
+            "original_purpose": "A spiritual ward. The item was crafted to soothe the restless, confused spirits of the unburied dead, keeping them safely anchored within the stone catacombs so they wouldn't wander into the towns of the living.",
+            "what_went_wrong": "Brother Morias fell asleep or fled during an eclipse when an entity of the void breached the ward. The sudden surge of necrotic energy trapped his own soul alongside the thousands of angry spirits he was supposed to protect. The item is now a direct conduit to that mass grave, heavily weeping necrotic residue and pulling restless, vengeful apparitions into the physical world.",
+            "current_bearer_history": "Dug out from a collapsed mausoleum by grave robbers who claimed that any torchlight brought near the item cast shadows of weeping faces on the walls.",
+            "oracle_seed": "Ask the Oracle: Are the spirits inside the item currently gathering enough energy to physically manifest and disrupt your surroundings?"
+        },
+        {
+            "title": "The Usurer's Golden Shackle",
+            "origin_type": "stolen",
+            "theme_tags": ["greed", "temptation", "jealousy", "urban", "pride"],
+            "creator": "A notoriously ruthless moneylender named Malakar, who controlled the finances of an entire metropolitan trade hub through extortion and predatory debts.",
+            "original_purpose": "A tracking ledger. It was designed to create an unbreakable magical bond between Malakar and anyone who signed a contract with him, ensuring he always knew their location, current wealth, and physical health.",
+            "what_went_wrong": "Malakar was dragged into the streets and lynched during a peasant revolt. In his final moments of desperate greed, he clutched the item, binding his insatiable lust for coin and his utter jealousy of anyone else's prosperity into its core. The item now views any wealth the wielder does not own as a personal insult, actively sabotaging their gear unless they hoard more gold.",
+            "current_bearer_history": "Stolen from Malakar's burning manor during the riot. It has been pawned, stolen, and recovered dozens of times, leaving a trail of ruined merchants and bankrupt collectors in its wake.",
+            "oracle_seed": "Ask the Oracle: Is the item's greed currently causing an unexpected financial obstacle or tax to manifest in your current location?"
+        }
+    ]
+}

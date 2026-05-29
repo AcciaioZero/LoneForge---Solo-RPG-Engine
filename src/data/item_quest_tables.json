@@ -1,0 +1,384 @@
+{
+  "item_quest_tables": {
+    "note": "Each rarity tier has independent pools for hook, origin, quest_type, steps, reward_hint, and oracle_seed. A quest is assembled by picking one entry from each pool at random. Steps pools contain arrays of possible step sequences — pick one full array per quest.",
+
+    "uncommon": {
+      "description": "Simple mysteries or small obligations. One-session stories.",
+      "hooks": [
+        "There is a name scratched into the hilt — someone cared enough to mark it.",
+        "The object is warm to the touch even in the coldest room.",
+        "A merchant recognized it and went pale before walking away quickly.",
+        "It was found on a body with no other belongings — as if left there deliberately.",
+        "A child in the last town pointed at it and said 'that belongs to grandmother'.",
+        "The object smells faintly of a place you have never been.",
+        "It still has someone else's blood on it. Old blood. Not from combat.",
+        "A symbol on it matches one you saw on a wanted notice.",
+        "It was sealed in a locked box with no key and no explanation.",
+        "Someone left a note with it: 'Do not use this until you understand what it costs'.",
+        "It hums softly at night when you are certain no one else is awake.",
+        "The previous owner sold it in a hurry, for far less than it was worth.",
+        "It was buried. Not lost — deliberately buried.",
+        "A priest of a forgotten god blessed it. The blessing is still active.",
+        "Someone has been asking about it in every town you have passed through."
+      ],
+      "origins": [
+        "Crafted by a journeyman artificer who disappeared before finishing their masterwork.",
+        "Belonged to a soldier who never came home from a battle fought three decades ago.",
+        "Made as a wedding gift that was never delivered.",
+        "Commissioned by a merchant guild as a symbol of rank — then the guild dissolved.",
+        "Created in a small village as a protective charm; the village no longer exists.",
+        "Won in a card game by someone who did not know its value.",
+        "Left behind by a traveler who passed through and never returned.",
+        "Part of a matching set; the other pieces are unaccounted for.",
+        "Made by a craftsperson to pay off a debt they could not settle in coin.",
+        "Taken from a shrine as an offering that was never meant to leave.",
+        "Inherited through a family line that has now ended.",
+        "Recovered from a shipwreck along with nothing else of value.",
+        "Traded between hands so many times its original owner is unknown.",
+        "Created during a festival that only happens once a generation.",
+        "Found in the rubble of a building that burned down under suspicious circumstances."
+      ],
+      "quest_types": [
+        "Return",
+        "Discovery",
+        "Closure",
+        "Delivery",
+        "Investigation"
+      ],
+      "steps_pools": [
+        [
+          "Find out who the name on the object belongs to.",
+          "Locate that person or their family.",
+          "Return the object and learn why it matters."
+        ],
+        [
+          "Ask the Oracle who is searching for this object right now.",
+          "Decide whether to keep it, sell it, or seek out the searcher.",
+          "Follow the lead wherever it takes you."
+        ],
+        [
+          "Trace the object back to its last known owner.",
+          "Discover what happened to them.",
+          "Determine whether the object played a role."
+        ],
+        [
+          "Find someone who recognizes the symbol or marking on the object.",
+          "Ask them what they know.",
+          "Decide whether the truth changes anything for you."
+        ],
+        [
+          "Use the Oracle to determine whether the object is wanted by someone dangerous.",
+          "If yes — decide whether to run, fight, or negotiate.",
+          "Resolve the situation on your terms."
+        ]
+      ],
+      "reward_hints": [
+        "The gratitude of a family that had given up hope.",
+        "A piece of information worth more than the object itself.",
+        "The respect of someone who has been watching you.",
+        "A small debt repaid by the universe — something goes your way soon.",
+        "Peace of mind, and perhaps a clearer conscience.",
+        "A contact in an unexpected place.",
+        "The satisfaction of finishing something someone else left undone.",
+        "A rumor that leads somewhere more interesting."
+      ],
+      "oracle_seeds": [
+        "Is someone in the nearest settlement looking for this object right now?",
+        "Did the previous owner give it up willingly?",
+        "Does this object have a reputation in this region?",
+        "Is there danger attached to possessing this?",
+        "Would the original maker recognize what became of their work?",
+        "Is the name on this object still alive?"
+      ]
+    },
+
+    "rare": {
+      "description": "Short questlines with 2-3 meaningful steps. Objects with obligations or contested histories.",
+      "hooks": [
+        "The object responds differently depending on who holds it — it has opinions.",
+        "You have dreamed of this object three times before you ever found it.",
+        "Two different factions have sent representatives asking about it within the same week.",
+        "The object was listed as destroyed in an official record dated fifteen years ago.",
+        "Using it leaves a mark on you that others with knowledge recognize immediately.",
+        "It was part of a collection that was broken up under violent circumstances.",
+        "The object carries a minor curse — not enough to harm you, enough to remind you it is there.",
+        "A scholar offered you a small fortune for it without explaining why.",
+        "It is mentioned by name in a text you found somewhere completely unrelated.",
+        "The object feels different after certain events — as if it is paying attention.",
+        "Someone tried to steal it from you before you even knew what it was worth.",
+        "An old map was hidden inside it, folded tight and sealed with wax.",
+        "Three people have owned it in the past decade. None of them kept it long.",
+        "It was made as a weapon against something specific. That something may still exist.",
+        "The object is incomplete — a piece of it is missing, and you can feel the absence.",
+        "A dying person pressed it into your hands and said only 'finish what I started'.",
+        "It was sealed with a spell that kept it hidden for decades. Something broke the seal recently.",
+        "Every craftsperson who examines it says the same thing: this should not be possible to make."
+      ],
+      "origins": [
+        "Forged as the centerpiece of a political alliance that collapsed into war.",
+        "Created by a mage who bound a fragment of their own soul into the making of it.",
+        "Belonged to a legendary figure whose legacy is now disputed — hero to some, monster to others.",
+        "Constructed by a secret order as a key to something they wanted kept locked.",
+        "Made as a gift between rivals who were briefly, unexpectedly, at peace.",
+        "Part of the payment for a contract that was never fulfilled.",
+        "Recovered from a dungeon that was sealed for a reason nobody recorded.",
+        "Smuggled across a border inside a shipment of mundane goods for twenty years.",
+        "Created during a magical experiment that went further than intended.",
+        "The last work of an artisan who was killed before they could explain what they had made.",
+        "Stolen from a temple vault three times and returned twice.",
+        "Built to contain something. Whether it still works is unclear.",
+        "Commissioned by a noble house that has since been erased from official histories.",
+        "Made in a tradition that was outlawed; the knowledge of how to make it should not exist.",
+        "Carried by a champion in a legendary contest. The contest had no honest winner."
+      ],
+      "quest_types": [
+        "Restitution",
+        "Unraveling",
+        "Obligation",
+        "Confrontation",
+        "Completion"
+      ],
+      "steps_pools": [
+        [
+          "Research the object's history — visit a library, a sage, or an old contact.",
+          "Discover the faction or individual with the strongest claim to it.",
+          "Decide whether to honor that claim, challenge it, or create a third option.",
+          "Face the consequences of your decision."
+        ],
+        [
+          "Find the missing piece or the person who has it.",
+          "Understand why it was separated in the first place.",
+          "Determine whether reuniting the pieces is safe — or wise.",
+          "Complete or abandon the object on your terms."
+        ],
+        [
+          "Follow the trail of previous owners backward through time.",
+          "Identify the moment the object became dangerous or contested.",
+          "Confront whatever is still unresolved from that moment.",
+          "Decide what story you want to add to the object's history."
+        ],
+        [
+          "Use the object as intended and observe what responds — person, creature, or place.",
+          "Follow that response to its source.",
+          "Negotiate, fight, or flee based on what you find.",
+          "Return changed."
+        ],
+        [
+          "Honor the dying person's request — find out what they started.",
+          "Discover why it was left unfinished.",
+          "Decide if you are the right person to finish it.",
+          "Finish it anyway."
+        ]
+      ],
+      "reward_hints": [
+        "The loyalty of an order that has been waiting for someone trustworthy.",
+        "Knowledge of a location that does not appear on any map.",
+        "A powerful enemy who now has reason to leave you alone.",
+        "The completed object — more powerful than any of its parts.",
+        "A name whispered in the right circles that opens unexpected doors.",
+        "A debt owed by someone who rarely owes anyone anything.",
+        "Answers to questions you did not know you had.",
+        "A title, informal but real, among people who matter."
+      ],
+      "oracle_seeds": [
+        "Is there an active faction searching for this object with resources and intent?",
+        "Did the original owner die because of this object?",
+        "Is the object's power tied to something that still exists in the world?",
+        "Has this object been used to harm someone innocent?",
+        "Is there an obligation attached to ownership that the previous owner ignored?",
+        "Does possessing this object make you a target for something you cannot yet see?"
+      ]
+    },
+
+    "very_rare": {
+      "description": "Multi-step arcs. The object is part of something larger already in motion.",
+      "hooks": [
+        "The object was not lost. It was hidden — by someone who is still alive and still afraid.",
+        "Three separate people have died in the past year trying to reach where you found this.",
+        "An ancient compact names whoever holds this object as responsible for something enormous.",
+        "The object changes you in small ways each time you use it. So far the changes have been useful.",
+        "A prophecy you heard years ago mentioned something that matches this object exactly.",
+        "It was the prize in a conflict that technically never ended. Both sides still have soldiers.",
+        "The object has a name. Not a given name — its own name, in a language older than Common.",
+        "Something is drawn to it. You have noticed the same creature watching you from a distance three times.",
+        "Owning it means inheriting a war. You did not start it. That does not matter.",
+        "It was created to kill something specific. That thing is still alive.",
+        "The object is one of seven. You now have two. Someone has the other five.",
+        "Every person in your bloodline who held this died before their time. You are holding it now.",
+        "Using it at full power requires a price the previous owner refused to pay.",
+        "It was sealed inside a vault that required three different keys to open. You only had one.",
+        "The object is famous enough that your name will be attached to it in histories. How is up to you."
+      ],
+      "origins": [
+        "Crafted at the convergence of a celestial event that occurs once every century.",
+        "The physical manifestation of a promise made between two powers that no longer speak.",
+        "Built as the anchor for a ward that protects an entire region — or used to.",
+        "Created by a civilization that destroyed itself and left no other record of its existence.",
+        "Shaped from a material that should not exist in this plane of reality.",
+        "The prize of a contest between gods, wagered casually and then forgotten.",
+        "Made to end a specific bloodline. The bloodline survived. The object was lost. Until now.",
+        "Forged with the willing sacrifice of the maker's future — they gave up what they would become.",
+        "The inheritance of an empire that fell so completely its name is not spoken anymore.",
+        "Built in pieces by seven different craftspeople who never met and never knew the whole design.",
+        "Created as the physical form of an oath sworn at the dawn of an age.",
+        "Stolen from the divine vault of a deity who noticed the theft.",
+        "Made to be the last resort of a hero who never needed it. Now someone does.",
+        "The result of a ritual meant to prevent something. The object is proof the ritual worked. Once."
+      ],
+      "quest_types": [
+        "Legacy",
+        "War",
+        "Restoration",
+        "Reckoning",
+        "Inheritance"
+      ],
+      "steps_pools": [
+        [
+          "Learn the object's true name and what it was made to do.",
+          "Find the others — people, objects, or places — connected to it.",
+          "Understand the full shape of what you have walked into.",
+          "Choose a side, or forge a third path no one anticipated.",
+          "See it through to an ending — yours or someone else's."
+        ],
+        [
+          "Locate the person who hid the object and find out what they feared.",
+          "Discover whether that fear was justified.",
+          "Face whatever they were hiding from.",
+          "Decide whether to finish what they started or let it remain buried."
+        ],
+        [
+          "Activate the object fully for the first time and observe the consequences.",
+          "Trace those consequences to their source.",
+          "Confront the original purpose the object was built for.",
+          "Choose whether to fulfill that purpose, subvert it, or destroy the object entirely."
+        ],
+        [
+          "Find the remaining pieces of the set this object belongs to.",
+          "Determine who has them and why they have not reunited the set themselves.",
+          "Unite the pieces — or prevent their reunion if that is the wiser path.",
+          "Reckon with what the completed set is capable of."
+        ],
+        [
+          "Follow the thread of deaths connected to this object back to the first one.",
+          "Identify what pattern ties them together.",
+          "Break the pattern — or become part of it knowingly.",
+          "Survive the ending you have chosen."
+        ]
+      ],
+      "reward_hints": [
+        "Mastery of the object's full power — whatever that costs.",
+        "The resolution of a conflict that has lasted longer than living memory.",
+        "Allies who are genuinely powerful and genuinely grateful.",
+        "A place in the histories — for better or worse.",
+        "The end of something that should have ended long ago.",
+        "Safety for a people, a place, or a principle that matters to you.",
+        "The right to walk away from something that would have consumed anyone else.",
+        "A truth that changes how you understand everything that came before."
+      ],
+      "oracle_seeds": [
+        "Is there a living person whose fate is directly tied to this object?",
+        "Has the object been used at full power before — and what happened?",
+        "Is there a force — faction, creature, or power — that has been waiting for this object to resurface?",
+        "Does owning this object make you part of a prophecy whether you want to be or not?",
+        "Is the object's creator still alive, in any form?",
+        "What is the price of using this object as it was truly intended?"
+      ]
+    },
+
+    "legendary": {
+      "description": "Full narrative arcs. The object is already shaping the world. Finding it was not an accident.",
+      "hooks": [
+        "You were meant to find this. You do not know by whom. That is the first question.",
+        "The object has been waiting. Not dormant — waiting. There is a difference.",
+        "Three prophecies from three different traditions mention an object matching this description. None of them end well for the person who finds it.",
+        "Something ancient woke up the moment you touched it. You felt it happen.",
+        "The world is different now that you hold this. You cannot explain how you know.",
+        "It has chosen you. Not accepted you — chosen you. You will understand the distinction eventually.",
+        "Every major power in the known world knows this object exists. By tomorrow they will know you have it.",
+        "The object is not a reward. It is a test. You have already begun failing or passing — you do not know which.",
+        "There is a voice. It is not the object speaking. It is something speaking through the object.",
+        "The last person to hold this shaped the world. The world is still living with what they shaped.",
+        "You are the seventh. The previous six did not finish what they started.",
+        "Legends call this object by a name that means 'the beginning of the end'. Legends have been right before.",
+        "It was locked away by the most powerful alliance in recorded history. They could not destroy it. They settled for hiding it.",
+        "The object is incomplete. What it needs to be complete is you.",
+        "Finding this was the easy part. Everyone who found it thought that. They were right."
+      ],
+      "origins": [
+        "Forged in the moment of a god's death, from the material of their passing.",
+        "The physical form of a concept — not a representation, the actual thing itself made solid.",
+        "Created at the end of an age as the only thing that could survive into the next one.",
+        "Built by the first civilization as a failsafe against a threat they knew would return.",
+        "The result of every mage in a generation pooling their power into a single act of creation.",
+        "Made from the willing transformation of a being who sacrificed their existence to become something useful.",
+        "Woven from the threads of fate itself by something that exists outside of time.",
+        "Constructed as the counterpart to something terrible — the only thing that can face it equally.",
+        "The inheritance of a lineage that predates recorded history, finally reaching its intended recipient.",
+        "Created in the space between worlds by forces that do not have names in any mortal language.",
+        "The last work of an entire tradition of magic that no longer exists — this object is the only proof it ever did.",
+        "Built to be found by the right person at the right time. Everything about your life has been leading here.",
+        "A wound in reality that was given shape and purpose rather than allowed to fester.",
+        "The answer to a question so large that the question itself was forgotten and only the answer remains."
+      ],
+      "quest_types": [
+        "Destiny",
+        "Salvation",
+        "Ruin",
+        "Transcendence",
+        "Ending"
+      ],
+      "steps_pools": [
+        [
+          "Understand what you are holding — truly, not just its power but its purpose.",
+          "Find the others who are part of this story, willing or not.",
+          "Face the first real test: a moment where the easy path and the right path diverge completely.",
+          "Learn what the object costs — not in resources, but in who you are.",
+          "Confront the reason it exists: the thing it was made to face.",
+          "Choose what kind of ending you will write."
+        ],
+        [
+          "Follow the voice, the pull, the pattern — wherever it leads.",
+          "Discover who or what has been guiding you toward this moment.",
+          "Decide whether to trust that guidance or reject it.",
+          "Face the consequences of that decision at the worst possible time.",
+          "Find out if you were the person this was meant for — or if you became that person on the way.",
+          "Finish it. Whatever finishing it means."
+        ],
+        [
+          "Survive the first wave of those who want the object — they will come quickly.",
+          "Find an ally who understands what you are carrying.",
+          "Unlock the first layer of the object's true capability — and what it reveals about the world.",
+          "Face a choice that cannot be unmade.",
+          "Go to the place this object was made for.",
+          "Do what needs to be done."
+        ],
+        [
+          "Accept that your life before this was a preparation, not a story.",
+          "Gather what and who you need — time is not unlimited.",
+          "Breach whatever stands between you and the heart of this.",
+          "Pay the price that was always coming.",
+          "See what is on the other side.",
+          "Decide what you do with what you find there."
+        ]
+      ],
+      "reward_hints": [
+        "A changed world — smaller or larger, better or worse, but undeniably different.",
+        "The answer to why you. Finally, the answer to why you.",
+        "The end of a threat that has existed longer than anyone alive can remember.",
+        "A power that cannot be measured in game terms — something that simply is.",
+        "The freedom to stop. If you want it.",
+        "The knowledge that it mattered. That you mattered.",
+        "A new age. You get to decide what kind.",
+        "Whatever you were looking for when you started, even if you forgot you were looking."
+      ],
+      "oracle_seeds": [
+        "Was finding this object truly random, or has something been arranging events for a long time?",
+        "Is there a living being whose entire existence is defined by this object's return?",
+        "What happens to the world if this object is destroyed rather than used?",
+        "Is the voice or pull coming from the object itself, or from something using the object as a channel?",
+        "Are you the person this was made for, or will you have to become them?",
+        "What is the name of the thing this object was created to face — and is it already aware you have it?"
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Loneforge Solo RPG",
+  "description": "A digital assistant for solo fantasy role-playing games featuring oracles, procedural generation, automated combat, and a comprehensive library of NPCs, monsters, and villains.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

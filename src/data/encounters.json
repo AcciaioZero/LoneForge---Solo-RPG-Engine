@@ -1,0 +1,1431 @@
+{
+    "Wilderness": {
+        "Ancient Forest": {
+            "encounters": [
+            {
+                "text": "The forest doesn’t merely fall silent — it *holds its breath*. Every leaf, every branch, every hidden creature seems to pause, as if bracing for something you cannot yet see.",
+                "prompt": "You stop. The silence stretches, taut and unnatural. What do you do?",
+                "oracle_suggested": true
+            },
+            {
+                "text": "A path reveals itself where moments ago there was only tangled brush. Its soil is pressed with countless footprints, worn smooth by frequent passage—yet the surrounding undergrowth remains pristine, untouched, as if the forest itself parts only for those it chooses.",
+                "prompt": "Do you follow it?",
+                "lore_trigger": "Use the Lore Engine to explore the myths and folklore of the region.",
+                "oracle_suggested": true
+            },
+            {
+                "text": "A campsite lies abandoned, but not long deserted. The fire still breaths a faint warmth, its embers pulsing like a dying heartbeat. Scattered belongings tell a story of sudden flight — a dropped pack, a meal left mid‑bite, a single boot half‑buried in the dirt, as if its owner vanished mid‑stride.",
+                "prompt": "Do you search the camp? Do you wait?",
+                "skill_check": {
+                "skill": "Survival",
+                "dc": 13,
+                "success": "The tracks twist erratically through the undergrowth, driven by panic rather than purpose — someone fled into the deeper forest, chased by something that did not tire.",
+                "failure": "The ground is churned and chaotic, the signs overwritten by haste. You can tell only that someone ran, and ran fast."
+                }
+            },
+            {
+                "text": "A stag steps onto the path with a slow, deliberate grace, its coat shimmering as though catching light that isn’t there. When its gaze meets yours, the forest seems to fall away — its eyes hold a depth and awareness no beast should possess. After a long, weighted moment, it turns and walks with purposeful calm, inviting you toward something unseen.",
+                "prompt": "Do you follow?",
+                "oracle_suggested": true,
+                "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior."
+            },
+            {
+                "text": "Bioluminescent fungi trace the outline of something beneath the soil — roots, or a structure, or something else entirely.",
+                "prompt": "Do you investigate?",
+                "oracle_suggested": true,
+                "lore_trigger": "Use the Lore Engine to know more about lost civilizations history or relics and artifacts related to this encounter."
+            },
+            {
+                "text": "A lone tree rises from the clearing, its branches heavy with offerings tied by countless hands. Faded scraps of cloth whisper in the wind beside polished bone and weathered carvings, some so ancient their symbols have nearly worn away. Others are fresh, bright, recently placed — a living tradition layered atop something far older.",
+                "prompt": "Do you leave an offering? Do you take one to examine?",
+                "lore_trigger": "Use the Lore Engine to know more about cultures and factions.",
+                "skill_check": {
+                "skill": "Religion",
+                "dc": 12,
+                "success": "The oldest offerings predate the region’s current settlers by at least two generations, hinting at a forgotten rite maintained in secret.",
+                "failure": "The meaning of the symbols escapes you, but the care and frequency of the offerings make one thing clear: this place matters to someone — deeply."
+                }
+            },
+            {
+                "text": "The canopy opens above a perfect circle of clearing, as if some unseen hand carved a window into the sky. At its center stands a single stone, chest‑high and impossibly smooth, its flat surface worn by ages of touch. Nothing grows near it — not moss, not grass — as though the earth itself keeps its distance.",
+                "prompt": "Do you approach? Do you touch it?",
+                "lore_trigger": "Use the Lore Engine to know more about relics and artifacts.",
+                "oracle_suggested": true
+            },
+            {
+                "text": "Behind the curtain of falling water lies a narrow cave, its air cool and echoing with distant drips. The walls are crowded with handprints layered over one another — some human-sized, others smaller, stranger, their shapes subtly wrong. The pigments cling to the stone with a vitality that defies time.",
+                "prompt": "Do you approach? Do you observe from a distance?",
+                "lore_trigger": "Use the Lore Engine to explore the history of lost civilizations.",
+                "skill_check": {
+                "skill": "History",
+                "dc": 14,
+                "success": "The pigment used for the smaller prints is unlike any substance you know — vibrant, unfaded, as if freshly applied despite the ages.",
+                "failure": "The markings are ancient beyond easy reckoning. Their story is lost to you, swallowed by time."
+                }
+            },
+            {
+                "text": "A massive oak looms before you, its trunk split by a natural hollow wide enough to step inside. The air within is still and cool, carrying the faint scent of old sap and older secrets. On the far wall, carved at eye level, a single word waits — its lines deliberate, its presence unsettling, as though it was etched by a hand that understood more than language.",
+                "prompt": "Do you study the word? Do you ivestigate the oak?",
+                "lore_trigger": "Use the Lore Engine to explore the myths and folklore of the region.",
+                "skill_check": {
+                "skill": "Arcana",
+                "dc": 13,
+                "success": "It is not a word at all, but a name — a true name, heavy with intent. Whose name it is, and why it was placed here, remain mysteries with sharp edges.",
+                "failure": "The script is unfamiliar, its shapes unlike any alphabet you know. Whatever meaning it holds stays locked behind its strange geometry."
+                }
+            },
+            {
+                "text": "A pool lies perfectly still as glass, mirroring the sky even as clouds race across it. Yet its surface is not a faithful reflection: it sometimes shows stars at midday, or a shoreline that does not exist, as if the water remembers a different world beneath the same heavens.",
+                "prompt": "Do you touch the pool? Do you leave?",
+                "lore_trigger": "Use the Lore Engine to explore prophecies and omens.",
+                "oracle_suggested": true
+            }
+            ]
+        },
+        "Jagged Mountains": {
+            "encounters": [
+                {   
+                    "text": "The path is choked by a fresh rockslide, the stones still grinding and settling with each breath of the mountain. Dust hangs in the air, sharp and metallic, and the cliff above is strangely empty — as if whatever triggered the fall vanished the moment the rocks began to tumble.",
+                    "prompt": "Do you wait for the slide to settle? Do you search for another way around? Do you study the ledge more closely?",
+                    "skill_check": {
+                        "skill": "Perception",
+                        "dc": 14,
+                        "success": "Faint scrapes on the rock face and crushed tufts of moss show that the fall was deliberate, not accidental. Something was here moments ago and left only the echo of its passing.",
+                        "failure": "The collapsed stones are all that remain. You can see no sign of what caused them, only the clean logic of a sudden, violent fall."
+                        
+                    },
+                    "oracle_suggested": true
+                },
+                {
+                    "text": "A cold wind carries the sound of chanting from somewhere below — or above, it is difficult to tell in the mountains. It is rhythmic, consistent, and stops the moment you stop moving.",
+                    "prompt": "Do you try to locate the source? Do you continue on?",
+                    "oracle_suggested": true,
+                    "lore_trigger": "Use the Lore Engine to explore the cultures and factions of the region."
+                },
+                {
+                    "text": "A metallic ringing comes from inside the mountain. Not the sound of tools — something more regular, more patient. It has a rhythm that does not match any natural process you know of.",
+                    "prompt": "Do you try to find the source? Do you mark the location and move on?",
+                    "lore_trigger": "Use the Lore Engine to explore the history of lost civilizations.",
+                    "oracle_suggested": true
+                },
+                {
+                    "text": "A rope bridge spans a narrow gorge. The bridge looks old but functional. Halfway across, it begins to sway — not from wind. The air is completely still.",
+                    "prompt": "Do you cross quickly? Do you turn back? Do you examine the bridge before committing?",
+                    "skill_check": {
+                        "skill": "Investigation",
+                        "dc": 13,
+                        "success": "Two of the main support ropes have been partially cut — recently, from this side of the gorge. You were not the first to attempt this crossing today.",
+                        "failure": "The bridge holds. Whatever is causing the movement, you cannot identify it from here."
+                    }
+                },
+                {
+                    "text": "A mountain lion has been following you for the last hour. It keeps its distance, does not approach, does not retreat. It is watching you the way a scout watches, not the way a predator does.",
+                    "prompt": "Do you try to drive it off? Do you ignore it? Do you try to communicate?",
+                    "oracle_suggested": true,
+                    "lore_trigger": "Use the Lore Engine to explore the origins and nature of monsters."
+                },
+                {
+                    "text": "The temperature drops sharply and without warning. Your breath fogs. The rocks around you develop a thin layer of frost in minutes. The cold has no wind behind it — it comes from nowhere in particular.",
+                    "prompt": "Do you push forward? Do you shelter and wait?",
+                    "oracle_suggested": true
+                },
+                {
+                    "text": "A distant avalanche collapses a section of mountain you passed through two hours ago. From where you stand, you can see that the path behind you no longer exists.",
+                    "prompt": "What you brought with you is what you have. The way forward is the only way.",
+                    "oracle_suggested": false
+                },
+                {
+                    "text": "You find a narrow pass not marked on any reference you have. It is well-worn — used regularly and recently. Someone knows this mountain better than the maps do.",
+                    "prompt": "Do you take it? Do you follow the tracks to see where they lead before deciding?",
+                    "skill_check": {
+                        "skill": "Survival",
+                        "dc": 12,
+                        "success": "The tracks are mixed — boots of different sizes, different gaits. A group, not an individual. They were moving fast but not panicked.",
+                        "failure": "The pass looks safe enough. Beyond that, the ground does not tell you much."
+                    },
+                    "lore_trigger": "Use the Lore Engine to explore the cultures and factions of the region."
+                },
+                {
+                    "text": "Inside a small cave you shelter in for the night, the wall bears a single handprint in red pigment. Around it, in a spiral, a series of marks that might be a count — or a warning — or both.",
+                    "lore_trigger": "Use the Lore Engine to explore the history of lost civilizations.",
+                    "skill_check": {
+                        "skill": "History",
+                        "dc": 13,
+                        "success": "The pigment and style match records of a people who inhabited these mountains long before the current settlements. The count, if that is what it is, goes higher than you initially thought.",
+                        "failure": "Old. Deliberate. Beyond that you cannot say."
+                    }
+                },
+                {
+                    "text": "A giant eagle circles overhead for a long time, then lands on a ledge nearby and waits. It is too large, the proportions slightly wrong. It does not behave like a hunting bird.",
+                    "prompt": "Do you approach? Do you observe from a distance?",
+                    "oracle_suggested": true,
+                    "lore_trigger": "Use the Lore Engine to explore the origins and nature of monsters."
+                },
+                {
+                    "text": "The ruins of a watchtower cling to a ridge above you. From its position it would have commanded a view of three valleys. Whatever it was watching for, it was watching from a long time ago.",
+                    "prompt": "Do you climb to it?",
+                    "lore_trigger": "Use the Lore Engine to explore the history of lost civilizations.",
+                    "skill_check": {
+                        "skill": "History",
+                        "dc": 14,
+                        "success": "The construction style is older than the current settlements in the region by several centuries. It was not built to watch for bandits or to collect tolls. The sight lines are aimed at something specific — a point in the valley below that is now unremarkable.",
+                        "failure": "Old construction. Solid, once. Whoever built it knew what they were doing."
+                    }
+                },
+                {
+                    "text": "A cavern opens in the cliff face, its walls threaded with mineral veins that catch the light and hold it longer than they should. The light dims when you move toward the center. It brightens when you move toward the exit.",
+                    "prompt": "Do you investigate further? Do you take a sample?",
+                    "lore_trigger": "Use the Lore Engine to know more about relics and artifacts.",
+                    "oracle_suggested": true
+                },
+                {
+                    "text": "A stone cairn on a high ledge, built carefully, with a flat stone on top bearing a single carved name. Below the name, a date. Below the date, a second line that reads: 'They knew what was up here. They went anyway.'",
+                    "prompt": "Do you add a stone to the cairn? Do you search the area for what they found?",
+                    "oracle_suggested": true,
+                    "lore_trigger": "Use the Lore Engine to explore the myths and folklore of the region."
+                },
+                {
+                    "text": "A frozen waterfall, permanent in a season when nothing else is frozen. The ice is perfectly clear. Inside it, visible but unreachable, something is suspended — an object, or a shape that resembles one.",
+                    "lore_trigger": "Use the Lore Engine to know more about relics and artifacts.",
+                    "oracle_suggested": true
+                },
+                {
+                    "text": "A high-altitude lake, perfectly still, at an elevation where water should not be this calm. The surface reflects the peaks above with complete accuracy — except for one peak that appears in the reflection but not in the sky.",
+                    "lore_trigger": "Use the Lore Engine to explore prophecies and omens.",
+                    "oracle_suggested": true
+                }
+            ]
+        },
+        "Murky Swamp": {
+            "encounters": [
+                {
+                    "text": "The ground gives way without warning. What looked solid is not. By the time you stop sinking the mud is at your waist. The surface around you is still. Nothing reacts to the sound you made going in.",
+                    "prompt": "Do you call for help? Do you try to pull yourself out quietly?",
+                    "skill_check": {
+                        "skill": "Athletics",
+                        "dc": 13,
+                        "success": "You drag yourself out slowly, losing one piece of equipment in the process — your choice of what stays behind.",
+                        "failure": "You need help, or something to grab onto. The bog does not offer either voluntarily."
+                    }
+                },
+                {
+                    "text": "A thick mist rises in minutes, reducing visibility to arm's length. Sound behaves strangely inside it — your own footsteps seem to come from slightly the wrong direction. Something else's footsteps might also be in there. You cannot tell.",
+                    "prompt": "Do you stop and wait for it to clear? Do you push through?",
+                    "oracle_suggested": true
+                },
+                {
+                    "text": "Yellow eyes beneath the water's surface. More than one pair. They have been tracking your movement for longer than you noticed them — you only see them now because they have stopped moving.",
+                    "prompt": "Do you stop? Do you change direction? Do you address them directly?",
+                    "oracle_suggested": true,
+                    "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior."
+                },
+                {
+                    "text": "A wooden boardwalk emerges from the reeds, old but not rotted. It ends abruptly after thirty feet over open water. At the end, a post with a lantern — unlit, but the oil inside is fresh.",
+                    "prompt": "Do you light it? Do you look into the water below the end of the boardwalk?",
+                    "skill_check": {
+                        "skill": "Investigation",
+                        "dc": 12,
+                        "success": "Below the end of the boardwalk, just visible through the murk, the top of a structure. Stone, worked stone, not natural. It continues down further than the light reaches.",
+                        "failure": "Dark water. Whatever is down there, you cannot see it from here."
+                    },
+                    "lore_trigger": "Use the Lore Engine to determine the lost civilization's history or use the Bestiary to identify it and learn more about its behavior."
+                },
+                {
+                    "text": "The bubbling starts slowly, then all at once — a wide section of water displaced from below. Something large is moving under there. It does not surface. It does not leave. The displacement continues, circling.",
+                    "prompt": "Do you move away from the water's edge? Do you wait to see what it is?",
+                    "oracle_suggested": true,
+                    "lore_trigger": "monster_origins"
+                },
+                {
+                    "text": "A hut on stilts, half-hidden by reeds. The door is open. Inside: a fire that has burned down to coals, herbs drying in bundles, a chair facing the door as if someone left in the middle of waiting for a visitor.",
+                    "prompt": "Do you go inside? Do you call out? Do you search?",
+                    "skill_check": {
+                        "skill": "Perception",
+                        "dc": 13,
+                        "success": "The herbs are unusual — some you recognize as medicinal, some you do not recognize at all. On the table, a journal, open to a page that was being written when whoever lived here stopped. The last sentence is incomplete.",
+                        "failure": "Someone lives here. Or lived here. You cannot tell how recently they left."
+                    },
+                    "lore_trigger": "Use the Lore Engine to explore the cultures and factions of the region."
+                },
+                {
+                    "text": "A glowing flower grows from a rotten log — pale blue, pulsing slowly, slightly out of sync with anything else around it. The rot beneath it has not spread. Everything within a foot of it is preserved perfectly.",
+                    "prompt": "Do you take it? Do you leave it?",
+                    "lore_trigger": "Use the Lore Engine to know more about relics and artifacts.",
+                    "oracle_suggested": true
+                },
+                {
+                    "text": "A circle of trees, their trunks grown into each other, their branches interlocked overhead. Inside the circle the ground is dry and firm. No insects. No sound. The silence is not peaceful — it is deliberate.",
+                    "prompt": "Do you step inside the circle?",
+                    "oracle_suggested": true,
+                    "lore_trigger": "Use the Lore Engine to explore the myths and folklore of the region."
+                },
+                {
+                    "text": "A floating lantern drifts slowly through the mist ahead, moving against the current of the air. It stops when you stop. It continues when you continue. It has been maintaining exactly the same distance for twenty minutes.",
+                    "prompt": "Do you follow it? Do you try to approach it? Do you turn back?",
+                    "oracle_suggested": true,
+                    "lore_trigger": "Use the Lore Engine to explore prophecies and omens."
+                },
+                {
+                    "text": "An ancient stone idol, moss-covered and half-submerged, the face worn smooth by water and time. Recent offerings have been left at its base — food, small carved figures, a bundle of the same herbs you saw in the hut.",
+                    "prompt": "Do you leave an offering? Do you take one to examine? Do you attempt to identify the deity?",
+                    "skill_check": {
+                        "skill": "Religion",
+                        "dc": 14,
+                        "success": "The idol predates any faith currently practiced in the region. The offerings are not consistent with any single tradition — whoever leaves them is working from fragments, not a complete doctrine.",
+                        "failure": "Old. Deliberately placed here, not fallen. Whoever it represents is not in any codex you have access to."
+                    },
+                    "lore_trigger": "Use the Lore Engine to explore the lore of gods and planes."
+                },
+                {
+                    "text": "A sunken obelisk, its top just above the waterline, covered in slime but carved beneath — you can feel the markings with your hand even if you cannot see them clearly. The water around it is slightly warmer than the surrounding swamp.",
+                    "skill_check": {
+                        "skill": "Arcana",
+                        "dc": 15,
+                        "success": "The warmth is not natural decay — it is residual. Something was channeled through this stone regularly, for a long time, and stopped not so long ago.",
+                        "failure": "Old stone, old carvings. The warmth might be geological. You are not certain."
+                    },
+                    "lore_trigger": "Use the Lore Engine to explore the history of lost civilizations."
+                },
+
+                {
+                    "text": "A half-sunken boat, tilted but not fully submerged. Inside: sealed crates, still dry. The manifest nailed to the inside of the hull lists contents and a destination. The destination does not exist on any map you know.",
+                    "prompt": "Do you open the crates? Do you note the destination and investigate further?",
+                    "skill_check": {
+                        "skill": "History",
+                        "dc": 13,
+                        "success": "The destination existed — past tense. It was a settlement that was abandoned or destroyed generations ago. The date on the manifest suggests this boat never arrived, and left before the settlement was gone.",
+                        "failure": "Trade goods, a destination you do not recognize, and no indication of what happened to the crew."
+                    },
+                    "lore_trigger": "Use the Lore Engine to explore the history of lost civilizations."
+                },
+                {
+                    "text": "A fossilized creature, half-buried in the mud, partially exposed by recent water movement. Large — larger than it should be for anything you recognize from this region. One limb is extended as if reaching for something just out of its reach.",
+                    "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior.",
+                    "skill_check": {
+                        "skill": "Nature",
+                        "dc": 14,
+                        "success": "This creature does not match any species in the natural record. The bone structure suggests something between two things that are not related. Whatever it was, it was not supposed to exist — or it existed before the current classification system had reason to account for it.",
+                        "failure": "Large. Old. Dead. Beyond that the mud has taken most of the detail."
+                    }
+                },
+                {
+                    "text": "A patch of ground that is warm to the touch — not uncomfortable, but wrong. Below the surface, something is generating heat. The swamp around it is unchanged. Whatever is happening is contained, deliberate, and has been happening for long enough that the plants above have adapted to it.",
+                    "oracle_suggested": true,
+                    "lore_trigger": "Use the Lore Engine to know more about relics and artifacts."
+                },
+                {
+                    "text": "Bubbles rise from a specific point in the muck, releasing not just smell but sound — something between breath and language, consistent enough to be pattern, inconsistent enough to resist interpretation.",
+                    "prompt": "Do you respond to it? Do you record what you hear? Do you move away?",
+                    "oracle_suggested": true,
+                    "lore_trigger": "Use the Lore Engine to explore prophecies, omens and visions."
+                }
+            ]
+        },
+        "Scorching Desert": {
+            "encounters": [
+                {
+                    "text": "A sandstorm appears on the horizon with no warning. You have minutes before it reaches you. The only shelter visible is a structure half-buried in the dunes — you did not notice it until now, which means either you missed it or it was not there before.",
+                    "prompt": "Do you make for the structure? Do you dig in where you are?",
+                    "skill_check": {
+                        "skill": "Survival",
+                        "dc": 13,
+                        "success": "You reach the structure. Inside: old, dry, and clearly not built by anyone who expected to return to it. Someone sealed it from the inside.",
+                        "failure": "You shelter where you are. The storm passes. When it does, the landscape has shifted enough that your previous landmarks are gone."
+                    },
+                    "lore_trigger": "Use the Lore Engine to determine the lost civilization's history or use the Bestiary to identify any monsters that might be associated with this encounter.",
+                    "oracle_suggested": true
+                },
+                {
+                    "text": "The mirage appears slowly — a city on the horizon, towers and walls in detail too precise for imagination. It does not waver the way mirages do. It holds. After an hour of walking toward it, it is no closer. After two hours, it is gone. You cannot find your own tracks from the last two hours.",
+                    "prompt": "Do you try to find where you were? Do you consult what you know about mirages?",
+                    "oracle_suggested": true,
+                    "skill_check": {
+                        "skill": "Arcana",
+                        "dc": 15,
+                        "success": "What you saw was not a mirage in the meteorological sense. The city was real — or had been real, in a place that no longer occupies this geography. The desert moved. The city did not.",
+                        "failure": "Heat and exhaustion. You know this. Knowing it does not explain the level of detail you saw, or the missing tracks."
+                    },
+                    "lore_trigger": "Use the Lore Engine to determine the lost civilization's history or use the Bestiary to identify any monsters that might be associated with this encounter."
+                },
+                {
+                    "text": "The sand beneath your feet becomes scorching hot without warning — not the ambient heat, something below the surface. The affected area is perfectly circular, twelve feet across. At the center, the sand is fused into glass.",
+                    "prompt": "Do you examine the glass? Do you move away quickly?",
+                    "skill_check": {
+                        "skill": "Arcana",
+                        "dc": 14,
+                        "success": "The glass formation is not from lightning or natural heat. The fusion pattern radiates outward from a single point below the surface. Something was here, and it left through the ground rather than across it.",
+                        "failure": "Glass. Intense heat, focused, recent enough that it is still warm. You do not know what caused it."
+                    },
+                    "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior.",
+                    "oracle_suggested": true
+                },
+                {
+                    "text": "A distant roar crosses the dunes — low, sustained, not an animal sound. It comes from below rather than from a direction. The sand vibrates slightly under your feet for ten seconds afterward, then stops.",
+                    "prompt": "Do you move away from the area? Do you try to locate the source?",
+                    "oracle_suggested": true,
+                    "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior."
+                    },
+                    {
+                    "text": "A dust devil forms thirty feet ahead and holds position instead of drifting. It maintains a fixed location for long enough that the coincidence becomes difficult to sustain. It dissipates the moment you step around it.",
+                    "prompt": "Do you walk through it? Do you examine what is on the ground where it stood?",
+                    "skill_check": {
+                        "skill": "Perception",
+                        "dc": 12,
+                        "success": "At the center of where it stood, exposed by the rotation of sand: the top of a carved stone surface, one foot across. It goes deeper.",
+                        "failure": "Disturbed sand. Whatever the dust devil was doing, it did not leave an obvious trace."
+                    },
+                    "lore_trigger": "Use the Lore Engine to know more about relics and artifacts.",
+                    "oracle_suggested": true
+                },
+                {
+                    "text": "A caravan skeleton — wagons, cargo frames, the bones of animals and people — half-buried in a dune's leeward side. Everything is bleached and dry. The cargo frames are still loaded. Whatever happened here, there was no time or reason to unload first.",
+                    "prompt": "Do you search the cargo? Do you look for any identification?",
+                    "skill_check": {
+                        "skill": "Investigation",
+                        "dc": 13,
+                        "success": "The cargo is intact and sealed. The manifest is still attached to the lead wagon, listing contents and a point of origin that is not on current maps. One crate has been opened from the inside.",
+                        "failure": "Old wreck, well-preserved by the dry heat. Whatever the cargo was, the desert has been keeping it."
+                    },
+                    "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior."
+                },
+                {
+                    "text": "The bleached bones of a creature too large to classify, half-exposed by wind erosion. The skeleton is not complete — something removed specific bones deliberately, long after death. The removed sections correspond to no practical use you can identify.",
+                    "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior.",
+                    "skill_check": {
+                        "skill": "Nature",
+                        "dc": 14,
+                        "success": "The creature does not match any species in the natural record. The bone density and joint structure suggest something that should not have been able to support its own weight under normal conditions. It managed anyway, which implies the conditions were not normal.",
+                        "failure": "Large. Dead. Something took parts of it after death, selectively. You cannot identify the species."
+                    }
+                },
+                {
+                    "text": "A small oasis — one tree, a pool, green that hurts to look at after hours of sand. A desert fox sits at the water's edge watching you arrive. It does not flee. When you reach the water, it moves to the far side and watches from there. It will not leave while you are here.",
+                    "prompt": "Do you stay the night? Do you try to follow it when it eventually moves?",
+                    "oracle_suggested": true,
+                    "lore_trigger": "Use the Lore Engine to explore the myths and folklore of the region."
+                },
+                {
+                    "text": "The tip of a buried structure breaks the surface of a dune — worked stone, carved at the top. The wind has exposed it recently. Below the surface, there is clearly much more. The exposed section bears a single line of text at eye level, as if placed there to be read by someone standing exactly where you are standing.",
+                    "prompt": "Do you attempt to excavate? Do you read the inscription?",
+                    "skill_check": {
+                        "skill": "History",
+                        "dc": 14,
+                        "success": "The script is old but readable. The line says: 'Do not open from below.' You are above it. The instruction was written for someone coming from the other direction.",
+                        "failure": "The script is too worn or too old to read without more time and better tools. The structure below is substantial."
+                    },
+                    "lore_trigger": "Use the Lore Engine to know more about lost civilizations history.",
+                    "oracle_suggested": true
+                },
+                {
+                    "text": "A field of glass formations — fulgurites, where lightning has fused the sand into hollow tubes. They cover an area too large for a single storm, too regular in their spacing to be fully random. Walking among them produces a faint harmonic sound.",
+                    "prompt": "Do you take one? Do you map the pattern of their placement?",
+                    "skill_check": {
+                        "skill": "Arcana",
+                        "dc": 13,
+                        "success": "The spacing is not random — it is a pattern, and the pattern has a center. Something at the center drew the lightning repeatedly, over a long period. The center point is marked by a formation larger than the others, and hollow in a way the others are not.",
+                        "failure": "Lightning glass, formed over many storms. The sound is air moving through the hollow tubes. Probably."
+                    },
+                    "lore_trigger": "Use the Lore Engine to know more about relics and artifacts."
+                },
+                {
+                    "text": "A collapsed tent, half-buried, with a journal inside still legible due to the dry heat. The last entries describe something the writer was following across the desert — something they could not identify but could not stop following. The entries become shorter. The last one is a single sentence and a direction.",
+                    "prompt": "Do you follow the direction indicated? Do you look for any other remains?",
+                    "oracle_suggested": true,
+                    "lore_trigger": "Use the Lore Engine to explore prophecies and omens."
+                },
+                {
+                    "text": "A dried oasis — stones carved around what was once water, now cracked earth at the center. The carvings on the stones are votive, names and requests in a script that is partially familiar. Some of the requests have been answered with a second inscription in a different hand.",
+                    "skill_check": {
+                        "skill": "Religion",
+                        "dc": 13,
+                        "success": "The responding inscriptions are not in the same script as the requests. Whatever answered these petitions was not the same kind of thing as whatever made them. The answers are specific, not formulaic.",
+                        "failure": "Requests carved in stone around a dead water source. Old practice, not current. The specific faith is not one you recognize."
+                    },
+                    "lore_trigger": "Use the Lore Engine to explore the lore of gods and planes."
+                },
+                {
+                    "text": "A buried statue's face stares up from the sand, monumental in scale — only the face is visible, the rest buried. The expression is not worship or war. It is attention. Whatever it is looking at is directly above it.",
+                    "prompt": "Do you dig around it? Do you look up to see what it might be watching?",
+                    "oracle_suggested": true,
+                    "lore_trigger": "Use the Lore Engine to explore the lore of gods and planes."
+                },
+                {
+                    "text": "A lone vulture has been circling for hours — too high to read clearly, too consistent to ignore. When you stop, it tightens its circle. When you move, it follows. At dusk, it descends to a rock nearby, looks at you directly, and does not behave like a vulture.",
+                    "prompt": "Do you approach it? Do you offer it something? Do you ignore it and make camp?",
+                    "oracle_suggested": true,
+                    "lore_trigger": "Use the Lore Engine to explore the myths and folklore of the region."
+                },
+                {
+                    "text": "A cave entrance in a rock formation, cool air coming from inside. On the back wall, ancient scrolls in sealed clay tubes, preserved by the dry cold. Some are intact. Some have been opened and replaced — recently, based on the disturbed dust.",
+                    "prompt": "Do you open one? Do you take one? Do you look for signs of who was here recently?",
+                    "skill_check": {
+                        "skill": "Investigation",
+                        "dc": 12,
+                        "success": "Whoever was here recently took specific tubes and left others. The selection was not random — the remaining ones are the ones that require the missing ones to be understood first.",
+                        "failure": "Someone was here not long ago. What they took and what they left, you cannot determine without reading everything."
+                    },
+                    "lore_trigger": "Use the Lore Engine to know more about lost civilizations history."
+                }
+            ]
+        },
+        "Open Plains": {
+          "encounters": [
+            {
+              "text": "A column of smoke rises on the horizon — too steady for a campfire, too small for a settlement fire. It has been burning at the same intensity for the entire time you have been watching it. Someone is maintaining it deliberately.",
+              "prompt": "Do you move toward it? Do you observe from a distance first? Do you give it a wide berth?",
+              "oracle_suggested": true,
+              "lore_trigger": "Use the Lore Engine to explore the cultures and factions of the region."
+            },
+            {
+              "text": "A riderless horse crosses your path at a steady trot, not panicked, not lost — purposeful. Its tack is intact and well-made. There is something tied to the saddle. It slows when it reaches you, does not stop, and continues in a specific direction.",
+              "prompt": "Do you follow it? Do you try to stop it and examine what it is carrying?",
+              "skill_check": {
+                "skill": "Animal Handling",
+                "dc": 12,
+                "success": "The horse stops long enough for you to examine the saddlebag. Inside: a sealed letter with no addressee, a hand-drawn map of this region with one location marked, and a short knife with an unfamiliar crest on the handle.",
+                "failure": "The horse avoids your hands and continues at the same pace. You can follow or you cannot."
+              },
+              "oracle_suggested": true,
+              "lore_trigger": "Use the Lore Engine to explore the cultures and factions of the region."
+            },
+            {
+              "text": "A massive herd thunders across the plain ahead, cutting off your path completely. You wait. It takes longer than it should. At the back of the herd, something moves with them that is not the same animal — larger, moving differently, keeping to the center of the mass.",
+              "prompt": "Do you try to get a better look? Do you wait for the herd to pass and then examine the tracks?",
+              "skill_check": {
+                "skill": "Perception",
+                "dc": 14,
+                "success": "The tracks of the anomalous animal are distinct from the herd — deeper, wider, with a gait pattern that does not match anything you recognize. Whatever it was, it was using the herd as cover.",
+                "failure": "The herd passes. The dust takes a long time to settle. By the time it does, whatever was in the center is gone with the rest."
+              },
+              "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior."
+            },
+            {
+              "text": "A pack of wild dogs has been maintaining a consistent distance behind you for hours — close enough that you cannot forget them, far enough that engagement would require you to turn back. They are not hunting. They are escorting.",
+              "prompt": "Do you stop and confront them? Do you try to drive them off? Do you let them continue?",
+              "oracle_suggested": true,
+              "lore_trigger": "Use the Lore Engine to explore the myths and folklore of the region."
+            },
+            {
+              "text": "A thunderstorm builds fast and direct — aimed at your position in a way that weather is not usually aimed. The lightning is striking in a pattern, each strike closer than the last. The intervals are consistent.",
+              "prompt": "Do you run? Do you find the lowest ground? Do you look for what the lightning is converging on?",
+              "skill_check": {
+                "skill": "Arcana",
+                "dc": 14,
+                "success": "The convergence point is not you. It is something in the ground fifty yards ahead — something buried that is attracting the strikes. The strikes are not damaging it. They appear to be charging it.",
+                "failure": "You find shelter and wait. The storm passes faster than it arrived. The burned ground where the lightning struck most heavily is in a pattern you cannot read from ground level."
+              },
+              "lore_trigger": "Use the Lore Engine to know more about relics and artifacts.",
+              "oracle_suggested": true
+            },
+            {
+              "text": "A lone ancient tree stands in the middle of the plain — the only vertical thing for miles in any direction. Its bark is covered in carvings from ground level to as high as a person can reach. Some are old. Some are not.",
+              "prompt": "Do you examine the carvings? Do you add one of your own?",
+              "skill_check": {
+                "skill": "History",
+                "dc": 13,
+                "success": "The carvings span several generations of visitors — names, dates, symbols, warnings. One recurring symbol appears in carvings from very different eras, always at the same height, always facing the same direction. Whatever it marks, it has been marked consistently for a very long time.",
+                "failure": "Many hands, many years. The oldest carvings are worn past legibility. The newest are recent enough that the wood has not healed around them yet."
+              },
+              "lore_trigger": "Use the Lore Engine to explore the myths and folklore of the region."
+            },
+            {
+              "text": "A group of nomadic riders appears on the horizon and stops. They can see you — there is nowhere to hide on open plains. They watch for several minutes without moving. Then one rider separates from the group and approaches alone.",
+              "prompt": "Do you stand your ground? Do you approach to meet them halfway? Do you signal peacefully?",
+              "skill_check": {
+                "skill": "Insight",
+                "dc": 12,
+                "success": "The lone rider is not a scout or a threat assessment — they are an intermediary. The group behind them has already made a decision. The rider is coming to deliver it, whatever it is.",
+                "failure": "One rider, coming alone. Whether this is a good sign or a controlled approach, you cannot read from here."
+              },
+              "lore_trigger": "Use the Lore Engine to explore the cultures and factions of the region."
+            },
+            {
+              "text": "A circle of standing stones rises from the grass — not ruins, the stones are intact and upright. The grass inside the circle is a different color than outside it. Not dead, not burned. A different species entirely, one that does not grow anywhere else in the plain.",
+              "prompt": "Do you enter the circle? Do you examine the stones before deciding?",
+              "skill_check": {
+                "skill": "Arcana",
+                "dc": 13,
+                "success": "The stones are not decorative markers — they are functional, and they are still functioning. What they are doing is not immediately clear, but the grass inside the circle is not different by accident. Something about the space inside is being maintained.",
+                "failure": "Old stones, deliberately placed. The grass inside is unusual. The two facts are probably connected."
+              },
+              "oracle_suggested": true,
+              "lore_trigger": "Use the Lore Engine to explore the lore of gods and planes."
+            },
+            {
+              "text": "The remains of a battlefield — old enough that the bones are bleached, recent enough that some equipment has not fully rusted. No burial. No markers. Whatever happened here, no one came back to account for it afterward.",
+              "prompt": "Do you search for anything identifiable? Do you look for survivors' accounts among the debris?",
+              "skill_check": {
+                "skill": "History",
+                "dc": 14,
+                "success": "The equipment comes from two distinct groups — and one of them should not have been in this region at this period. Whatever this battle was, it was not recorded. Or it was recorded and the record was removed.",
+                "failure": "Two sides, one battle, no survivors who stayed to explain it. The equipment is old enough that the people who could identify it are also gone."
+              },
+              "lore_trigger": "Use the Lore Engine to know more about lost civilizations history."
+            },
+            {
+              "text": "A stone marker stands alone in the grass, carved with symbols on all four faces. The carvings on three faces match known tribal traditions from this region. The fourth face is in a completely different style — older, from something that predates the current cultures here.",
+              "prompt": "Do you examine the fourth face more carefully? Do you make a rubbing to study later?",
+              "skill_check": {
+                "skill": "Investigation",
+                "dc": 12,
+                "success": "The fourth carving is a boundary marker — not for territory, for something else. The symbol used means something close to threshold or limit in the older script. Whatever boundary this marks, the current cultures built their own marker on top of it without knowing what was already there.",
+                "failure": "Four faces, four different carvings, at least two different eras. Someone added to something that was already here."
+              },
+              "lore_trigger": "Use the Lore Engine to know more about lost civilizations history."
+            },
+            {
+              "text": "A patch of grass grows in a perfect spiral, the blades flattened and woven as if by wind — but the surrounding grass is still. The spiral is large enough to stand in. At the center, the ground is bare and slightly depressed, as if something was removed from it recently.",
+              "prompt": "Do you examine the center? Do you stand in the spiral?",
+              "oracle_suggested": true,
+              "lore_trigger": "Use the Lore Engine to know more about relics and artifacts."
+            },
+            {
+              "text": "A broken spear planted firmly in the ground, blade down, at the top of a low rise. It is too deliberate to be abandoned — this is a marker. Around its base, the ground has been cleared of grass in a small circle. The clearing is maintained, not old.",
+              "prompt": "Do you remove the spear? Do you wait to see if whoever maintains this place returns?",
+              "oracle_suggested": true,
+              "lore_trigger": "Use the Lore Engine to explore the cultures and factions of the region."
+            },
+            {
+              "text": "A shallow depression in the plain, large and regular — too regular. It is filled with bones, mixed species, mixed ages. At the edges, the bones are recent. At the center, they are very old. Whatever brings things here has been doing so for a long time.",
+              "prompt": "Do you examine the bones at the center? Do you look for signs of what brings things here?",
+              "skill_check": {
+                "skill": "Nature",
+                "dc": 13,
+                "success": "The bones at the center are not from species currently in this region. Something was bringing things here long before the current ecosystem existed. The pattern of deposit is not predation — there are no marks of feeding. Things come here and die here, voluntarily or otherwise.",
+                "failure": "Many bones, many species, long time span. Whatever draws things to this spot, it is not visible from the surface."
+              },
+              "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior.",
+              "oracle_suggested": true
+            },
+            {
+              "text": "A hawk has been circling for hours — not hunting, the circles are too wide and too consistent. At intervals, it calls once and then is silent. The calls are not random. You have been counting them without meaning to, and the count has been consistent: three, pause, one, pause, three.",
+              "prompt": "Do you try to respond to the pattern? Do you follow the direction it is circling toward?",
+              "oracle_suggested": true,
+              "lore_trigger": "Use the Lore Engine to explore prophecies, omens and visions."
+            },
+            {
+              "text": "A sinkhole opens in the plain ahead — recent, the edges still crumbling. Below, the sound of moving water. The underground stream is large enough to have carved the space you can see from the edge. On the far wall of the cavity below, exposed by the collapse, the face of a carved stone block.",
+              "prompt": "Do you descend? Do you examine what you can see from above first?",
+              "skill_check": {
+                "skill": "Investigation",
+                "dc": 12,
+                "success": "The carved block is part of a larger structure — you can see the joins with adjacent blocks. There is a building down there, intact, that the plain has been sitting on top of for long enough that no one above remembered it was there.",
+                "failure": "Stone, carved, underground. The stream has been running past it long enough that the lower courses are smooth. How much more is down there, you cannot tell from the edge."
+              },
+              "lore_trigger": "Use the Lore Engine to explore the history of lost civilizations."
+            }
+          ]
+        },
+        "Frozen Tundra": {
+          "encounters": [
+            {
+              "text": "A blizzard builds in minutes and reduces visibility to the length of your arm. You can hear something moving nearby — steady, unhurried, not struggling against the wind the way you are. It is circling. The sound does not get closer. It does not go away.",
+              "prompt": "Do you call out? Do you stay still and wait? Do you move toward the sound?",
+              "oracle_suggested": true,
+              "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior."
+            },
+            {
+              "text": "The aurora appears — greens and whites moving across the sky in patterns that are almost too structured to be natural. You have seen auroras before. They do not usually respond to sound. This one does. When you speak, the patterns shift.",
+              "prompt": "Do you keep speaking? Do you try specific words or sounds? Do you watch in silence?",
+              "oracle_suggested": true,
+              "lore_trigger": "Use the Lore Engine to explore prophecies, omens and visions."
+            },
+            {
+              "text": "A lone figure moves through the snow ahead — bundled, unhurried, heading in a direction with apparent purpose. You call out. They do not respond. You increase your pace to close the distance. The gap does not close. After twenty minutes, they are gone. Your tracks show you have been walking in a straight line. Theirs show nothing.",
+              "prompt": "Do you follow the direction they were heading? Do you consult the oracle?",
+              "oracle_suggested": true,
+              "lore_trigger": "Use the Lore Engine to explore the myths and folklore of the region."
+            },
+            {
+              "text": "The ice cracks loudly beneath your feet — a single fracture line racing ahead of you and stopping. You are not over water. The ground below is solid earth. Whatever caused the crack came from below, not from your weight.",
+              "prompt": "Do you examine the crack? Do you move carefully away from it?",
+              "skill_check": {
+                "skill": "Arcana",
+                "dc": 13,
+                "success": "The fracture pattern radiates from a specific point, not from your footfall. Something below the permafrost produced a pressure event. The crack runs directly toward a low ridge fifty yards ahead.",
+                "failure": "Ice cracks. You move carefully. The ground holds."
+              },
+              "lore_trigger": "Use the Lore Engine to know more about relics and artifacts.",
+              "oracle_suggested": true
+            },
+            {
+              "text": "A distant howl crosses the tundra — long, structured, not the howl of an animal calling to its pack. It rises and falls with a deliberateness that suggests language more than instinct. It does not repeat. Nothing answers it.",
+              "prompt": "Do you attempt to respond? Do you move toward or away from the source?",
+              "oracle_suggested": true,
+              "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior."
+            },
+            {
+              "text": "A frozen river groans beneath you as you cross — not the standard settling of ice, but a sustained sound, almost rhythmic, coming from below the surface. Through the ice you can see the water moving. Something else is moving with it.",
+              "prompt": "Do you cross quickly? Do you look more carefully through the ice first?",
+              "skill_check": {
+                "skill": "Perception",
+                "dc": 14,
+                "success": "Below the ice, moving against the current, a shape too large and too deliberate to be debris. It tracks your position as you move. When you stop, it stops.",
+                "failure": "You cross quickly. The ice holds. The groaning stops when you reach the far bank."
+              },
+              "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior."
+            },
+            {
+              "text": "A whiteout descends without warning — total, absolute, the ground and sky the same color. You cannot see your own feet. When it clears, minutes or hours later, you are in a different position than you thought you were. So are your tracks, which begin ten yards from where you are standing.",
+              "prompt": "Do you try to retrace your steps? Do you accept your new position and continue?",
+              "oracle_suggested": true,
+              "lore_trigger": "Use the Lore Engine to explore prophecies, omens and visions."
+            },
+            {
+              "text": "A perfectly preserved mammoth, frozen upright in a wall of glacial ice — not fallen, standing, as if it walked into the glacier and the glacier closed around it. Its eyes are open. Its expression is not the expression of something that died in panic.",
+              "prompt": "Do you examine it more closely? Do you look for anything on or near it?",
+              "skill_check": {
+                "skill": "Nature",
+                "dc": 14,
+                "success": "The preservation is too perfect for natural glaciation — internal organs, fur, even the contents of its last meal, all intact. The ice around it is structurally different from the surrounding glacier. It was not trapped. It was sealed.",
+                "failure": "Perfectly preserved, standing upright. The cold does strange things to the dead here. You move on."
+              },
+              "lore_trigger": "Use the Lore Engine to know more about relics and artifacts.",
+              "oracle_suggested": true
+            },
+            {
+              "text": "A hot spring in a sheltered valley, steam rising into the cold air. The warmth is immediate and real. Around the spring, the rock is carved — not naturally worn, carved, with channels cut to direct the water flow. Someone engineered this, long ago, and the engineering still works.",
+              "prompt": "Do you rest here? Do you examine the carvings while you warm yourself?",
+              "skill_check": {
+                "skill": "History",
+                "dc": 13,
+                "success": "The channels are precise and sophisticated — the kind of hydraulic knowledge that requires generations of accumulated practice. The culture that built this understood this landscape deeply. There is no record of any such culture in the standard histories of this region.",
+                "failure": "Old construction, still functional. Someone knew what they were doing. Whoever they were, they are not here anymore."
+              },
+              "lore_trigger": "Use the Lore Engine to explore the history of lost civilizations."
+            },
+            {
+              "text": "The ruins of a structure emerge from a snowdrift — walls of ice-covered stone, too regular to be natural, too large to be a shelter. It was a building, and it was built for something that required scale. The entrance is still clear. Cold air moves outward from inside, colder than the outside air.",
+              "prompt": "Do you enter? Do you examine the exterior first?",
+              "skill_check": {
+                "skill": "Arcana",
+                "dc": 14,
+                "success": "The cold coming from inside is not ambient — it is produced. Something inside is actively generating cold, which means something inside is still functioning. The architecture is designed around that function, not around habitation.",
+                "failure": "Large, old, cold inside and out. Whatever it was built for, it was not built for comfort."
+              },
+              "oracle_suggested": true,
+              "lore_trigger": "Use the Lore Engine to explore the history of lost civilizations."
+            },
+            {
+              "text": "A cache of supplies — carefully packed, well-preserved by the cold — left by a previous expedition. A journal inside documents their route and findings. The last entry describes something they found, something they decided not to bring back. The entry explains why. The reason is detailed, specific, and deeply unsettling.",
+              "prompt": "Do you follow their route? Do you look for what they left behind?",
+              "oracle_suggested": true,
+              "lore_trigger": "Use the Lore Engine to know more about relics and artifacts."
+            },
+            {
+              "text": "A glowing crystal embedded in the face of a glacier — deep blue, pulsing slowly, visible through three feet of clear ice. The ice around it has not melted despite the heat the crystal appears to be generating. The pulse has a rhythm. You find yourself unconsciously matching your breathing to it.",
+              "prompt": "Do you try to extract it? Do you examine the glacier around it for other anomalies?",
+              "skill_check": {
+                "skill": "Arcana",
+                "dc": 15,
+                "success": "The crystal is not embedded in the glacier — the glacier grew around it. The crystal was here before the ice. The pulse is not random — it is a signal, and it has been running long enough that the ice around it has adapted rather than melted.",
+                "failure": "Glowing, pulsing, warm but not melting the ice around it. You note the location. You are not sure you should touch it."
+              },
+              "lore_trigger": "Use the Lore Engine to know more about relics and artifacts.",
+              "oracle_suggested": true
+            },
+            {
+              "text": "A frozen campsite — tent still standing, equipment laid out as if someone stepped away for a moment and did not return. The fire is out but the wood is still stacked beside it, ready to light. Inside the tent, everything is in order. There are two sleeping arrangements. One has been slept in. One has not.",
+              "prompt": "Do you search for signs of what happened? Do you use the camp for shelter?",
+              "skill_check": {
+                "skill": "Investigation",
+                "dc": 12,
+                "success": "One person left in a hurry — boot prints leading out from the tent, deep and fast. The second person never arrived, or arrived after the first left. The equipment for two suggests they were expected. The single set of tracks suggests they did not come.",
+                "failure": "Two people planned to be here. One was. The cold preserves everything except explanations."
+              },
+              "oracle_suggested": true,
+              "lore_trigger": "Use the Lore Engine to explore the myths and folklore of the region."
+            },
+            {
+              "text": "A cairn half-buried in snow, with a name carved on the top stone and below it a date — and below that, a second date, added later in a different hand. The second date is more recent than the first by forty years. Someone came back here, forty years later, and added something.",
+              "prompt": "Do you dig around the cairn to see if anything else was left? Do you note the dates and move on?",
+              "oracle_suggested": true,
+              "lore_trigger": "myths_folklore"
+            },
+            {
+              "text": "A metallic object half-buried in the snow — the exposed section is not rusted, not corroded, despite the conditions. When you touch it, it is warm. Not room temperature — warm, as if it has an internal temperature it is maintaining against the cold. It does not feel like any alloy you recognize.",
+              "prompt": "Do you excavate it fully? Do you mark the location and leave it?",
+              "skill_check": {
+                "skill": "Arcana",
+                "dc": 14,
+                "success": "The warmth is not residual — it is active. The object is maintaining its own temperature in conditions that should be impossible for any passive material. The portion still buried is larger than the portion exposed. Significantly larger.",
+                "failure": "Warm metal, unknown alloy, partially buried. The warm part is the exposed part. You do not know if the buried part is also warm."
+              },
+              "lore_trigger": "Use the Lore Engine to know more about relics and artifacts.",
+              "oracle_suggested": true
+            }
+          ]
+        }
+    },
+    "Camp_encounters": {
+      "Sounds & Environment": [
+        {
+          "text": "A branch snaps somewhere in the dark — close enough to be deliberate, far enough to be deniable. The sound does not repeat. Whatever made it is either still there or was never moving to begin with.",
+          "prompt": "Do you investigate? Do you wake anyone else? Do you stay still and listen?",
+          "oracle_suggested": true
+        },
+        {
+          "text": "A rhythmic tapping begins somewhere in the trees — too consistent to be random, too slow to be an animal. It continues for several minutes, then stops mid-sequence, as if interrupted.",
+          "prompt": "Do you try to locate the source? Do you respond to the pattern?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Perception",
+            "dc": 13,
+            "success": "The tapping was coming from a single point that has not moved. Whatever was making it was stationary. The stop was abrupt — not a natural conclusion.",
+            "failure": "The trees scatter the sound. You cannot determine direction or distance with any confidence."
+          }
+        },
+        {
+          "text": "A deep resonant hum rises from the ground beneath your camp — felt more than heard, vibrating through your bedroll and into your chest. It builds slowly for two minutes, then fades. The fire dims during it and brightens after.",
+          "prompt": "Do you examine the ground? Do you move the camp?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Arcana",
+            "dc": 14,
+            "success": "Not geological. The frequency is consistent with resonance produced by something channeling energy through stone or compacted earth. The source is below you, not nearby.",
+            "failure": "The ground feels normal when you press your hand to it. Whatever produced the hum has stopped."
+          },
+          "lore_trigger": "Use the Lore Engine to explore relics and artifacts."
+        },
+        {
+          "text": "A thunderstorm arrives with no warning — no wind shift, no drop in temperature, no distant rumble building. One moment clear sky, the next full storm directly overhead. It passes in twenty minutes and leaves no standing water.",
+          "prompt": "Do you shelter and wait? Do you note the absence of the usual signs?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Nature",
+            "dc": 13,
+            "success": "Storms do not arrive this way. The absence of preconditions is not meteorologically possible. Whatever this was, it was not weather in the conventional sense.",
+            "failure": "Storms are unpredictable in this region. You shelter and wait. It passes."
+          }
+        },
+        {
+          "text": "A heavy fog rolls in around midnight, thick enough to reduce visibility to a few feet. Inside the fog, sounds behave strangely — your own voice comes back to you from the wrong direction, and something else's sounds seem closer than the fog should allow.",
+          "prompt": "Do you stay by the fire and wait for it to lift? Do you try to navigate through it?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Perception",
+            "dc": 14,
+            "success": "The sounds in the fog are not echoes — the timing is wrong for reflection. Something is moving in it, maintaining a distance that suggests awareness of where you are.",
+            "failure": "Fog plays tricks with sound. You stay still and wait. By dawn it has lifted completely."
+          }
+        },
+        {
+          "text": "Every sound stops at once — insects, wind, the settling of the fire. Total silence, the kind that feels pressurized. It lasts long enough that you start counting. At seventeen seconds, everything resumes simultaneously, as if a switch was thrown.",
+          "prompt": "Do you wait to see if it happens again? Do you consult the oracle?",
+          "oracle_suggested": true
+        },
+        {
+          "text": "A cold wind cuts through camp from a direction that should be blocked by the terrain. It carries a smell — not decay, not smoke, something you recognize but cannot immediately place. The smell is gone before you identify it. The cold lingers.",
+          "prompt": "Do you try to identify the smell? Do you check the direction it came from?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Survival",
+            "dc": 12,
+            "success": "The wind came from the wrong direction for this geography. Something redirected it, or it originated close enough that the terrain did not have time to block it.",
+            "failure": "Wind in unfamiliar terrain is difficult to read. You pull your blanket tighter and try to sleep."
+          }
+        },
+        {
+          "text": "A flock of birds takes off from the trees to the north — all at once, all in the same direction, without any sound that would have startled them. They do not return. Whatever they responded to, you did not perceive it.",
+          "prompt": "Do you look toward where they came from? Do you wake and prepare?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Perception",
+            "dc": 13,
+            "success": "The trees to the north are still. No movement, no sound. The birds responded to something that is no longer producing a signal — or that produced no signal you can detect.",
+            "failure": "Darkness and distance. Whatever startled them is not visible from camp."
+          }
+        },
+        {
+          "text": "Rain begins — normal, unremarkable. Twenty minutes in, something changes: the rain is falling in the same pattern but the sound has shifted. It is landing differently than it should, as if the surface it is hitting has changed. The camp looks the same. The sound does not.",
+          "prompt": "Do you examine the ground around camp? Do you wait for dawn to look properly?",
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to explore prophecies, omens and visions."
+        },
+        {
+          "text": "The fire goes out. Not dies down — goes out, all at once, mid-burn, as if extinguished by something that left no trace. The wood is still warm. There is no wind. Relighting it takes three attempts, and the flame burns lower than it should for the rest of the night.",
+          "prompt": "Do you keep watch the rest of the night? Do you examine the fire pit?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Arcana",
+            "dc": 12,
+            "success": "Something suppressed the combustion — not physically, at the level of the reaction itself. This requires either a very specific magical effect or proximity to something that disrupts fire naturally. Neither option is comforting.",
+            "failure": "Fire goes out sometimes. You relight it and watch it more carefully."
+          }
+        }
+      ],
+      "Wildlife": [
+        {
+          "text": "A wolf watches from the treeline — visible only because it wants to be, positioned exactly where the firelight reaches its eyes. It has not moved in twenty minutes. It is not hunting. It is waiting.",
+          "prompt": "Do you acknowledge it? Do you offer food? Do you ignore it and see what it does?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Animal Handling",
+            "dc": 12,
+            "success": "The wolf is alone, which is unusual. Its posture is not aggressive and not submissive — it is attentive. It responds to direct eye contact by looking slightly to your left, as if indicating a direction.",
+            "failure": "It watches. You watch. Eventually one of you will have to make a decision."
+          }
+        },
+        {
+          "text": "A bear enters camp from downwind — it knew you were here before it arrived. It moves through the camp slowly, examining things without touching them, with a methodical attention that does not belong to an animal looking for food.",
+          "prompt": "Do you stay still? Do you try to drive it off? Do you observe what it is examining?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Nature",
+            "dc": 13,
+            "success": "It is not interested in your food or your gear. It stops longest at the spot where you are sleeping, then at the edge of camp facing a specific direction, then leaves the same way it came.",
+            "failure": "A bear in camp is dangerous regardless of intent. You make yourself large and loud. It leaves, unhurried."
+          },
+          "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior."
+        },
+        {
+          "text": "Something large circles the camp perimeter for most of the night — you hear it but never see it. The footfalls are irregular in a way that suggests it is stopping and starting, not pacing. By dawn the sound has stopped. In the morning you find the tracks. They stop at the edge of camp and do not continue in any direction.",
+          "prompt": "Do you follow the perimeter to find all the tracks? Do you break camp quickly?",
+          "skill_check": {
+            "skill": "Survival",
+            "dc": 14,
+            "success": "The tracks are from something you can identify — but the size is wrong, significantly larger than it should be. And they do not end, they simply stop, mid-stride, with no disturbance in the ground that would suggest a leap or a change of surface.",
+            "failure": "Large tracks, stopping abruptly. You do not recognize the species from the print alone."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior."
+        },
+        {
+          "text": "A fox sits just outside the firelight and watches you eat. When you finish, it approaches, takes something small from near your pack — not food, something else — and leaves at a trot in a specific direction. It looks back once before disappearing.",
+          "prompt": "Do you follow it? Do you check what it took?",
+          "skill_check": {
+            "skill": "Perception",
+            "dc": 11,
+            "success": "What it took was not valuable and not food — a small object, possibly something you did not realize you had dropped. It took it deliberately and specifically.",
+            "failure": "Small and fast. You cannot tell what it took before it is gone."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about myths and folklore."
+        },
+        {
+          "text": "A snake coils near the warmth of your fire — common enough behavior. What is not common is that it is facing outward, away from the heat, toward the darkness. It remains in that position for hours, still but alert, like a sentinel.",
+          "prompt": "Do you remove it from camp? Do you leave it and watch what it is watching?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Nature",
+            "dc": 12,
+            "success": "Snakes do not behave this way. They seek warmth, not proximity to warmth while facing away from it. Whatever it is responding to is in the darkness beyond the firelight.",
+            "failure": "Snakes near fires are common. You move it carefully away from camp and try to sleep."
+          }
+        },
+        {
+          "text": "Every animal sound stops at once — then resumes, but wrong. The insects are still there but the rhythm has changed. The distant owl is calling at a different interval. Something moved through the area and everything adjusted, and what you are hearing now is the adjustment.",
+          "prompt": "Do you stay still and listen for what caused it? Do you prepare for something to arrive?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Survival",
+            "dc": 13,
+            "success": "The disruption moved through from north to south at a walking pace. Large, and the wildlife gave it significant berth — more than they would for a bear or a large predator. Whatever it was, the local animals have learned to make room for it.",
+            "failure": "Animals get spooked. The sounds resume. Nothing arrives. You do not sleep well."
+          },
+          "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior."
+        },
+        {
+          "text": "A deer walks into the firelight, stands for a moment, and looks directly at you. Not at the camp, not at the food — at you specifically. Then it lies down fifteen feet away and closes its eyes. It is still there in the morning, watching you break camp.",
+          "prompt": "Do you approach it? Do you let it be? Do you try to understand what it wants?",
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about myths and folklore."
+        },
+        {
+          "text": "A swarm of insects descends on the camp all at once — not aggressive, not feeding, just present, covering every surface including your gear. They remain for exactly as long as it takes you to decide what to do about them, then lift and disperse in a single coordinated movement.",
+          "prompt": "Do you examine your gear for damage or changes? Do you note the direction they dispersed toward?",
+          "skill_check": {
+            "skill": "Nature",
+            "dc": 13,
+            "success": "Insects do not swarm like this without a pheromone trigger or a hive signal. There is no hive nearby. Whatever coordinated them was not biological in any way you recognize.",
+            "failure": "Insects. You shake out your gear and find nothing missing or damaged."
+          },
+          "oracle_suggested": true
+        },
+        {
+          "text": "A large cat — mountain lion, or something close to it — is on a branch directly above your camp. It has been there long enough that it is comfortable, which means it arrived before you made camp and watched you set up. It shows no intention of leaving.",
+          "prompt": "Do you try to drive it off? Do you move the camp? Do you sleep with one eye open and see what it does?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Animal Handling",
+            "dc": 14,
+            "success": "It is not hunting. Its body language is relaxed in a way that predators only achieve when they feel completely safe — or when they are not thinking about you as prey at all. It is here for a different reason, or no reason you can identify.",
+            "failure": "You make noise and throw things. It shifts position on the branch but does not leave. Eventually you stop trying."
+          },
+          "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior."
+        },
+        {
+          "text": "A boar charges through camp in a straight line — not at you, through you, as if the camp is not there. It hits nothing, upsets nothing, and is gone in seconds. Behind it, following at the same pace in the same straight line, three more. Then silence. The grass where they passed is not disturbed.",
+          "prompt": "Do you examine the path they took? Do you follow it in either direction?",
+          "skill_check": {
+            "skill": "Nature",
+            "dc": 15,
+            "success": "No tracks. No bent grass. No smell, which should have been overwhelming at that proximity. Whatever you saw passed through this space without physically occupying it.",
+            "failure": "Fast and dark. You cannot find tracks, but night tracking is difficult. By morning the grass tells you nothing useful."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about planar phenomena."
+        }
+      ],
+      "Dreams & Visions": [
+        {
+          "text": "You dream of a place you have never been — specific, detailed, with a geography you could draw from memory when you wake. The dream is not narrative. It is a location, held still, as if you are being shown something rather than experiencing something. You wake with the certain feeling that the place is real.",
+          "prompt": "Do you try to sketch what you saw before the details fade? Do you consult the oracle about whether this place exists?",
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about prophecies and omens."
+        },
+        {
+          "text": "You dream of a door. Not a remarkable door — ordinary wood, ordinary frame, set into nothing, standing alone in a space that has no other features. You know with dream-certainty that you should not open it. You wake before you find out whether you did.",
+          "prompt": "Do you record the dream? Do you try to return to it?",
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about prophecies and omens."
+        },
+        {
+          "text": "A voice calls your name in the dream — not a voice you recognize, but one that knows you, the way a voice knows someone it has been watching for a long time. It does not say anything else. It does not need to. You wake with the feeling of being found.",
+          "prompt": "Do you try to recall any detail about the voice? Do you consult the oracle about what found you?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Insight",
+            "dc": 13,
+            "success": "The voice was not threatening and not welcoming. It was informational — as if something has been tracking your location and has now confirmed it. The feeling of being found does not go away with waking.",
+            "failure": "A name called in a dream. You have heard your name before. You tell yourself it means nothing."
+          }
+        },
+        {
+          "text": "You dream of someone you know — alive, specific, recognizable. They are trying to tell you something. You can see their mouth moving but the sound keeps arriving slightly wrong, like a translation that loses the important part. You wake remembering the expression on their face more clearly than any word.",
+          "prompt": "Do you try to recall what they were saying? Do you send word to them if you can?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Insight",
+            "dc": 12,
+            "success": "The expression was urgency without panic — the face of someone delivering information they believe you need, not crying for help. Whatever they were trying to say, they expected you to understand it.",
+            "failure": "A familiar face, an unclear message. Dreams distort. You tell yourself this is distortion."
+          }
+        },
+        {
+          "text": "You dream of being underground — not lost, moving with purpose through passages that feel familiar despite being unknown. At a certain point you stop in front of a wall and begin removing stones. Behind them is something. You wake before you see what it is, with your hands aching as if you actually used them.",
+          "prompt": "Do you examine your hands? Do you try to identify the architecture you saw?",
+          "skill_check": {
+            "skill": "History",
+            "dc": 14,
+            "success": "The construction style in the dream is identifiable — old, specific to a period and a culture. The passages you moved through match descriptions of a type of structure that is believed to no longer exist in this region.",
+            "failure": "Stone passages, underground. Your hands ache. You find no marks on them."
+          },
+          "lore_trigger": "Use the Lore Engine to know more about lost civilizations and history."
+        },
+        {
+          "text": "The dream is not visual. You know things — specific, detailed, organized — with the clarity of memory rather than the confusion of new information. When you wake, the knowledge begins to fade immediately, the way dreams do. You have perhaps a minute to act on what you knew before it is gone.",
+          "prompt": "What do you try to hold onto? What do you write down first?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Intelligence",
+            "dc": 13,
+            "success": "You retain one specific piece of information with complete clarity. The rest fades. The piece you retained feels like the piece you were meant to retain — as if the choice was not entirely yours.",
+            "failure": "The knowledge drains out faster than you can capture it. By the time you have something to write with, you remember only that you knew something important."
+          },
+          "lore_trigger": "Use the Lore Engine to know more about prophecies and omens."
+        },
+        {
+          "text": "You dream of a figure standing at the edge of your camp — in the dream, your camp, exactly as it is, in real geography. The figure is not threatening. It is waiting. When you approach it in the dream it does not respond. When you wake, you check the edge of camp. The ground there is disturbed in a way that was not disturbed when you made camp.",
+          "prompt": "Do you examine the disturbance? Do you check the perimeter?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Perception",
+            "dc": 13,
+            "success": "The disturbance is footprints — one set, arriving and not leaving, stopping exactly where the figure stood in your dream. The prints do not continue in any direction.",
+            "failure": "Disturbed ground. Animals move through camps at night. You find no clear prints in the dark."
+          }
+        },
+        {
+          "text": "You do not dream. This is not unusual. What is unusual is that you are aware of not dreaming — conscious throughout the night of a complete absence, as if something cleared the space your dreams usually occupy. You wake fully rested and deeply unsettled, unable to explain why the absence feels like a presence.",
+          "prompt": "Do you note the date and location? Do you consult the oracle?",
+          "oracle_suggested": true
+        },
+        {
+          "text": "Two of you dream the same dream — you discover this only by comparing notes in the morning, when one of you mentions a detail and the other goes quiet. The dream was not identical but the center of it was: a specific image you both describe using different words that mean the same thing.",
+          "prompt": "Do you attempt to reconstruct the shared image together? Do you consult the oracle about what it means?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Arcana",
+            "dc": 14,
+            "success": "Shared dreaming does not occur naturally. Something produced this deliberately — either something in this location, something one of you is carrying, or something that has a reason to communicate with both of you simultaneously.",
+            "failure": "Coincidence is possible. People traveling together share experiences and those experiences surface similarly in dreams. You tell yourself this. It does not fully satisfy."
+          },
+          "lore_trigger": "Use the Lore Engine to know more about prophecies and omens."
+        },
+        {
+          "text": "You dream of the sky — not looking up at it, inside it, moving through it at speed toward something below. The detail of the ground increases as you approach. You recognize the landscape. It is the area you are traveling through. The thing you are moving toward is your camp. You are the thing approaching.",
+          "prompt": "Do you check for anything that might be observing the camp from above? Do you consult the oracle?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Arcana",
+            "dc": 15,
+            "success": "The perspective in the dream was not metaphorical — it was a point of view. Something observed your camp from above last night, and either you perceived it unconsciously and processed it as a dream, or something chose to show you what it saw.",
+            "failure": "A dream of flying toward familiar ground. Anxiety about your journey expressing itself. You tell yourself this and mostly believe it."
+          }
+        }
+      ],
+      "Visitors": [
+        {
+          "text": "A traveler appears at the edge of the firelight and stops — not sneaking, not announcing themselves, simply present, waiting to be acknowledged. They carry little. They look at the fire more than at you, with the expression of someone who has been cold for longer than one night.",
+          "prompt": "Do you invite them in? Do you ask their business first? Do you let them approach on their own terms?",
+          "skill_check": {
+            "skill": "Insight",
+            "dc": 12,
+            "success": "Tired, genuinely. The wariness they show is the wariness of someone who has been turned away before, not someone calculating an approach. Whatever their reason for being out here, it is not you.",
+            "failure": "A traveler wanting warmth. Common enough. You cannot read more than that from here."
+          },
+          "oracle_suggested": true
+        },
+        {
+          "text": "A child walks into camp alone — not lost, not panicked, moving with the confidence of someone who knows where they are going. They sit down across the fire from you without asking permission and look at you with an attention that is not childlike at all.",
+          "prompt": "Do you ask who they are? Do you ask where they came from? Do you wait to see what they do?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Insight",
+            "dc": 14,
+            "success": "The eyes are wrong — not dangerous, not threatening, but not the eyes of a child. Whatever this is, it has chosen this form deliberately. The attention it is giving you is evaluative.",
+            "failure": "A child, alone, at night. Your first concern is practical — where did they come from and where are their people."
+          },
+          "lore_trigger": "Use the Lore Engine to know more about myths and folklore."
+        },
+        {
+          "text": "A wounded traveler collapses at the edge of camp — real wounds, real exhaustion, nothing staged about the condition they are in. Between breaths they say they were followed. They cannot describe what followed them. They say this is because it had no consistent shape.",
+          "prompt": "Do you treat their wounds? Do you prepare for something to arrive? Do you ask them to describe what they saw more carefully?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Medicine",
+            "dc": 12,
+            "success": "The wounds are not from a weapon or an animal you recognize. The pattern is consistent with something that grips and compresses rather than cuts or bites. Whatever made these marks was strong and was holding on, not attacking.",
+            "failure": "Wounds, real ones. You stabilize them. The story about what caused it you set aside for now."
+          },
+          "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior."
+        },
+        {
+          "text": "A hunter arrives at camp and asks, matter-of-factly, if you have seen their quarry. They describe it in the language of someone who hunts for a living — size, gait, markings. The description does not match any animal you know. The hunter does not seem to find this unusual.",
+          "prompt": "Do you ask them to describe it further? Do you tell them what you have seen? Do you ask what they intend to do with it?",
+          "skill_check": {
+            "skill": "Nature",
+            "dc": 13,
+            "success": "The description is internally consistent and specific enough to be from direct observation. Whatever they are hunting, they have seen it more than once. The markings they describe do not appear in any bestiary you have encountered.",
+            "failure": "An unfamiliar animal in unfamiliar territory. You tell them you have not seen it. They accept this and move on."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior."
+        },
+        {
+          "text": "A cloaked figure stops outside camp and asks, politely, if they may share the fire. They give a name when asked. They answer questions about their destination and their origin with answers that are plausible and consistent and somehow do not add up to anything solid. They leave before dawn without sound.",
+          "prompt": "Do you try to keep them talking? Do you watch them through the night? Do you check in the morning for tracks?",
+          "skill_check": {
+            "skill": "Insight",
+            "dc": 14,
+            "success": "Every answer they gave was technically true. You are certain of this and uncertain why you are certain. They were not lying. They were also not telling you what you were actually asking.",
+            "failure": "A traveler, polite, unremarkable. You wake to find them gone. The fire is lower but still burning."
+          },
+          "skill_check_morning": {
+            "skill": "Survival",
+            "dc": 13,
+            "success": "No tracks leaving camp in any direction. The place where they sat shows the impression of weight. The weight arrived and did not depart.",
+            "failure": "Soft ground and disturbed leaves. You find nothing definitive."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about myths and folklore."
+        },
+        {
+          "text": "A hermit emerges from the trees and delivers a warning without preamble — specific, detailed, concerning a place or a thing you have not mentioned to anyone. Then they turn and walk back into the trees. They do not explain how they know what they know. They do not appear to think an explanation is necessary.",
+          "prompt": "Do you follow them to ask how they know? Do you take the warning seriously? Do you consult the oracle?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Perception",
+            "dc": 13,
+            "success": "You follow quickly enough to see where they went. The trees are thin enough here that they should be visible for fifty yards. They are not visible at all.",
+            "failure": "By the time you decide to follow, there is no sound of movement in the trees. The forest absorbed them completely."
+          },
+          "lore_trigger": "Use the Lore Engine to know more about prophecies and omens."
+        },
+        {
+          "text": "A bard arrives and asks to share the fire in exchange for a song. The song they play is unremarkable — pleasant, forgettable. The second song is about you. Not metaphorically, not a type — you, specifically, with details they should not know. They play it the same way they played the first one, as if this is normal.",
+          "prompt": "Do you let them finish? Do you stop them and ask how they know what they know? Do you ask them to play it again?",
+          "skill_check": {
+            "skill": "Insight",
+            "dc": 13,
+            "success": "They are not surprised by your reaction. They expected it. The song was the point of coming here — not the warmth, not the company. They have been looking for you, and the song is either a message or a test.",
+            "failure": "A bard who has heard stories about travelers matching your description. It happens. The details could be coincidence. You tell yourself this."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about cultures and factions."
+        },
+        {
+          "text": "A pilgrim stops at camp, exhausted, and asks only to rest without conversation. They keep their word — they say nothing, eat nothing you offer, and sit with their back to a tree facing outward. In the morning they are awake before you and gone before you can speak. They left something small behind, placed deliberately near your pack.",
+          "prompt": "Do you examine what they left? Do you try to catch up to them?",
+          "skill_check": {
+            "skill": "Investigation",
+            "dc": 11,
+            "success": "The object is a marker of some kind — the type used to indicate that a person or place has been noted, accounted for, recorded. Someone knows you were here. The pilgrim was not traveling. They were working.",
+            "failure": "A small object, possibly meaningful, possibly discarded. You cannot determine its purpose."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about cultures and factions."
+        },
+        {
+          "text": "A scout from a nearby settlement arrives to check your intentions — professional, not unfriendly, asking reasonable questions about your route and your business. The questions themselves are unremarkable. The specific questions they do not ask, given what they clearly already know about you, are more interesting.",
+          "prompt": "Do you answer straightforwardly? Do you ask what they already know? Do you try to find out who sent them?",
+          "skill_check": {
+            "skill": "Insight",
+            "dc": 12,
+            "success": "They already know your route and your approximate business. The questions are confirmation, not discovery. Someone briefed them before they came out here, which means someone has been tracking your movement for long enough to brief a scout.",
+            "failure": "A routine check. Settlements near traveled routes send scouts. You answer their questions and they leave satisfied."
+          },
+          "lore_trigger": "Use the Lore Engine to know more about cultures and factions."
+        },
+        {
+          "text": "No one arrives. You prepared for the possibility, kept half an eye on the treeline, noted the sounds. Nothing came. Around the third hour of watch you realize you have been expecting something with a certainty you cannot account for — a feeling of approach that never resolved into arrival. By morning it has not gone away.",
+          "prompt": "Do you search the perimeter in daylight? Do you consult the oracle about what you were sensing?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Perception",
+            "dc": 14,
+            "success": "The perimeter shows signs of something that stopped and did not approach — weight displacement in the soil at consistent intervals around the camp, as if something circled without entering. It came close enough that not arriving was a choice.",
+            "failure": "Nothing. You find nothing. The feeling does not require evidence to persist."
+          }
+        }
+      ],
+      "Threats": [
+        {
+          "text": "A group of bandits steps out of the treeline — four visible, positioned to cut off retreat. Their leader speaks first, which is professional. What they ask for is specific rather than general, which is more concerning than a demand for everything. Someone told them what you are carrying.",
+          "prompt": "Do you comply? Do you negotiate? Do you look for the ones you cannot see?",
+          "skill_check": {
+            "skill": "Insight",
+            "dc": 13,
+            "success": "The visible four are not the threat — they are the conversation. The ones you have not seen are already in position. The leader is waiting for a signal, not a decision. This was never a negotiation.",
+            "failure": "Four bandits, professional enough to have a spokesperson. The demand is specific. You do not know yet what that means."
+          },
+          "oracle_suggested": true
+        },
+        {
+          "text": "Something has been following you since before you made camp — you piece this together in the dark from small inconsistencies: a sound in the wrong place, a shape at the wrong distance. It has not approached. It has not left. It is waiting for something, and you do not know what that something is.",
+          "prompt": "Do you address it directly? Do you break camp and move? Do you set a trap?",
+          "skill_check": {
+            "skill": "Survival",
+            "dc": 14,
+            "success": "The pattern of sounds suggests one thing, moving intelligently, maintaining a consistent distance that adjusts when you move. It knows where you are with more precision than sound alone would allow.",
+            "failure": "Something is out there. Size and nature unclear. It has not come closer in the last hour, which is either reassuring or strategic."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior."
+        },
+        {
+          "text": "A figure steps into the firelight with a drawn weapon — not attacking, presenting. They state your name, describe you accurately, and say they have been hired to bring you somewhere. They do not say by whom. They say this is the polite version of the conversation and that they would prefer not to have the other version.",
+          "prompt": "Do you go with them? Do you ask who hired them? Do you attempt to talk your way out or fight?",
+          "skill_check": {
+            "skill": "Insight",
+            "dc": 13,
+            "success": "They mean what they say about preferring the polite version — not out of mercy, out of preference for clean work. They are professional and they are alone, which means either they are very confident or there are others you have not seen.",
+            "failure": "Professional, armed, knows who you are. The offer of a polite version implies an impolite one they are prepared for."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about cultures and factions."
+        },
+        {
+          "text": "A creature enters camp from downwind, moving low and fast — predatory, committed, no hesitation in the approach. It stops ten feet away when it sees you are awake and aware. The stop was a calculation, not a fright. It is reassessing.",
+          "prompt": "Do you hold your ground? Do you make yourself larger and louder? Do you ready a weapon?",
+          "skill_check": {
+            "skill": "Nature",
+            "dc": 13,
+            "success": "It stopped because the approach relied on surprise and surprise is gone. It is not retreating because it is not afraid. It is deciding whether the cost has changed enough to matter. You have a short window in which your next action will determine the outcome.",
+            "failure": "Large, fast, stopped ten feet away. Predator behavior. What happens next depends on what you do in the next few seconds."
+          },
+          "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior."
+        },
+        {
+          "text": "You wake to find someone already in camp — going through your pack, unhurried, with the efficiency of someone who knows what they are looking for. They have not noticed you are awake. You have a few seconds before that changes.",
+          "prompt": "Do you act immediately? Do you watch to see what they take? Do you call out?",
+          "skill_check": {
+            "skill": "Stealth",
+            "dc": 12,
+            "success": "You have the initiative. They are focused on the pack and have not checked your position since they arrived. What you do with the next three seconds is entirely your choice.",
+            "failure": "They look up before you are ready. The dynamic shifts to negotiation or conflict on their terms, not yours."
+          }
+        },
+        {
+          "text": "A group of figures surrounds the camp — you count at least six before you stop counting and start thinking. They have not spoken. They have not moved since you noticed them. They are waiting, and the waiting feels coordinated.",
+          "prompt": "Do you speak first? Do you wake your companions quietly? Do you look for a gap in the circle?",
+          "skill_check": {
+            "skill": "Perception",
+            "dc": 14,
+            "success": "The spacing is not uniform — there is a gap to the east that is wider than the others by enough to matter. It may be intentional. A gap left deliberately is either an escape route someone is offering or a funnel someone is constructing.",
+            "failure": "Six or more, evenly spaced, silent. You cannot determine intent from position alone."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about cultures and factions."
+        },
+        {
+          "text": "Something large hits the edge of camp — not an attack, an arrival, the sound and force of something that was moving fast and stopped. In the darkness at the perimeter, a shape. Too large to be a person. Breathing audibly. Not moving.",
+          "prompt": "Do you approach with light? Do you make noise to drive it off? Do you wait for it to move first?",
+          "skill_check": {
+            "skill": "Nature",
+            "dc": 14,
+            "success": "The breathing pattern is wrong for any animal this size — too slow, too controlled. Large animals breathe faster when they have been running. Whatever this is, it was not running. It arrived at speed by some other means.",
+            "failure": "Large, breathing, stationary. You cannot identify it from here. The darkness is doing most of the work."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior."
+        },
+        {
+          "text": "A scout arrives — not to negotiate, to observe. You spot them before they realize you have, which means you have a choice about whether to reveal that. They are noting your numbers, your equipment, your position. Someone sent them to gather information before something else happens.",
+          "prompt": "Do you confront them? Do you let them finish and follow them when they leave? Do you move camp immediately?",
+          "skill_check": {
+            "skill": "Stealth",
+            "dc": 13,
+            "success": "You watch them finish without revealing yourself. They leave in a specific direction, moving quickly. Whatever they are reporting to is not far.",
+            "failure": "They notice you noticing them. The dynamic changes — now both sides know, and whoever acts first has the advantage."
+          },
+          "lore_trigger": "Use the Lore Engine to know more about cultures and factions."
+        },
+        {
+          "text": "A trap has been set in camp — you discover it before it triggers, which means either it was poorly placed or you were meant to find it. A poorly placed trap is reassuring. A trap meant to be found is not, because its purpose is not capture.",
+          "prompt": "Do you disarm it? Do you leave it and watch to see who comes to check it? Do you move camp entirely?",
+          "skill_check": {
+            "skill": "Investigation",
+            "dc": 13,
+            "success": "The construction is deliberate and skilled — this was not placed by someone who did not know what they were doing. The placement is wrong for capture and wrong for injury. It is placed where it would be found by someone careful. It is a message or a test.",
+            "failure": "A trap, real enough to be dangerous if triggered. You cannot determine intent from construction alone."
+          },
+          "oracle_suggested": true
+        },
+        {
+          "text": "Nothing threatens the camp directly. But sometime in the night, something was killed nearby — you find the evidence in the morning, close enough that it happened while you slept. The kill was not eaten. Whatever did it was not hunting for food.",
+          "prompt": "Do you examine the kill carefully? Do you move camp immediately? Do you try to track what did it?",
+          "skill_check": {
+            "skill": "Survival",
+            "dc": 14,
+            "success": "The kill is deliberate in a way that predation is not — specific, methodical, and positioned. It is close enough to camp that whatever did it knew you were here. The positioning suggests it was left where you would find it. This was communication.",
+            "failure": "Something died nearby while you slept. Large predators hunt at night. You break camp and move before you have finished breakfast."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to determine the monster's origin or use the Bestiary to identify it and learn more about its behavior."
+        }
+      ],
+      "Strange & Unexplained": [
+        {
+          "text": "A light moves through the trees at a consistent height and speed — not a lantern carried by someone walking, the motion is too smooth. It does not flicker. It does not respond to wind. It maintains a course that, if extended, passes directly through your camp.",
+          "prompt": "Do you let it pass? Do you move out of its path? Do you try to intercept it?",
+          "skill_check": {
+            "skill": "Arcana",
+            "dc": 13,
+            "success": "The light is not producing illumination in the conventional sense — the trees around it are not lit, only the light itself is visible. It is not a torch, not a spell you recognize, not bioluminescence. It is passing through this space with a destination.",
+            "failure": "A light, moving steadily. You watch it pass. It does not acknowledge your presence."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about planar phenomena."
+        },
+        {
+          "text": "You find, in the morning, that everything in camp has been moved slightly — not ransacked, not searched, repositioned. Each object has been placed with care, in a configuration that is almost the same as you left it. The differences are small enough that you question whether you are remembering correctly. You are remembering correctly.",
+          "prompt": "Do you try to determine what the new configuration means? Do you check for tracks? Do you consult the oracle?",
+          "skill_check": {
+            "skill": "Investigation",
+            "dc": 14,
+            "success": "The repositioning is not random — the objects have been arranged in a pattern that has a center point. The center point is where you sleep. Whatever moved them was making a statement about you specifically, not about the camp.",
+            "failure": "Everything is slightly wrong. No tracks, no explanation. You reset the camp and do not mention it."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about myths and folklore."
+        },
+        {
+          "text": "The fire burns a different color for approximately ten minutes — not dramatically, not alarmingly, a shift in the spectrum that you notice and cannot un-notice. The heat output does not change. The wood is the same wood. When it returns to normal you are not certain it was ever different, except that you are.",
+          "prompt": "Do you note the time and direction you are traveling? Do you consult the oracle? Do you examine the wood?",
+          "skill_check": {
+            "skill": "Arcana",
+            "dc": 13,
+            "success": "Fire changes color when the composition of what it is burning changes, or when something in the surrounding air changes. The wood is unchanged. The air carried something through this space during those ten minutes — something that has since passed.",
+            "failure": "Fire does strange things at night. You watch it return to normal and decide not to read into it."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about planar phenomena."
+        },
+        {
+          "text": "A sound repeats exactly every seventeen minutes throughout the night — you time it because the regularity is too precise to be natural. It is not loud, not close, not identifiable. At dawn it stops, mid-interval, eight minutes before the next repetition would have occurred.",
+          "prompt": "Do you investigate the direction it came from at first light? Do you note the interval for future reference?",
+          "skill_check": {
+            "skill": "Arcana",
+            "dc": 14,
+            "success": "Seventeen-minute intervals appear in several traditions as a significant timing — not a natural cycle, a constructed one. Something was marking time, or counting, or signaling at intervals meant to be noticed by someone who knows what seventeen minutes means.",
+            "failure": "Regular sound, unknown source, stops at dawn. You find nothing at the source location. The ground is undisturbed."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about prophecies and omens."
+        },
+        {
+          "text": "Your shadow behaves incorrectly — not dramatically, not impossibly, just slightly wrong. The angle is off by a few degrees from where the firelight would put it. When you move, it follows correctly. When you are still, it drifts. You watch it for a long time. It does not stop drifting.",
+          "prompt": "Do you test it deliberately — moving in specific ways to see how it responds? Do you wake someone else to confirm what you are seeing?",
+          "skill_check": {
+            "skill": "Arcana",
+            "dc": 15,
+            "success": "The shadow is responding to a light source that is not the fire — something that is illuminating you from a direction that has no visible source. You are being observed by something that produces light you cannot see.",
+            "failure": "Firelight is inconsistent. Shadows near fires do strange things. You tell yourself this until you believe it enough to sleep."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about planar phenomena."
+        },
+        {
+          "text": "You find a circle in the ground around your camp — not drawn, pressed, as if something walked the perimeter with enough weight to leave a mark in the soil. The circle is complete and even. You did not hear it being made. It was not there when you made camp.",
+          "prompt": "Do you step outside the circle? Do you examine the marks more closely? Do you consult the oracle about what it means?",
+          "skill_check": {
+            "skill": "Arcana",
+            "dc": 13,
+            "success": "The marks are not footprints — no individual steps, a continuous impression, as if something moved around the camp without lifting whatever made the mark. The depth is consistent all the way around, which means the pressure was constant. This was deliberate and controlled.",
+            "failure": "A circle around the camp, pressed into the soil, complete and even. You do not know if it is meant to keep something in or keep something out."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about myths and folklore."
+        },
+        {
+          "text": "You wake at the same moment as everyone else in camp — simultaneously, for no reason any of you can identify. The night is still, the fire is normal, nothing is visibly wrong. You all look at each other. After a moment, one of you says: did you hear that. No one heard anything. That is what woke you.",
+          "prompt": "Do you search the perimeter? Do you sit in silence and listen? Do you consult the oracle?",
+          "oracle_suggested": true,
+          "skill_check": {
+            "skill": "Perception",
+            "dc": 15,
+            "success": "The silence is wrong — not the silence of nothing happening, the silence of something that was happening and stopped at the exact moment you woke. Whatever produced the silence was present and is now absent. The transition woke you.",
+            "failure": "Nothing. Still night, normal camp, no explanation. You sit in silence for a while and then, one by one, go back to sleep."
+          }
+        },
+        {
+          "text": "An object in your camp is warm — not from the fire, not from proximity to anything — warm in a way that suggests an internal temperature it is maintaining against the night air. It was not warm when you made camp. You do not know when it changed.",
+          "prompt": "Do you examine it closely? Do you set it aside and watch it? Do you consult the oracle?",
+          "skill_check": {
+            "skill": "Arcana",
+            "dc": 13,
+            "success": "The warmth is stable, not radiating outward the way heat dissipates — it is contained, as if the object is holding it rather than producing it. Something charged this object while you slept, deliberately and precisely.",
+            "failure": "Warm, for no reason you can identify. You set it somewhere visible and watch it. It does not change further."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about relics and artifacts."
+        },
+        {
+          "text": "The stars are wrong — not dramatically, one constellation is shifted slightly from where it should be. You notice because you navigate by them. The shift is consistent across the whole sky, as if the reference point has moved rather than any individual star. By morning everything is back in its correct position.",
+          "prompt": "Do you note the direction of the shift? Do you consult the oracle? Do you recalculate your position based on what you saw?",
+          "skill_check": {
+            "skill": "Navigation",
+            "dc": 14,
+            "success": "The shift was not in the stars. The shift was in your position — or in what your position is relative to. For a period last night, you were somewhere that was not quite here. The stars were correct. You were not.",
+            "failure": "Stars do not move like that. You check your navigation notes in the morning and find no discrepancy. Whatever happened corrected itself."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about planar phenomena."
+        },
+        {
+          "text": "In the morning, there is an extra set of tracks in camp — arriving from outside the perimeter, moving through the camp with apparent purpose, and leaving in a different direction. The tracks are human. They move between your sleeping positions without disturbing anything. They stop at a specific point in camp and remain there for long enough to leave a deeper impression, then continue out. You were all asleep. Nothing was taken. Nothing was left. The tracks simply passed through.",
+          "prompt": "Do you follow the tracks in the direction they left? Do you examine the point where they stopped? Do you consult the oracle?",
+          "skill_check": {
+            "skill": "Survival",
+            "dc": 14,
+            "success": "The tracks stop point corresponds to nothing obvious — no object, no mark on the ground, no disturbance. Whatever they came to look at or do at that spot left no physical evidence. The tracks are real. The purpose is not legible.",
+            "failure": "Human tracks, passing through camp while you slept, stopping for a moment, leaving. You follow them until they reach harder ground and disappear."
+          },
+          "oracle_suggested": true,
+          "lore_trigger": "Use the Lore Engine to know more about myths and folklore."
+        }
+      ]
+    }
+}
